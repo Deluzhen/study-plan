@@ -385,7 +385,7 @@ ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 <li><a class="flink" href="https://online.yasar.edu.tr/course/view.php?id=746" target="_blank" rel="noopener">Moodle course page (from 00_Course_Introduction.pdf)</a> <small>(Moodle login needed)</small></li>
 <li><a class="flink" href="https://github.com/calvint/AlgorithmsOneProblems/blob/master/Algorithms/Thomas%20H.%20Cormen,%20Charles%20E.%20Leiserson,%20Ronald%20L.%20Rivest,%20Clifford%20Stein%20Introduction%20to%20Algorithms,%20Third%20Edition%20%202009.pdf" target="_blank" rel="noopener">Cormen, Introduction to Algorithms (link from the instructor&#x27;s site)</a></li>
 </ul>
-<p><small>Underlined file names inside the daily tasks open the PDF from your iCloud folder, so they work in Safari on your Mac. On the iPhone, use the web links above.</small></p></details></section>
+<p><small>Underlined file names inside the daily tasks open the PDF from your iCloud folder. They only work in the Desktop copy of this plan on your Mac (the Study Plan Dock app opens it). On this online page and on the iPhone, Safari blocks them, so use the web links above.</small></p></details></section>
 </main>
 <main class="wrap" id="view-outlook" role="tabpanel" hidden></main>
 <main class="wrap" id="view-exams" role="tabpanel" hidden></main>
@@ -848,7 +848,7 @@ function prqBlock(text){var list=prqList(text);if(!list.length)return null;var b
 function noteKey(date){return KEY+":note:"+date}
 function taskItem(t){
  var li=el("li");var cb=el("input");cb.type="checkbox";cb.id="cb-"+t.id;cb.checked=!!state.done[t.id];
- cb.addEventListener("change",function(){if(cb.checked)state.done[t.id]=1;else delete state.done[t.id];save();render()});
+ cb.addEventListener("change",function(){if(cb.checked&&!confirm(lang==="fa"?"مطمئنی؟":"Are you sure?")){cb.checked=false;return}if(cb.checked)state.done[t.id]=1;else delete state.done[t.id];save();render()});
  var lab=el("label");lab.htmlFor=cb.id;lab.appendChild(el("div","t",tTitle(t)));lab.appendChild(linked(el("div","d"),tDetail(t)));var pb=prqBlock(tDetail(t));if(pb)lab.appendChild(pb);
  li.appendChild(cb);li.appendChild(lab);li.appendChild(el("span","h",S().hrs(fmt(t.hours))));if(window.__quiz){var qm=window.__quiz.keysFor(t.c,t.title);if(qm)window.__quiz.attach(li,t.id,qm.keys,qm.n)}return li}
 function render(){
