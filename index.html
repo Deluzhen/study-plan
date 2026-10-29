@@ -302,6 +302,13 @@ ul.lnk{margin:4px 0 12px;padding-inline-start:20px;display:grid;gap:5px}
 ul.lnk li{color:var(--ink);line-height:1.45}
 ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 
+/* v10: exam announced (green) / not announced (red) */
+.ex-card.ex-ann{border-inline-start:5px solid #16a34a}
+.ex-card.ex-unann{border-inline-start:5px solid #dc2626}
+.ex-card.ex-ann h3{color:#15803d}
+.ex-card.ex-unann h3{color:#b91c1c}
+@media (prefers-color-scheme:dark){.ex-card.ex-ann h3{color:#4ade80}.ex-card.ex-unann h3{color:#f87171}}
+
 </style>
 </head>
 </head>
@@ -499,7 +506,7 @@ function cell(label,val,opt){opt=opt||{};var c=el("div","ex-cell"+(opt.cls?" "+o
  else if(opt.ltr){var b=el("span","ex-ltr");b.setAttribute("dir","ltr");b.textContent=val;v.appendChild(b)}
  else v.textContent=val;
  c.appendChild(v);if(opt.sub)c.appendChild(el("div","ex-sub",opt.sub));return c}
-function card(e,l,kind){var s=S[l],c=el("article","ex-card glass st-"+e.status);
+function card(e,l,kind){var s=S[l],c=el("article","ex-card glass st-"+e.status+(e.date?" ex-ann":" ex-unann"));
  var hd=el("div","ex-hd"),t=el("div");t.appendChild(el("h3",null,e.course[l]));t.appendChild(el("span","ex-code",e.code+(e.extra?" · "+s.extra:"")));hd.appendChild(t);
  hd.appendChild(el("span","ex-pill "+e.status,s.st[e.status]));c.appendChild(hd);
  var dc=dateCell(e,l),strip=el("div","ex-strip");
