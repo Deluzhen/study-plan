@@ -323,6 +323,9 @@ ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 .syncbtn{min-height:44px;min-width:44px;touch-action:manipulation}
 .syncst{display:inline-block;margin-inline-start:8px;font-size:.85em;opacity:.85;vertical-align:middle}
 
+/* v16: per-block ChatGPT button */
+.projbtn.askblk{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0;margin-inline-start:4px;font-size:16px;flex:0 0 auto;align-self:center}
+
 </style>
 </head>
 </head>
@@ -926,6 +929,7 @@ function linked(parent,text){var last=0,mm;LINK_RE.lastIndex=0;
  if(last<text.length)parent.appendChild(document.createTextNode(text.slice(last)));return parent}
 var PROJ={ALG:"codex://launch",DS:"codex://launch",EEE:"codex://launch",STAT:"codex://launch"};var PROJN={ALG:"Algorithm (analyze & design)",DS:"Data Strucrute",EEE:"Fundamentals of Electricity",STAT:"Statistics"};
 var IOS=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+function cap(q){return q.length>1500?q.slice(0,1499)+"\u2026":q}
 function projBtn(k,q){var a=document.createElement("a");a.className="projbtn";a.href=q?(IOS?"https://chatgpt.com/?q=":"codex://new?prompt=")+encodeURIComponent(q):PROJ[k];if(q&&IOS){a.target="_blank";a.rel="noopener"}a.title=lang==="fa"?"ChatGPT با عنوان همین درس باز می\u200cشود":"Opens ChatGPT with this course title filled in";a.textContent=lang==="fa"?"\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u067e\u0631\u0648\u0698\u0647 \u062f\u0631 ChatGPT":"Open ChatGPT project";a.addEventListener("click",function(ev){ev.stopPropagation()});return a}
 var AI=[["Grok","https://grok.com/?q="],["Codex","codex://new?prompt="]];
 function aiLink(enc){var w=el("span","askai-w");AI.forEach(function(s){var a=document.createElement("a");a.className="askai";a.href=s[1]+enc;a.target="_blank";a.rel="noopener";a.textContent=s[0];a.title=S().ask(s[0]);a.addEventListener("click",function(ev){ev.stopPropagation()});w.appendChild(a)});return w}
@@ -938,6 +942,7 @@ function taskItem(t){
  cb.addEventListener("change",function(){if(cb.checked&&!confirm(lang==="fa"?"مطمئنی؟":"Are you sure?")){cb.checked=false;return}if(cb.checked)state.done[t.id]=1;else delete state.done[t.id];save();render()});
  var lab=el("label");lab.htmlFor=cb.id;lab.appendChild(el("div","t",tTitle(t)));lab.appendChild(linked(el("div","d"),tDetail(t)));var pb=prqBlock(tDetail(t));if(pb)lab.appendChild(pb);
  li.appendChild(cb);li.appendChild(lab);li.appendChild(el("span","h",S().hrs(fmt(t.hours))));if(window.__quiz){var qm=window.__quiz.keysFor(t.c,t.title);if(qm)window.__quiz.attach(li,t.id,qm.keys,qm.n)}return li}
+var _taskItem0=taskItem;taskItem=function(t){var li=_taskItem0(t);var ab=projBtn(t.c,cap(COURSES[t.c].code+" \u00b7 "+cn(t.c)+"\n"+tTitle(t)+"\n"+tDetail(t)));ab.className="projbtn askblk";ab.textContent="\u2726";ab.setAttribute("aria-label",(lang==="fa"?"\u067e\u0631\u0633\u06cc\u062f\u0646 \u0627\u0632 ChatGPT: ":"Ask ChatGPT: ")+tTitle(t));li.appendChild(ab);return li};
 function render(){
  var s=S(),today=todayIso(),tot=0,dn=0,th=0,dh=0,per={};ORDER.forEach(function(k){per[k]={n:0,d:0,h:0,dh:0}});
  var grid=document.getElementById("grid");grid.innerHTML="";
@@ -971,7 +976,7 @@ function renderPanel(){
  ORDER.forEach(function(k){var ts=day.tasks.filter(function(t){return t.c===k});if(!ts.length)return;
   var g=el("div","grp");g.style.setProperty("--c",COURSES[k].color);
   var hrs=ts.reduce(function(a,t){return a+t.hours},0),act=ts.filter(function(t){return!state.done[t.id]});
-  var h=el("h3",null,COURSES[k].code+" \u00b7 "+cn(k));h.appendChild(projBtn(k,COURSES[k].code+" \u00b7 "+cn(k)));h.appendChild(el("small",null,s.hrs(fmt(hrs))));g.appendChild(h);
+  var h=el("h3",null,COURSES[k].code+" \u00b7 "+cn(k));h.appendChild(projBtn(k,cap(COURSES[k].code+" \u00b7 "+cn(k)+(lang==="fa"?" \u2014 \u0627\u0645\u0631\u0648\u0632:":" \u2014 today:")+"\n"+ts.map(function(t){return "- "+tTitle(t)}).join("\n"))));h.appendChild(el("small",null,s.hrs(fmt(hrs))));g.appendChild(h);
   var ul=el("ul");act.forEach(function(t){ul.appendChild(taskItem(t))});if(!act.length)ul.appendChild(el("div","empty",s.allDone));g.appendChild(ul);p.appendChild(g)});
  var dn=el("div","done");dn.id="donebox";dn.appendChild(el("h4",null,s.doneToday+" ("+num(dts.length)+")"));var ul=el("ul");dts.forEach(function(t){var li=taskItem(t);li.querySelector(".t").textContent=t.c+": "+tTitle(t);ul.appendChild(li)});if(!dts.length)ul.appendChild(el("div","empty",s.nothing));dn.appendChild(ul);p.appendChild(dn);
  var nb=el("div","notebox glass");var nl=el("label",null,s.notesL);nl.htmlFor="note-"+day.date;nb.appendChild(nl);
@@ -988,7 +993,7 @@ function renderStatic(){
  var lg=document.getElementById("legend");lg.innerHTML="";ORDER.forEach(function(k){var sp=el("span"),dot=el("span","dot");dot.style.background=COURSES[k].color;dot.style.color=COURSES[k].color;sp.appendChild(dot);sp.appendChild(document.createTextNode(k+" = "+COURSES[k].code+" "+cn(k)));lg.appendChild(sp)});
  s.legend.forEach(function(m){var sp=el("span");sp.appendChild(el("span","mk "+m[0],m[1]));sp.appendChild(document.createTextNode(m[2]));lg.appendChild(sp)});
  document.getElementById("ssum").textContent=s.scopeSum;
- var sc=document.getElementById("scope");sc.innerHTML="";INFO.forEach(function(i){var pp=el("p"),b=el("b",null,COURSES[i[0]].code+" "+cn(i[0])+": ");pp.appendChild(b);var pb2=projBtn(i[0],COURSES[i[0]].code+" "+cn(i[0]));pb2.style.marginInlineStart="0";pp.appendChild(pb2);pp.appendChild(document.createTextNode(" "));var txt=lang==="fa"?FA.info[i[0]]:i[1];linked(pp,txt);sc.appendChild(pp);
+ var sc=document.getElementById("scope");sc.innerHTML="";INFO.forEach(function(i){var pp=el("p"),b=el("b",null,COURSES[i[0]].code+" "+cn(i[0])+": ");pp.appendChild(b);var txt=lang==="fa"?FA.info[i[0]]:i[1];var pb2=projBtn(i[0],cap(COURSES[i[0]].code+" "+cn(i[0])+"\n"+txt));pb2.style.marginInlineStart="0";pp.appendChild(pb2);pp.appendChild(document.createTextNode(" "));linked(pp,txt);sc.appendChild(pp);
   var cp2=el("div","prq prq-course");cp2.appendChild(el("span","prq-l",s.prq));var ci=el("div","prq-i");ci.appendChild(document.createTextNode((lang==="fa"?FA.cpre[i[0]]:CPRE[i[0]])+" "));ci.appendChild(aiLink(CPRE_AI[i[0]]));cp2.appendChild(ci);
   prqList(txt).forEach(function(u){cp2.appendChild(prqItem(u))});sc.appendChild(cp2)});
  sc.appendChild(el("p",null,s.minor))}
