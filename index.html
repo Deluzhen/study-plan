@@ -925,7 +925,8 @@ function linked(parent,text){var last=0,mm;LINK_RE.lastIndex=0;
   a.addEventListener("click",function(ev){ev.stopPropagation()});parent.appendChild(a);last=mm.index+mm[0].length}
  if(last<text.length)parent.appendChild(document.createTextNode(text.slice(last)));return parent}
 var PROJ={ALG:"codex://launch",DS:"codex://launch",EEE:"codex://launch",STAT:"codex://launch"};var PROJN={ALG:"Algorithm (analyze & design)",DS:"Data Strucrute",EEE:"Fundamentals of Electricity",STAT:"Statistics"};
-function projBtn(k){var a=document.createElement("a");a.className="projbtn";a.href=PROJ[k];a.title=lang==="fa"?"اپ ChatGPT باز می‌شود؛ بعد در نوار کناری روی «"+PROJN[k]+"» بزن.":"Opens the ChatGPT app. Then click “"+PROJN[k]+"” under Projects in the sidebar.";a.textContent=lang==="fa"?"\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u067e\u0631\u0648\u0698\u0647 \u062f\u0631 ChatGPT":"Open ChatGPT project";a.addEventListener("click",function(ev){ev.stopPropagation()});return a}
+var IOS=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+function projBtn(k,q){var a=document.createElement("a");a.className="projbtn";a.href=q?(IOS?"https://chatgpt.com/?q=":"codex://new?prompt=")+encodeURIComponent(q):PROJ[k];if(q&&IOS){a.target="_blank";a.rel="noopener"}a.title=lang==="fa"?"ChatGPT با عنوان همین درس باز می\u200cشود":"Opens ChatGPT with this course title filled in";a.textContent=lang==="fa"?"\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u067e\u0631\u0648\u0698\u0647 \u062f\u0631 ChatGPT":"Open ChatGPT project";a.addEventListener("click",function(ev){ev.stopPropagation()});return a}
 var AI=[["Grok","https://grok.com/?q="],["Codex","codex://new?prompt="]];
 function aiLink(enc){var w=el("span","askai-w");AI.forEach(function(s){var a=document.createElement("a");a.className="askai";a.href=s[1]+enc;a.target="_blank";a.rel="noopener";a.textContent=s[0];a.title=S().ask(s[0]);a.addEventListener("click",function(ev){ev.stopPropagation()});w.appendChild(a)});return w}
 function prqList(text){var seen={},list=[],mm;LINK_RE.lastIndex=0;while((mm=LINK_RE.exec(text))){var u=LINKS[mm[0]];if(PRQ[u]&&!seen[u]){seen[u]=1;list.push(u)}}return list}
@@ -970,7 +971,7 @@ function renderPanel(){
  ORDER.forEach(function(k){var ts=day.tasks.filter(function(t){return t.c===k});if(!ts.length)return;
   var g=el("div","grp");g.style.setProperty("--c",COURSES[k].color);
   var hrs=ts.reduce(function(a,t){return a+t.hours},0),act=ts.filter(function(t){return!state.done[t.id]});
-  var h=el("h3",null,COURSES[k].code+" \u00b7 "+cn(k));h.appendChild(projBtn(k));h.appendChild(el("small",null,s.hrs(fmt(hrs))));g.appendChild(h);
+  var h=el("h3",null,COURSES[k].code+" \u00b7 "+cn(k));h.appendChild(projBtn(k,COURSES[k].code+" \u00b7 "+cn(k)));h.appendChild(el("small",null,s.hrs(fmt(hrs))));g.appendChild(h);
   var ul=el("ul");act.forEach(function(t){ul.appendChild(taskItem(t))});if(!act.length)ul.appendChild(el("div","empty",s.allDone));g.appendChild(ul);p.appendChild(g)});
  var dn=el("div","done");dn.id="donebox";dn.appendChild(el("h4",null,s.doneToday+" ("+num(dts.length)+")"));var ul=el("ul");dts.forEach(function(t){var li=taskItem(t);li.querySelector(".t").textContent=t.c+": "+tTitle(t);ul.appendChild(li)});if(!dts.length)ul.appendChild(el("div","empty",s.nothing));dn.appendChild(ul);p.appendChild(dn);
  var nb=el("div","notebox glass");var nl=el("label",null,s.notesL);nl.htmlFor="note-"+day.date;nb.appendChild(nl);
@@ -987,7 +988,7 @@ function renderStatic(){
  var lg=document.getElementById("legend");lg.innerHTML="";ORDER.forEach(function(k){var sp=el("span"),dot=el("span","dot");dot.style.background=COURSES[k].color;dot.style.color=COURSES[k].color;sp.appendChild(dot);sp.appendChild(document.createTextNode(k+" = "+COURSES[k].code+" "+cn(k)));lg.appendChild(sp)});
  s.legend.forEach(function(m){var sp=el("span");sp.appendChild(el("span","mk "+m[0],m[1]));sp.appendChild(document.createTextNode(m[2]));lg.appendChild(sp)});
  document.getElementById("ssum").textContent=s.scopeSum;
- var sc=document.getElementById("scope");sc.innerHTML="";INFO.forEach(function(i){var pp=el("p"),b=el("b",null,COURSES[i[0]].code+" "+cn(i[0])+": ");pp.appendChild(b);var pb2=projBtn(i[0]);pb2.style.marginInlineStart="0";pp.appendChild(pb2);pp.appendChild(document.createTextNode(" "));var txt=lang==="fa"?FA.info[i[0]]:i[1];linked(pp,txt);sc.appendChild(pp);
+ var sc=document.getElementById("scope");sc.innerHTML="";INFO.forEach(function(i){var pp=el("p"),b=el("b",null,COURSES[i[0]].code+" "+cn(i[0])+": ");pp.appendChild(b);var pb2=projBtn(i[0],COURSES[i[0]].code+" "+cn(i[0]));pb2.style.marginInlineStart="0";pp.appendChild(pb2);pp.appendChild(document.createTextNode(" "));var txt=lang==="fa"?FA.info[i[0]]:i[1];linked(pp,txt);sc.appendChild(pp);
   var cp2=el("div","prq prq-course");cp2.appendChild(el("span","prq-l",s.prq));var ci=el("div","prq-i");ci.appendChild(document.createTextNode((lang==="fa"?FA.cpre[i[0]]:CPRE[i[0]])+" "));ci.appendChild(aiLink(CPRE_AI[i[0]]));cp2.appendChild(ci);
   prqList(txt).forEach(function(u){cp2.appendChild(prqItem(u))});sc.appendChild(cp2)});
  sc.appendChild(el("p",null,s.minor))}
