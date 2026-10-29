@@ -314,6 +314,11 @@ ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 .ex-card.ex-quiz{border-style:dashed}
 .ex-card.ex-done{opacity:.75}
 
+/* v12: quiz dismiss button */
+.ex-dis{flex:0 0 auto;min-width:44px;min-height:44px;margin-inline-start:6px;border:1px solid rgba(127,127,127,.4);border-radius:10px;background:transparent;color:inherit;font-size:18px;line-height:1;cursor:pointer;-webkit-appearance:none;appearance:none;touch-action:manipulation}
+.ex-dis:hover,.ex-dis:focus-visible{background:rgba(220,38,38,.12);color:#dc2626}
+.ex-noq{opacity:.7;margin:4px 2px}
+
 </style>
 </head>
 </head>
@@ -445,20 +450,20 @@ midterms:[
   status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:{en:"Not part of the 4-course study plan. Add details here when known.",fa:"جزو برنامهٔ 4 درس نیست. وقتی معلوم شد اینجا اضافه کن."}}
 ],
 quizzes:[
- {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},quiz:{en:"Quiz 1",fa:"کوییز 1"},done:true,
+ {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},qid:"ds-quiz1",quiz:{en:"Quiz 1",fa:"کوییز 1"},done:true,
   status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,
   source:{en:"Moodle COMP2233 Announcements: 'Quiz 1 results & Quiz 2 date' (20 Oct) and 'Quiz 1 Results Sec 3' (23 Oct)",fa:"اطلاعیه‌های COMP2233 در Moodle: «نتایج کوییز 1 و تاریخ کوییز 2» (20 اکتبر) و «نتایج کوییز 1 بخش 3» (23 اکتبر)"},
   note:{en:"Already held (results were posted 20 Oct). The exact quiz date is not in the saved data.",fa:"برگزار شده (نتایج 20 اکتبر اعلام شد). تاریخ دقیق کوییز در داده‌های ذخیره‌شده نیست."}},
- {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},quiz:{en:"Lab Quiz 1",fa:"کوییز آزمایشگاه 1"},done:true,
+ {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},qid:"ds-labquiz1",quiz:{en:"Lab Quiz 1",fa:"کوییز آزمایشگاه 1"},done:true,
   status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,
   source:{en:"Moodle COMP2233 Announcements: 'Lab Quiz 1' (posted 8 Oct)",fa:"اطلاعیهٔ COMP2233 در Moodle: «Lab Quiz 1» (منتشرشده 8 اکتبر)"},
   note:{en:"Announcement posted 8 Oct, so it is most likely past. The exact date is not in the saved data.",fa:"اطلاعیه 8 اکتبر منتشر شده، پس به احتمال زیاد گذشته است. تاریخ دقیق در داده‌های ذخیره‌شده نیست."}},
- {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},quiz:{en:"Quiz 2",fa:"کوییز 2"},
+ {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},qid:"ds-quiz2",quiz:{en:"Quiz 2",fa:"کوییز 2"},
   status:"confirmed",date:"2026-10-30",estimate:null,time:null,where:null,weight:null,
   topics:{en:"Singly Linked Lists only",fa:"فقط لیست پیوندی یک‌طرفه (Singly Linked Lists)"},
   source:{en:"Moodle COMP2233 Announcements (20 and 23 Oct, Giray Kilic)",fa:"اطلاعیه‌های COMP2233 در Moodle (20 و 23 اکتبر، Giray Kilic)"},
   note:{en:"Time and room are not stated.",fa:"ساعت و کلاس اعلام نشده."}},
- {id:"STAT",code:"MATH 2260",course:{en:"Probability & Statistics",fa:"احتمال و آمار"},quiz:{en:"Quiz",fa:"کوییز"},
+ {id:"STAT",code:"MATH 2260",course:{en:"Probability & Statistics",fa:"احتمال و آمار"},qid:"stat-quiz",quiz:{en:"Quiz",fa:"کوییز"},
   status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,
   source:{en:"Course info (saved exam data)",fa:"اطلاعات درس (داده‌های ذخیره‌شدهٔ امتحان)"},
   note:{en:"Planned after week 8. Date not announced; dates are shared in the course WhatsApp group.",fa:"بعد از هفتهٔ 8 برنامه‌ریزی شده. تاریخ اعلام نشده؛ تاریخ‌ها در گروه واتس‌اپ درس گفته می‌شود."}}
@@ -490,17 +495,20 @@ var X=window.EXAMS;
 var MN={en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],fa:["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"]};
 var WD={en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],fa:["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"]};
 var S={
- en:{h:"Exams",sub:"Midterms and finals for every course, with countdowns. Statuses are honest: only 'Confirmed' has an official source.",mid:"Midterms",qz:"Quizzes",qzSub:"Short in-term quizzes",qTag:"Quiz",done:"Done (already held)",midSub:"Now",fin:"Finals",finSub:"To be filled in a couple of months",
+ en:{h:"Exams",sub:"Midterms and finals for every course, with countdowns. Statuses are honest: only 'Confirmed' has an official source.",mid:"Midterms",qz:"Quizzes",qzSub:"Short in-term quizzes",qTag:"Quiz",dis:"Dismiss",noQ:"No quizzes to show.",done:"Done (already held)",midSub:"Now",fin:"Finals",finSub:"To be filled in a couple of months",
   st:{confirmed:"Confirmed",week:"Week only",estimate:"Estimate",check:"Needs confirmation",tba:"To be announced"},
   f:{date:"Date",time:"Time",where:"Room / format",weight:"Weight",topics:"Topics covered",left:"Countdown",source:"Source",note:"Note"},
   tba:"To be announced",none:"Not announced",today:"Today",passed:"Passed",inD:function(n){return "In "+n+" "+(n===1?"day":"days")},aboutD:function(n){return "About "+n+" days (estimate)"},weekD:function(n){return "The exam week starts in "+n+" days"},
   wk:function(d){return "Week of "+d+" (exact day not announced)"},wkS:function(d){return "Week of "+d},estS:function(d){return "About "+d},estTag:"Estimate",weekTag:"Exact day not announced",s:"Source",est:function(d){return "Not announced. Estimate: about "+d},edit:"To change a date, edit the EXAMS object at the top of the page script (window.EXAMS).",extra:"Not in the study plan"},
- fa:{h:"امتحان‌ها",sub:"میان‌ترم و پایان‌ترم هر درس، با شمارش معکوس. وضعیت‌ها صادقانه‌اند: فقط «قطعی» منبع رسمی دارد.",mid:"میان‌ترم‌ها",qz:"کوییزها",qzSub:"کوییزهای کوتاه طول ترم",qTag:"کوییز",done:"برگزار شده",midSub:"الان",fin:"پایان‌ترم‌ها",finSub:"چند ماه دیگر پر می‌شود",
+ fa:{h:"امتحان‌ها",sub:"میان‌ترم و پایان‌ترم هر درس، با شمارش معکوس. وضعیت‌ها صادقانه‌اند: فقط «قطعی» منبع رسمی دارد.",mid:"میان‌ترم‌ها",qz:"کوییزها",qzSub:"کوییزهای کوتاه طول ترم",qTag:"کوییز",dis:"حذف",noQ:"کوییزی برای نمایش نیست.",done:"برگزار شده",midSub:"الان",fin:"پایان‌ترم‌ها",finSub:"چند ماه دیگر پر می‌شود",
   st:{confirmed:"قطعی",week:"فقط هفته مشخص است",estimate:"تخمینی",check:"نیاز به تأیید",tba:"اعلام نشده"},
   f:{date:"تاریخ",time:"ساعت",where:"کلاس / نوع امتحان",weight:"وزن",topics:"مباحث امتحان",left:"شمارش معکوس",source:"منبع",note:"توضیح"},
   tba:"اعلام نشده",none:"اعلام نشده",today:"امروز",passed:"گذشته",inD:function(n){return n+" روز مانده"},aboutD:function(n){return "حدود "+n+" روز (تخمینی)"},weekD:function(n){return "هفتهٔ امتحان "+n+" روز دیگر شروع می‌شود"},
   wk:function(d){return "هفتهٔ "+d+" (روز دقیق اعلام نشده)"},wkS:function(d){return "هفتهٔ "+d},estS:function(d){return "حدود "+d},estTag:"تخمینی",weekTag:"روز دقیق اعلام نشده",est:function(d){return "اعلام نشده. تخمین: حدود "+d},edit:"برای تغییر تاریخ‌ها، شیء EXAMS را بالای اسکریپت صفحه ویرایش کن (window.EXAMS).",extra:"جزو برنامهٔ مطالعه نیست"}
 };
+var DKEY="midterm4-plan-v1:dismissed-quizzes";
+function getDis(){try{return JSON.parse(localStorage.getItem(DKEY)||"[]")||[]}catch(e){return []}}
+function addDis(id){var a=getDis();if(a.indexOf(id)<0)a.push(id);try{localStorage.setItem(DKEY,JSON.stringify(a))}catch(e){}}
 function lang(){var d=window.__plan&&window.__plan.data?window.__plan.data():null;return d&&d.lang==="fa"?"fa":"en"}
 function pd(i){var p=i.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
 function todayIso(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
@@ -533,7 +541,8 @@ function cell(label,val,opt){opt=opt||{};var c=el("div","ex-cell"+(opt.cls?" "+o
  c.appendChild(v);if(opt.sub)c.appendChild(el("div","ex-sub",opt.sub));return c}
 function card(e,l,kind){var s=S[l],c=el("article","ex-card glass st-"+e.status+(e.date?" ex-ann":" ex-unann")+(e.quiz?" ex-quiz":"")+(e.done?" ex-done":""));
  var hd=el("div","ex-hd"),t=el("div");if(e.quiz)t.appendChild(el("span","ex-qtag",s.qTag+" · "+e.quiz[l]));t.appendChild(el("h3",null,e.course[l]));t.appendChild(el("span","ex-code",e.code+(e.extra?" · "+s.extra:"")));hd.appendChild(t);
- hd.appendChild(el("span","ex-pill "+e.status,s.st[e.status]));c.appendChild(hd);
+ hd.appendChild(el("span","ex-pill "+e.status,s.st[e.status]));
+ if(e.qid){var x=el("button","ex-dis","\u2715");x.type="button";x.title=s.dis;x.setAttribute("aria-label",s.dis+" "+e.quiz[l]);x.setAttribute("data-qid",e.qid);x.addEventListener("click",function(){addDis(e.qid);render()});hd.appendChild(x)}c.appendChild(hd);
  var dc=dateCell(e,l),strip=el("div","ex-strip");
  strip.appendChild(cell(s.f.date,dc[0],{sub:dc[1]}));
  strip.appendChild(cell(s.f.time,e.time,{ltr:true}));
@@ -551,7 +560,7 @@ function render(){var root=document.getElementById("view-exams");if(!root)return
  var top=el("div","sec-h");top.appendChild(el("h2",null,s.h));top.appendChild(el("p",null,s.sub));root.appendChild(top);
  [["mid","midSub",X.midterms],["qz","qzSub",X.quizzes||[]],["fin","finSub",X.finals]].forEach(function(g){
   var h=el("div","sec-h sub");var t=el("h2",null,s[g[0]]);t.appendChild(el("small",null," · "+s[g[1]]));h.appendChild(t);root.appendChild(h);
-  var grid=el("div","ex-list");g[2].forEach(function(e){grid.appendChild(card(e,l))});root.appendChild(grid)});
+  var grid=el("div","ex-list");var dis=getDis(),items=g[2].filter(function(e){return !(e.qid&&dis.indexOf(e.qid)>=0)});items.forEach(function(e){grid.appendChild(card(e,l))});if(g[0]==="qz"&&!items.length)grid.appendChild(el("p","ex-noq",s.noQ));root.appendChild(grid)});
  root.appendChild(el("p","ol-note",s.edit))}
 window.__ex={S:S,pd:pd,diff:diff,fmt:fmt,short:short,tx:tx,todayIso:todayIso,render:render,lang:lang};
 })();
