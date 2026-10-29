@@ -331,6 +331,22 @@ details.cppv{margin:6px 0 2px}
 details.cppv>summary{cursor:pointer;font-size:.85em;font-weight:600;min-height:32px;display:flex;align-items:center}
 details.cppblk{flex-basis:100%;width:100%}
 details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
+/* v20: solid uniform exam colours (green announced, red unannounced, yellow awaiting check) */
+.ex-card.ex-ann,.ex-card.ex-unann{border:2px solid!important}
+.ex-card.ex-quiz{border-style:dashed!important}
+.ex-card.ex-ann{--exc:#16a34a;--exd:#14532d;--exb:#22c55e;--ext:#fff;--exm:rgba(255,255,255,.85);background:linear-gradient(180deg,#15803d,#166534)!important}
+.ex-card.ex-unann{--exc:#dc2626;--exd:#7f1d1d;--exb:#ef4444;--ext:#fff;--exm:rgba(255,255,255,.85);background:linear-gradient(180deg,#b91c1c,#991b1b)!important}
+.ex-card.st-check{--exc:#eab308;--exd:#a16207;--exb:#facc15;--ext:#1a1300;--exm:rgba(26,19,0,.8);background:linear-gradient(180deg,#facc15,#eab308)!important}
+.ex-card.ex-ann,.ex-card.ex-unann,.ex-card.st-check{border-color:var(--exb)!important;box-shadow:0 0 0 1px var(--exb),0 8px 24px color-mix(in srgb,var(--exc) 45%,transparent)!important}
+.ex-card.ex-ann h3,.ex-card.ex-unann h3,.ex-card.ex-ann .ex-code,.ex-card.ex-unann .ex-code,.ex-card.ex-ann .ex-v,.ex-card.ex-unann .ex-v,.ex-card.ex-ann .ex-cd .ex-v,.ex-card.ex-unann .ex-cd .ex-v,.ex-card.ex-ann .ex-rv,.ex-card.ex-unann .ex-rv,.ex-card.ex-ann .ex-dis,.ex-card.ex-unann .ex-dis{color:var(--ext)!important}
+.ex-card.ex-ann .ex-k,.ex-card.ex-unann .ex-k,.ex-card.ex-ann .ex-sub,.ex-card.ex-unann .ex-sub,.ex-card.ex-ann .ex-rk,.ex-card.ex-unann .ex-rk,.ex-card.ex-ann .ex-na,.ex-card.ex-unann .ex-na{color:var(--exm)!important}
+.ex-card.ex-ann .ex-strip,.ex-card.ex-unann .ex-strip{background:rgba(255,255,255,.3)!important;border-color:rgba(255,255,255,.3)!important}
+.ex-card.ex-ann .ex-cell,.ex-card.ex-unann .ex-cell{background:var(--exd)!important}
+.ex-card.ex-ann .ex-row,.ex-card.ex-unann .ex-row{border-top-color:rgba(255,255,255,.25)!important}
+.ex-card.ex-ann .ex-pill,.ex-card.ex-unann .ex-pill{background:var(--exc)!important;color:var(--ext)!important;border-color:var(--ext)!important}
+.ex-card.st-check .ex-cell{background:#fde68a!important}
+.ex-card.st-check .ex-strip{background:rgba(0,0,0,.2)!important;border-color:rgba(0,0,0,.2)!important}
+.ex-card.st-check .ex-row{border-top-color:rgba(0,0,0,.18)!important}
 
 </style>
 </head>
