@@ -319,6 +319,10 @@ ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 .ex-dis:hover,.ex-dis:focus-visible{background:rgba(220,38,38,.12);color:#dc2626}
 .ex-noq{opacity:.7;margin:4px 2px}
 
+/* v13: sync button */
+.syncbtn{min-height:44px;min-width:44px;touch-action:manipulation}
+.syncst{display:inline-block;margin-inline-start:8px;font-size:.85em;opacity:.85;vertical-align:middle}
+
 </style>
 </head>
 </head>
@@ -407,6 +411,47 @@ ul.lnk small,.links-sec small{color:var(--mut,#9aa3b5)}
 <main class="wrap" id="view-outlook" role="tabpanel" hidden></main>
 <main class="wrap" id="view-exams" role="tabpanel" hidden></main>
 
+<script>
+/* v13: one-button cross-device sync (ticks + dismissed quizzes) via textdb.online (keyless, public). */
+(function(){
+"use strict";
+var URL_GET="https://textdb.online/studyplan-ae006f50c587589ed86bd189",URL_SET="https://textdb.online/update",DBKEY="studyplan-ae006f50c587589ed86bd189";
+var PFX="midterm4-plan-v1",KEYS=[PFX,PFX+":dismissed-quizzes"],UKEY=PFX+":sync-updatedAt",LANGKEY=PFX+":lang";
+var LS=null;try{LS=window.localStorage}catch(e){}
+var P=Storage.prototype,oSet=P.setItem,oRem=P.removeItem,quiet=false;
+function g(k){try{return LS.getItem(k)}catch(e){return null}}
+function localT(){return +(g(UKEY)||0)}
+function bump(){try{oSet.call(LS,UKEY,String(Date.now()))}catch(e){}}
+P.setItem=function(k,v){var old=(this===LS&&KEYS.indexOf(k)>=0)?this.getItem(k):null;oSet.call(this,k,v);if(!quiet&&this===LS&&KEYS.indexOf(k)>=0&&old!==String(v))bump()};
+P.removeItem=function(k){var had=(this===LS&&KEYS.indexOf(k)>=0)?this.getItem(k)!==null:false;oRem.call(this,k);if(!quiet&&had)bump()};
+function fa(){return g(LANGKEY)==="fa"}
+var T={en:{b:"Sync",t:"Sync ticks and dismissed quizzes across your devices",ing:"Syncing…",ok:"Synced ✓",got:"Updated from another device ✓",err:"Sync failed (offline?)"},
+ fa:{b:"همگام‌سازی",t:"همگام‌سازی تیک‌ها و کوییزهای حذف‌شده بین دستگاه‌ها",ing:"در حال همگام‌سازی…",ok:"همگام شد ✓",got:"از دستگاه دیگر به‌روز شد ✓",err:"همگام‌سازی ناموفق بود (آفلاین؟)"}};
+function tr(){return fa()?T.fa:T.en}
+function getRemote(){return fetch(URL_GET+"?t="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()}).then(function(s){var o=null;try{o=JSON.parse(s)}catch(e){}return o&&typeof o==="object"?o:{updatedAt:0,data:{}}})}
+function putRemote(){var data={};KEYS.forEach(function(k){data[k]=g(k)});var t=localT()||Date.now();
+ var body=new URLSearchParams();body.set("key",DBKEY);body.set("value",JSON.stringify({updatedAt:t,data:data}));
+ return fetch(URL_SET,{method:"POST",body:body}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(j){if(!j||j.status!==1)throw new Error("store");if(!localT())oSet.call(LS,UKEY,String(t))})}
+function adopt(o){quiet=true;try{KEYS.forEach(function(k){var v=o.data?o.data[k]:null;if(v==null)LS.removeItem(k);else LS.setItem(k,v)});oSet.call(LS,UKEY,String(o.updatedAt))}finally{quiet=false}}
+var btn,st;
+function show(m){if(st)st.textContent=m}
+function paint(){if(!btn)return;var x=tr();btn.textContent="⟳ "+x.b;btn.title=x.t;btn.setAttribute("aria-label",x.t)}
+function sync(){if(!LS)return;var x=tr();show(x.ing);btn.disabled=true;
+ getRemote().then(function(o){if((+o.updatedAt||0)>localT()){adopt(o);try{sessionStorage.setItem(PFX+":sync-msg","1")}catch(e){}location.reload();return}
+  return putRemote().then(function(){show(tr().ok)})}).catch(function(){show(tr().err)}).then(function(){btn.disabled=false})}
+function init(){var anchor=document.getElementById("bonline")||document.getElementById("btour");
+ btn=document.createElement("button");btn.type="button";btn.className="btn syncbtn";btn.id="bsync";
+ st=document.createElement("span");st.className="syncst";st.id="syncst";st.setAttribute("role","status");st.setAttribute("aria-live","polite");
+ if(anchor&&anchor.parentNode){anchor.parentNode.insertBefore(btn,anchor.nextSibling);anchor.parentNode.insertBefore(st,btn.nextSibling)}else{document.body.insertBefore(st,document.body.firstChild);document.body.insertBefore(btn,st)}
+ paint();btn.addEventListener("click",sync);
+ try{if(sessionStorage.getItem(PFX+":sync-msg")){sessionStorage.removeItem(PFX+":sync-msg");show(tr().got)}}catch(e){}
+ P.setItem=(function(f){return function(k,v){f.call(this,k,v);if(k===LANGKEY)setTimeout(paint,0)}})(P.setItem);
+ if(LS)getRemote().then(function(o){if((+o.updatedAt||0)>localT()){adopt(o);try{sessionStorage.setItem(PFX+":sync-msg","1")}catch(e){}location.reload()}}).catch(function(){})}
+window.__sync={sync:sync,localT:localT,getRemote:getRemote,init:init};
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else setTimeout(init,0);
+})();
+
+</script>
 <script>/* EXAM DATES: edit this object to change any exam date (see comments inside). */
 /* ============================================================
    EXAM DATA: the ONE place to edit exam dates.
