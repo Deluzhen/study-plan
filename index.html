@@ -347,6 +347,9 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .ex-card.st-check .ex-cell{background:#fde68a!important}
 .ex-card.st-check .ex-strip{background:rgba(0,0,0,.2)!important;border-color:rgba(0,0,0,.2)!important}
 .ex-card.st-check .ex-row{border-top-color:rgba(0,0,0,.18)!important}
+/* v21: programming language row */
+.ex-row.ex-lng .ex-rk,.ex-row.ex-lng .ex-rv{font-weight:700!important;color:inherit}
+.ex-card .ex-row.ex-lng .ex-rv{color:var(--ext,var(--hi))!important}
 
 </style>
 </head>
@@ -572,12 +575,12 @@ var WD={en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],fa:["یکشنبه","دو�
 var S={
  en:{h:"Exams",sub:"Midterms and finals for every course, with countdowns. Statuses are honest: only 'Confirmed' has an official source.",mid:"Midterms",qz:"Quizzes",qzSub:"Short in-term quizzes",qTag:"Quiz",dis:"Dismiss",noQ:"No quizzes to show.",done:"Done (already held)",midSub:"Now",fin:"Finals",finSub:"To be filled in a couple of months",
   st:{confirmed:"Confirmed",week:"Week only",estimate:"Estimate",check:"Needs confirmation",tba:"To be announced"},
-  f:{date:"Date",time:"Time",where:"Room / format",weight:"Weight",topics:"Topics covered",left:"Countdown",source:"Source",note:"Note"},
+  f:{date:"Date",time:"Time",where:"Room / format",weight:"Weight",topics:"Topics covered",left:"Countdown",source:"Source",note:"Note",lng:"Language"},
   tba:"To be announced",none:"Not announced",today:"Today",passed:"Passed",inD:function(n){return "In "+n+" "+(n===1?"day":"days")},aboutD:function(n){return "About "+n+" days (estimate)"},weekD:function(n){return "The exam week starts in "+n+" days"},
   wk:function(d){return "Week of "+d+" (exact day not announced)"},wkS:function(d){return "Week of "+d},estS:function(d){return "About "+d},estTag:"Estimate",weekTag:"Exact day not announced",s:"Source",est:function(d){return "Not announced. Estimate: about "+d},edit:"To change a date, edit the EXAMS object at the top of the page script (window.EXAMS).",extra:"Not in the study plan"},
  fa:{h:"امتحان‌ها",sub:"میان‌ترم و پایان‌ترم هر درس، با شمارش معکوس. وضعیت‌ها صادقانه‌اند: فقط «قطعی» منبع رسمی دارد.",mid:"میان‌ترم‌ها",qz:"کوییزها",qzSub:"کوییزهای کوتاه طول ترم",qTag:"کوییز",dis:"حذف",noQ:"کوییزی برای نمایش نیست.",done:"برگزار شده",midSub:"الان",fin:"پایان‌ترم‌ها",finSub:"چند ماه دیگر پر می‌شود",
   st:{confirmed:"قطعی",week:"فقط هفته مشخص است",estimate:"تخمینی",check:"نیاز به تأیید",tba:"اعلام نشده"},
-  f:{date:"تاریخ",time:"ساعت",where:"کلاس / نوع امتحان",weight:"وزن",topics:"مباحث امتحان",left:"شمارش معکوس",source:"منبع",note:"توضیح"},
+  f:{date:"تاریخ",time:"ساعت",where:"کلاس / نوع امتحان",weight:"وزن",topics:"مباحث امتحان",left:"شمارش معکوس",source:"منبع",note:"توضیح",lng:"زبان برنامه‌نویسی"},
   tba:"اعلام نشده",none:"اعلام نشده",today:"امروز",passed:"گذشته",inD:function(n){return n+" روز مانده"},aboutD:function(n){return "حدود "+n+" روز (تخمینی)"},weekD:function(n){return "هفتهٔ امتحان "+n+" روز دیگر شروع می‌شود"},
   wk:function(d){return "هفتهٔ "+d+" (روز دقیق اعلام نشده)"},wkS:function(d){return "هفتهٔ "+d},estS:function(d){return "حدود "+d},estTag:"تخمینی",weekTag:"روز دقیق اعلام نشده",est:function(d){return "اعلام نشده. تخمین: حدود "+d},edit:"برای تغییر تاریخ‌ها، شیء EXAMS را بالای اسکریپت صفحه ویرایش کن (window.EXAMS).",extra:"جزو برنامهٔ مطالعه نیست"}
 };
@@ -614,6 +617,9 @@ function cell(label,val,opt){opt=opt||{};var c=el("div","ex-cell"+(opt.cls?" "+o
  else if(opt.ltr){var b=el("span","ex-ltr");b.setAttribute("dir","ltr");b.textContent=val;v.appendChild(b)}
  else v.textContent=val;
  c.appendChild(v);if(opt.sub)c.appendChild(el("div","ex-sub",opt.sub));return c}
+var LANGS={
+DS:{en:"C. Write linked lists (singly, doubly, circular), pointers, arrays and structs in C: struct Node, malloc/free, printf. The lecture notes, labs and Weiss textbook are all in C. C++ appears only in the vector questions (std::vector) and the 'Additional C++' practice set.",fa:"زبان C. لیست‌های پیوندی (یک‌طرفه، دوطرفه، حلقوی)، اشاره‌گرها، آرایه‌ها و struct را به زبان C بنویس: struct Node و malloc/free و printf. جزوه‌ها، آزمایشگاه‌ها و کتاب Weiss همه به زبان C هستند. C++ فقط در سؤال‌های vector (یعنی std::vector) و بخش «Additional C++» نمونه‌سؤال‌ها آمده."},
+ALG:{en:"C. The lab code is in C (#include <stdio.h>, printf). Most exam questions are pseudocode and complexity analysis.",fa:"زبان C. کد آزمایشگاه‌ها به زبان C است (#include <stdio.h> و printf). بیشتر سؤال‌های امتحان شبه‌کد و تحلیل پیچیدگی هستند."}};
 function card(e,l,kind){var s=S[l],c=el("article","ex-card glass st-"+e.status+(e.date?" ex-ann":" ex-unann")+(e.quiz?" ex-quiz":"")+(e.done?" ex-done":""));
  var hd=el("div","ex-hd"),t=el("div");if(e.quiz)t.appendChild(el("span","ex-qtag",s.qTag+" · "+e.quiz[l]));t.appendChild(el("h3",null,e.course[l]));t.appendChild(el("span","ex-code",e.code+(e.extra?" · "+s.extra:"")));hd.appendChild(t);
  hd.appendChild(el("span","ex-pill "+e.status,s.st[e.status]));
@@ -626,8 +632,8 @@ function card(e,l,kind){var s=S[l],c=el("article","ex-card glass st-"+e.status+(
  strip.appendChild(cell(s.f.left,countdown(e,l),{cls:"ex-cd"}));
  c.appendChild(strip);
  var det=el("div","ex-det");
- [["topics",tx(e.topics,l)],["source",tx(e.source,l)],["note",tx(e.note,l)]].forEach(function(r){if(r[0]==="note"&&!r[1])return;
-  var row=el("div","ex-row");row.appendChild(el("div","ex-rk",s.f[r[0]]));var rv=el("div","ex-rv");
+ [["topics",tx(e.topics,l)],["lng",tx(LANGS[e.id],l)],["source",tx(e.source,l)],["note",tx(e.note,l)]].forEach(function(r){if((r[0]==="note"||r[0]==="lng")&&!r[1])return;
+  var row=el("div","ex-row"+(r[0]==="lng"?" ex-lng":""));row.appendChild(el("div","ex-rk",s.f[r[0]]));var rv=el("div","ex-rv");
   if(r[1])rv.textContent=r[1];else rv.appendChild(el("span","ex-na",s.tba));row.appendChild(rv);det.appendChild(row)});
  c.appendChild(det);return c}
 function render(){var root=document.getElementById("view-exams");if(!root)return;var l=lang(),s=S[l];
