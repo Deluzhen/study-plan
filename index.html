@@ -350,6 +350,8 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 /* v21: programming language row */
 .ex-row.ex-lng .ex-rk,.ex-row.ex-lng .ex-rv{font-weight:700!important;color:inherit}
 .ex-card .ex-row.ex-lng .ex-rv{color:var(--ext,var(--hi))!important}
+/* v22: weight on separate lines */
+.ex-cell .ex-v{white-space:pre-line}
 
 </style>
 </head>
@@ -500,12 +502,12 @@ asOf:"2026-10-28",
 sheetUpdated:true, /* set to true once the Google Sheet plan has been rescheduled to match this site */
 midterms:[
  {id:"ALG",code:"SE 2228",course:{en:"Algorithm Analysis & Design",fa:"تحلیل و طراحی الگوریتم‌ها"},
-  status:"estimate",date:null,estimate:"2026-11-06",time:null,where:{en:"Face-to-face, classical written exam",fa:"حضوری، امتحان کلاسیک کتبی"},weight:{en:"40% (50% theory, 50% lab)",fa:"40% (50% تئوری، 50% آزمایشگاه)"},
+  status:"estimate",date:null,estimate:"2026-11-06",time:null,where:{en:"Face-to-face, classical written exam",fa:"حضوری، امتحان کلاسیک کتبی"},weight:{en:"Midterm: 40%\nTheory part: 50% of midterm\nLab part: 50% of midterm",fa:"میان‌ترم: 40%\nبخش تئوری: 50% میان‌ترم\nبخش آزمایشگاه: 50% میان‌ترم"},
   topics:{en:"Weeks 1 to 6: math review, analysis, brute force, divide and conquer, greedy",fa:"هفته‌های 1 تا 6: مرور ریاضی، تحلیل، brute force، تقسیم و حل، حریصانه"},
   source:{en:"00_Course_Introduction.pdf (weight, 'end of week 7') and Week07-Midterm Review.pdf",fa:"فایل 00_Course_Introduction.pdf (وزن، «پایان هفتهٔ 7») و Week07-Midterm Review.pdf"},
   note:{en:"The course intro says one midterm at the end of week 7 (week of 2 to 6 Nov). The exact day is not announced, so it could be as early as 5 to 6 Nov. The plan finishes all the material and the mock exam by 4 Nov.",fa:"طبق معرفی درس، یک میان‌ترم در پایان هفتهٔ 7 است (هفتهٔ 2 تا 6 نوامبر). روز دقیق اعلام نشده و ممکن است 5 تا 6 نوامبر باشد. برنامه همهٔ مطالب و آزمون آزمایشی را تا 4 نوامبر تمام می‌کند."}},
  {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},calendar:true,
-  status:"confirmed",date:"2026-11-03",estimate:null,time:"17:30 - 19:30",where:{en:"Your room: M218 (row 46 on the list, student no. 25070001094)",fa:"کلاس تو: M218 (ردیف 46 در فهرست، شماره دانشجویی 25070001094)"},weight:{en:"30% (hw/project/quiz 30%, final 40%)",fa:"30% (تکلیف/پروژه/کوییز 30%، پایان‌ترم 40%)"},
+  status:"confirmed",date:"2026-11-03",estimate:null,time:"17:30 - 19:30",where:{en:"Your room: M218 (row 46 on the list, student no. 25070001094)",fa:"کلاس تو: M218 (ردیف 46 در فهرست، شماره دانشجویی 25070001094)"},weight:{en:"Midterm: 30%\nHomework / project / quiz: 30%\nFinal: 40%",fa:"میان‌ترم: 30%\nتکلیف / پروژه / کوییز: 30%\nپایان‌ترم: 40%"},
   topics:{en:"Weeks 1 to 6: intro, algorithm concept and software process, ADT / arrays / vectors, multidimensional arrays, pointers and singly linked lists, doubly and circular linked lists",fa:"هفته‌های 1 تا 6: مقدمه، مفهوم الگوریتم و فرایند نرم‌افزار، ADT و آرایه و vector، آرایه‌های چندبعدی، اشاره‌گرها و لیست پیوندی یک‌طرفه، لیست‌های دوطرفه و حلقوی"},
   source:{en:"omercetin.com.tr/~courses/comp2233 (instructor's site)",fa:"سایت استاد: omercetin.com.tr/~courses/comp2233"},
   note:{en:"Official sample questions: Midterm_Practice_Questions_EN.pdf",fa:"سؤال‌های نمونهٔ رسمی: Midterm_Practice_Questions_EN.pdf"}},
@@ -514,7 +516,7 @@ midterms:[
   topics:{en:"Assumed Larson & Farber chapters 1 to 3 (4.1 to 4.2 as a stretch). Not confirmed.",fa:"فرض ما: فصل‌های 1 تا 3 کتاب Larson & Farber (4.1 و 4.2 اضافه). تأیید نشده."},
   source:{en:"Not found on Moodle",fa:"در Moodle پیدا نشد"},note:{en:"Dates are announced in the course WhatsApp group. Ask there. A quiz is also planned after week 8 (date TBA).",fa:"تاریخ‌ها در گروه واتس‌اپ درس اعلام می‌شود، از همان‌جا بپرس. یک کوییز هم بعد از هفتهٔ 8 برنامه‌ریزی شده (تاریخ نامشخص)."}},
  {id:"EEE",code:"EEE 2274",course:{en:"Fundamentals of Electronics",fa:"مبانی الکترونیک"},
-  status:"confirmed",date:"2026-11-17",estimate:null,time:null,where:null,weight:{en:"25% (final 45%, lab 30%)",fa:"25% (پایان‌ترم 45%، آزمایشگاه 30%)"},
+  status:"confirmed",date:"2026-11-17",estimate:null,time:null,where:null,weight:{en:"Midterm: 25%\nLab: 30%\nFinal: 45%",fa:"میان‌ترم: 25%\nآزمایشگاه: 30%\nپایان‌ترم: 45%"},
   topics:{en:"Weeks 1 to 7: L1 to L7 (circuit variables to first-order RL / RC circuits)",fa:"هفته‌های 1 تا 7: از L1 تا L7 (متغیرهای مدار تا مدارهای مرتبهٔ اول RL و RC)"},
   source:{en:"Moodle: Syllabus (2nd Revision - 27.10.2026), General section of EEE 2274",fa:"Moodle: فایل Syllabus (2nd Revision - 27.10.2026) در بخش General درس EEE 2274"},
   note:{en:"Updated 28 Oct: the revised syllabus moves the midterm to Tue 17 Nov 2026 (it was the week of 9 Nov). Time and room are not announced yet. The lab make-up session has moved to week 13 (exact date not given).",fa:"به‌روز شد (28 اکتبر): طبق سیلابس اصلاح‌شده، میان‌ترم سه‌شنبه 17 نوامبر 2026 است (قبلاً هفتهٔ 9 نوامبر بود). ساعت و کلاس هنوز اعلام نشده. جلسهٔ جبرانی آزمایشگاه به هفتهٔ 13 منتقل شده (تاریخ دقیق اعلام نشده)."}},
@@ -548,9 +550,9 @@ quizzes:[
 ],
 finals:[
  {id:"ALG",code:"SE 2228",course:{en:"Algorithm Analysis & Design",fa:"تحلیل و طراحی الگوریتم‌ها"},status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null},
- {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},status:"tba",date:null,estimate:null,time:null,where:null,weight:"40%",topics:null,source:{en:"Weight from omercetin.com.tr/~courses/comp2233",fa:"وزن از سایت استاد: omercetin.com.tr/~courses/comp2233"},note:null},
+ {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},status:"tba",date:null,estimate:null,time:null,where:null,weight:{en:"Final: 40%\nMidterm: 30%\nHomework / project / quiz: 30%",fa:"پایان‌ترم: 40%\nمیان‌ترم: 30%\nتکلیف / پروژه / کوییز: 30%"},topics:null,source:{en:"Weight from omercetin.com.tr/~courses/comp2233",fa:"وزن از سایت استاد: omercetin.com.tr/~courses/comp2233"},note:null},
  {id:"STAT",code:"MATH 2260",course:{en:"Probability & Statistics",fa:"احتمال و آمار"},status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null},
- {id:"EEE",code:"EEE 2274",course:{en:"Fundamentals of Electronics",fa:"مبانی الکترونیک"},status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null},
+ {id:"EEE",code:"EEE 2274",course:{en:"Fundamentals of Electronics",fa:"مبانی الکترونیک"},status:"tba",date:null,estimate:null,time:null,where:null,weight:{en:"Final: 45%\nMidterm: 25%\nLab: 30%",fa:"پایان‌ترم: 45%\nمیان‌ترم: 25%\nآزمایشگاه: 30%"},topics:null,source:null,note:null},
  {id:"HIST",code:"HIST 1120",course:{en:"History I",fa:"تاریخ 1"},status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null},
  {id:"ISG",code:"ISG 9120",course:{en:"Occupational Health and Safety",fa:"ایمنی و بهداشت کار"},extra:true,status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null},
  {id:"UFND",code:"UFND 2020",course:{en:"Research Culture",fa:"فرهنگ پژوهش"},extra:true,status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,source:null,note:null}
