@@ -992,7 +992,7 @@ function render(){
   var mks=el("div","mks");if(day.date===today)mks.appendChild(el("span","mk today",s.todayMk));
   day.markers.forEach(function(mk,mi2){var sp=el("span","mk "+mk[0]);sp.title=mkText(di,mi2);sp.textContent=s.pre[mk[0]]+mkText(di,mi2);mks.appendChild(sp)});
   c.appendChild(mks);
-  c.addEventListener("click",function(){sel=di;state.sel=di;save();render()});
+  c.addEventListener("click",function(){sel=di;state.sel=di;save();render();var pn=document.getElementById("panel");if(pn)setTimeout(function(){pn.scrollIntoView({behavior:RM?"auto":"smooth",block:"start"})},30)});
   grid.appendChild(c)});
  var pct=th?Math.round(dh/th*100):0;
  document.getElementById("obar").style.width=pct+"%";document.getElementById("opct").textContent=num(pct)+(lang==="fa"?"٪":"%");
