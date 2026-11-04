@@ -352,6 +352,36 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .ex-card .ex-row.ex-lng .ex-rv{color:var(--ext,var(--hi))!important}
 /* v22: weight on separate lines */
 .ex-cell .ex-v{white-space:pre-line}
+/* ===== GPA roadmap ===== */
+.gpa{text-align:right;direction:rtl;font-family:Vazirmatn,Tahoma,-apple-system,sans-serif}
+.gpa .gh{margin:30px 0 10px;font-size:1.2rem;color:var(--hi)}
+.gpa .gp{color:var(--muted);font-size:.92rem;margin:6px 0 12px}
+.gpa-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:12px 0}
+.gcard{border-radius:var(--r-lg);padding:16px 18px}
+.gcard .gk{color:var(--muted);font-size:.85rem}.gcard .gv{font-size:1.7rem;font-weight:700;color:var(--hi)}.gcard .gs{font-size:.8rem;color:var(--muted)}
+.gcard.red{border-color:rgba(255,140,115,.45);box-shadow:0 0 22px -8px rgba(255,120,95,.7)}
+.gcard.blue{border-color:rgba(147,182,255,.45);box-shadow:0 0 22px -8px rgba(110,140,255,.7)}
+.gcard.yellow{border-color:rgba(242,207,124,.45);box-shadow:0 0 22px -8px rgba(242,200,110,.7)}
+.gbox,.gcourse,.gterm{border-radius:var(--r-lg);padding:14px 18px;margin:12px 0}
+.gbox summary{cursor:pointer;font-weight:650;color:var(--hi)}
+.gl{list-style:none;padding:0;margin:6px 0}.gl li{margin:5px 0}.gl li::before{content:"• ";color:var(--accent)}
+.gpa a{color:var(--accent)}
+.gch{font-size:1rem;color:var(--hi);margin-bottom:6px}
+.pill{display:inline-block;font-size:.72rem;padding:2px 9px;border-radius:99px;background:rgba(147,182,255,.15);color:var(--accent);margin-inline-start:6px}
+.pill.real{background:rgba(127,217,166,.15);color:var(--good)}.pill.est{background:rgba(242,200,110,.15);color:var(--exam)}.pill.mix{background:rgba(187,162,255,.15);color:var(--accent2)}
+.wchip{display:inline-block;font-size:.8rem;padding:3px 10px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--line);margin:3px 0 3px 6px}
+.gsrc{font-size:.75rem;color:var(--muted);margin:4px 0 8px}
+.gtip{font-size:.85rem;color:var(--muted);margin-top:8px}
+.gt{width:100%;border-collapse:collapse;font-size:.85rem;font-variant-numeric:tabular-nums;overflow-x:auto;display:table}
+.gt th,.gt td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:center}
+.gt th{color:var(--muted);font-weight:600}
+.gt td.ok{color:var(--good)}.gt td.mid{color:var(--exam)}.gt td.hard,.gt td.no{color:var(--quiz)}
+.gterms{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.gcalc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px}
+.gci{font-size:.85rem;display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.04)}
+.gci select{background:#151a26;color:var(--hi);border:1px solid var(--line2);border-radius:8px;padding:3px 6px}
+.gres{margin-top:12px;font-size:1.1rem}.gres b{font-size:1.5rem}
+@media(max-width:640px){.gcourse{overflow-x:auto}}
 
 </style>
 </head>
@@ -375,6 +405,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
  <button type="button" class="vtab" role="tab" id="tab-plan" aria-controls="view-plan" aria-selected="true">Daily plan</button>
  <button type="button" class="vtab" role="tab" id="tab-outlook" aria-controls="view-outlook" aria-selected="false">Two-week outlook</button>
  <button type="button" class="vtab" role="tab" id="tab-exams" aria-controls="view-exams" aria-selected="false">Exams</button>
+ <button type="button" class="vtab" role="tab" id="tab-gpa" aria-controls="view-gpa" aria-selected="false">GPA roadmap</button>
 </nav>
 <main class="wrap" id="view-plan" role="tabpanel">
  <section class="sec">
@@ -440,6 +471,192 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 </main>
 <main class="wrap" id="view-outlook" role="tabpanel" hidden></main>
 <main class="wrap" id="view-exams" role="tabpanel" hidden></main>
+<main class="wrap" id="view-gpa" role="tabpanel" hidden><section class="sec gpa" dir="rtl" lang="fa">
+<div class="sec-h"><h2>نقشه معدل 🎯</h2><p>همه عددها از کارنامه OBS (4 نوامبر 2026) با اسکریپت حساب شده. معدل با AKTS (ECTS) وزن‌دار است: امتیاز = ضریب نمره × AKTS.</p></div>
+<div class="gpa-cards">
+<div class="gcard glass red"><div class="gk">معدل کل (AGNO)</div><div class="gv">1.55 <small>/ 4</small></div><div class="gs">104.4 امتیاز ÷ 67 AKTS نمره‌دار</div></div>
+<div class="gcard glass blue"><div class="gk">AKTS پاس‌شده</div><div class="gv">47 <small>/ 240</small></div><div class="gs">این ترم 32 AKTS در حال گذراندن</div></div>
+<div class="gcard glass yellow"><div class="gk">وضعیت</div><div class="gv">سِنامالی ⚠️</div><div class="gs">مشروط (Sınamalı): معدل زیر 2.00</div></div>
+</div>
+<div class="glass gbox"><ul class="gl">
+<li>🔴 درس‌های افتاده (باید ترم بعد دوباره برداری): COMP 1202 (6)، MATH 1132 (7)، PHYS 1122 (7)، UMFD 1220 (2) = 22 AKTS با نمره صفر</li>
+<li>🟡 درس‌های D (می‌شه برای بالا بردن نمره تکرار کرد): MATH 1100 (5)، MATH 1131 (7)، PHYS 1121 (7)</li>
+<li>🔴 برای اینکه همین ترم از مشروطی دربیای (معدل ≥ 2.00) باید میانگین این ترم حداقل <b>2.92</b> یعنی حدود <b>B</b> باشه.</li>
+<li>🔵 تا وقتی مشروطی، سقف ثبت‌نامت 32 واحده و اول باید درس‌های F و NA رو برداری.</li>
+</ul></div>
+<details class="glass gbox" open><summary>📜 قوانین دانشگاه یاشار (منبع رسمی)</summary><ul class="gl">
+<li>جدول نمره: A = 95-100 (4.00)، A- = 90-94 (3.70)، B+ = 85-89 (3.30)، B = 80-84 (3.00)، B- = 75-79 (2.70)، C+ = 70-74 (2.30)، C = 65-69 (2.00)، C- = 60-64 (1.70)، D+ = 55-59 (1.30)، D = 50-54 (1.00)، F = 0-49 (0.00)</li>
+<li>🔴 حداقل نمره قبولی: D (50 از 100). F = زیر 50. NA (غیبت) مثل F حساب می‌شه.</li>
+<li>🔵 درسی که تکرار کنی، <b>آخرین نمره</b> جای قبلی رو در معدل می‌گیره (ماده 21 بند 6).</li>
+<li>🔵 مشروط (Sınamalı): معدل کل 1.99 یا کمتر در پایان هر ترم. باید اول F/W/U/NAها رو برداری، حداکثر 32 واحد (ماده 24). موفق: معدل ≥ 2.00، تا 40 واحد (ماده 23).</li>
+<li>🔵 C-، D+ و D رو می‌شه دوباره برداشت؛ اگه از اون درس انصراف (W) بدی، نمره قبلی می‌مونه.</li>
+<li>🟡 بعضی استادها مرز حروف رو منحنی (نسبی) می‌کنن؛ عددهای این صفحه بر اساس جدول رسمی است.</li>
+<li><small>منبع: <a href="https://www.resmigazete.gov.tr/eskiler/2019/07/20190717-5.htm" target="_blank" rel="noopener">Resmî Gazete 17.07.2019</a> · <a href="https://www.yasar.edu.tr/yu-files/yonetmelik-yonerge/tr/59751247618113477416.pdf" target="_blank" rel="noopener">آیین‌نامه آموزشی یاشار</a> · <a href="https://arch.yasar.edu.tr/en/category/dokumanlar/" target="_blank" rel="noopener">جدول حروف یاشار</a></small></li>
+</ul></details>
+<h3 class="gh">📚 این ترم (پاییز 2026): هر درس چقدر لازمه؟</h3>
+<p class="gp">هدف‌ها: <b>قبولی</b> = 50 از 100 (D). <b>مسیر معدل 3</b> = حداقل 85 (B+). جدول هر درس می‌گه: اگه میانگین بقیه بخش‌ها (کوییز، میان‌ترم، لب) X باشه، در پایان‌ترم چند لازمه.</p>
+<div class="glass gcourse"><div class="gch"><b>MATH 2260</b> · احتمال و آمار <span class="pill">6 AKTS</span> <span class="pill est">وزن تخمینی</span></div>
+<div class="gw"><span class="wchip">کوییز/تکلیف: 20%</span> <span class="wchip">میان‌ترم: 30%</span> <span class="wchip">پایان‌ترم: 50%</span></div><div class="gsrc">منبع وزن: تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">70</td><td class="hard">100</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">60</td><td class="hard">90</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">80</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">40</td><td class="mid">70</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">30</td><td class="ok">60</td><td class="hard">90</td><td class="hard">100</td></tr>
+<tr><td>80</td><td class="ok">20</td><td class="ok">50</td><td class="mid">80</td><td class="hard">90</td></tr>
+<tr><td>90</td><td class="ok">10</td><td class="ok">40</td><td class="mid">70</td><td class="mid">80</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>COMP 2233</b> · ساختمان داده‌ها <span class="pill">6 AKTS</span> <span class="pill real">وزن از سیلابس</span></div>
+<div class="gw"><span class="wchip">تکلیف/پروژه/کوییز: 30%</span> <span class="wchip">میان‌ترم ✓: 30%</span> <span class="wchip">پایان‌ترم: 40%</span></div><div class="gsrc">منبع وزن: از سایت استاد (omercetin.com.tr)</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">80</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="mid">65</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="hard">88</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">35</td><td class="mid">73</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">20</td><td class="ok">58</td><td class="hard">95</td><td class="no">✗</td></tr>
+<tr><td>80</td><td class="ok">5</td><td class="ok">43</td><td class="mid">80</td><td class="hard">93</td></tr>
+<tr><td>90</td><td class="ok">✓ 0</td><td class="ok">28</td><td class="mid">65</td><td class="mid">78</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>EEE 2274</b> · مبانی الکترونیک <span class="pill">6 AKTS</span> <span class="pill real">وزن از سیلابس</span></div>
+<div class="gw"><span class="wchip">آزمایشگاه: 30%</span> <span class="wchip">میان‌ترم: 25%</span> <span class="wchip">پایان‌ترم: 45%</span></div><div class="gsrc">منبع وزن: از سیلابس Moodle</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">75</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="mid">63</td><td class="hard">96</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">84</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">38</td><td class="mid">72</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">26</td><td class="ok">59</td><td class="hard">93</td><td class="no">✗</td></tr>
+<tr><td>80</td><td class="ok">14</td><td class="ok">47</td><td class="mid">80</td><td class="hard">92</td></tr>
+<tr><td>90</td><td class="ok">2</td><td class="ok">35</td><td class="mid">68</td><td class="mid">79</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>SE 2228</b> · تحلیل و طراحی الگوریتم <span class="pill">6 AKTS</span> <span class="pill mix">بخشی از سیلابس</span></div>
+<div class="gw"><span class="wchip">میان‌ترم (نیمی تئوری، نیمی لب): 40%</span> <span class="wchip">پایان‌ترم: 60%</span></div><div class="gsrc">منبع وزن: میان‌ترم 40% از سیلابس؛ 60% پایان‌ترم تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">64</td><td class="hard">89</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">57</td><td class="mid">82</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">75</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">44</td><td class="mid">69</td><td class="hard">94</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">37</td><td class="mid">62</td><td class="hard">87</td><td class="hard">95</td></tr>
+<tr><td>80</td><td class="ok">30</td><td class="ok">55</td><td class="mid">80</td><td class="hard">89</td></tr>
+<tr><td>90</td><td class="ok">24</td><td class="ok">49</td><td class="mid">74</td><td class="mid">82</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>HIST 1120</b> · تاریخ 1 (آتاتورک) <span class="pill">2 AKTS</span> <span class="pill mix">بخشی از سیلابس</span></div>
+<div class="gw"><span class="wchip">میان‌ترم: 40%</span> <span class="wchip">پایان‌ترم: 60%</span></div><div class="gsrc">منبع وزن: میان‌ترم 40% از Moodle؛ پایان‌ترم تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">64</td><td class="hard">89</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">57</td><td class="mid">82</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">75</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">44</td><td class="mid">69</td><td class="hard">94</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">37</td><td class="mid">62</td><td class="hard">87</td><td class="hard">95</td></tr>
+<tr><td>80</td><td class="ok">30</td><td class="ok">55</td><td class="mid">80</td><td class="hard">89</td></tr>
+<tr><td>90</td><td class="ok">24</td><td class="ok">49</td><td class="mid">74</td><td class="mid">82</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>ISG 9120</b> · ایمنی و بهداشت کار 1 <span class="pill">2 AKTS</span> <span class="pill est">وزن تخمینی</span></div>
+<div class="gw"><span class="wchip">میان‌ترم: 40%</span> <span class="wchip">پایان‌ترم: 60%</span></div><div class="gsrc">منبع وزن: تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">64</td><td class="hard">89</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">57</td><td class="mid">82</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">75</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">44</td><td class="mid">69</td><td class="hard">94</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">37</td><td class="mid">62</td><td class="hard">87</td><td class="hard">95</td></tr>
+<tr><td>80</td><td class="ok">30</td><td class="ok">55</td><td class="mid">80</td><td class="hard">89</td></tr>
+<tr><td>90</td><td class="ok">24</td><td class="ok">49</td><td class="mid">74</td><td class="mid">82</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>UFND 2020</b> · فرهنگ پژوهش <span class="pill">2 AKTS</span> <span class="pill est">وزن تخمینی</span></div>
+<div class="gw"><span class="wchip">میان‌ترم: 40%</span> <span class="wchip">پایان‌ترم: 60%</span></div><div class="gsrc">منبع وزن: تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">64</td><td class="hard">89</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">57</td><td class="mid">82</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">75</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">44</td><td class="mid">69</td><td class="hard">94</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">37</td><td class="mid">62</td><td class="hard">87</td><td class="hard">95</td></tr>
+<tr><td>80</td><td class="ok">30</td><td class="ok">55</td><td class="mid">80</td><td class="hard">89</td></tr>
+<tr><td>90</td><td class="ok">24</td><td class="ok">49</td><td class="mid">74</td><td class="mid">82</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<div class="glass gcourse"><div class="gch"><b>UFND 2420</b> · روابط میان‌فردی <span class="pill">2 AKTS</span> <span class="pill est">وزن تخمینی</span></div>
+<div class="gw"><span class="wchip">میان‌ترم: 40%</span> <span class="wchip">پایان‌ترم: 60%</span></div><div class="gsrc">منبع وزن: تخمینی</div>
+<table class="gt"><thead><tr><th>میانگین بقیه بخش‌ها</th><th>قبولی D</th><th>C</th><th>B</th><th>B+ (مسیر 3)</th></tr></thead><tbody>
+<tr><td>30</td><td class="mid">64</td><td class="hard">89</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>40</td><td class="ok">57</td><td class="mid">82</td><td class="no">✗</td><td class="no">✗</td></tr>
+<tr><td>50</td><td class="ok">50</td><td class="mid">75</td><td class="hard">100</td><td class="no">✗</td></tr>
+<tr><td>60</td><td class="ok">44</td><td class="mid">69</td><td class="hard">94</td><td class="no">✗</td></tr>
+<tr><td>70</td><td class="ok">37</td><td class="mid">62</td><td class="hard">87</td><td class="hard">95</td></tr>
+<tr><td>80</td><td class="ok">30</td><td class="ok">55</td><td class="mid">80</td><td class="hard">89</td></tr>
+<tr><td>90</td><td class="ok">24</td><td class="ok">49</td><td class="mid">74</td><td class="mid">82</td></tr>
+</tbody></table>
+<div class="gtip">• ساده‌ترین قانون: اگه <b>هر</b> بخش رو 50 بگیری قبولی؛ برای B+ باید هر بخش حدود 85 باشه.</div></div>
+<p class="gp">🔵 COMP 2233: میان‌ترم برگزار شده (3 نوامبر) ولی نمره‌اش هنوز در فایل‌ها نیست؛ وقتی اعلام شد از ردیف مربوطه بخون.</p>
+<h3 class="gh">📊 سناریوها: معدلت چی می‌شه؟</h3><table class="gt big"><thead><tr><th>این ترم (میانگین)</th><th>بعد از همین ترم</th><th>+ بهار: 4 درس افتاده با B</th><th>+ 4 افتاده با B+</th><th>+ 4 افتاده با A</th><th>+ درس‌های D هم B</th></tr></thead><tbody>
+<tr><td><b>A</b></td><td class="mid">2.34</td><td class="ok">3.01</td><td class="ok">3.08</td><td class="ok">3.23</td><td class="ok">3.39</td></tr>
+<tr><td><b>A-</b></td><td class="mid">2.25</td><td class="mid">2.91</td><td class="mid">2.98</td><td class="ok">3.13</td><td class="ok">3.30</td></tr>
+<tr><td><b>B+</b></td><td class="mid">2.12</td><td class="mid">2.78</td><td class="mid">2.85</td><td class="ok">3.01</td><td class="ok">3.17</td></tr>
+<tr><td><b>B</b></td><td class="mid">2.02</td><td class="mid">2.69</td><td class="mid">2.75</td><td class="mid">2.91</td><td class="ok">3.07</td></tr>
+<tr><td><b>C</b></td><td class="hard">1.70</td><td class="mid">2.36</td><td class="mid">2.43</td><td class="mid">2.58</td><td class="mid">2.75</td></tr>
+</tbody></table><p class="gp">🟢 سبز = 3 یا بیشتر · 🟡 زرد = 2 تا 3 (بیرون از مشروطی) · 🔴 قرمز = زیر 2</p>
+<h3 class="gh">🗺️ نقشه تا فارغ‌التحصیلی</h3>
+<p class="gp">برای معدل نهایی 3.00، میانگین لازم در 143 AKTS باقی‌مانده (درس‌های جدید از بهار 2027 تا آخر):</p><table class="gt"><thead><tr><th>این ترم</th><th>4 درس افتاده</th><th>میانگین لازم بقیه</th><th>یعنی تقریباً</th></tr></thead><tbody>
+<tr><td>A</td><td>A</td><td>2.84</td><td>B</td></tr>
+<tr><td>A</td><td>B+</td><td>2.94</td><td>B</td></tr>
+<tr><td>A</td><td>B</td><td>2.99</td><td>B</td></tr>
+<tr><td>B+</td><td>A</td><td>2.99</td><td>B</td></tr>
+<tr><td>B+</td><td>B+</td><td>3.10</td><td>B+</td></tr>
+<tr><td>B+</td><td>B</td><td>3.15</td><td>B+</td></tr>
+<tr><td>B</td><td>A</td><td>3.06</td><td>B+</td></tr>
+<tr><td>B</td><td>B+</td><td>3.17</td><td>B+</td></tr>
+<tr><td>B</td><td>B</td><td>3.21</td><td>B+</td></tr>
+</tbody></table>
+<p class="gp">🎯 مسیر پیشنهادی: این ترم <b>B+</b>، درس‌های افتاده <b>B+</b>، و از بعد هر ترم میانگین <b>B+</b> (3.10). جدول ترم‌ها (ترتیب پیشنهادی؛ با مشاورت، دکتر عمر چتین، چک کن):</p>
+<div class="gterms">
+<div class="glass gterm"><div class="gch"><b>بهار 2027 (ترم 4)</b> <span class="pill">31 AKTS</span></div><ul class="gl">
+<li>COMP 1202 🔴 تکرار · 6 AKTS · هدف <b>B+</b></li>
+<li>MATH 1132 🔴 تکرار · 7 AKTS · هدف <b>B+</b></li>
+<li>PHYS 1122 🔴 تکرار · 7 AKTS · هدف <b>B+</b></li>
+<li>UMFD 1220 🔴 تکرار · 2 AKTS · هدف <b>B+</b></li>
+<li>MATH 2255 جبر خطی · 6 AKTS · هدف <b>B+</b></li>
+<li>HIST 1220 تاریخ 2 · 2 AKTS · هدف <b>B+</b></li>
+<li>UFND 7020 مسئولیت اجتماعی · 1 AKTS · هدف <b>B+</b></li>
+</ul></div>
+<div class="glass gterm"><div class="gch"><b>پاییز 2027 (ترم 5)</b> <span class="pill">30 AKTS</span></div><ul class="gl">
+<li>COMP 2215 برنامه‌نویسی شیءگرا (عقب‌افتاده از بهار) · 7 AKTS · هدف <b>B+</b></li>
+<li>COMP 3315 معماری کامپیوتر · 7 AKTS · هدف <b>B+</b></li>
+<li>COMP 3327 شبکه · 6 AKTS · هدف <b>B+</b></li>
+<li>MATH 2261 معادلات دیفرانسیل · 4 AKTS · هدف <b>B+</b></li>
+<li>SE 2230 پایگاه داده · 6 AKTS · هدف <b>B+</b></li>
+</ul></div>
+<div class="glass gterm"><div class="gch"><b>بهار 2028 (ترم 6)</b> <span class="pill">31 AKTS</span></div><ul class="gl">
+<li>COMP 3330 نظریه اتوماتا (عقب‌افتاده) · 6 AKTS · هدف <b>B+</b></li>
+<li>EEE 2110 طراحی دیجیتال (عقب‌افتاده) · 6 AKTS · هدف <b>B+</b></li>
+<li>COMP 3304 مهندسی نرم‌افزار · 6 AKTS · هدف <b>B+</b></li>
+<li>COMP 3323 سیستم‌عامل · 6 AKTS · هدف <b>B+</b></li>
+<li>COMP 3328 سیستم‌های نهفته · 7 AKTS · هدف <b>B+</b></li>
+</ul></div>
+<div class="glass gterm"><div class="gch"><b>پاییز 2028 (ترم 7)</b> <span class="pill">32 AKTS</span></div><ul class="gl">
+<li>UNV.COMP 2 اختیاری · 4 AKTS · هدف <b>B+</b></li>
+<li>COMP 4910 پروژه پایانی 1 · 8 AKTS · هدف <b>B+</b></li>
+<li>ENGR 4411 مهندسی پایدار · 3 AKTS · هدف <b>B+</b></li>
+<li>ISG 9220 ایمنی کار 2 · 2 AKTS · هدف <b>B+</b></li>
+<li>COMP 4801 کارآموزی · 4 AKTS · هدف <b>B+</b></li>
+<li>ELECT A1 · 6 AKTS · هدف <b>B+</b></li>
+<li>ELECT B2 · 5 AKTS · هدف <b>B+</b></li>
+</ul></div>
+<div class="glass gterm"><div class="gch"><b>بهار 2029 (ترم 8)</b> <span class="pill">41 AKTS</span></div><ul class="gl">
+<li>ENGR 3450 مدیریت پروژه · 5 AKTS · هدف <b>B+</b></li>
+<li>ENGR 4400 اخلاق مهندسی · 2 AKTS · هدف <b>B+</b></li>
+<li>UNV.COMP 3 اختیاری · 4 AKTS · هدف <b>B+</b></li>
+<li>COMP 4920 پروژه پایانی 2 · 8 AKTS · هدف <b>B+</b></li>
+<li>ELECT A3 · 12 AKTS · هدف <b>B+</b></li>
+<li>ELECT B3 · 10 AKTS · هدف <b>B+</b></li>
+</ul></div>
+</div><p class="gp">🟡 بهار 2027 به‌خاطر مشروطی حداکثر 32 واحده، پس COMP 2215، COMP 3330 و EEE 2110 به ترم‌های بعد (یا تابستان) منتقل شدن. پیش‌نیازها رو با مشاور چک کن.</p>
+<h3 class="gh">🧮 ماشین‌حساب معدل</h3><div class="glass gbox"><p class="gp">نمره‌ای که انتظار داری رو انتخاب کن تا معدل کل پیش‌بینی بشه.</p><div id="gcalc" class="gcalc"></div><div class="gres">معدل پیش‌بینی: <b id="gout">—</b></div></div>
+</section>
+<script>(function(){var C={"P": 104.4, "E": 67, "G": {"A": 4.0, "A-": 3.7, "B+": 3.3, "B": 3.0, "B-": 2.7, "C+": 2.3, "C": 2.0, "C-": 1.7, "D+": 1.3, "D": 1.0, "F": 0.0}, "rows": [["MATH 2260", 6, 0, "cur"], ["COMP 2233", 6, 0, "cur"], ["EEE 2274", 6, 0, "cur"], ["SE 2228", 6, 0, "cur"], ["HIST 1120", 2, 0, "cur"], ["ISG 9120", 2, 0, "cur"], ["UFND 2020", 2, 0, "cur"], ["UFND 2420", 2, 0, "cur"], ["COMP 1202 (تکرار)", 6, 0, "rep"], ["MATH 1132 (تکرار)", 7, 0, "rep"], ["PHYS 1122 (تکرار)", 7, 0, "rep"], ["UMFD 1220 (تکرار)", 2, 0, "rep"], ["MATH 1100 (تکرار D)", 5, 1.0, "d"], ["MATH 1131 (تکرار D)", 7, 1.0, "d"], ["PHYS 1121 (تکرار D)", 7, 1.0, "d"]]};var box=document.getElementById("gcalc"),o=document.getElementById("gout");var ks=Object.keys(C.G);C.rows.forEach(function(r,i){var d=document.createElement("label");d.className="gci";d.textContent=r[0]+" ("+r[1]+") ";var s=document.createElement("select");s.id="gs"+i;var e=document.createElement("option");e.value="";e.textContent="—";s.appendChild(e);ks.forEach(function(k){var op=document.createElement("option");op.value=k;op.textContent=k;s.appendChild(op)});s.onchange=calc;d.appendChild(s);box.appendChild(d)});function calc(){var p=C.P,e=C.E;C.rows.forEach(function(r,i){var v=document.getElementById("gs"+i).value;if(!v)return;var g=C.G[v];if(r[3]==="cur"){p+=g*r[1];e+=r[1]}else{p+=(g-r[2])*r[1]}});var x=Math.floor(p/e*100+1e-6)/100;o.textContent=x.toFixed(2);o.style.color=x>=3?"#7fd9a6":x>=2?"#f4d184":"#ffa592"}calc()})();</script></main>
 
 <script>
 /* v17: C++ reference snippets per DS block (compiled and tested; see cpp/). */
@@ -1093,10 +1310,10 @@ window.__plan={reload:function(){var st={};try{st=JSON.parse(ls(KEY)||"{}")||{}}
 (function(){
 "use strict";
 var UI={
- en:{plan:"Daily plan",outlook:"Outlook",exams:"Exams",hCal:"19-day calendar",pCal:"Pick a day to see its tasks. Colored chips show the courses and hours.",hDay:"Tasks for the selected day",pDay:"Tick a task when you finish it. Under each task, \u201cTest yourself\u201d opens a short quiz on exactly that block."},
- fa:{plan:"برنامهٔ روزانه",outlook:"دورنما",exams:"امتحان‌ها",hCal:"تقویم 19 روزه",pCal:"یک روز را انتخاب کن تا کارهایش را ببینی. برچسب‌های رنگی درس‌ها و ساعت‌ها را نشان می‌دهند.",hDay:"کارهای روز انتخاب‌شده",pDay:"هر کاری را که تمام کردی تیک بزن. زیر هر کار، «خودت را بسنج» یک کوییز کوتاه دربارهٔ همان بخش باز می‌کند."}
+ en:{plan:"Daily plan",outlook:"Outlook",exams:"Exams",gpa:"GPA roadmap",hCal:"19-day calendar",pCal:"Pick a day to see its tasks. Colored chips show the courses and hours.",hDay:"Tasks for the selected day",pDay:"Tick a task when you finish it. Under each task, \u201cTest yourself\u201d opens a short quiz on exactly that block."},
+ fa:{plan:"برنامهٔ روزانه",outlook:"دورنما",exams:"امتحان‌ها",gpa:"نقشه معدل",hCal:"تقویم 19 روزه",pCal:"یک روز را انتخاب کن تا کارهایش را ببینی. برچسب‌های رنگی درس‌ها و ساعت‌ها را نشان می‌دهند.",hDay:"کارهای روز انتخاب‌شده",pDay:"هر کاری را که تمام کردی تیک بزن. زیر هر کار، «خودت را بسنج» یک کوییز کوتاه دربارهٔ همان بخش باز می‌کند."}
 };
-var VIEWS=["plan","outlook","exams"],cur="plan";
+var VIEWS=["plan","outlook","exams","gpa"],cur="plan";
 function lang(){var d=window.__plan&&window.__plan.data?window.__plan.data():null;return d&&d.lang==="fa"?"fa":"en"}
 function $(id){return document.getElementById(id)}
 function labels(){var u=UI[lang()];
