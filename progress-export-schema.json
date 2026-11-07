@@ -1,0 +1,822 @@
+{
+  "schema": "study-plan-progress",
+  "schemaVersion": 1,
+  "timezone": "Europe/Istanbul",
+  "storageKey": "midterm4-plan-v1",
+  "purpose": "Helper-independent map. The website download fills done, doneTaskIds, and allBlocksComplete from the page's own localStorage. This file has no completion state.",
+  "rules": [
+    "Ticks are copied from this page's localStorage only.",
+    "This file does not tag files, change ticks, or upload anything.",
+    "allBlocksComplete is true only when every taskIds entry for that file is done. An empty task list is never complete.",
+    "Stale Statistics filenames in gaps are not taggable."
+  ],
+  "doesNot": [
+    "read Safari or any browser database",
+    "tag Finder colors",
+    "write the host filesystem",
+    "upload ticks",
+    "reset ticks"
+  ],
+  "resources": [
+    {
+      "id": "00_Course_Introduction.pdf",
+      "relativeUrl": "algorithms/00_Course_Introduction.pdf",
+      "sha256": "b625b0f9024468efc0d3e3fd81f2e9019b8f64274babd0dc1138514f253fe52f",
+      "bytes": 552538,
+      "week": "1",
+      "taskIds": [
+        "alg3-2026-11-08-12",
+        "alg3-2026-11-09-5"
+      ]
+    },
+    {
+      "id": "Lab01-Lecture.pdf",
+      "relativeUrl": "algorithms/Lab01-Lecture.pdf",
+      "sha256": "b5c2fda8859308fe7a8580f9d9c3942429028fb7bc488fc6bde97f86fb6ae6ff",
+      "bytes": 905541,
+      "week": "1",
+      "taskIds": [
+        "alg3-2026-11-07-7",
+        "alg3-2026-11-08-16",
+        "alg3-2026-11-09-9"
+      ]
+    },
+    {
+      "id": "Lab02-Tutorial-Code.pdf",
+      "relativeUrl": "algorithms/Lab02-Tutorial-Code.pdf",
+      "sha256": "a1b8ea233401645d75dd6a1e92458a6addec0d4f95f262fa9da7c88b7f088261",
+      "bytes": 375478,
+      "week": "2",
+      "taskIds": [
+        "alg3-2026-11-07-5",
+        "alg3-2026-11-07-7",
+        "alg3-2026-11-08-14",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-5",
+        "alg3-2026-11-09-9"
+      ]
+    },
+    {
+      "id": "Review.pdf",
+      "relativeUrl": "algorithms/Review.pdf",
+      "sha256": "0afb3e85980bd6a710f5e982cdb5010c649d9c2466f764274616b75c89a953c6",
+      "bytes": 644587,
+      "week": "1",
+      "taskIds": [
+        "alg3-2026-11-07-7",
+        "alg3-2026-11-09-9"
+      ]
+    },
+    {
+      "id": "Tutorial_on_recurrence_relations.pdf",
+      "relativeUrl": "algorithms/Tutorial_on_recurrence_relations.pdf",
+      "sha256": "1aa8294dc4d770a44da154c50be642ecbbc7a5bf4ff603508131e7734f346d50",
+      "bytes": 48079,
+      "week": "2",
+      "taskIds": [
+        "alg3-2026-11-07-5",
+        "alg3-2026-11-08-1"
+      ]
+    },
+    {
+      "id": "Week01-Intro.pdf",
+      "relativeUrl": "algorithms/Week01-Intro.pdf",
+      "sha256": "ba86dc2211f7c96beccf0f56e4712781d3f79a1b43f7e71a8513fb0f757edeb9",
+      "bytes": 780533,
+      "week": "1",
+      "taskIds": [
+        "alg3-2026-11-07-0",
+        "alg3-2026-11-07-1",
+        "alg3-2026-11-07-5",
+        "alg3-2026-11-08-1",
+        "alg3-2026-11-09-3"
+      ]
+    },
+    {
+      "id": "Week02-Analysis-1.pdf",
+      "relativeUrl": "algorithms/Week02-Analysis-1.pdf",
+      "sha256": "e6b3534e54a7cdcef1494283d2c20ea6323353ee8e9b3ce5b1ec0f0cb3b2ef79",
+      "bytes": 980334,
+      "week": "2",
+      "taskIds": [
+        "alg3-2026-11-07-3",
+        "alg3-2026-11-09-3"
+      ]
+    },
+    {
+      "id": "Week03-Analysis-2.pdf",
+      "relativeUrl": "algorithms/Week03-Analysis-2.pdf",
+      "sha256": "8a606b003b5ee7576e75a3d0fe55066f548c087f4ef73213e6022b0e972656f4",
+      "bytes": 1024048,
+      "week": "3",
+      "taskIds": [
+        "alg3-2026-11-07-3",
+        "alg3-2026-11-07-7",
+        "alg3-2026-11-08-1",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-7",
+        "alg3-2026-11-09-11"
+      ]
+    },
+    {
+      "id": "Week04-Design-1.pdf",
+      "relativeUrl": "algorithms/Week04-Design-1.pdf",
+      "sha256": "e996e9d995b3e819b836ae8c75a20b46531f52e79c0b750a2ed1c64274288a02",
+      "bytes": 442556,
+      "week": "4",
+      "taskIds": [
+        "alg3-2026-11-07-9",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-11"
+      ]
+    },
+    {
+      "id": "Week05-Design-2.pdf",
+      "relativeUrl": "algorithms/Week05-Design-2.pdf",
+      "sha256": "fc85fb909f2e2d5de714f66664ebd82aa5d68ef17f64438e6fb587cf1e0b22e9",
+      "bytes": 773706,
+      "week": "5",
+      "taskIds": [
+        "alg3-2026-11-08-2",
+        "alg3-2026-11-08-4",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-7",
+        "alg3-2026-11-09-9",
+        "alg3-2026-11-09-11"
+      ]
+    },
+    {
+      "id": "Week06-Greedy Algorithms.pdf",
+      "relativeUrl": "algorithms/Week06-Greedy%20Algorithms.pdf",
+      "sha256": "541893ebc113cf99a493d070911f0bddb13fd6fc3dfc82d32df6cc4fbedc0abc",
+      "bytes": 1165392,
+      "week": "6",
+      "taskIds": [
+        "alg3-2026-11-08-6",
+        "alg3-2026-11-08-8",
+        "alg3-2026-11-08-10",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-7",
+        "alg3-2026-11-09-11"
+      ]
+    },
+    {
+      "id": "Week07-Midterm Review.pdf",
+      "relativeUrl": "algorithms/Week07-Midterm%20Review.pdf",
+      "sha256": "e761eefa3533b2b7b5327d7e0ae91df5d59d4f6b1cb72a936ff8a1a7fedd327d",
+      "bytes": 933840,
+      "week": "7",
+      "taskIds": [
+        "alg3-2026-11-07-0",
+        "alg3-2026-11-07-10",
+        "alg3-2026-11-08-6",
+        "alg3-2026-11-08-12",
+        "alg3-2026-11-08-14",
+        "alg3-2026-11-09-1",
+        "alg3-2026-11-09-5",
+        "alg3-2026-11-09-7",
+        "alg3-2026-11-09-13",
+        "d10t0"
+      ]
+    },
+    {
+      "id": "Week7_Graphs.pdf",
+      "relativeUrl": "algorithms/Week7_Graphs.pdf",
+      "sha256": "5791a98c8794dcb8f02593db12fef29a769e7eb18d16aa4272b6975e97c600bd",
+      "bytes": 5793473,
+      "week": "5",
+      "taskIds": [
+        "alg3-2026-11-08-6",
+        "alg3-2026-11-08-8",
+        "alg3-2026-11-08-10",
+        "alg3-2026-11-09-11"
+      ]
+    },
+    {
+      "id": "dijkstra_skeleton.c",
+      "relativeUrl": "algorithms/dijkstra_skeleton.c",
+      "sha256": "da9d0272fa89d15108858dfd3fbc71188538e423a1d2e38f7481176a1be2c70f",
+      "bytes": 2610,
+      "week": "5",
+      "taskIds": [
+        "alg3-2026-11-08-8",
+        "alg3-2026-11-08-14",
+        "alg3-2026-11-08-16",
+        "alg3-2026-11-09-3",
+        "alg3-2026-11-09-5",
+        "alg3-2026-11-09-9"
+      ]
+    },
+    {
+      "id": "knapsack_brute_solution.c.png",
+      "relativeUrl": "algorithms/knapsack_brute_solution.c.png",
+      "sha256": "0fae5440735d2abe4b94d07491301bb517b7256835b0ee629394516320b18c5d",
+      "bytes": 111111,
+      "week": "3",
+      "taskIds": [
+        "alg3-2026-11-07-9",
+        "alg3-2026-11-08-16"
+      ]
+    },
+    {
+      "id": "summation.pdf",
+      "relativeUrl": "algorithms/summation.pdf",
+      "sha256": "2d50cf1fd4f5c8a3f5c7ece198a805c3b4e7b6a9358a85a31c7f759bc6a559c2",
+      "bytes": 1823767,
+      "week": "2",
+      "taskIds": [
+        "alg3-2026-11-07-1"
+      ]
+    },
+    {
+      "id": "synopsis.pdf",
+      "relativeUrl": "algorithms/synopsis.pdf",
+      "sha256": "5a3fe2363eda915119beab18dc860fb4d526ccc1e2bb6cadce6550ef36fa3569",
+      "bytes": 96568,
+      "week": "1",
+      "taskIds": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "d0t0",
+      "course": "DS",
+      "date": "2026-10-28",
+      "titleEn": "Pointers and dynamic memory refresher (W5 topic)",
+      "sources": []
+    },
+    {
+      "id": "d10t1",
+      "course": "DS",
+      "date": "2026-10-31",
+      "titleEn": "Weeks 1 and 2: intro and program development",
+      "sources": []
+    },
+    {
+      "id": "d9t2",
+      "course": "DS",
+      "date": "2026-10-31",
+      "titleEn": "Arrays, ADTs and vectors (W3)",
+      "sources": []
+    },
+    {
+      "id": "d11t2",
+      "course": "DS",
+      "date": "2026-10-31",
+      "titleEn": "Multidimensional arrays (W4)",
+      "sources": []
+    },
+    {
+      "id": "d0t1",
+      "course": "DS",
+      "date": "2026-11-01",
+      "titleEn": "Singly linked lists: node, head pointer, traversal, insertion",
+      "sources": []
+    },
+    {
+      "id": "d1t0",
+      "course": "DS",
+      "date": "2026-11-01",
+      "titleEn": "Singly linked lists: deletion, search, common errors",
+      "sources": []
+    },
+    {
+      "id": "d1t1",
+      "course": "DS",
+      "date": "2026-11-01",
+      "titleEn": "Code a singly linked list in C from scratch",
+      "sources": []
+    },
+    {
+      "id": "d11t3",
+      "course": "DS",
+      "date": "2026-11-01",
+      "titleEn": "Doubly and circular linked lists (W6)",
+      "sources": []
+    },
+    {
+      "id": "d10t2",
+      "course": "DS",
+      "date": "2026-11-01",
+      "titleEn": "Lab 2: discrete variables vs arrays and search",
+      "sources": []
+    },
+    {
+      "id": "d9t3",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Lab 3 practice",
+      "sources": []
+    },
+    {
+      "id": "d2t0",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Linked list exercises from the textbook",
+      "sources": []
+    },
+    {
+      "id": "x1",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Instructor's practice questions: theory and C code",
+      "sources": []
+    },
+    {
+      "id": "d13t0",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Linked lists from a blank file",
+      "sources": []
+    },
+    {
+      "id": "d13t1",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Exam-style traces",
+      "sources": []
+    },
+    {
+      "id": "d2t1",
+      "course": "DS",
+      "date": "2026-11-02",
+      "titleEn": "Quiz drill on paper",
+      "sources": []
+    },
+    {
+      "id": "d3t0",
+      "course": "DS",
+      "date": "2026-11-03",
+      "titleEn": "Pre-midterm warm-up: linked lists & arrays",
+      "sources": []
+    },
+    {
+      "id": "x2",
+      "course": "DS",
+      "date": "2026-11-03",
+      "titleEn": "Light review before the exam",
+      "sources": []
+    },
+    {
+      "id": "d2t3",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Chapter 1: overview, data classification, study design",
+      "sources": []
+    },
+    {
+      "id": "d4t2",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Frequency distributions and graphs",
+      "sources": []
+    },
+    {
+      "id": "d4t3",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Central tendency and variation",
+      "sources": []
+    },
+    {
+      "id": "d6t2",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Basic probability and counting",
+      "sources": []
+    },
+    {
+      "id": "d8t2",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "The addition rule",
+      "sources": []
+    },
+    {
+      "id": "d8t3",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Permutations and combinations",
+      "sources": []
+    },
+    {
+      "id": "d6t3",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Conditional probability and the multiplication rule",
+      "sources": []
+    },
+    {
+      "id": "d10t3",
+      "course": "STAT",
+      "date": "2026-11-05",
+      "titleEn": "Bayes' theorem and conditional probability",
+      "sources": []
+    },
+    {
+      "id": "d12t0",
+      "course": "STAT",
+      "date": "2026-11-06",
+      "titleEn": "Mixed probability problem set",
+      "sources": []
+    },
+    {
+      "id": "d13t5",
+      "course": "STAT",
+      "date": "2026-11-06",
+      "titleEn": "Quick calculation drill",
+      "sources": []
+    },
+    {
+      "id": "d12t1",
+      "course": "STAT",
+      "date": "2026-11-06",
+      "titleEn": "Stretch: discrete distributions",
+      "sources": []
+    },
+    {
+      "id": "d13t4",
+      "course": "STAT",
+      "date": "2026-11-06",
+      "titleEn": "Formula sheet, chapters 1 to 3",
+      "sources": []
+    },
+    {
+      "id": "x3",
+      "course": "STAT",
+      "date": "2026-11-06",
+      "titleEn": "Last pass, then stop",
+      "sources": []
+    },
+    {
+      "id": "alg3-2026-11-07-0",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "15:00–15:20 · Optional starting check",
+      "sources": [
+        "Week01-Intro.pdf",
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-1",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "15:20–16:10 · Foundations and math",
+      "sources": [
+        "Week01-Intro.pdf",
+        "summation.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-3",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "16:25–17:35 · Asymptotic analysis",
+      "sources": [
+        "Week02-Analysis-1.pdf",
+        "Week03-Analysis-2.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-5",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "17:50–19:00 · Recurrences",
+      "sources": [
+        "Week01-Intro.pdf",
+        "Tutorial_on_recurrence_relations.pdf",
+        "Lab02-Tutorial-Code.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-7",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "19:45–20:45 · Iterative and recursive code",
+      "sources": [
+        "Week03-Analysis-2.pdf",
+        "Lab02-Tutorial-Code.pdf",
+        "Lab01-Lecture.pdf",
+        "Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-9",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "21:00–22:00 · Brute force",
+      "sources": [
+        "Week04-Design-1.pdf",
+        "knapsack_brute_solution.c.png"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-07-10",
+      "course": "ALG",
+      "date": "2026-11-07",
+      "titleEn": "22:00–22:15 · Error log",
+      "sources": [
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-1",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "09:00–09:30 · Retrieval",
+      "sources": [
+        "Week01-Intro.pdf",
+        "Week03-Analysis-2.pdf",
+        "Tutorial_on_recurrence_relations.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-2",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "09:30–10:40 · Divide and conquer: merge sort",
+      "sources": [
+        "Week05-Design-2.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-4",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "10:55–12:05 · Divide and conquer: quicksort",
+      "sources": [
+        "Week05-Design-2.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-6",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "13:00–14:00 · Graphs and greedy",
+      "sources": [
+        "Week7_Graphs.pdf",
+        "Week06-Greedy Algorithms.pdf",
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-8",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "14:15–15:30 · Dijkstra",
+      "sources": [
+        "Week06-Greedy Algorithms.pdf",
+        "Week7_Graphs.pdf",
+        "dijkstra_skeleton.c"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-10",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "15:45–17:00 · Kruskal and Prim",
+      "sources": [
+        "Week06-Greedy Algorithms.pdf",
+        "Week7_Graphs.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-12",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "17:45–19:00 · Labs 6 and 7",
+      "sources": [
+        "00_Course_Introduction.pdf",
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-14",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "19:15–20:00 · Lab validation",
+      "sources": [
+        "Lab02-Tutorial-Code.pdf",
+        "dijkstra_skeleton.c",
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-08-16",
+      "course": "ALG",
+      "date": "2026-11-08",
+      "titleEn": "20:15–21:00 · Blank-file coding",
+      "sources": [
+        "dijkstra_skeleton.c",
+        "knapsack_brute_solution.c.png",
+        "Lab01-Lecture.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-1",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "09:00–10:00 · Coverage checklist",
+      "sources": [
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-3",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "10:15–11:45 · Repair",
+      "sources": [
+        "Week01-Intro.pdf",
+        "Week02-Analysis-1.pdf",
+        "Week03-Analysis-2.pdf",
+        "Week04-Design-1.pdf",
+        "Week05-Design-2.pdf",
+        "Week06-Greedy Algorithms.pdf",
+        "Lab02-Tutorial-Code.pdf",
+        "dijkstra_skeleton.c"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-5",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "12:45–14:35 · 110-minute practice mock",
+      "sources": [
+        "00_Course_Introduction.pdf",
+        "Week07-Midterm Review.pdf",
+        "Lab02-Tutorial-Code.pdf",
+        "dijkstra_skeleton.c"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-7",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "15:00–16:20 · Correct and redo",
+      "sources": [
+        "Week07-Midterm Review.pdf",
+        "Week03-Analysis-2.pdf",
+        "Week05-Design-2.pdf",
+        "Week06-Greedy Algorithms.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-9",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "16:35–17:35 · Coding and tracing",
+      "sources": [
+        "Lab02-Tutorial-Code.pdf",
+        "dijkstra_skeleton.c",
+        "Week05-Design-2.pdf",
+        "Lab01-Lecture.pdf",
+        "Review.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-11",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "18:30–19:30 · Table from memory",
+      "sources": [
+        "Week03-Analysis-2.pdf",
+        "Week04-Design-1.pdf",
+        "Week05-Design-2.pdf",
+        "Week06-Greedy Algorithms.pdf",
+        "Week7_Graphs.pdf"
+      ]
+    },
+    {
+      "id": "alg3-2026-11-09-13",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "19:45–20:15 · Six-question exit check",
+      "sources": [
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "d9t1",
+      "course": "ALG",
+      "date": "2026-11-10",
+      "titleEn": "Complexity cheat sheet",
+      "sources": []
+    },
+    {
+      "id": "d10t0",
+      "course": "ALG",
+      "date": "2026-11-10",
+      "titleEn": "Morning recap",
+      "sources": [
+        "Week07-Midterm Review.pdf"
+      ]
+    },
+    {
+      "id": "d3t3",
+      "course": "EEE",
+      "date": "2026-11-11",
+      "titleEn": "Basic quantities and notation",
+      "sources": []
+    },
+    {
+      "id": "d3t4",
+      "course": "EEE",
+      "date": "2026-11-11",
+      "titleEn": "Circuit elements and Kirchhoff's laws",
+      "sources": []
+    },
+    {
+      "id": "d5t2",
+      "course": "EEE",
+      "date": "2026-11-11",
+      "titleEn": "Simple resistive circuits",
+      "sources": []
+    },
+    {
+      "id": "d5t3",
+      "course": "EEE",
+      "date": "2026-11-11",
+      "titleEn": "Node-voltage and mesh-current methods",
+      "sources": []
+    },
+    {
+      "id": "d7t2",
+      "course": "EEE",
+      "date": "2026-11-12",
+      "titleEn": "Node-voltage and mesh-current practice",
+      "sources": []
+    },
+    {
+      "id": "d7t3",
+      "course": "EEE",
+      "date": "2026-11-12",
+      "titleEn": "Source transformation, Thevenin and Norton",
+      "sources": []
+    },
+    {
+      "id": "d9t4",
+      "course": "EEE",
+      "date": "2026-11-12",
+      "titleEn": "Superposition and maximum power transfer",
+      "sources": []
+    },
+    {
+      "id": "d11t0",
+      "course": "EEE",
+      "date": "2026-11-13",
+      "titleEn": "Inductance, capacitance and mutual inductance",
+      "sources": []
+    },
+    {
+      "id": "d11t1",
+      "course": "EEE",
+      "date": "2026-11-13",
+      "titleEn": "Response of RL and RC circuits (W7)",
+      "sources": []
+    },
+    {
+      "id": "d12t3",
+      "course": "EEE",
+      "date": "2026-11-13",
+      "titleEn": "Inductor, capacitor and RL/RC practice",
+      "sources": []
+    },
+    {
+      "id": "d12t2",
+      "course": "EEE",
+      "date": "2026-11-14",
+      "titleEn": "Timed mixed practice",
+      "sources": []
+    },
+    {
+      "id": "d13t2",
+      "course": "EEE",
+      "date": "2026-11-14",
+      "titleEn": "Formula sheet",
+      "sources": []
+    },
+    {
+      "id": "d13t3",
+      "course": "EEE",
+      "date": "2026-11-14",
+      "titleEn": "Redo the weakest problem set",
+      "sources": []
+    }
+  ],
+  "gaps": [
+    {
+      "filename": "statistics_chapter1_lecture_notes.pdf",
+      "status": "stale",
+      "tagReady": false,
+      "detail": "This filename is only an old iCloud link in the link table. No current study block names it. Nov 5-6 blocks cite MATH2260_Midterm_Study_Guide and chapter 3 lecture notes, which are not filenames in that table. Do not mark this file complete from this export."
+    },
+    {
+      "filename": "statistics_chapter2_lecture_notes.pdf",
+      "status": "stale",
+      "tagReady": false,
+      "detail": "This filename is only an old iCloud link in the link table. No current study block names it. Nov 5-6 blocks cite MATH2260_Midterm_Study_Guide and chapter 3 lecture notes, which are not filenames in that table. Do not mark this file complete from this export."
+    }
+  ]
+}
