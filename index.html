@@ -408,7 +408,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
   <div>
    <div class="bar"><div id="obar"></div></div>
    <div class="stats"><span><b id="opct">0%</b><span id="st1"></span></span><span><b id="ocnt">0 / 0</b><span id="st2"></span></span><span><b id="ohrs">0 / 0</b><span id="st3"></span></span></div>
-   <div class="tools"><button class="btn" id="btoday">Today</button><button class="btn" id="breset">Reset ticks</button><button class="btn tourbtn" id="btour">Take the tour</button><a class="btn" id="bonline" href="https://deluzhen.github.io/study-plan/" target="_blank" rel="noopener" title="https://deluzhen.github.io/study-plan/">Open online</a></div>
+   <div class="tools"><button class="btn" id="btoday">Today</button><button class="btn" id="breset">Reset ticks</button><button class="btn" id="bexport" type="button">Export progress</button><button class="btn tourbtn" id="btour">Take the tour</button><a class="btn" id="bonline" href="https://deluzhen.github.io/study-plan/" target="_blank" rel="noopener" title="https://deluzhen.github.io/study-plan/">Open online</a></div>
   </div>
   <div class="courses" id="cprog"></div>
  </div>
@@ -1300,7 +1300,7 @@ var lang=ls(LANGKEY)==="fa"?"fa":"en";
 var L={
 en:{dir:"ltr",WD:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WDL:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],MO:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
  title:"Midterm Study Plan: 4 Courses",doc:"Midterm Study Plan - 4 Courses",sub:"Wed Oct 28 to Sat Nov 14, 2026 \u00b7 Data Structures only until the Nov 3 midterm \u00b7 Algorithms and the other courses from Nov 4",
- st1:" done (by hours)",st2:" tasks",st3:" hours",today:"Today",reset:"Reset ticks",tour:"Take the tour",confirm:"Clear all ticks?",
+ st1:" done (by hours)",st2:" tasks",st3:" hours",today:"Today",reset:"Reset ticks",exportBtn:"Export progress",exportTitle:"Download a JSON file of your ticks and the verified file map. This does not change ticks, tag files, or send anything.",tour:"Take the tour",confirm:"Clear all ticks?",
  allDone:"All done for this course today.",doneToday:"Done today",nothing:"Nothing ticked yet.",notesL:"My notes for this day",notesPh:"Write anything: what was hard, what to revisit...",saved:"Saved",
  scopeSum:"Midterm scope and dates (from the course files and Moodle)",minor:"Minor (low priority, online): EEE Exp 3 prelab, announced Oct 27, due Nov 5. MATH 2260 quiz after W8, date TBA. No Moodle calendar events Oct 27 to Nov 30.",
  prq:"Prerequisites",open:"Open ",ask:function(s){return "Ask "+s+" about this prerequisite (prompt pre-filled)"},
@@ -1319,7 +1319,7 @@ en:{dir:"ltr",WD:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WDL:["Sunday","Mond
 fa:{dir:"rtl",WD:["\u06cc\u06a9\u0634\u0646\u0628\u0647","\u062f\u0648\u0634\u0646\u0628\u0647","\u0633\u0647\u200c\u0634\u0646\u0628\u0647","\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647","\u067e\u0646\u062c\u0634\u0646\u0628\u0647","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],
  MO:["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"],
  title:"برنامهٔ مطالعهٔ میان‌ترم: 4 درس",doc:"برنامهٔ مطالعهٔ میان‌ترم - 4 درس",sub:"چهارشنبه 28 اکتبر تا شنبه 14 نوامبر 2026 · سه‌شنبه 27 اکتبر مطالعه نداری · 28 و 29 اکتبر (بدون کلاس) 8 تا 8.5 ساعت، بعد حدود 7 ساعت در روز",
- st1:" انجام‌شده (بر اساس ساعت)",st2:" کار",st3:" ساعت",today:"امروز",reset:"پاک کردن تیک‌ها",tour:"تور راهنما",confirm:"همهٔ تیک‌ها پاک شوند؟",
+ st1:" انجام‌شده (بر اساس ساعت)",st2:" کار",st3:" ساعت",today:"امروز",reset:"پاک کردن تیک‌ها",exportBtn:"دانلود پیشرفت",exportTitle:"یک فایل JSON از تیک‌ها و نقشهٔ فایل‌های تأییدشده دانلود می‌شود. تیک‌ها عوض نمی‌شوند، فایلی برچسب نمی‌خورد و چیزی فرستاده نمی‌شود.",tour:"تور راهنما",confirm:"همهٔ تیک‌ها پاک شوند؟",
  allDone:"همهٔ کارهای امروزِ این درس انجام شد.",doneToday:"انجام‌شدهٔ امروز",nothing:"هنوز چیزی تیک نخورده است.",notesL:"یادداشت‌های من برای این روز",notesPh:"هر چیزی بنویسید: چه چیزی سخت بود، چه چیزی را باید دوباره مرور کنم...",saved:"ذخیره شد",
  scopeSum:"محدوده و تاریخ‌های میان‌ترم (از فایل‌های درس و Moodle)",minor:null,
  prq:"پیش‌نیازها",open:"باز کردن ",ask:function(s){return "پرسیدن از "+s+" دربارهٔ این پیش‌نیاز (پرامپت آماده است)"},
@@ -1485,7 +1485,7 @@ function renderStatic(){
  var s=S(),h=document.documentElement;h.lang=lang;h.dir=s.dir;document.title=s.doc;
  document.getElementById("h1").textContent=s.title;document.getElementById("sub").textContent=s.sub;
  document.getElementById("st1").textContent=s.st1;document.getElementById("st2").textContent=s.st2;document.getElementById("st3").textContent=s.st3;
- document.getElementById("btoday").textContent=s.today;document.getElementById("breset").textContent=s.reset;document.getElementById("btour").textContent=s.tour;
+ document.getElementById("btoday").textContent=s.today;document.getElementById("breset").textContent=s.reset;var bx=document.getElementById("bexport");if(bx){bx.textContent=s.exportBtn;bx.title=s.exportTitle}document.getElementById("btour").textContent=s.tour;
  var sw=document.getElementById("langsw");sw.setAttribute("data-l",lang);sw.setAttribute("aria-label",s.langAria);[].forEach.call(sw.querySelectorAll("button"),function(b){b.setAttribute("aria-pressed",b.getAttribute("data-l")===lang?"true":"false")});
  var lg=document.getElementById("legend");lg.innerHTML="";ORDER.forEach(function(k){var sp=el("span"),dot=el("span","dot");dot.style.background=COURSES[k].color;dot.style.color=COURSES[k].color;sp.appendChild(dot);sp.appendChild(document.createTextNode(k+" = "+COURSES[k].code+" "+cn(k)));lg.appendChild(sp)});
  s.legend.forEach(function(m){var sp=el("span");sp.appendChild(el("span","mk "+m[0],m[1]));sp.appendChild(document.createTextNode(m[2]));lg.appendChild(sp)});
@@ -1541,7 +1541,29 @@ document.getElementById("btour").addEventListener("click",startTour);
 [].forEach.call(document.querySelectorAll("#langsw button"),function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-l"))})});
 buildTour();renderStatic();render();(function(){var tp=document.getElementById("tab-plan");if(tp)tp.textContent=lang==="fa"?"برنامهٔ روزانه":"Daily plan"})();
 if(!ls(TOURKEY))setTimeout(startTour,RM?60:700);
-window.__plan={reload:function(){var st={};try{st=JSON.parse(ls(KEY)||"{}")||{}}catch(e){st={}}if(!st.done)st={done:{},sel:state.sel};st.sel=state.sel;state=st;lang=ls(LANGKEY)==="fa"?"fa":"en";renderStatic();render();if(ls(TOURKEY)&&tourOn)endTour()},data:function(){return{PLAN:PLAN,done:state.done,COURSES:COURSES,FA:FA,today:todayIso(),lang:lang}},startTour:startTour,endTour:endTour,setLang:setLang,step:function(){return tourOn?ti:-1}};
+function filesNamed(text){var names=Object.keys(ALG_RES.assets).sort(function(a,b){return b.length-a.length}),rest=text||"",found=[];
+ names.forEach(function(n){if(rest.indexOf(n)>=0){found.push(n);rest=rest.split(n).join("\u0000")}});return found}
+function progressExport(){var stored={};try{stored=JSON.parse(ls(KEY)||"{}")||{}}catch(e){stored={}}
+ var done=stored.done||{},byId={},tasks=[],used={};
+ PLAN.forEach(function(day){day.tasks.forEach(function(t){
+  var listed=ALG_RES.tasks[t.id]?ALG_RES.tasks[t.id].resources.slice():[];
+  filesNamed(t.title+" "+t.detail).forEach(function(n){if(listed.indexOf(n)<0)listed.push(n)});
+  listed.forEach(function(n){used[n]=1;(byId[n]=byId[n]||[]).push(t.id)});
+  var fa=FA.tasks[t.di]&&FA.tasks[t.di][t.ti]?FA.tasks[t.di][t.ti][0]:"";
+  tasks.push({id:t.id,course:t.c,date:day.date,done:!!done[t.id],titleEn:t.title,titleFa:fa,sources:listed});
+ })});
+ var resources=Object.keys(ALG_RES.assets).sort().map(function(n){var x=ALG_RES.assets[n],ids=byId[n]||[],doneIds=ids.filter(function(id){return !!done[id]});
+  return {id:n,relativeUrl:x.relative_url,sha256:x.sha256,bytes:x.bytes,week:x.week,taskIds:ids,doneTaskIds:doneIds,allBlocksComplete:ids.length>0&&doneIds.length===ids.length}});
+ var stale=["statistics_chapter1_lecture_notes.pdf","statistics_chapter2_lecture_notes.pdf"];
+ var gaps=stale.map(function(name){return {filename:name,status:"stale",tagReady:false,detail:"This filename is only an old iCloud link in the link table. No current study block names it. Nov 5-6 blocks cite MATH2260_Midterm_Study_Guide and chapter 3 lecture notes, which are not filenames in that table. Do not mark this file complete from this export."}});
+ var orphan=Object.keys(done).filter(function(id){return !tasks.some(function(t){return t.id===id})});
+ return {schema:"study-plan-progress",schemaVersion:1,exportedAt:new Date().toISOString(),timezone:"Europe/Istanbul",storageKey:KEY,language:lang,
+  rules:["Ticks are copied from this page's localStorage only.","This file does not tag files, change ticks, or upload anything.","allBlocksComplete is true only when every taskIds entry for that file is done. An empty task list is never complete.","Stale Statistics filenames in gaps are not taggable."],
+  tasks:tasks,resources:resources,gaps:gaps,storedDoneIdsNotInPlan:orphan}}
+function downloadProgress(){var obj=progressExport(),blob=new Blob([JSON.stringify(obj,null,2)],{type:"application/json"}),a=document.createElement("a");
+ a.href=URL.createObjectURL(blob);a.download="study-plan-progress.json";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1500)}
+var bexport=document.getElementById("bexport");if(bexport)bexport.addEventListener("click",downloadProgress);
+window.__plan={reload:function(){var st={};try{st=JSON.parse(ls(KEY)||"{}")||{}}catch(e){st={}}if(!st.done)st={done:{},sel:state.sel};st.sel=state.sel;state=st;lang=ls(LANGKEY)==="fa"?"fa":"en";renderStatic();render();if(ls(TOURKEY)&&tourOn)endTour()},data:function(){return{PLAN:PLAN,done:state.done,COURSES:COURSES,FA:FA,today:todayIso(),lang:lang}},exportProgress:progressExport,startTour:startTour,endTour:endTour,setLang:setLang,step:function(){return tourOn?ti:-1}};
 })();
 
 
