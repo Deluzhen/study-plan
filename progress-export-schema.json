@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "timezone": "Europe/Istanbul",
   "storageKey": "midterm4-plan-v1",
-  "purpose": "Helper-independent map. The website download fills done, doneTaskIds, and allBlocksComplete from the page's own localStorage. This file has no completion state.",
+  "purpose": "Helper-independent map for the 9 Nov 2026 emergency plan. The website download fills done, doneTaskIds, and allBlocksComplete from this page's localStorage. This file has no completion state. Old alg3 and pre-emergency ids are not current blocks.",
   "rules": [
     "Ticks are copied from this page's localStorage only.",
     "This file does not tag files, change ticks, or upload anything.",
@@ -15,7 +15,8 @@
     "tag Finder colors",
     "write the host filesystem",
     "upload ticks",
-    "reset ticks"
+    "reset ticks",
+    "touch the Mac"
   ],
   "resources": [
     {
@@ -24,10 +25,7 @@
       "sha256": "b625b0f9024468efc0d3e3fd81f2e9019b8f64274babd0dc1138514f253fe52f",
       "bytes": 552538,
       "week": "1",
-      "taskIds": [
-        "alg3-2026-11-08-12",
-        "alg3-2026-11-09-5"
-      ]
+      "taskIds": []
     },
     {
       "id": "Lab01-Lecture.pdf",
@@ -36,9 +34,7 @@
       "bytes": 905541,
       "week": "1",
       "taskIds": [
-        "alg3-2026-11-07-7",
-        "alg3-2026-11-08-16",
-        "alg3-2026-11-09-9"
+        "ae-m4"
       ]
     },
     {
@@ -48,12 +44,10 @@
       "bytes": 375478,
       "week": "2",
       "taskIds": [
-        "alg3-2026-11-07-5",
-        "alg3-2026-11-07-7",
-        "alg3-2026-11-08-14",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-5",
-        "alg3-2026-11-09-9"
+        "ae-m3",
+        "ae-m4",
+        "ae-t3",
+        "ae-t4"
       ]
     },
     {
@@ -62,10 +56,7 @@
       "sha256": "0afb3e85980bd6a710f5e982cdb5010c649d9c2466f764274616b75c89a953c6",
       "bytes": 644587,
       "week": "1",
-      "taskIds": [
-        "alg3-2026-11-07-7",
-        "alg3-2026-11-09-9"
-      ]
+      "taskIds": []
     },
     {
       "id": "Tutorial_on_recurrence_relations.pdf",
@@ -74,8 +65,8 @@
       "bytes": 48079,
       "week": "2",
       "taskIds": [
-        "alg3-2026-11-07-5",
-        "alg3-2026-11-08-1"
+        "ae-m3",
+        "ae-t1"
       ]
     },
     {
@@ -85,11 +76,8 @@
       "bytes": 780533,
       "week": "1",
       "taskIds": [
-        "alg3-2026-11-07-0",
-        "alg3-2026-11-07-1",
-        "alg3-2026-11-07-5",
-        "alg3-2026-11-08-1",
-        "alg3-2026-11-09-3"
+        "ae-m1",
+        "ae-m3"
       ]
     },
     {
@@ -99,8 +87,7 @@
       "bytes": 980334,
       "week": "2",
       "taskIds": [
-        "alg3-2026-11-07-3",
-        "alg3-2026-11-09-3"
+        "ae-m2"
       ]
     },
     {
@@ -110,12 +97,9 @@
       "bytes": 1024048,
       "week": "3",
       "taskIds": [
-        "alg3-2026-11-07-3",
-        "alg3-2026-11-07-7",
-        "alg3-2026-11-08-1",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-7",
-        "alg3-2026-11-09-11"
+        "ae-m2",
+        "ae-m4",
+        "ae-t3"
       ]
     },
     {
@@ -125,9 +109,7 @@
       "bytes": 442556,
       "week": "4",
       "taskIds": [
-        "alg3-2026-11-07-9",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-11"
+        "ae-m5"
       ]
     },
     {
@@ -137,12 +119,8 @@
       "bytes": 773706,
       "week": "5",
       "taskIds": [
-        "alg3-2026-11-08-2",
-        "alg3-2026-11-08-4",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-7",
-        "alg3-2026-11-09-9",
-        "alg3-2026-11-09-11"
+        "ae-m6",
+        "ae-t3"
       ]
     },
     {
@@ -152,12 +130,9 @@
       "bytes": 1165392,
       "week": "6",
       "taskIds": [
-        "alg3-2026-11-08-6",
-        "alg3-2026-11-08-8",
-        "alg3-2026-11-08-10",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-7",
-        "alg3-2026-11-09-11"
+        "ae-m7",
+        "ae-m8",
+        "ae-t2"
       ]
     },
     {
@@ -167,16 +142,10 @@
       "bytes": 933840,
       "week": "7",
       "taskIds": [
-        "alg3-2026-11-07-0",
-        "alg3-2026-11-07-10",
-        "alg3-2026-11-08-6",
-        "alg3-2026-11-08-12",
-        "alg3-2026-11-08-14",
-        "alg3-2026-11-09-1",
-        "alg3-2026-11-09-5",
-        "alg3-2026-11-09-7",
-        "alg3-2026-11-09-13",
-        "d10t0"
+        "ae-m8",
+        "ae-t1",
+        "ae-t4",
+        "ae-t5"
       ]
     },
     {
@@ -186,10 +155,9 @@
       "bytes": 5793473,
       "week": "5",
       "taskIds": [
-        "alg3-2026-11-08-6",
-        "alg3-2026-11-08-8",
-        "alg3-2026-11-08-10",
-        "alg3-2026-11-09-11"
+        "ae-m7",
+        "ae-m8",
+        "ae-t2"
       ]
     },
     {
@@ -199,12 +167,9 @@
       "bytes": 2610,
       "week": "5",
       "taskIds": [
-        "alg3-2026-11-08-8",
-        "alg3-2026-11-08-14",
-        "alg3-2026-11-08-16",
-        "alg3-2026-11-09-3",
-        "alg3-2026-11-09-5",
-        "alg3-2026-11-09-9"
+        "ae-m7",
+        "ae-t2",
+        "ae-t4"
       ]
     },
     {
@@ -214,8 +179,7 @@
       "bytes": 111111,
       "week": "3",
       "taskIds": [
-        "alg3-2026-11-07-9",
-        "alg3-2026-11-08-16"
+        "ae-m5"
       ]
     },
     {
@@ -225,7 +189,7 @@
       "bytes": 1823767,
       "week": "2",
       "taskIds": [
-        "alg3-2026-11-07-1"
+        "ae-m1"
       ]
     },
     {
@@ -449,40 +413,30 @@
       "sources": []
     },
     {
-      "id": "alg3-2026-11-07-0",
+      "id": "ae-m1",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "15:00–15:20 · Optional starting check",
-      "sources": [
-        "Week01-Intro.pdf",
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-07-1",
-      "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "15:20–16:10 · Foundations and math",
+      "date": "2026-11-09",
+      "titleEn": "09:00–10:00 · Start from zero: foundations and essential mathematics",
       "sources": [
         "Week01-Intro.pdf",
         "summation.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-07-3",
+      "id": "ae-m2",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "16:25–17:35 · Asymptotic analysis",
+      "date": "2026-11-09",
+      "titleEn": "10:15–11:30 · Bounds, cases and loop counting",
       "sources": [
         "Week02-Analysis-1.pdf",
         "Week03-Analysis-2.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-07-5",
+      "id": "ae-m3",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "17:50–19:00 · Recurrences",
+      "date": "2026-11-09",
+      "titleEn": "11:45–12:45 · Recurrences without memorizing blindly",
       "sources": [
         "Week01-Intro.pdf",
         "Tutorial_on_recurrence_relations.pdf",
@@ -490,81 +444,72 @@
       ]
     },
     {
-      "id": "alg3-2026-11-07-7",
+      "id": "ae-m4",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "19:45–20:45 · Iterative and recursive code",
+      "date": "2026-11-09",
+      "titleEn": "13:30–14:45 · Iterative and recursive code",
       "sources": [
         "Week03-Analysis-2.pdf",
         "Lab02-Tutorial-Code.pdf",
-        "Lab01-Lecture.pdf",
-        "Review.pdf"
+        "Lab01-Lecture.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-07-9",
+      "id": "ae-m5",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "21:00–22:00 · Brute force",
+      "date": "2026-11-09",
+      "titleEn": "15:00–16:00 · Brute force and exhaustive search",
       "sources": [
         "Week04-Design-1.pdf",
         "knapsack_brute_solution.c.png"
       ]
     },
     {
-      "id": "alg3-2026-11-07-10",
+      "id": "ae-m6",
       "course": "ALG",
-      "date": "2026-11-07",
-      "titleEn": "22:00–22:15 · Error log",
+      "date": "2026-11-09",
+      "titleEn": "16:15–17:30 · Divide and conquer: merge sort and quicksort",
       "sources": [
+        "Week05-Design-2.pdf"
+      ]
+    },
+    {
+      "id": "ae-m7",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "18:15–19:15 · Graphs, greedy choices and Dijkstra",
+      "sources": [
+        "Week06-Greedy Algorithms.pdf",
+        "Week7_Graphs.pdf",
+        "dijkstra_skeleton.c"
+      ]
+    },
+    {
+      "id": "ae-m8",
+      "course": "ALG",
+      "date": "2026-11-09",
+      "titleEn": "19:30–20:15 · Prim, Kruskal and the error list",
+      "sources": [
+        "Week06-Greedy Algorithms.pdf",
+        "Week7_Graphs.pdf",
         "Week07-Midterm Review.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-08-1",
+      "id": "ae-t1",
       "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "09:00–09:30 · Retrieval",
+      "date": "2026-11-10",
+      "titleEn": "09:00–09:45 · Recall and repair",
       "sources": [
-        "Week01-Intro.pdf",
-        "Week03-Analysis-2.pdf",
+        "Week07-Midterm Review.pdf",
         "Tutorial_on_recurrence_relations.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-08-2",
+      "id": "ae-t2",
       "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "09:30–10:40 · Divide and conquer: merge sort",
-      "sources": [
-        "Week05-Design-2.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-4",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "10:55–12:05 · Divide and conquer: quicksort",
-      "sources": [
-        "Week05-Design-2.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-6",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "13:00–14:00 · Graphs and greedy",
-      "sources": [
-        "Week7_Graphs.pdf",
-        "Week06-Greedy Algorithms.pdf",
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-8",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "14:15–15:30 · Dijkstra",
+      "date": "2026-11-10",
+      "titleEn": "10:00–11:00 · Reinforce the newest topics: graphs",
       "sources": [
         "Week06-Greedy Algorithms.pdf",
         "Week7_Graphs.pdf",
@@ -572,143 +517,32 @@
       ]
     },
     {
-      "id": "alg3-2026-11-08-10",
+      "id": "ae-t3",
       "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "15:45–17:00 · Kruskal and Prim",
-      "sources": [
-        "Week06-Greedy Algorithms.pdf",
-        "Week7_Graphs.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-12",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "17:45–19:00 · Labs 6 and 7",
-      "sources": [
-        "00_Course_Introduction.pdf",
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-14",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "19:15–20:00 · Lab validation",
+      "date": "2026-11-10",
+      "titleEn": "11:15–12:00 · Paper coding and tracing",
       "sources": [
         "Lab02-Tutorial-Code.pdf",
-        "dijkstra_skeleton.c",
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-08-16",
-      "course": "ALG",
-      "date": "2026-11-08",
-      "titleEn": "20:15–21:00 · Blank-file coding",
-      "sources": [
-        "dijkstra_skeleton.c",
-        "knapsack_brute_solution.c.png",
-        "Lab01-Lecture.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-09-1",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "09:00–10:00 · Coverage checklist",
-      "sources": [
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-09-3",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "10:15–11:45 · Repair",
-      "sources": [
-        "Week01-Intro.pdf",
-        "Week02-Analysis-1.pdf",
         "Week03-Analysis-2.pdf",
-        "Week04-Design-1.pdf",
-        "Week05-Design-2.pdf",
-        "Week06-Greedy Algorithms.pdf",
-        "Lab02-Tutorial-Code.pdf",
-        "dijkstra_skeleton.c"
+        "Week05-Design-2.pdf"
       ]
     },
     {
-      "id": "alg3-2026-11-09-5",
+      "id": "ae-t4",
       "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "12:45–14:35 · 110-minute practice mock",
+      "date": "2026-11-10",
+      "titleEn": "13:00–14:00 · 60-minute mixed practice",
       "sources": [
-        "00_Course_Introduction.pdf",
         "Week07-Midterm Review.pdf",
         "Lab02-Tutorial-Code.pdf",
         "dijkstra_skeleton.c"
       ]
     },
     {
-      "id": "alg3-2026-11-09-7",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "15:00–16:20 · Correct and redo",
-      "sources": [
-        "Week07-Midterm Review.pdf",
-        "Week03-Analysis-2.pdf",
-        "Week05-Design-2.pdf",
-        "Week06-Greedy Algorithms.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-09-9",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "16:35–17:35 · Coding and tracing",
-      "sources": [
-        "Lab02-Tutorial-Code.pdf",
-        "dijkstra_skeleton.c",
-        "Week05-Design-2.pdf",
-        "Lab01-Lecture.pdf",
-        "Review.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-09-11",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "18:30–19:30 · Table from memory",
-      "sources": [
-        "Week03-Analysis-2.pdf",
-        "Week04-Design-1.pdf",
-        "Week05-Design-2.pdf",
-        "Week06-Greedy Algorithms.pdf",
-        "Week7_Graphs.pdf"
-      ]
-    },
-    {
-      "id": "alg3-2026-11-09-13",
-      "course": "ALG",
-      "date": "2026-11-09",
-      "titleEn": "19:45–20:15 · Six-question exit check",
-      "sources": [
-        "Week07-Midterm Review.pdf"
-      ]
-    },
-    {
-      "id": "d9t1",
+      "id": "ae-t5",
       "course": "ALG",
       "date": "2026-11-10",
-      "titleEn": "Complexity cheat sheet",
-      "sources": []
-    },
-    {
-      "id": "d10t0",
-      "course": "ALG",
-      "date": "2026-11-10",
-      "titleEn": "Morning recap",
+      "titleEn": "14:15–14:45 · Correct errors and finish",
       "sources": [
         "Week07-Midterm Review.pdf"
       ]
