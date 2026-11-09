@@ -394,6 +394,17 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .gci{font-size:.85rem;display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.04)}
 .gci select{background:#151a26;color:var(--hi);border:1px solid var(--line2);border-radius:8px;padding:3px 6px}
 .gres{margin-top:12px;font-size:1.1rem}.gres b{font-size:1.5rem}
+.glegend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0 16px;font-size:.9rem;color:var(--ink)}
+.glegend span{display:inline-flex;align-items:center;gap:8px}
+.glegend i{width:12px;height:12px;border-radius:50%;flex:none}
+.glegend .gy i{background:#f4d184}.glegend .gg i{background:#7fd9a6}
+.gplan{display:flex;flex-direction:column;gap:12px}
+.gsum{margin:2px 0 8px;color:var(--ink);font-size:.95rem}
+.gpart{margin:12px 0 2px;font-weight:650;color:var(--hi)}
+.gyell{margin:2px 0;color:#f4d184}
+.ggreen{margin:2px 0 4px;color:#7fd9a6}
+.gmiss{margin:2px 0;color:var(--muted);font-size:.9rem}
+@media(max-width:640px){.gplan .gcourse{padding:12px 14px}}
 @media(max-width:640px){.gcourse{overflow-x:auto}}
 
 </style>
@@ -485,7 +496,91 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <main class="wrap" id="view-outlook" role="tabpanel" hidden></main>
 <main class="wrap" id="view-exams" role="tabpanel" hidden></main>
 <main class="wrap" id="view-gpa" role="tabpanel" hidden><section class="sec gpa gpa-en" data-lang="en" dir="ltr" lang="en">
-<div class="sec-h"><h2>GPA roadmap 🎯</h2><p>All numbers come from your OBS transcript (4 Nov 2026), computed by script. GPA is ECTS-weighted: points = grade value × ECTS.</p></div>
+<div class="sec-h"><h2>GPA roadmap 🎯</h2><p>Your overall GPA is 1.55, so you are on probation. Pass is 50 (D). The roadmap aim is B+ (85) on each part.</p></div>
+<div class="glegend"><span class="gy"><i></i>Yellow: the score you need to pass.</span><span class="gg"><i></i>Green: the score you need to reach B+ and raise your GPA.</span></div>
+<div class="gplan">
+<article class="glass gcourse"><div class="gch"><b>MATH 2260</b> · Probability & Statistics <span class="pill">6 ECTS</span></div>
+<p class="gsum">These weights are estimated, not taken from a syllabus. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Quizzes and homework: 20%.</p>
+<p class="gyell">Quizzes and homework: get at least 50 to pass.</p>
+<p class="ggreen">Quizzes and homework: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Midterm: 30%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 50%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>COMP 2233</b> · Data Structures <span class="pill">6 ECTS</span></div>
+<p class="gsum">Weights come from the instructor's site. The midterm was held on 3 Nov, but its score is not saved, so the other parts still use 50 to pass and 85 for B+.</p>
+<p class="gpart">Homework, project and quizzes: 30%.</p>
+<p class="gyell">Homework, project and quizzes: get at least 50 to pass.</p>
+<p class="ggreen">Homework, project and quizzes: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Midterm: 30%.</p>
+<p class="gmiss">This part was already held. The score is not in the saved data.</p>
+<p class="gpart">Final: 40%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>EEE 2274</b> · Fundamentals of Electronics <span class="pill">6 ECTS</span></div>
+<p class="gsum">Weights come from the Moodle syllabus. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Lab: 30%.</p>
+<p class="gyell">Lab: get at least 50 to pass.</p>
+<p class="ggreen">Lab: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Midterm: 25%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 45%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>SE 2228</b> · Algorithm Analysis & Design <span class="pill">6 ECTS</span></div>
+<p class="gsum">The midterm weight is from the syllabus. The final weight is estimated. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Midterm (half theory, half lab): 40%.</p>
+<p class="gyell">Midterm (half theory, half lab): get at least 50 to pass.</p>
+<p class="ggreen">Midterm (half theory, half lab): get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 60%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>HIST 1120</b> · Atatürk Principles & History I <span class="pill">2 ECTS</span></div>
+<p class="gsum">The midterm weight is from Moodle. The final weight is estimated. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Midterm: 40%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 60%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>ISG 9120</b> · Occupational Health & Safety I <span class="pill">2 ECTS</span></div>
+<p class="gsum">These weights are estimated, not taken from a syllabus. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Midterm: 40%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 60%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>UFND 2020</b> · Research Culture <span class="pill">2 ECTS</span></div>
+<p class="gsum">These weights are estimated, not taken from a syllabus. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Midterm: 40%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 60%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>UFND 2420</b> · Interpersonal Relations <span class="pill">2 ECTS</span></div>
+<p class="gsum">These weights are estimated, not taken from a syllabus. No score is saved, so each part uses 50 to pass and 85 for B+.</p>
+<p class="gpart">Midterm: 40%.</p>
+<p class="gyell">Midterm: get at least 50 to pass.</p>
+<p class="ggreen">Midterm: get 85 or more to reach B+ and raise your GPA.</p>
+<p class="gpart">Final: 60%.</p>
+<p class="gyell">Final: get at least 50 to pass.</p>
+<p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
+</article>
+</div>
+<details class="glass gbox"><summary>Details</summary>
 <div class="gpa-cards">
 <div class="gcard glass red"><div class="gk">Overall GPA (AGNO)</div><div class="gv">1.55 <small>/ 4</small></div><div class="gs">104.4 points ÷ 67 graded ECTS</div></div>
 <div class="gcard glass blue"><div class="gk">ECTS passed</div><div class="gv">47 <small>/ 240</small></div><div class="gs">32 ECTS in progress this term</div></div>
@@ -496,7 +591,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <li>🔴 To get off probation this term (GPA ≥ 2.00) your term average must be at least <b>2.92</b>, about a <b>B</b>.</li>
 <li>🔵 While on probation your load is capped at 32 credits and F/NA courses must be taken first.</li>
 </ul></div>
-<details class="glass gbox" open><summary>📜 Yaşar University rules (official sources)</summary><ul class="gl">
+<details class="glass gbox"><summary>📜 Yaşar University rules (official sources)</summary><ul class="gl">
 <li>Grade table: A = 95-100 (4.00), A- = 90-94 (3.70), B+ = 85-89 (3.30), B = 80-84 (3.00), B- = 75-79 (2.70), C+ = 70-74 (2.30), C = 65-69 (2.00), C- = 60-64 (1.70), D+ = 55-59 (1.30), D = 50-54 (1.00), F = 0-49 (0.00)</li>
 <li>🔴 Minimum pass: D (50/100). F = below 50. NA (non-attendance) counts as F.</li>
 <li>🔵 When you retake a course, the <b>latest grade</b> replaces the old one in the GPA (Article 21(6)).</li>
@@ -658,10 +753,94 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <li>ELECT B3 · 10 ECTS · target <b>B+</b></li>
 </ul></div>
 </div><p class="gp">🟡 Spring 2027 is capped at 32 credits because of probation, so COMP 2215, COMP 3330 and EEE 2110 move to later terms (or summer). Check prerequisites with your advisor.</p>
-<h3 class="gh">🧮 GPA calculator</h3><div class="glass gbox"><p class="gp">Pick the grade you expect in each course to see your projected overall GPA.</p><div id="gecalc" class="gcalc"></div><div class="gres">Projected GPA: <b id="geout">—</b></div></div></section>
+<h3 class="gh">🧮 GPA calculator</h3><div class="glass gbox"><p class="gp">Pick the grade you expect in each course to see your projected overall GPA.</p><div id="gecalc" class="gcalc"></div><div class="gres">Projected GPA: <b id="geout">—</b></div></div></details></section>
 <script>(function(){var C={"P": 104.4, "E": 67, "G": {"A": 4.0, "A-": 3.7, "B+": 3.3, "B": 3.0, "B-": 2.7, "C+": 2.3, "C": 2.0, "C-": 1.7, "D+": 1.3, "D": 1.0, "F": 0.0}, "rows": [["MATH 2260", 6, 0, "cur"], ["COMP 2233", 6, 0, "cur"], ["EEE 2274", 6, 0, "cur"], ["SE 2228", 6, 0, "cur"], ["HIST 1120", 2, 0, "cur"], ["ISG 9120", 2, 0, "cur"], ["UFND 2020", 2, 0, "cur"], ["UFND 2420", 2, 0, "cur"], ["COMP 1202 (retake)", 6, 0, "rep"], ["MATH 1132 (retake)", 7, 0, "rep"], ["PHYS 1122 (retake)", 7, 0, "rep"], ["UMFD 1220 (retake)", 2, 0, "rep"], ["MATH 1100 (retake D)", 5, 1.0, "d"], ["MATH 1131 (retake D)", 7, 1.0, "d"], ["PHYS 1121 (retake D)", 7, 1.0, "d"]]};var pre="ge";var box=document.getElementById(pre+"calc"),o=document.getElementById(pre+"out");var ks=Object.keys(C.G);C.rows.forEach(function(r,i){var d=document.createElement("label");d.className="gci";d.textContent=r[0]+" ("+r[1]+") ";var s=document.createElement("select");s.id=pre+"s"+i;var e=document.createElement("option");e.value="";e.textContent="—";s.appendChild(e);ks.forEach(function(k){var op=document.createElement("option");op.value=k;op.textContent=k;s.appendChild(op)});s.onchange=calc;d.appendChild(s);box.appendChild(d)});function calc(){var p=C.P,e=C.E;C.rows.forEach(function(r,i){var v=document.getElementById(pre+"s"+i).value;if(!v)return;var g=C.G[v];if(r[3]==="cur"){p+=g*r[1];e+=r[1]}else{p+=(g-r[2])*r[1]}});var x=Math.floor(p/e*100+1e-6)/100;o.textContent=x.toFixed(2);o.style.color=x>=3?"#7fd9a6":x>=2?"#f4d184":"#ffa592"}calc()})();</script>
 <section class="sec gpa gpa-fa" data-lang="fa" dir="rtl" lang="fa" hidden>
-<div class="sec-h"><h2>نقشه معدل 🎯</h2><p>همه عددها از کارنامه OBS (4 نوامبر 2026) با اسکریپت حساب شده. معدل با AKTS (ECTS) وزن‌دار است: امتیاز = ضریب نمره × AKTS.</p></div>
+<div class="sec-h"><h2>نقشه معدل 🎯</h2><p>معدل کل 1.55 است، پس مشروطی. قبولی 50 (D) است. هدف این نقشه B+ یعنی 85 در هر بخش است.</p></div>
+<div class="glegend"><span class="gy"><i></i>زرد: نمره‌ای که برای قبولی لازم است.</span><span class="gg"><i></i>سبز: نمره‌ای که برای B+ و بالا رفتن معدل لازم است.</span></div>
+<div class="gplan">
+<article class="glass gcourse"><div class="gch"><b>MATH 2260</b> · احتمال و آمار <span class="pill">6 AKTS</span></div>
+<p class="gsum">این وزن‌ها تخمینی‌اند و از سیلابس گرفته نشده‌اند. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">کوییز و تکلیف: 20%.</p>
+<p class="gyell">کوییز و تکلیف: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">کوییز و تکلیف: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">میان‌ترم: 30%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 50%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>COMP 2233</b> · ساختمان داده‌ها <span class="pill">6 AKTS</span></div>
+<p class="gsum">وزن‌ها از سایت استاد است. میان‌ترم در 3 نوامبر برگزار شد، ولی نمره‌اش ذخیره نشده، پس بقیه بخش‌ها هنوز برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">تکلیف، پروژه و کوییز: 30%.</p>
+<p class="gyell">تکلیف، پروژه و کوییز: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">تکلیف، پروژه و کوییز: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">میان‌ترم: 30%.</p>
+<p class="gmiss">این بخش برگزار شده است. نمره‌اش در داده‌های ذخیره‌شده نیست.</p>
+<p class="gpart">پایان‌ترم: 40%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>EEE 2274</b> · مبانی الکترونیک <span class="pill">6 AKTS</span></div>
+<p class="gsum">وزن‌ها از سیلابس Moodle است. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">آزمایشگاه: 30%.</p>
+<p class="gyell">آزمایشگاه: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">آزمایشگاه: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">میان‌ترم: 25%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 45%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>SE 2228</b> · تحلیل و طراحی الگوریتم <span class="pill">6 AKTS</span></div>
+<p class="gsum">وزن میان‌ترم از سیلابس است. وزن پایان‌ترم تخمینی است. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">میان‌ترم (نیمی تئوری، نیمی لب): 40%.</p>
+<p class="gyell">میان‌ترم (نیمی تئوری، نیمی لب): برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم (نیمی تئوری، نیمی لب): برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 60%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>HIST 1120</b> · تاریخ 1 (آتاتورک) <span class="pill">2 AKTS</span></div>
+<p class="gsum">وزن میان‌ترم از Moodle است. وزن پایان‌ترم تخمینی است. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">میان‌ترم: 40%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 60%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>ISG 9120</b> · ایمنی و بهداشت کار 1 <span class="pill">2 AKTS</span></div>
+<p class="gsum">این وزن‌ها تخمینی‌اند و از سیلابس گرفته نشده‌اند. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">میان‌ترم: 40%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 60%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>UFND 2020</b> · فرهنگ پژوهش <span class="pill">2 AKTS</span></div>
+<p class="gsum">این وزن‌ها تخمینی‌اند و از سیلابس گرفته نشده‌اند. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">میان‌ترم: 40%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 60%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+<article class="glass gcourse"><div class="gch"><b>UFND 2420</b> · روابط میان‌فردی <span class="pill">2 AKTS</span></div>
+<p class="gsum">این وزن‌ها تخمینی‌اند و از سیلابس گرفته نشده‌اند. هیچ نمره‌ای ذخیره نشده، پس هر بخش برای قبولی 50 و برای B+ عدد 85 است.</p>
+<p class="gpart">میان‌ترم: 40%.</p>
+<p class="gyell">میان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">میان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+<p class="gpart">پایان‌ترم: 60%.</p>
+<p class="gyell">پایان‌ترم: برای قبولی حداقل 50 بگیر.</p>
+<p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
+</article>
+</div>
+<details class="glass gbox"><summary>جزئیات</summary>
 <div class="gpa-cards">
 <div class="gcard glass red"><div class="gk">معدل کل (AGNO)</div><div class="gv">1.55 <small>/ 4</small></div><div class="gs">104.4 امتیاز ÷ 67 AKTS نمره‌دار</div></div>
 <div class="gcard glass blue"><div class="gk">AKTS پاس‌شده</div><div class="gv">47 <small>/ 240</small></div><div class="gs">این ترم 32 AKTS در حال گذراندن</div></div>
@@ -672,7 +851,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <li>🔴 برای اینکه همین ترم از مشروطی دربیای (معدل ≥ 2.00) باید میانگین این ترم حداقل <b>2.92</b> یعنی حدود <b>B</b> باشه.</li>
 <li>🔵 تا وقتی مشروطی، سقف ثبت‌نامت 32 واحده و اول باید درس‌های F و NA رو برداری.</li>
 </ul></div>
-<details class="glass gbox" open><summary>📜 قوانین دانشگاه یاشار (منبع رسمی)</summary><ul class="gl">
+<details class="glass gbox"><summary>📜 قوانین دانشگاه یاشار (منبع رسمی)</summary><ul class="gl">
 <li>جدول نمره: A = 95-100 (4.00)، A- = 90-94 (3.70)، B+ = 85-89 (3.30)، B = 80-84 (3.00)، B- = 75-79 (2.70)، C+ = 70-74 (2.30)، C = 65-69 (2.00)، C- = 60-64 (1.70)، D+ = 55-59 (1.30)، D = 50-54 (1.00)، F = 0-49 (0.00)</li>
 <li>🔴 حداقل نمره قبولی: D (50 از 100). F = زیر 50. NA (غیبت) مثل F حساب می‌شه.</li>
 <li>🔵 درسی که تکرار کنی، <b>آخرین نمره</b> جای قبلی رو در معدل می‌گیره (ماده 21 بند 6).</li>
@@ -834,7 +1013,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <li>ELECT B3 · 10 AKTS · هدف <b>B+</b></li>
 </ul></div>
 </div><p class="gp">🟡 بهار 2027 به‌خاطر مشروطی حداکثر 32 واحده، پس COMP 2215، COMP 3330 و EEE 2110 به ترم‌های بعد (یا تابستان) منتقل شدن. پیش‌نیازها رو با مشاور چک کن.</p>
-<h3 class="gh">🧮 ماشین‌حساب معدل</h3><div class="glass gbox"><p class="gp">نمره‌ای که انتظار داری رو انتخاب کن تا معدل کل پیش‌بینی بشه.</p><div id="gfcalc" class="gcalc"></div><div class="gres">معدل پیش‌بینی: <b id="gfout">—</b></div></div></section>
+<h3 class="gh">🧮 ماشین‌حساب معدل</h3><div class="glass gbox"><p class="gp">نمره‌ای که انتظار داری رو انتخاب کن تا معدل کل پیش‌بینی بشه.</p><div id="gfcalc" class="gcalc"></div><div class="gres">معدل پیش‌بینی: <b id="gfout">—</b></div></div></details></section>
 <script>(function(){var C={"P": 104.4, "E": 67, "G": {"A": 4.0, "A-": 3.7, "B+": 3.3, "B": 3.0, "B-": 2.7, "C+": 2.3, "C": 2.0, "C-": 1.7, "D+": 1.3, "D": 1.0, "F": 0.0}, "rows": [["MATH 2260", 6, 0, "cur"], ["COMP 2233", 6, 0, "cur"], ["EEE 2274", 6, 0, "cur"], ["SE 2228", 6, 0, "cur"], ["HIST 1120", 2, 0, "cur"], ["ISG 9120", 2, 0, "cur"], ["UFND 2020", 2, 0, "cur"], ["UFND 2420", 2, 0, "cur"], ["COMP 1202 (تکرار)", 6, 0, "rep"], ["MATH 1132 (تکرار)", 7, 0, "rep"], ["PHYS 1122 (تکرار)", 7, 0, "rep"], ["UMFD 1220 (تکرار)", 2, 0, "rep"], ["MATH 1100 (تکرار D)", 5, 1.0, "d"], ["MATH 1131 (تکرار D)", 7, 1.0, "d"], ["PHYS 1121 (تکرار D)", 7, 1.0, "d"]]};var pre="gf";var box=document.getElementById(pre+"calc"),o=document.getElementById(pre+"out");var ks=Object.keys(C.G);C.rows.forEach(function(r,i){var d=document.createElement("label");d.className="gci";d.textContent=r[0]+" ("+r[1]+") ";var s=document.createElement("select");s.id=pre+"s"+i;var e=document.createElement("option");e.value="";e.textContent="—";s.appendChild(e);ks.forEach(function(k){var op=document.createElement("option");op.value=k;op.textContent=k;s.appendChild(op)});s.onchange=calc;d.appendChild(s);box.appendChild(d)});function calc(){var p=C.P,e=C.E;C.rows.forEach(function(r,i){var v=document.getElementById(pre+"s"+i).value;if(!v)return;var g=C.G[v];if(r[3]==="cur"){p+=g*r[1];e+=r[1]}else{p+=(g-r[2])*r[1]}});var x=Math.floor(p/e*100+1e-6)/100;o.textContent=x.toFixed(2);o.style.color=x>=3?"#7fd9a6":x>=2?"#f4d184":"#ffa592"}calc()})();</script></main>
 
 <script>
