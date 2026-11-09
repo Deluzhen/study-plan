@@ -404,6 +404,18 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .gyell{margin:2px 0;color:#f4d184}
 .ggreen{margin:2px 0 4px;color:#7fd9a6}
 .gmiss{margin:2px 0;color:var(--muted);font-size:.9rem}
+.semcalc{margin:22px 0 8px}
+.semcalc h3{margin:0 0 6px;font-size:1.15rem;color:var(--hi)}
+.semcalc .semlead{margin:0 0 10px;color:var(--muted);font-size:.9rem}
+.semcard{border-radius:var(--r-lg);padding:12px 14px;margin:10px 0}
+.semtop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.semtop b{color:var(--hi)}
+.semsrc{color:var(--muted);font-size:.75rem}
+.semrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.semfield{display:flex;flex-direction:column;gap:3px;font-size:.72rem;color:var(--muted)}
+.semfield input,.semfield select{font:inherit;font-size:.9rem;color:var(--hi);background:rgba(3,6,12,.45);border:1px solid var(--line);border-radius:8px;padding:5px 6px;width:92px;direction:ltr}
+.semout{margin:8px 0 0;font-size:.92rem}
+.semsum{margin-top:8px;color:var(--ink)}
 @media(max-width:640px){.gplan .gcourse{padding:12px 14px}}
 @media(max-width:640px){.gcourse{overflow-x:auto}}
 
@@ -580,6 +592,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
 </article>
 </div>
+<div id="semcalc-en"></div>
 <details class="glass gbox"><summary>Details</summary>
 <div class="gpa-cards">
 <div class="gcard glass red"><div class="gk">Overall GPA (AGNO)</div><div class="gv">1.55 <small>/ 4</small></div><div class="gs">104.4 points ÷ 67 graded ECTS</div></div>
@@ -840,6 +853,7 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 <p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
 </article>
 </div>
+<div id="semcalc-fa"></div>
 <details class="glass gbox"><summary>جزئیات</summary>
 <div class="gpa-cards">
 <div class="gcard glass red"><div class="gk">معدل کل (AGNO)</div><div class="gv">1.55 <small>/ 4</small></div><div class="gs">104.4 امتیاز ÷ 67 AKTS نمره‌دار</div></div>
@@ -1806,6 +1820,186 @@ window.addEventListener("hashchange",function(){var h=location.hash.replace("#",
 var h0=location.hash.replace("#","");show(VIEWS.indexOf(h0)>=0?h0:"plan",true);
 })();
 
+</script>
+<script>
+/* This-semester calculator. Own storage key. Does not read or write progress ticks. */
+(function(){
+"use strict";
+var STORE="midterm4-plan-v1:semester-calc";
+var LETTERS=[["A",95,4],["A-",90,3.7],["B+",85,3.3],["B",80,3],["B-",75,2.7],["C+",70,2.3],["C",65,2],["C-",60,1.7],["D+",55,1.3],["D",50,1]];
+var COURSES=[
+ {id:"MATH2260",code:"MATH 2260",ects:6,src:"estimated",en:"Probability & Statistics",fa:"احتمال و آمار",
+  parts:[{id:"hw",en:"Quizzes and homework",fa:"کوییز و تکلیف",w:20},{id:"mid",en:"Midterm",fa:"میان‌ترم",w:30},{id:"fin",en:"Final",fa:"پایان‌ترم",w:50,final:true}]},
+ {id:"COMP2233",code:"COMP 2233",ects:6,src:"syllabus",en:"Data Structures",fa:"ساختمان داده‌ها",
+  parts:[{id:"hw",en:"Homework, project and quizzes",fa:"تکلیف، پروژه و کوییز",w:30},{id:"mid",en:"Midterm",fa:"میان‌ترم",w:30},{id:"fin",en:"Final",fa:"پایان‌ترم",w:40,final:true}]},
+ {id:"EEE2274",code:"EEE 2274",ects:6,src:"syllabus",en:"Fundamentals of Electronics",fa:"مبانی الکترونیک",
+  parts:[{id:"lab",en:"Lab",fa:"آزمایشگاه",w:30},{id:"mid",en:"Midterm",fa:"میان‌ترم",w:25},{id:"fin",en:"Final",fa:"پایان‌ترم",w:45,final:true}]},
+ {id:"SE2228",code:"SE 2228",ects:6,src:"mixed-syllabus",en:"Algorithm Analysis & Design",fa:"تحلیل و طراحی الگوریتم",
+  parts:[{id:"mid",en:"Midterm (half theory, half lab)",fa:"میان‌ترم (نیمی تئوری، نیمی لب)",w:40},{id:"fin",en:"Final",fa:"پایان‌ترم",w:60,final:true}]},
+ {id:"HIST1120",code:"HIST 1120",ects:2,src:"mixed-moodle",en:"Atatürk Principles & History I",fa:"تاریخ 1 (آتاتورک)",
+  parts:[{id:"mid",en:"Midterm",fa:"میان‌ترم",w:40},{id:"fin",en:"Final",fa:"پایان‌ترم",w:60,final:true}]},
+ {id:"ISG9120",code:"ISG 9120",ects:2,src:"estimated",en:"Occupational Health & Safety I",fa:"ایمنی و بهداشت کار 1",
+  parts:[{id:"mid",en:"Midterm",fa:"میان‌ترم",w:40},{id:"fin",en:"Final",fa:"پایان‌ترم",w:60,final:true}]},
+ {id:"UFND2020",code:"UFND 2020",ects:2,src:"estimated",en:"Research Culture",fa:"فرهنگ پژوهش",
+  parts:[{id:"mid",en:"Midterm",fa:"میان‌ترم",w:40},{id:"fin",en:"Final",fa:"پایان‌ترم",w:60,final:true}]},
+ {id:"UFND2420",code:"UFND 2420",ects:2,src:"estimated",en:"Interpersonal Relations",fa:"روابط میان‌فردی",
+  parts:[{id:"mid",en:"Midterm",fa:"میان‌ترم",w:40},{id:"fin",en:"Final",fa:"پایان‌ترم",w:60,final:true}]}
+];
+var SRC={
+ en:{estimated:"Estimated weights. You can edit them.",syllabus:"Weights from the syllabus. You can edit them.","mixed-syllabus":"Midterm weight from the syllabus. Final weight is estimated. You can edit both.","mixed-moodle":"Midterm weight from Moodle. Final weight is estimated. You can edit both."},
+ fa:{estimated:"وزن‌ها تخمینی‌اند. می‌توانی عوضشان کنی.",syllabus:"وزن‌ها از سیلابس است. می‌توانی عوضشان کنی.","mixed-syllabus":"وزن میان‌ترم از سیلابس است. وزن پایان‌ترم تخمینی است. هر دو را می‌توانی عوض کنی.","mixed-moodle":"وزن میان‌ترم از Moodle است. وزن پایان‌ترم تخمینی است. هر دو را می‌توانی عوض کنی."}
+};
+function lang(){return document.documentElement.lang==="fa"?"fa":"en"}
+function load(){try{var o=JSON.parse(localStorage.getItem(STORE)||"{}");return o&&typeof o==="object"?o:{}}catch(e){return {}}}
+function save(o){try{localStorage.setItem(STORE,JSON.stringify(o))}catch(e){}}
+function num(v){if(v==null||String(v).trim()==="")return null;var n=+v;return isFinite(n)?n:null}
+function partVal(st,cid,pid,field){var bag=st[field]&&st[field][cid];if(!bag||bag[pid]==null||String(bag[pid]).trim()==="")return null;return String(bag[pid])}
+function weightOf(st,c,p){var v=num(partVal(st,c.id,p.id,"weights"));return v==null?p.w:v}
+function scoreOf(st,c,p){return num(partVal(st,c.id,p.id,"scores"))}
+function targetOf(st,c){var t=st.targets&&st.targets[c.id];return LETTERS.some(function(L){return L[0]===t})?t:"B+"}
+function letterMin(code){for(var i=0;i<LETTERS.length;i++)if(LETTERS[i][0]===code)return LETTERS[i][1];return 85}
+function letterPts(pct){for(var i=0;i<LETTERS.length;i++)if(pct+1e-9>=LETTERS[i][1])return LETTERS[i][2];return 0}
+function need(st,c,threshold){
+ var fin=c.parts.filter(function(p){return p.final})[0];
+ var wf=weightOf(st,c,fin), S=0, W=0;
+ if(!(wf>0))return {kind:"noweight"};
+ c.parts.forEach(function(p){if(p.final)return;var s=scoreOf(st,c,p),w=weightOf(st,c,p);if(s==null||!(w>0))return;S+=s*w;W+=w});
+ W+=wf;
+ var x=(threshold*W-S)/wf;
+ if(x<=1e-9)return {kind:"secured",x:0};
+ var show=Math.ceil(x-1e-9);
+ if(show>100)return {kind:"impossible",x:show};
+ return {kind:"need",x:show};
+}
+function coursePct(st,c){
+ var fin=c.parts.filter(function(p){return p.final})[0];
+ var wf=weightOf(st,c,fin), S=0, W=0, fs=scoreOf(st,c,fin);
+ if(!(wf>0)&&fs==null)return null;
+ c.parts.forEach(function(p){if(p.final)return;var s=scoreOf(st,c,p),w=weightOf(st,c,p);if(s==null||!(w>0))return;S+=s*w;W+=w});
+ var use=fs==null?letterMin(targetOf(st,c)):fs;
+ if(wf>0){S+=use*wf;W+=wf}
+ if(!(W>0))return null;
+ return S/W;
+}
+function say(L,kind,x,code,min,entered){
+ var name=code;
+ if(L==="fa"){
+  if(kind==="noweight")return "وزن پایان‌ترم 0 است، پس پایان‌ترم در نمره نیست.";
+  if(kind==="secured")return "حتی با 0 در پایان‌ترم هم به "+name+" ("+min+") می‌رسی.";
+  if(kind==="impossible")return "حتی با 100 در پایان‌ترم هم به "+name+" ("+min+") نمی‌رسی.";
+  var s="برای "+name+" ("+min+") در پایان‌ترم به "+x+" نیاز داری.";
+  if(entered!=null)s+=" نمره‌ای که نوشتی "+entered+" است"+(entered+1e-9>=x?"، پس این هدف را داری.":"، پس هنوز به این هدف نرسیده‌ای.");
+  return s;
+ }
+ if(kind==="noweight")return "The final weight is 0, so the final does not count.";
+ if(kind==="secured")return "You already reach "+name+" ("+min+"), even with 0 on the final.";
+ if(kind==="impossible")return name+" ("+min+") is impossible with these scores, even with 100 on the final.";
+ var s="You need "+x+" on the final for "+name+" ("+min+").";
+ if(entered!=null)s+=" You entered "+entered+", so this is "+(entered+1e-9>=x?"already secured.":"not secured yet.");
+ return s;
+}
+function passSentence(L,res,entered){
+ if(L==="fa"){
+  if(res.kind==="need")return "برای قبولی (D, 50) در پایان‌ترم به "+res.x+" نیاز داری."+(entered!=null?" نمره‌ای که نوشتی "+entered+" است"+(entered+1e-9>=res.x?"، پس قبولی را داری.":"، پس هنوز قبول نیستی."):"");
+  if(res.kind==="secured")return "حتی با 0 در پایان‌ترم هم قبول می‌شوی (D, 50).";
+  if(res.kind==="impossible")return "حتی با 100 در پایان‌ترم هم قبول نمی‌شوی (D, 50).";
+  return say("fa",res.kind,res.x,"D",50,entered);
+ }
+ if(res.kind==="need"){var s="You need "+res.x+" on the final to pass (D, 50).";if(entered!=null)s+=" You entered "+entered+", so this pass is "+(entered+1e-9>=res.x?"already secured.":"not secured yet.");return s}
+ if(res.kind==="secured")return "You already pass (D, 50), even with 0 on the final.";
+ if(res.kind==="impossible")return "A pass (D, 50) is impossible with these scores, even with 100 on the final.";
+ return say("en",res.kind,res.x,"D",50,entered);
+}
+function field(L,c,p,st){
+ var lab=document.createElement("label");lab.className="semfield";
+ lab.appendChild(document.createTextNode(p[L]));
+ var row=document.createElement("span");row.style.display="flex";row.style.gap="4px";
+ var sc=document.createElement("input");sc.type="number";sc.min="0";sc.max="100";sc.step="1";sc.placeholder=L==="fa"?"نمره":"score";sc.setAttribute("dir","ltr");sc.setAttribute("aria-label",(L==="fa"?"نمره ":"Score ")+p[L]);
+ var wt=document.createElement("input");wt.type="number";wt.min="0";wt.max="100";wt.step="1";wt.placeholder="%";wt.setAttribute("dir","ltr");wt.setAttribute("aria-label",(L==="fa"?"وزن ":"Weight ")+p[L]);
+ var sv=partVal(st,c.id,p.id,"scores"), wv=partVal(st,c.id,p.id,"weights");
+ if(sv!=null)sc.value=sv; if(wv!=null)wt.value=wv; else wt.value=String(p.w);
+ function commit(){var o=load();o.scores=o.scores||{};o.weights=o.weights||{};o.scores[c.id]=o.scores[c.id]||{};o.weights[c.id]=o.weights[c.id]||{};o.scores[c.id][p.id]=sc.value;o.weights[c.id][p.id]=wt.value;save(o);paint(false)}
+ sc.addEventListener("input",commit);wt.addEventListener("input",commit);
+ row.appendChild(sc);row.appendChild(wt);lab.appendChild(row);return lab;
+}
+function card(L,c,st){
+  var art=document.createElement("article");art.className="glass semcard";
+  var top=document.createElement("div");top.className="semtop";
+  var title=document.createElement("b");title.textContent=c.code+" · "+c[L]+" · "+c.ects+" ECTS";
+  var src=document.createElement("span");src.className="semsrc";src.textContent=SRC[L][c.src];
+  top.appendChild(title);top.appendChild(src);art.appendChild(top);
+  var row=document.createElement("div");row.className="semrow";
+  c.parts.forEach(function(p){row.appendChild(field(L,c,p,st))});
+  var tg=document.createElement("label");tg.className="semfield";tg.appendChild(document.createTextNode(L==="fa"?"هدف":"Target"));
+  var sel=document.createElement("select");sel.setAttribute("dir","ltr");
+  LETTERS.forEach(function(Ltr){var op=document.createElement("option");op.value=Ltr[0];op.textContent=Ltr[0]+" ("+Ltr[1]+")";if(Ltr[0]===targetOf(st,c))op.selected=true;sel.appendChild(op)});
+  sel.addEventListener("change",function(){var o=load();o.targets=o.targets||{};o.targets[c.id]=sel.value;save(o);paint(false)});
+  tg.appendChild(sel);row.appendChild(tg);art.appendChild(row);
+  var fin=c.parts.filter(function(p){return p.final})[0];
+  var entered=scoreOf(st,c,fin);
+  var yel=document.createElement("p");yel.className="semout gyell";yel.textContent=passSentence(L,need(st,c,50),entered);
+  var code=targetOf(st,c), min=letterMin(code);
+  var gr=document.createElement("p");gr.className="semout ggreen";gr.textContent=say(L,need(st,c,min).kind,need(st,c,min).x,code,min,entered);
+  art.appendChild(yel);art.appendChild(gr);return art;
+}
+function summary(L,st){
+  var pts=0, ects=0, code=null;
+  COURSES.forEach(function(c){var pct=coursePct(st,c);if(pct==null)return;pts+=letterPts(pct)*c.ects;ects+=c.ects;code=targetOf(st,c)});
+  if(!ects)return "";
+  var g=(Math.floor(pts/ects*100+1e-6)/100).toFixed(2);
+  var letters={};
+  COURSES.forEach(function(c){letters[targetOf(st,c)]=1});
+  var only=Object.keys(letters);
+  var mark=only.length===1?only[0]:(L==="fa"?"هدف هر درس":"each course target");
+  var line=letterMin(only.length===1?only[0]:"B+");
+  if(L==="fa")return "اگر هر پایان‌ترم خالی روی خط هدفش باشد ("+mark+"، "+(only.length===1?line:"هدف")+")، معدل این ترم "+g+" می‌شود. فقط 8 درس همین ترم، "+ects+" ECTS.";
+  return "If each blank final is at its target line ("+mark+(only.length===1?", "+line:"")+"), this semester's GPA is "+g+". These are the 8 current courses, "+ects+" ECTS.";
+}
+var built={};
+function paint(rebuild){
+  var st=load();
+  ["en","fa"].forEach(function(L){
+    var host=document.getElementById("semcalc-"+L);if(!host)return;
+    if(rebuild||!built[L]){host.innerHTML="";built[L]=1;
+      var h=document.createElement("h3");h.textContent=L==="fa"?"ماشین‌حساب این ترم":"This semester calculator";host.appendChild(h);
+      var lead=document.createElement("p");lead.className="semlead";
+      lead.textContent=L==="fa"?"نمره را فقط وقتی نوشتی که گرفته‌ای. خانه خالی یعنی هنوز آن بخش برگزار نشده و در جمع نمی‌آید. وزن را می‌توانی عوض کنی.":"Type a score only after you have it. An empty box is not taken yet and is left out of the sum. You can edit any weight.";
+      host.appendChild(lead);
+      COURSES.forEach(function(c){host.appendChild(card(L,c,st))});
+      var sum=document.createElement("p");sum.className="semsum";sum.textContent=summary(L,st);host.appendChild(sum);
+      var note=document.createElement("p");note.className="semlead";
+      note.textContent=L==="fa"?"COMP 1202 و MATH 1132 و PHYS 1122 و UMFD 1220 برای ترم بعد نوشته شده‌اند، نه این ترم. MATH 1100 و MATH 1131 و PHYS 1121 هم در داده‌ها درس همین ترم نیستند.":"COMP 1202, MATH 1132, PHYS 1122 and UMFD 1220 are listed as next-term retakes, not this semester. MATH 1100, MATH 1131 and PHYS 1121 are not marked as this semester either.";
+      host.appendChild(note);
+    } else {
+      var outs=host.querySelectorAll(".semcard");
+      COURSES.forEach(function(c,i){
+        if(!outs[i])return;
+        var inputs=outs[i].querySelectorAll("input");
+        c.parts.forEach(function(p,pi){
+          var sc=inputs[pi*2], wt=inputs[pi*2+1]; if(!sc||!wt)return;
+          var sv=partVal(st,c.id,p.id,"scores"), wv=partVal(st,c.id,p.id,"weights");
+          var sWant=sv==null?"":sv, wWant=wv==null?String(p.w):wv;
+          if(sc!==document.activeElement&&sc.value!==sWant)sc.value=sWant;
+          if(wt!==document.activeElement&&wt.value!==wWant)wt.value=wWant;
+        });
+        var sel=outs[i].querySelector("select");
+        if(sel&&sel!==document.activeElement)sel.value=targetOf(st,c);
+        var ps=outs[i].querySelectorAll(".semout");
+        var fin=c.parts.filter(function(p){return p.final})[0];
+        var entered=scoreOf(st,c,fin);
+        var code=targetOf(st,c), min=letterMin(code), nd=need(st,c,min);
+        if(ps[0])ps[0].textContent=passSentence(L,need(st,c,50),entered);
+        if(ps[1])ps[1].textContent=say(L,nd.kind,nd.x,code,min,entered);
+      });
+      var sum=host.querySelector(".semsum");if(sum)sum.textContent=summary(L,st);
+    }
+  });
+}
+var prev=window.__afterRender;
+window.__afterRender=function(){if(prev)prev();paint(false)};
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){paint(true)});
+else paint(true);
+})();
 </script>
 </body>
 </html>
