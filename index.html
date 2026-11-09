@@ -416,6 +416,13 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .semfield input,.semfield select{font:inherit;font-size:.9rem;color:var(--hi);background:rgba(3,6,12,.45);border:1px solid var(--line);border-radius:8px;padding:5px 6px;width:92px;direction:ltr}
 .semout{margin:8px 0 0;font-size:.92rem}
 .semsum{margin-top:8px;color:var(--ink)}
+.semresult{margin-top:14px;border-radius:var(--r-lg);padding:14px 16px}
+.semresult .big{font-size:1.8rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.semresult.up .big{color:#7fd9a6}
+.semresult.flat .big{color:#f4d184}
+.semline{margin:2px 0;font-size:.92rem}
+.sempair{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.sempair label{font-size:.75rem;color:var(--muted);display:flex;flex-direction:column;gap:3px}
 @media(max-width:640px){.gplan .gcourse{padding:12px 14px}}
 @media(max-width:640px){.gcourse{overflow-x:auto}}
 
@@ -1871,15 +1878,20 @@ function need(st,c,threshold){
  if(show>100)return {kind:"impossible",x:show};
  return {kind:"need",x:show};
 }
-function coursePct(st,c){
- var fin=c.parts.filter(function(p){return p.final})[0];
- var wf=weightOf(st,c,fin), S=0, W=0, fs=scoreOf(st,c,fin);
- if(!(wf>0)&&fs==null)return null;
- c.parts.forEach(function(p){if(p.final)return;var s=scoreOf(st,c,p),w=weightOf(st,c,p);if(s==null||!(w>0))return;S+=s*w;W+=w});
- var use=fs==null?letterMin(targetOf(st,c)):fs;
- if(wf>0){S+=use*wf;W+=wf}
- if(!(W>0))return null;
- return S/W;
+function letterOf(pct){for(var i=0;i<LETTERS.length;i++)if(pct+1e-9>=LETTERS[i][1])return LETTERS[i];return ["F",0,0]}
+function courseResult(st,c){
+ var S=0,W=0,missing=0;
+ c.parts.forEach(function(p){var w=weightOf(st,c,p);if(!(w>0))return;var s=scoreOf(st,c,p);if(s==null){missing++;return}S+=s*w;W+=w});
+ if(!(W>0))return {complete:false,pct:null};
+ var pct=S/W, Ltr=letterOf(pct);
+ return {complete:missing===0,pct:pct,letter:Ltr[0],pts:Ltr[2]};
+}
+function baseStats(st){
+ var g=num(st.cgpa); if(g==null)g=1.55;
+ var e=num(st.credits); if(e==null)e=67;
+ var untouched=(st.cgpa==null||String(st.cgpa).trim()===""||String(st.cgpa)==="1.55")&&(st.credits==null||String(st.credits).trim()===""||String(st.credits)==="67");
+ if(untouched)return {gpa:1.55,ects:67,points:104.4};
+ return {gpa:g,ects:e,points:g*e};
 }
 function say(L,kind,x,code,min,entered){
  var name=code;
@@ -1942,18 +1954,51 @@ function card(L,c,st){
   var gr=document.createElement("p");gr.className="semout ggreen";gr.textContent=say(L,need(st,c,min).kind,need(st,c,min).x,code,min,entered);
   art.appendChild(yel);art.appendChild(gr);return art;
 }
-function summary(L,st){
-  var pts=0, ects=0, code=null;
-  COURSES.forEach(function(c){var pct=coursePct(st,c);if(pct==null)return;pts+=letterPts(pct)*c.ects;ects+=c.ects;code=targetOf(st,c)});
-  if(!ects)return "";
-  var g=(Math.floor(pts/ects*100+1e-6)/100).toFixed(2);
-  var letters={};
-  COURSES.forEach(function(c){letters[targetOf(st,c)]=1});
-  var only=Object.keys(letters);
-  var mark=only.length===1?only[0]:(L==="fa"?"هدف هر درس":"each course target");
-  var line=letterMin(only.length===1?only[0]:"B+");
-  if(L==="fa")return "اگر هر پایان‌ترم خالی روی خط هدفش باشد ("+mark+"، "+(only.length===1?line:"هدف")+")، معدل این ترم "+g+" می‌شود. فقط 8 درس همین ترم، "+ects+" ECTS.";
-  return "If each blank final is at its target line ("+mark+(only.length===1?", "+line:"")+"), this semester's GPA is "+g+". These are the 8 current courses, "+ects+" ECTS.";
+function gpaText(x){return (Math.floor(x*100+1e-6)/100).toFixed(2)}
+function oneDec(x){return (Math.round(x*10)/10).toString()}
+function resultMath(st){
+ var rows=[], pts=0, ects=0, miss=0;
+ COURSES.forEach(function(c){
+  var r=courseResult(st,c);
+  if(!r.complete){miss++;rows.push({code:c.code,done:false});return}
+  pts+=r.pts*c.ects; ects+=c.ects;
+  rows.push({code:c.code,done:true,pct:r.pct,letter:r.letter,pts:r.pts});
+ });
+ var base=baseStats(st);
+ return {rows:rows,miss:miss,sem:ects?pts/ects:null,cum:ects?(base.points+pts)/(base.ects+ects):null,base:base};
+}
+function lineText(L,row){
+ if(!row.done)return row.code+": "+(L==="fa"?"ناتمام":"incomplete");
+ return row.code+": "+oneDec(row.pct)+", "+(L==="fa"?"حرف ":"letter ")+row.letter+", "+row.pts.toFixed(2);
+}
+function fillResult(box,L,st){
+ var m=resultMath(st);
+ box.className="glass semresult"+(m.cum==null?"":(m.cum>m.base.gpa+1e-9?" up":" flat"));
+ var lines=box.querySelectorAll(".semline");
+ if(lines.length!==m.rows.length){
+  box.innerHTML="";
+  m.rows.forEach(function(row){var p=document.createElement("p");p.className="semline";p.textContent=lineText(L,row);box.appendChild(p)});
+  var pair=document.createElement("div");pair.className="sempair";
+  function addField(label,key,fallback){
+   var lab=document.createElement("label");lab.textContent=label;
+   var inp=document.createElement("input");inp.type="number";inp.min="0";inp.step="0.01";inp.setAttribute("dir","ltr");inp.style.width="92px";
+   var cur=st[key];inp.value=cur==null||String(cur).trim()===""?String(fallback):String(cur);
+   inp.addEventListener("input",function(){var o=load();o[key]=inp.value;save(o);paint(false)});
+   lab.appendChild(inp);pair.appendChild(lab);
+  }
+  addField(L==="fa"?"معدل فعلی":"Current GPA","cgpa","1.55");
+  addField(L==="fa"?"واحد گذرانده":"Completed credits","credits","67");
+  box.appendChild(pair);
+  var big=document.createElement("div");big.className="big sem-gpa";box.appendChild(big);
+  var big2=document.createElement("div");big2.className="big sem-cum";box.appendChild(big2);
+  var note=document.createElement("p");note.className="semlead sem-miss";box.appendChild(note);
+ }
+ lines=box.querySelectorAll(".semline");
+ m.rows.forEach(function(row,i){if(lines[i])lines[i].textContent=lineText(L,row)});
+ var g1=box.querySelector(".sem-gpa"), g2=box.querySelector(".sem-cum"), note=box.querySelector(".sem-miss");
+ if(g1)g1.textContent=m.sem==null?(L==="fa"?"معدل این ترم: هنوز هیچ درس کاملی نیست":"Semester GPA: no course is complete yet"):(L==="fa"?"معدل این ترم ":"Semester GPA ")+gpaText(m.sem);
+ if(g2)g2.textContent=m.cum==null?(L==="fa"?"معدل کل جدید: هنوز نیست":"New cumulative GPA: not yet"):(L==="fa"?"معدل کل جدید ":"New cumulative GPA ")+gpaText(m.cum);
+ if(note)note.textContent=m.miss?(L==="fa"?m.miss+" درس ناتمام است و در این معدل‌ها نیست.":m.miss+(m.miss===1?" course incomplete":" courses incomplete")+", so they are not in these GPAs."):"";
 }
 var built={};
 function paint(rebuild){
@@ -1966,7 +2011,7 @@ function paint(rebuild){
       lead.textContent=L==="fa"?"نمره را فقط وقتی نوشتی که گرفته‌ای. خانه خالی یعنی هنوز آن بخش برگزار نشده و در جمع نمی‌آید. وزن را می‌توانی عوض کنی.":"Type a score only after you have it. An empty box is not taken yet and is left out of the sum. You can edit any weight.";
       host.appendChild(lead);
       COURSES.forEach(function(c){host.appendChild(card(L,c,st))});
-      var sum=document.createElement("p");sum.className="semsum";sum.textContent=summary(L,st);host.appendChild(sum);
+      var sum=document.createElement("div");sum.className="semresult";host.appendChild(sum);fillResult(sum,L,st);
       var note=document.createElement("p");note.className="semlead";
       note.textContent=L==="fa"?"COMP 1202 و MATH 1132 و PHYS 1122 و UMFD 1220 برای ترم بعد نوشته شده‌اند، نه این ترم. MATH 1100 و MATH 1131 و PHYS 1121 هم در داده‌ها درس همین ترم نیستند.":"COMP 1202, MATH 1132, PHYS 1122 and UMFD 1220 are listed as next-term retakes, not this semester. MATH 1100, MATH 1131 and PHYS 1121 are not marked as this semester either.";
       host.appendChild(note);
@@ -1991,7 +2036,7 @@ function paint(rebuild){
         if(ps[0])ps[0].textContent=passSentence(L,need(st,c,50),entered);
         if(ps[1])ps[1].textContent=say(L,nd.kind,nd.x,code,min,entered);
       });
-      var sum=host.querySelector(".semsum");if(sum)sum.textContent=summary(L,st);
+      var sum=host.querySelector(".semresult");if(sum)fillResult(sum,L,st);
     }
   });
 }
