@@ -426,6 +426,67 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 @media(max-width:640px){.gplan .gcourse{padding:12px 14px}}
 @media(max-width:640px){.gcourse{overflow-x:auto}}
 
+
+/* NOV13_CALENDAR styles */
+.calwrap{display:flex;flex-direction:column;gap:12px}
+.calbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:var(--r-lg)}
+.calseg{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px;gap:2px;background:rgba(255,255,255,.04)}
+.calsegb{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:.86rem;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer}
+.calsegb.on{background:rgba(147,182,255,.22);color:var(--hi);box-shadow:var(--glow)}
+.caltitle{font-weight:700;color:var(--hi);font-size:1.05rem;white-space:nowrap}
+.calnav{display:inline-flex;gap:6px;align-items:center}
+.calarrow{min-width:38px;font-size:1.1rem;line-height:1}
+.callegend{display:flex;flex-wrap:wrap;gap:8px}
+.mk.hl-exam,.calhl.hl-exam{background:rgba(255,95,95,.16);color:#ffb3a8;border-color:rgba(255,120,110,.55);box-shadow:0 0 16px -4px rgba(255,90,90,.7)}
+.mk.hl-deadline,.calhl.hl-deadline{background:rgba(255,170,60,.15);color:#ffd08a;border-color:rgba(255,180,80,.5)}
+.mk.hl-finals,.calhl.hl-finals{background:rgba(187,162,255,.16);color:#d8c9ff;border-color:rgba(187,162,255,.5)}
+.calhl{white-space:normal;line-height:1.3;padding:3px 7px;font-weight:600;letter-spacing:.01em}
+.calweek{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.calcell,.calmc{border-radius:var(--r-lg);color:inherit;font:inherit;text-align:start;cursor:pointer;border:1px solid var(--line)}
+.calcell{padding:10px;min-height:190px;display:flex;flex-direction:column;gap:7px}
+.calcd{display:flex;justify-content:space-between;align-items:baseline;gap:4px}
+.calcd .wd{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.calcd .dn{font-weight:700;color:var(--hi);white-space:nowrap}
+.calrow{display:flex;flex-direction:column;gap:3px}
+.calrow .chip{align-self:flex-start}
+.caltopic{font-size:.74rem;line-height:1.35;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.calfoot{margin-top:auto;display:flex;flex-direction:column;gap:4px;font-size:.72rem;color:var(--muted)}
+.calfoot .mini,.calcell .mini{height:4px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.calfoot .mini>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--teal))}
+.calempty{color:var(--muted);margin:auto}
+.calcell.today,.calmc.today{box-shadow:0 0 0 2px rgba(147,182,255,.7)}
+.calcell.sel,.calmc.sel{border-color:rgba(147,182,255,.55)}
+.calcell.hl-finals,.calmc.hl-finals{background-color:rgba(187,162,255,.16);border-color:rgba(187,162,255,.55)}
+.calcell.hl-deadline,.calmc.hl-deadline{border-color:rgba(255,180,80,.6)}
+.calcell.hl-exam,.calmc.hl-exam{border-color:rgba(255,110,100,.75);background-color:rgba(255,90,90,.08)}
+.calmonth{display:flex;flex-direction:column;gap:6px}
+.calmh,.calmrow{display:grid;grid-template-columns:44px repeat(7,minmax(0,1fr));gap:6px}
+.calwdh{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:center;font-weight:600}
+.calwkb{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);border-radius:12px;font:inherit;font-size:.66rem;cursor:pointer;writing-mode:horizontal-tb}
+.calmc{min-height:88px;padding:6px;display:flex;flex-direction:column;gap:4px}
+.calmc.out{opacity:.38}
+.calmtop{display:flex;justify-content:space-between;align-items:baseline;gap:2px}
+.calmtop .dn{font-weight:700;color:var(--hi)}
+.calmtot{font-size:.64rem;color:var(--muted);white-space:nowrap}
+.calmchips{display:flex;flex-wrap:wrap;gap:3px}
+.calmchip{font-size:.6rem;padding:1px 5px}
+.calmhl{display:flex;gap:3px}
+.hl-dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.hl-dot.hl-exam{background:#ff7a6e}.hl-dot.hl-deadline{background:#ffb24d}.hl-dot.hl-finals{background:#bba2ff}
+.calhead{padding:12px;border-radius:var(--r-lg);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.calnone{margin:0;color:var(--muted)}
+@media (max-width:980px){.calweek{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:700px){
+ .calweek{grid-template-columns:1fr}
+ .calcell{min-height:0}
+ .caltopic{-webkit-line-clamp:2}
+ .calbar{justify-content:center}
+ .calmh,.calmrow{grid-template-columns:26px repeat(7,minmax(0,1fr));gap:3px}
+ .calmc{min-height:58px;padding:3px;border-radius:10px}
+ .calmchip{font-size:.5rem;padding:0 3px}
+ .calmtot{display:none}
+ .calwkb{font-size:.55rem;border-radius:8px;padding:0}
+}
 </style>
 </head>
 </head>
@@ -1657,6 +1718,100 @@ function hoursTable(){var g=document.getElementById("grid");if(!g)return;var hos
  wrap.appendChild(tb);host.appendChild(wrap)}
 var _prevAR=window.__afterRender;window.__afterRender=function(){if(_prevAR)_prevAR();try{hoursTable()}catch(e){if(window.console)console.error(e)}};
 })();
+/* NOV13_CALENDAR 2026-11-12: Day / Week / Month calendar views over the same PLAN data. Ticks and notes keep the same storage keys. */
+(function(){
+var CV={view:"week",date:null,init:false};
+var HL=[
+ {d:"2026-11-15",k:"deadline",en:"SE 2228 Lab 8 due 23:00",fa:"مهلت لب 8 درس SE 2228 ساعت 23:00"},
+ {d:"2026-11-17",k:"exam",en:"EEE 2274 midterm 17:40",fa:"میان‌ترم EEE 2274 ساعت 17:40"},
+ {d:"2026-11-21",k:"exam",en:"HIST 1120 13:40 + ISG 9120 17:40 midterms (online)",fa:"میان‌ترم آنلاین HIST 1120 ساعت 13:40 + ISG 9120 ساعت 17:40"},
+ {d:"2026-12-15",k:"deadline",en:"UFND 2420 assignments due 17:00",fa:"مهلت تکلیف‌های UFND 2420 ساعت 17:00"}];
+function finals(iso){return (iso>="2026-12-26"&&iso<="2026-12-30")||(iso>="2027-01-04"&&iso<="2027-01-12")}
+function hls(iso){var o=HL.filter(function(h){return h.d===iso});if(finals(iso))o.push({d:iso,k:"finals",en:"Final exam window (dates TBA)",fa:"بازهٔ امتحانات پایان‌ترم (تاریخ‌ها اعلام نشده)"});return o}
+var T={en:{day:"Day",week:"Week",month:"Month",prev:"Previous",next:"Next",today:"Today",none:"No study plan for this day (the plan runs Nov 13, 2026 to Jan 12, 2027).",wk:"Week",open:"Open week",h:function(x){return x+"h"},tot:"total",
+  leg:[["exam","Exam"],["deadline","Deadline"],["finals","Final exam window"]]},
+ fa:{day:"روز",week:"هفته",month:"ماه",prev:"قبلی",next:"بعدی",today:"امروز",none:"برای این روز برنامه‌ای نیست (برنامه از 13 نوامبر 2026 تا 12 ژانویه 2027 است).",wk:"هفته",open:"باز کردن هفته",h:function(x){return x+" ساعت"},tot:"جمع",
+  leg:[["exam","امتحان"],["deadline","مهلت"],["finals","بازهٔ پایان‌ترم"]]}};
+function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function addD(d,n){var x=new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);return x}
+function monday(d){var w=(d.getDay()+6)%7;return addD(d,-w)}
+function idx(s){for(var i=0;i<PLAN.length;i++)if(PLAN[i].date===s)return i;return -1}
+function dayHours(day){return day.tasks.reduce(function(a,t){return a+t.hours},0)}
+function doneHours(day){return day.tasks.reduce(function(a,t){return a+(state.done[t.id]?t.hours:0)},0)}
+function byCourse(day){var o=[];ORDER.forEach(function(k){var ts=day.tasks.filter(function(t){return t.c===k});if(ts.length)o.push({k:k,ts:ts,h:ts.reduce(function(a,t){return a+t.hours},0)})});return o}
+function go(view,date){CV.view=view;if(date)CV.date=date;
+ if(view==="day"){var di=idx(iso(CV.date));if(di>=0&&di!==sel){sel=di;state.sel=di;save();render();return}}
+ draw()}
+function step(n){var d=CV.date;if(CV.view==="day")d=addD(d,n);else if(CV.view==="week")d=addD(d,7*n);else d=new Date(d.getFullYear(),d.getMonth()+n,1);go(CV.view,d)}
+function badge(h){var t=T[lang];var b=el("span","mk calhl hl-"+h.k,lang==="fa"?h.fa:h.en);return b}
+function chip(k,h,t){var sp=el("span","chip",k+" "+t.h(fmt(h)));sp.style.background=COURSES[k].color;sp.title=COURSES[k].code+" "+cn(k);return sp}
+function draw(){
+ var grid=document.getElementById("grid");if(!grid)return;var t=T[lang],s=S(),today=todayIso();
+ if(!CV.init){CV.init=true;CV.date=pd(today)}
+ grid.style.display="none";
+ var wrap=document.getElementById("calwrap");if(!wrap){wrap=el("div","calwrap");wrap.id="calwrap";grid.parentNode.insertBefore(wrap,grid)}
+ wrap.innerHTML="";wrap.setAttribute("data-view",CV.view);
+ /* toolbar */
+ var bar=el("div","calbar glass");bar.id="calbar";
+ var seg=el("div","calseg");seg.setAttribute("role","tablist");
+ ["day","week","month"].forEach(function(v){var b=el("button","calsegb",t[v]);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",CV.view===v?"true":"false");if(CV.view===v)b.classList.add("on");b.addEventListener("click",function(){go(v)});seg.appendChild(b)});
+ var nav=el("div","calnav");var rtl=lang==="fa";
+ var bp=el("button","btn calarrow",rtl?"\u203a":"\u2039");bp.type="button";bp.setAttribute("aria-label",t.prev);bp.title=t.prev;bp.addEventListener("click",function(){step(-1)});
+ var bt=el("button","btn",t.today);bt.type="button";bt.addEventListener("click",function(){go(CV.view,pd(today))});
+ var bn=el("button","btn calarrow",rtl?"\u2039":"\u203a");bn.type="button";bn.setAttribute("aria-label",t.next);bn.title=t.next;bn.addEventListener("click",function(){step(1)});
+ nav.appendChild(bp);nav.appendChild(bt);nav.appendChild(bn);
+ var ttl=el("div","caltitle");var d=CV.date;
+ if(CV.view==="day")ttl.textContent=s.WDL[d.getDay()]+(rtl?"، ":", ")+s.cell(d)+" "+d.getFullYear();
+ else if(CV.view==="week"){var m=monday(d),e=addD(m,6);ttl.textContent=s.cell(m)+" \u2013 "+s.cell(e)+" "+e.getFullYear()}
+ else ttl.textContent=s.MO[d.getMonth()]+" "+d.getFullYear();
+ bar.appendChild(seg);bar.appendChild(ttl);bar.appendChild(nav);wrap.appendChild(bar);
+ var lg=el("div","callegend");t.leg.forEach(function(x){lg.appendChild(el("span","mk calhl hl-"+x[0],x[1]))});wrap.appendChild(lg);
+ var panelSec=document.getElementById("panel");panelSec=panelSec&&panelSec.parentNode;
+ if(CV.view==="day"){
+  var di=idx(iso(d));var head=el("div","calhead glass");head.id="calhead";
+  hls(iso(d)).forEach(function(h){head.appendChild(badge(h))});
+  if(di<0){head.appendChild(el("p","calnone",t.none));if(panelSec)panelSec.style.display="none"}
+  else{var cs=el("div","chips");byCourse(PLAN[di]).forEach(function(x){cs.appendChild(chip(x.k,x.h,t))});head.appendChild(cs);if(panelSec)panelSec.style.display=""}
+  wrap.appendChild(head);
+ }else{
+  if(panelSec)panelSec.style.display="none";
+  if(CV.view==="week"){
+   var g=el("div","calweek"),m0=monday(d);
+   for(var i=0;i<7;i++){(function(dd){var ds=iso(dd),di=idx(ds),c=el("button","calcell glass");c.type="button";
+     if(ds===today)c.classList.add("today");if(di>=0&&di===sel)c.classList.add("sel");
+     var hl=hls(ds);hl.forEach(function(h){c.classList.add("hl-"+h.k)});
+     var hd=el("div","calcd");hd.appendChild(el("span","wd",s.WD[dd.getDay()]));hd.appendChild(el("span","dn",s.cell(dd)));c.appendChild(hd);
+     hl.forEach(function(h){c.appendChild(badge(h))});
+     if(di>=0){var day=PLAN[di];byCourse(day).forEach(function(x){var r=el("div","calrow");r.appendChild(chip(x.k,x.h,t));var tp=el("div","caltopic",x.ts.map(function(q){return tTitle(q)}).join(" + "));r.appendChild(tp);c.appendChild(r)});
+      var th=dayHours(day),dh=doneHours(day);var ft=el("div","calfoot");ft.appendChild(el("span",null,t.tot+" "+t.h(fmt(th))));var mi=el("div","mini");var mb=el("div");mb.style.width=(th?dh/th*100:0)+"%";mi.appendChild(mb);ft.appendChild(mi);c.appendChild(ft)}
+     else c.appendChild(el("div","calempty","\u2014"));
+     c.addEventListener("click",function(){go("day",dd)});g.appendChild(c)})(addD(m0,i))}
+   wrap.appendChild(g);
+  }else{
+   var g2=el("div","calmonth");var hdr=el("div","calmh");hdr.appendChild(el("span","calwkh",""));
+   var m1=monday(new Date(2026,10,16));for(var j=0;j<7;j++)hdr.appendChild(el("span","calwdh",s.WD[addD(m1,j).getDay()]));g2.appendChild(hdr);
+   var first=new Date(d.getFullYear(),d.getMonth(),1),start=monday(first),last=new Date(d.getFullYear(),d.getMonth()+1,0);
+   for(var w=start;w<=last;w=addD(w,7)){(function(ws){var row=el("div","calmrow");
+     var wb=el("button","calwkb",t.wk);wb.type="button";wb.title=t.open;wb.setAttribute("aria-label",t.open+" "+s.cell(ws));wb.addEventListener("click",function(){go("week",ws)});row.appendChild(wb);
+     for(var k=0;k<7;k++){(function(dd){var ds=iso(dd),di=idx(ds),c=el("button","calmc glass");c.type="button";
+       if(dd.getMonth()!==d.getMonth())c.classList.add("out");if(ds===today)c.classList.add("today");if(di>=0&&di===sel)c.classList.add("sel");
+       var hl=hls(ds);hl.forEach(function(h){c.classList.add("hl-"+h.k)});c.title=hl.map(function(h){return lang==="fa"?h.fa:h.en}).join(" · ");
+       var top=el("div","calmtop");top.appendChild(el("span","dn",String(dd.getDate())));if(di>=0)top.appendChild(el("span","calmtot",t.h(fmt(dayHours(PLAN[di])))));c.appendChild(top);
+       if(hl.length){var hb=el("div","calmhl");hl.forEach(function(h){hb.appendChild(el("i","hl-dot hl-"+h.k))});c.appendChild(hb)}
+       if(di>=0){var cs=el("div","calmchips");byCourse(PLAN[di]).forEach(function(x){var sp=el("span","chip calmchip",x.k+" "+fmt(x.h));sp.style.background=COURSES[x.k].color;cs.appendChild(sp)});c.appendChild(cs)}
+       c.addEventListener("click",function(){go("day",dd)});row.appendChild(c)})(addD(ws,k))}
+     g2.appendChild(row)})(w)}
+   wrap.appendChild(g2);
+  }
+ }
+}
+window.__cal={go:function(v,s){go(v,s?pd(s):null)},view:function(){return CV.view}};
+var _prevAR2=window.__afterRender;window.__afterRender=function(){if(_prevAR2)_prevAR2();try{
+ if(typeof TSEL!=="undefined"&&TSEL[0]!=="#calbar"){TSEL[0]="#calbar";TSEL[1]=".calcell.sel, #calhead, .calcell"}
+ if(!CV.hooked){CV.hooked=true;var bt=document.getElementById("btoday");if(bt)bt.addEventListener("click",function(){go(CV.view,pd(todayIso()))});
+  var bo=document.getElementById("btour");if(bo)bo.addEventListener("click",function(){if(CV.view!=="day"){var di=idx(todayIso());CV.view="day";CV.date=di>=0?pd(todayIso()):pd(PLAN[sel].date);draw()}},true)}
+ draw()}catch(e){if(window.console)console.error(e)}};
+})();
 PLAN.forEach(function(day,di){day.tasks=day.tasks.map(function(t,ti){return{id:(t[4]||("d"+di+"t"+ti)),di:di,ti:ti,c:t[0],title:t[1],detail:t[2],hours:t[3]}})});
 function tTitle(t){return lang==="fa"?FA.tasks[t.di][t.ti][0]:t.title}
 function tDetail(t){return lang==="fa"?FA.tasks[t.di][t.ti][1]:t.detail}
@@ -1859,7 +2014,7 @@ function show(v,noHash){cur=v;
  if(!noHash){try{history.replaceState(null,"",v==="plan"?location.pathname+location.search:"#"+v)}catch(e){}}
  if(v!=="plan"&&window.__plan&&window.__plan.endTour)window.__plan.endTour();
  labels();paint()}
-window.__afterRender=function(){labels();paint()};
+var _pARt=window.__afterRender;window.__afterRender=function(){if(_pARt)_pARt();labels();paint()};
 VIEWS.forEach(function(v){var b=$("tab-"+v);if(b)b.addEventListener("click",function(){show(v)})});
 window.addEventListener("hashchange",function(){var h=location.hash.replace("#","");show(VIEWS.indexOf(h)>=0?h:"plan",true)});
 var h0=location.hash.replace("#","");show(VIEWS.indexOf(h0)>=0?h0:"plan",true);
