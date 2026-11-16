@@ -504,6 +504,18 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .gtile .gk{color:var(--muted);font-size:.72rem;font-weight:650;letter-spacing:.03em;margin:0 0 4px}
 .gtile .gv{font-size:1.55rem;font-weight:700;color:var(--hi);letter-spacing:-.02em;line-height:1.15}
 .gtile .gv.empty{color:var(--muted);font-weight:500}
+.gtile.gtile-final{flex:1 1 180px;max-width:260px}
+.gtile .gv-line{font-size:1.02rem;font-weight:700;color:var(--hi);letter-spacing:-.02em;line-height:1.4;margin:2px 0}
+#sem-overview-en .gv,#sem-overview-fa .gv{font-size:1.28rem}
+.eee-cram-prereq{display:block;margin-top:3px;font-size:.8rem;color:var(--muted);font-weight:400;line-height:1.4}
+html[lang=fa] span.eee-cram-prereq.eee-cram-fa{display:block}
+.eee-cram li.eee-cram-break{padding:4px 10px 4px 40px;color:var(--muted);font-size:.82rem}
+.eee-cram li.eee-cram-break b[dir=ltr]{color:var(--muted);font-weight:600}
+.eee-cram b.eee-cram-en{display:inline}
+.eee-cram b.eee-cram-fa{display:none}
+html[lang=fa] .eee-cram b.eee-cram-en{display:none}
+html[lang=fa] .eee-cram b.eee-cram-fa{display:inline}
+
 
 .gscore-tile .gv{font-size:2.15rem;letter-spacing:-.03em;color:var(--exam)}
 .gscore-tile .gs{line-height:1.55}
@@ -560,32 +572,47 @@ html[lang=fa] span.eee-cram-fa{display:inline}
  <section class="sec eee-cram" id="eee-cram">
   <div class="panel glass eee-cram-panel">
    <div class="sec-h eee-cram-en" lang="en" dir="ltr">
-    <h2>EEE 2274 Midterm Cram Plan — Mon Nov 16 night to Tue Nov 17 17:40</h2>
-    <p>Exam 17:40, 90 min, closed book, covers L1–L7.</p>
+    <h2>EEE 2274 Midterm Cram Plan — Mon 16 Nov night to Tue 17 Nov 17:40</h2>
+    <p>Page-count plan at about 4.5 min/page. L1–L7 is 139 pages in the Part 1 (74 pp.) and Part 2 (67 pp.) guides — about 10 h 26 min, plus 10 min breaks hourly. That does not fit. Available: 23:05–02:00 tonight, then 09:00–13:30 and 15:45–17:00 tomorrow (SE 2228 lab 13:40–15:30). Sleep 02:00–08:00 (6 h). Be at the room by 17:20; exam 17:40.</p>
    </div>
    <div class="sec-h eee-cram-fa" lang="fa" dir="rtl">
-    <h2>برنامه فشرده میان‌ترم EEE 2274 — شب دوشنبه 16 نوامبر تا سه‌شنبه 17 نوامبر 17:40</h2>
-    <p>امتحان ساعت 17:40، 90 دقیقه، کتاب‌بسته، پوشش L1 تا L7.</p>
+    <h2>برنامه فشرده میان‌ترم <span class="ex-ltr" dir="ltr">EEE 2274</span> — شب دوشنبه <span class="ex-ltr" dir="ltr">16 Nov</span> تا سه‌شنبه <span class="ex-ltr" dir="ltr">17 Nov 17:40</span></h2>
+    <p>برنامه بر اساس تعداد صفحه، حدود <span class="ex-ltr" dir="ltr">4.5</span> دقیقه برای هر صفحه. <span class="ex-ltr" dir="ltr">L1–L7</span> روی هم <span class="ex-ltr" dir="ltr">139</span> صفحه در راهنمای بخش <span class="ex-ltr" dir="ltr">1</span> (<span class="ex-ltr" dir="ltr">74</span> صفحه) و بخش <span class="ex-ltr" dir="ltr">2</span> (<span class="ex-ltr" dir="ltr">67</span> صفحه) است — حدود <span class="ex-ltr" dir="ltr">10</span> ساعت و <span class="ex-ltr" dir="ltr">26</span> دقیقه، به‌علاوه استراحت <span class="ex-ltr" dir="ltr">10</span> دقیقه‌ای در هر ساعت. این حجم جا نمی‌شود. وقت موجود: امشب <span class="ex-ltr" dir="ltr">23:05–02:00</span>، فردا <span class="ex-ltr" dir="ltr">09:00–13:30</span> و <span class="ex-ltr" dir="ltr">15:45–17:00</span> (آزمایشگاه <span class="ex-ltr" dir="ltr">SE 2228</span> ساعت <span class="ex-ltr" dir="ltr">13:40–15:30</span>). خواب <span class="ex-ltr" dir="ltr">02:00–08:00</span> (<span class="ex-ltr" dir="ltr">6</span> ساعت). ساعت <span class="ex-ltr" dir="ltr">17:20</span> دم کلاس باش؛ امتحان <span class="ex-ltr" dir="ltr">17:40</span>.</p>
    </div>
-   <p class="eee-cram-en" lang="en" dir="ltr" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">If behind, protect L7 time and cut problems first.</p>
-   <p class="eee-cram-fa" lang="fa" dir="rtl" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">اگر عقب افتادی، زمان L7 را حفظ کن و اول مسئله‌ها را کم کن.</p>
+   <p class="eee-cram-en" lang="en" dir="ltr" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">Exam format: 1 compulsory question + 2 of the other 3. Full reads cover compulsory Q1 (L1, L2, L4) and optional Q3 (L6) and Q4 (L7, split around the lab). Optional Q2 (L3 + L5) does not fit. No 90 min mock. If a block runs long, stop at 02:00 tonight and at 13:30 / 17:00 tomorrow.</p>
+   <p class="eee-cram-fa" lang="fa" dir="rtl" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">قالب امتحان: <span class="ex-ltr" dir="ltr">1</span> سؤال اجباری + <span class="ex-ltr" dir="ltr">2</span> از <span class="ex-ltr" dir="ltr">3</span> سؤال دیگر. خواندن کامل برای سؤال اجباری <span class="ex-ltr" dir="ltr">Q1</span> (<span class="ex-ltr" dir="ltr">L1</span>، <span class="ex-ltr" dir="ltr">L2</span>، <span class="ex-ltr" dir="ltr">L4</span>) و سؤال‌های اختیاری <span class="ex-ltr" dir="ltr">Q3</span> (<span class="ex-ltr" dir="ltr">L6</span>) و <span class="ex-ltr" dir="ltr">Q4</span> (<span class="ex-ltr" dir="ltr">L7</span>، دو بخش به‌خاطر آزمایشگاه). سؤال اختیاری <span class="ex-ltr" dir="ltr">Q2</span> (<span class="ex-ltr" dir="ltr">L3</span> و <span class="ex-ltr" dir="ltr">L5</span>) جا نمی‌شود. آزمون آزمایشی <span class="ex-ltr" dir="ltr">90</span> دقیقه‌ای حذف شد. اگر یک بازه طول کشید، امشب ساعت <span class="ex-ltr" dir="ltr">02:00</span> و فردا ساعت <span class="ex-ltr" dir="ltr">13:30</span> / <span class="ex-ltr" dir="ltr">17:00</span> تمام کن.</p>
    <h3><span class="eee-cram-en">Tonight</span><span class="eee-cram-fa">امشب</span></h3>
    <ul>
-<li><input type="checkbox" id="eee-cram-n1" data-eee-cram="n1"><label for="eee-cram-n1"><b dir="ltr">22:00–23:30</b> <span class="eee-cram-en">L1–L2</span><span class="eee-cram-fa">لکچرهای L1 و L2</span></label></li>
-<li><input type="checkbox" id="eee-cram-n2" data-eee-cram="n2"><label for="eee-cram-n2"><b dir="ltr">23:30–01:00</b> <span class="eee-cram-en">L3–L4</span><span class="eee-cram-fa">لکچرهای L3 و L4</span></label></li>
-<li><input type="checkbox" id="eee-cram-n3" data-eee-cram="n3"><label for="eee-cram-n3"><b dir="ltr">01:00–01:15</b> <span class="eee-cram-en">break</span><span class="eee-cram-fa">استراحت</span></label></li>
-<li><input type="checkbox" id="eee-cram-n4" data-eee-cram="n4"><label for="eee-cram-n4"><b dir="ltr">01:15–02:45</b> <span class="eee-cram-en">L5</span><span class="eee-cram-fa">لکچر L5</span></label></li>
-<li><input type="checkbox" id="eee-cram-n5" data-eee-cram="n5"><label for="eee-cram-n5"><b dir="ltr">03:00–08:00</b> <span class="eee-cram-en">sleep (5 h)</span><span class="eee-cram-fa">خواب (5 ساعت)</span></label></li>
+<li><input type="checkbox" id="eee-cram-n1" data-eee-cram="n1"><label for="eee-cram-n1"><b dir="ltr">23:05–00:08</b> <span class="eee-cram-en">L1 · full (Part 1, pp. 1–14, 14 pages)</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L1</span> · کامل · بخش <span class="ex-ltr" dir="ltr">1</span>، <span class="ex-ltr" dir="ltr">pp. 1–14</span>، <span class="ex-ltr" dir="ltr">14</span> صفحه</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: derivatives and integrals (including sin/cos).</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: مشتق و انتگرال، از جمله <span class="ex-ltr" dir="ltr">sin/cos</span>.</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">00:08–00:18</b> break</span><span class="eee-cram-fa"><b dir="ltr">00:08–00:18</b> استراحت</span></li>
+<li><input type="checkbox" id="eee-cram-n2" data-eee-cram="n2"><label for="eee-cram-n2"><b dir="ltr">00:18–01:18</b> <span class="eee-cram-en">L2 · full (Part 1, pp. 15–32, 18 pages) — first hour</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L2</span> · کامل · بخش <span class="ex-ltr" dir="ltr">1</span>، <span class="ex-ltr" dir="ltr">pp. 15–32</span>، <span class="ex-ltr" dir="ltr">18</span> صفحه — ساعت اول</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: basic algebra (rearranging a linear equation).</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: جبر پایه (مرتب‌کردن یک معادله خطی).</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">01:18–01:28</b> break</span><span class="eee-cram-fa"><b dir="ltr">01:18–01:28</b> استراحت</span></li>
+<li><input type="checkbox" id="eee-cram-n3" data-eee-cram="n3"><label for="eee-cram-n3"><b dir="ltr">01:28–01:49</b> <span class="eee-cram-en">L2 · continued (same 18 pages)</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L2</span> · ادامه همان <span class="ex-ltr" dir="ltr">18</span> صفحه</span></label></li>
+<li><input type="checkbox" id="eee-cram-n4" data-eee-cram="n4"><label for="eee-cram-n4"><b dir="ltr">02:00–08:00</b> <span class="eee-cram-en">sleep (6 h)</span><span class="eee-cram-fa">خواب (<span class="ex-ltr" dir="ltr">6</span> ساعت)</span></label></li>
    </ul>
-   <h3><span class="eee-cram-en">Tomorrow around classes</span><span class="eee-cram-fa">فردا حوالی کلاس‌ها</span></h3>
+   <h3><span class="eee-cram-en">Tomorrow morning and afternoon</span><span class="eee-cram-fa">فردا صبح و بعدازظهر</span></h3>
    <ul>
-<li><input type="checkbox" id="eee-cram-t1" data-eee-cram="t1"><label for="eee-cram-t1"><b dir="ltr">1.5 h</b> <span class="eee-cram-en">L6 (inductors &amp; capacitors)</span><span class="eee-cram-fa">لکچر L6 (سلف و خازن)</span></label></li>
-<li><input type="checkbox" id="eee-cram-t2" data-eee-cram="t2"><label for="eee-cram-t2"><b dir="ltr">2 h</b> <span class="eee-cram-en">L7 RL/RC (most important, give it your best slot)</span><span class="eee-cram-fa">لکچر L7 پاسخ گذرای RL/RC (مهم‌ترین بخش؛ بهترین بازه را به آن بده)</span></label></li>
-<li><input type="checkbox" id="eee-cram-t3" data-eee-cram="t3"><label for="eee-cram-t3"><b dir="ltr">15:30–17:00</b> <span class="eee-cram-en">49-topic checklist + formula review, 1–2 mock questions only if time, nothing new</span><span class="eee-cram-fa">چک‌لیست 49 مبحث + مرور فرمول‌ها؛ فقط اگر وقت ماند 1 یا 2 سؤال آزمایشی؛ چیز جدید نخوان</span></label></li>
-<li><input type="checkbox" id="eee-cram-t4" data-eee-cram="t4"><label for="eee-cram-t4"><b dir="ltr">17:20</b> <span class="eee-cram-en">be at the room (M110/M116/M218), bring calculator</span><span class="eee-cram-fa">دم کلاس باش (M110/M116/M218)؛ ماشین‌حساب را بیاور</span></label></li>
+<li><input type="checkbox" id="eee-cram-t1" data-eee-cram="t1"><label for="eee-cram-t1"><b dir="ltr">09:00–10:00</b> <span class="eee-cram-en">L4 · full (Part 1, pp. 52–74, 23 pages) — first hour</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L4</span> · کامل · بخش <span class="ex-ltr" dir="ltr">1</span>، <span class="ex-ltr" dir="ltr">pp. 52–74</span>، <span class="ex-ltr" dir="ltr">23</span> صفحه — ساعت اول</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: solving simultaneous linear equations (2–3 unknowns).</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: حل دستگاه معادله‌های خطی، <span class="ex-ltr" dir="ltr">2–3</span> مجهول.</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">10:00–10:10</b> break</span><span class="eee-cram-fa"><b dir="ltr">10:00–10:10</b> استراحت</span></li>
+<li><input type="checkbox" id="eee-cram-t2" data-eee-cram="t2"><label for="eee-cram-t2"><b dir="ltr">10:10–10:54</b> <span class="eee-cram-en">L4 · continued (same 23 pages)</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L4</span> · ادامه همان <span class="ex-ltr" dir="ltr">23</span> صفحه</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">10:54–11:04</b> break</span><span class="eee-cram-fa"><b dir="ltr">10:54–11:04</b> استراحت</span></li>
+<li><input type="checkbox" id="eee-cram-t3" data-eee-cram="t3"><label for="eee-cram-t3"><b dir="ltr">11:04–12:04</b> <span class="eee-cram-en">L6 · full (Part 2, pp. 21–37, 17 pages) — first hour</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L6</span> · کامل · بخش <span class="ex-ltr" dir="ltr">2</span>، <span class="ex-ltr" dir="ltr">pp. 21–37</span>، <span class="ex-ltr" dir="ltr">17</span> صفحه — ساعت اول</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: derivatives and integrals (product rule, integration by parts).</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: مشتق و انتگرال (قاعده ضرب، انتگرال جزءبه‌جزء).</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">12:04–12:14</b> break</span><span class="eee-cram-fa"><b dir="ltr">12:04–12:14</b> استراحت</span></li>
+<li><input type="checkbox" id="eee-cram-t4" data-eee-cram="t4"><label for="eee-cram-t4"><b dir="ltr">12:14–12:31</b> <span class="eee-cram-en">L6 · continued (same 17 pages)</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L6</span> · ادامه همان <span class="ex-ltr" dir="ltr">17</span> صفحه</span></label></li>
+<li><input type="checkbox" id="eee-cram-t5" data-eee-cram="t5"><label for="eee-cram-t5"><b dir="ltr">12:31–13:29</b> <span class="eee-cram-en">L7 · full, part 1 (Part 2, pp. 38–50, 13 of 30 pages)</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L7</span> · کامل، بخش اول · بخش <span class="ex-ltr" dir="ltr">2</span>، <span class="ex-ltr" dir="ltr">pp. 38–50</span>، <span class="ex-ltr" dir="ltr">13</span> از <span class="ex-ltr" dir="ltr">30</span> صفحه</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: first-order ODEs; exponentials and ln.</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: معادله‌های دیفرانسیل مرتبه اول؛ تابع نمایی و <span class="ex-ltr" dir="ltr">ln</span>.</span></label></li>
+<li class="eee-cram-break"><span class="eee-cram-en"><b dir="ltr">13:40–15:30</b> SE 2228 lab · M433 (not EEE study)</span><span class="eee-cram-fa"><b dir="ltr">13:40–15:30</b> آزمایشگاه <span class="ex-ltr" dir="ltr">SE 2228</span> · <span class="ex-ltr" dir="ltr">M433</span> — مطالعه <span class="ex-ltr" dir="ltr">EEE</span> نیست</span></li>
+<li><input type="checkbox" id="eee-cram-t6" data-eee-cram="t6"><label for="eee-cram-t6"><b dir="ltr">15:45–17:00</b> <span class="eee-cram-en">L7 · full, part 2 (Part 2, pp. 51–67, 17 pages) — 76.5 min budgeted; stop at 17:00, skim the last self-check page if needed</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L7</span> · کامل، بخش دوم · بخش <span class="ex-ltr" dir="ltr">2</span>، <span class="ex-ltr" dir="ltr">pp. 51–67</span>، <span class="ex-ltr" dir="ltr">17</span> صفحه — بودجه <span class="ex-ltr" dir="ltr">76.5</span> دقیقه؛ ساعت <span class="ex-ltr" dir="ltr">17:00</span> تمام کن و اگر لازم شد صفحه آخر خودآزمایی را سریع نگاه کن</span></label></li>
+<li><input type="checkbox" id="eee-cram-t7" data-eee-cram="t7"><label for="eee-cram-t7"><b dir="ltr">17:20</b> <span class="eee-cram-en">be at the room (M110/M116/M218), bring calculator</span><span class="eee-cram-fa">دم کلاس باش <span class="ex-ltr" dir="ltr">M110/M116/M218</span>؛ ماشین‌حساب را بیاور</span></label></li>
+   </ul>
+   <h3><span class="eee-cram-en">Does not fit — optional Q2</span><span class="eee-cram-fa">جا نمی‌شود — سؤال اختیاری <span class="ex-ltr" dir="ltr">Q2</span></span></h3>
+   <p class="eee-cram-en" lang="en" dir="ltr" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">L3 full is Part 1 pp. 33–51 (19 pages, 86 min) and L5 full is Part 2 pp. 3–20 (18 pages, 81 min). There is no clock slot left after the full reads. If you finish a block early, do L5 examples first, then L3.</p>
+   <p class="eee-cram-fa" lang="fa" dir="rtl" style="margin:0 0 8px;color:var(--muted);font-size:.86rem">خواندن کامل <span class="ex-ltr" dir="ltr">L3</span> بخش <span class="ex-ltr" dir="ltr">1</span>، <span class="ex-ltr" dir="ltr">pp. 33–51</span> (<span class="ex-ltr" dir="ltr">19</span> صفحه، <span class="ex-ltr" dir="ltr">86</span> دقیقه) و <span class="ex-ltr" dir="ltr">L5</span> بخش <span class="ex-ltr" dir="ltr">2</span>، <span class="ex-ltr" dir="ltr">pp. 3–20</span> (<span class="ex-ltr" dir="ltr">18</span> صفحه، <span class="ex-ltr" dir="ltr">81</span> دقیقه) است. بعد از خواندن کامل‌ها بازه خالی نمی‌ماند. اگر زودتر تمام کردی، اول مثال‌های <span class="ex-ltr" dir="ltr">L5</span> را بکن، بعد <span class="ex-ltr" dir="ltr">L3</span>.</p>
+   <ul>
+<li><input type="checkbox" id="eee-cram-x1" data-eee-cram="x1"><label for="eee-cram-x1"><b class="eee-cram-en" dir="ltr">If ahead</b><b class="eee-cram-fa">اگر زودتر تمام شد</b> <span class="eee-cram-en">L5 · examples only (Part 2, pp. 13–19, 7 pages) — Thévenin, maximum power, superposition + formula</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L5</span> · فقط مثال‌ها · بخش <span class="ex-ltr" dir="ltr">2</span>، <span class="ex-ltr" dir="ltr">pp. 13–19</span>، <span class="ex-ltr" dir="ltr">7</span> صفحه — تونن، حداکثر توان، جمع آثار + برگه فرمول</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: solving linear equations; setting a derivative to zero.</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: حل معادله‌های خطی؛ صفر کردن مشتق.</span></label></li>
+<li><input type="checkbox" id="eee-cram-x2" data-eee-cram="x2"><label for="eee-cram-x2"><b class="eee-cram-en" dir="ltr">If ahead</b><b class="eee-cram-fa">اگر زودتر تمام شد</b> <span class="eee-cram-en">L3 · examples only (Part 1, pp. 41–49, 9 pages) — reduce &amp; return, dividers + formula</span><span class="eee-cram-fa"><span class="ex-ltr" dir="ltr">L3</span> · فقط مثال‌ها · بخش <span class="ex-ltr" dir="ltr">1</span>، <span class="ex-ltr" dir="ltr">pp. 41–49</span>، <span class="ex-ltr" dir="ltr">9</span> صفحه — کاهش و برگشت، تقسیم ولتاژ و جریان + برگه فرمول</span><span class="eee-cram-prereq eee-cram-en">Prerequisites: ratios, fractions, and rearranging linear equations.</span><span class="eee-cram-prereq eee-cram-fa">پیش‌نیاز: نسبت، کسر، و مرتب‌کردن معادله‌های خطی.</span></label></li>
    </ul>
    <p class="eee-cram-note eee-cram-en" lang="en" dir="ltr">Exam 17:40, 90 min, closed book, covers L1–L7.</p>
-   <p class="eee-cram-note eee-cram-fa" lang="fa" dir="rtl">امتحان ساعت 17:40، 90 دقیقه، کتاب‌بسته، پوشش L1 تا L7.</p>
+   <p class="eee-cram-note eee-cram-fa" lang="fa" dir="rtl">امتحان ساعت <span class="ex-ltr" dir="ltr">17:40</span>، <span class="ex-ltr" dir="ltr">90</span> دقیقه، کتاب‌بسته، پوشش <span class="ex-ltr" dir="ltr">L1–L7</span>.</p>
   </div>
  </section>
  <section class="sec">
@@ -659,8 +686,11 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <div class="gch"><b>MATH 2260</b> · Probability &amp; Statistics <span class="pill">6 ECTS</span></div>
 <div class="gtiles">
 <div class="gtile"><div class="gk">Midterm</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
-<div class="gtile"><div class="gk">Quiz</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
-<div class="gtile"><div class="gk">Final needed</div><div class="gv"><span class="ex-ltr" dir="ltr">53</span></div></div>
+<div class="gtile"><div class="gk">Quiz 1</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile"><div class="gk">Quiz 2</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile gtile-final"><div class="gk">Final</div>
+<div class="gv-line"><span class="ex-ltr" dir="ltr">Min 53 → D</span></div>
+<div class="gv-line"><span class="ex-ltr" dir="ltr">Max 79.6 → B-</span></div></div>
 </div>
 <p class="need-est"><span class="ex-ltr" dir="ltr">Pass = 50</span> · weights estimated</p>
 </article>
@@ -734,6 +764,14 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <p class="ggreen">Final: get 85 or more to reach B+ and raise your GPA.</p>
 </article>
 </div>
+<article class="glass gcourse" id="sem-overview-en">
+<div class="gch"><b>Semester overview</b></div>
+<div class="gtiles">
+<div class="gtile"><div class="gk">Semester GPA</div><div class="gv"><span class="ex-ltr" dir="ltr">1.00–2.70</span></div></div>
+<div class="gtile"><div class="gk">Overall GPA</div><div class="gv"><span class="ex-ltr" dir="ltr">1.51–1.65</span></div></div>
+</div>
+<p class="need-est"><span class="ex-ltr" dir="ltr">MATH 2260: D–B-</span> · other courses <span class="ex-ltr" dir="ltr">—</span> · previous GPA <span class="ex-ltr" dir="ltr">1.55</span> (<span class="ex-ltr" dir="ltr">67 ECTS</span>, OBS 4 Nov 2026)</p>
+</article>
 <div id="semcalc-en"></div>
 <details class="glass gbox"><summary>Details</summary>
 <div class="gpa-cards">
@@ -918,8 +956,11 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <div class="gch"><span class="ex-ltr" dir="ltr">MATH 2260</span> · احتمال و آمار <span class="pill"><span class="ex-ltr" dir="ltr">6 AKTS</span></span></div>
 <div class="gtiles">
 <div class="gtile"><div class="gk">میان‌ترم</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
-<div class="gtile"><div class="gk">کوییز</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
-<div class="gtile"><div class="gk">پایان‌ترم لازم</div><div class="gv"><span class="ex-ltr" dir="ltr">53</span></div></div>
+<div class="gtile"><div class="gk">کوییز 1</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile"><div class="gk">کوییز 2</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile gtile-final"><div class="gk">پایان‌ترم</div>
+<div class="gv-line"><span class="ex-ltr" dir="ltr">Min 53 → D</span></div>
+<div class="gv-line"><span class="ex-ltr" dir="ltr">Max 79.6 → B-</span></div></div>
 </div>
 <p class="need-est">قبولی = <span class="ex-ltr" dir="ltr">50</span> · وزن‌ها تخمینی</p>
 </article>
@@ -993,6 +1034,14 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <p class="ggreen">پایان‌ترم: برای رسیدن به B+ و بالا رفتن معدل، 85 یا بیشتر بگیر.</p>
 </article>
 </div>
+<article class="glass gcourse" id="sem-overview-fa">
+<div class="gch"><b>نمای کلی ترم</b></div>
+<div class="gtiles">
+<div class="gtile"><div class="gk">معدل ترم</div><div class="gv"><span class="ex-ltr" dir="ltr">1.00–2.70</span></div></div>
+<div class="gtile"><div class="gk">معدل کل</div><div class="gv"><span class="ex-ltr" dir="ltr">1.51–1.65</span></div></div>
+</div>
+<p class="need-est"><span class="ex-ltr" dir="ltr">MATH 2260: D–B-</span> · درس‌های دیگر <span class="ex-ltr" dir="ltr">—</span> · معدل قبلی <span class="ex-ltr" dir="ltr">1.55 (67 AKTS, OBS, 4 Nov 2026)</span></p>
+</article>
 <div id="semcalc-fa"></div>
 <details class="glass gbox"><summary>جزئیات</summary>
 <div class="gpa-cards">
@@ -2316,7 +2365,7 @@ else paint(true);
 <script>
 /* EEE 2274 midterm cram ticks. Own storage key; does not change Daily plan ticks or progress totals. */
 (function(){
- var KEY="midterm4-plan-v1:eee-cram-2026-11-16-v3";
+ var KEY="midterm4-plan-v1:eee-cram-2026-11-16-v5";
  var box=document.getElementById("eee-cram");
  if(!box)return;
  var done={};
