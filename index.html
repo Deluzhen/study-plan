@@ -499,6 +499,12 @@ details.cppv pre{white-space:pre;overflow-x:auto;text-align:left}
 .need-line{margin:14px 0 6px;font-size:1.45rem;font-weight:700;color:var(--hi);line-height:1.45}
 .need-line .ex-ltr{font-size:1.05em}
 .gcourse .need-est{margin:0;font-size:.8rem;color:var(--muted)}
+.gtiles{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 8px}
+.gtile{flex:1 1 120px;min-width:108px;max-width:200px;padding:12px 14px;border-radius:var(--r-md);text-align:center;background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:none}
+.gtile .gk{color:var(--muted);font-size:.72rem;font-weight:650;letter-spacing:.03em;margin:0 0 4px}
+.gtile .gv{font-size:1.55rem;font-weight:700;color:var(--hi);letter-spacing:-.02em;line-height:1.15}
+.gtile .gv.empty{color:var(--muted);font-weight:500}
+
 .gscore-tile .gv{font-size:2.15rem;letter-spacing:-.03em;color:var(--exam)}
 .gscore-tile .gs{line-height:1.55}
 .ex-ltr.nowrap,.gformula{white-space:nowrap}
@@ -649,11 +655,14 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <div class="sec-h"><h2>GPA roadmap 🎯</h2><p>Your overall GPA is 1.55, so you are on probation. Pass is 50 (D). The roadmap aim is B+ (85) on each part.</p></div>
 <div class="glegend"><span class="gy"><i></i>Yellow: the score you need to pass.</span><span class="gg"><i></i>Green: the score you need to reach B+ and raise your GPA.</span></div>
 <div class="gplan">
-<article class="glass gcourse need-final" id="math2260-need-final-en">
+<article class="glass gcourse" id="math2260-need-final-en">
 <div class="gch"><b>MATH 2260</b> · Probability &amp; Statistics <span class="pill">6 ECTS</span></div>
-<div class="gcard glass yellow gscore-tile"><div class="gk">Midterm</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
-<p class="need-line">To pass you need: <span class="ex-ltr" dir="ltr">Quiz 70 + Final 53</span></p>
-<p class="need-est">Weights estimated</p>
+<div class="gtiles">
+<div class="gtile"><div class="gk">Midterm</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
+<div class="gtile"><div class="gk">Quiz</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile"><div class="gk">Final needed</div><div class="gv"><span class="ex-ltr" dir="ltr">53</span></div></div>
+</div>
+<p class="need-est"><span class="ex-ltr" dir="ltr">Pass = 50</span> · weights estimated</p>
 </article>
 
 <article class="glass gcourse"><div class="gch"><b>COMP 2233</b> · Data Structures <span class="pill">6 ECTS</span></div>
@@ -905,11 +914,14 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 <div class="sec-h"><h2>نقشه معدل 🎯</h2><p>معدل کل 1.55 است، پس مشروطی. قبولی 50 (D) است. هدف این نقشه B+ یعنی 85 در هر بخش است.</p></div>
 <div class="glegend"><span class="gy"><i></i>زرد: نمره‌ای که برای قبولی لازم است.</span><span class="gg"><i></i>سبز: نمره‌ای که برای B+ و بالا رفتن معدل لازم است.</span></div>
 <div class="gplan">
-<article class="glass gcourse need-final" id="math2260-need-final-fa">
+<article class="glass gcourse" id="math2260-need-final-fa">
 <div class="gch"><span class="ex-ltr" dir="ltr">MATH 2260</span> · احتمال و آمار <span class="pill"><span class="ex-ltr" dir="ltr">6 AKTS</span></span></div>
-<div class="gcard glass yellow gscore-tile"><div class="gk">میان‌ترم</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
-<p class="need-line">برای پاس شدن لازم داری: کوییز <span class="ex-ltr" dir="ltr">70</span> + پایان‌ترم <span class="ex-ltr" dir="ltr">53</span></p>
-<p class="need-est">وزن‌ها تخمینی</p>
+<div class="gtiles">
+<div class="gtile"><div class="gk">میان‌ترم</div><div class="gv"><span class="ex-ltr" dir="ltr">32</span></div></div>
+<div class="gtile"><div class="gk">کوییز</div><div class="gv empty"><span class="ex-ltr" dir="ltr">—</span></div></div>
+<div class="gtile"><div class="gk">پایان‌ترم لازم</div><div class="gv"><span class="ex-ltr" dir="ltr">53</span></div></div>
+</div>
+<p class="need-est">قبولی = <span class="ex-ltr" dir="ltr">50</span> · وزن‌ها تخمینی</p>
 </article>
 
 <article class="glass gcourse"><div class="gch"><b>COMP 2233</b> · ساختمان داده‌ها <span class="pill">6 AKTS</span></div>
