@@ -570,12 +570,16 @@ html[lang=fa] #topbar-cards{font-family:Vazirmatn,"IRANSansX","Tahoma","Geeza Pr
 #panel ul.daylist li:first-child{border-top:0}
 #panel ul.daylist li:hover{background:transparent}
 #panel ul.daylist li input{margin-top:1px;flex:none}
-#panel ul.daylist li label{display:flex;align-items:baseline;gap:10px;flex:1;min-width:0;flex-wrap:nowrap}
+#panel ul.daylist li label,#panel ul.daylist li .trow{display:flex;align-items:baseline;gap:10px;flex:1;min-width:0;flex-wrap:nowrap}
 #panel ul.daylist .tm{flex:none;font-variant-numeric:tabular-nums;font-weight:700;color:var(--hi);direction:ltr;unicode-bidi:isolate;min-width:7.6em;letter-spacing:0}
 #panel ul.daylist .tn{flex:0 1 auto;font-weight:600;color:var(--hi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#panel ul.daylist a.tn,#panel ul.daylist a.tn-more{color:var(--hi);text-decoration:none;cursor:pointer}
+#panel ul.daylist a.tn:hover,#panel ul.daylist a.tn-more:hover{text-decoration:underline}
+#panel ul.daylist a.tn-more{flex:none;font-size:.85rem;color:var(--muted);padding:0 2px;text-decoration:none}
 #panel ul.daylist .pre{flex:0 1 28ch;font-size:.75rem;font-weight:400;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:28ch}
 #panel ul.daylist li.is-done .tn,#panel ul.daylist li.is-done .tm{color:var(--muted);text-decoration:line-through}
 #panel ul.daylist li.is-done .pre{opacity:.7}
+#panel ul.daylist li.is-done a.tn,#panel ul.daylist li.is-done a.tn-more{color:var(--muted)}
 
 /* ===== Finals 5-week plan tab (neutral glass; no green/yellow) ===== */
 #view-finals{padding-bottom:72px}
@@ -2192,7 +2196,7 @@ function tDetail(t){return lang==="fa"?FA.tasks[t.di][t.ti][1]:t.detail}
 function mkText(di,mi){return lang==="fa"?FA.markers[di][mi]:PLAN[di].markers[mi][1]}
 function defaultSel(){var t=todayIso();for(var i=0;i<PLAN.length;i++)if(PLAN[i].date===t)return i;return -1}
 var sel=defaultSel();
-var LINK_RE=(function(){var ks=Object.keys(LINKS).sort(function(a,b){return b.length-a.length});
+var LINK_RE=(function(){if(!LINKS["MATH2260_Quiz_Prep_EN-FA.pdf"])LINKS["MATH2260_Quiz_Prep_EN-FA.pdf"]="https://deluzhen.github.io/study-plan/MATH2260_Quiz_Prep_EN-FA.pdf";var ks=Object.keys(LINKS).sort(function(a,b){return b.length-a.length});
  return new RegExp(ks.map(function(k){var e=k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");return /\.pdf$/i.test(k)?e:"(?<![\\w-])"+e+"(?![\\w])"}).join("|"),"g")})();
 function linked(parent,text){var last=0,mm;LINK_RE.lastIndex=0;
  while((mm=LINK_RE.exec(text))){if(mm.index>last)parent.appendChild(document.createTextNode(text.slice(last,mm.index)));
@@ -2254,18 +2258,74 @@ function shortPrereq(detail){
  if(!p||p.length>42) return "";
  return p;
 }
+function sourceHits(t){
+ var text=[t.title,t.detail,tTitle(t),tDetail(t)].filter(Boolean).join("\n");
+ var hits=[], seen={};
+ function add(name, href, page){
+  if(!href) return;
+  var url=href+(page?((href.indexOf("#")>=0?"":"#page=")+page):"");
+  if(seen[name]||seen[url]) return;
+  seen[name]=1; seen[url]=1;
+  hits.push({name:name, href:url});
+ }
+ function pageAfter(idx, len){
+  var rest=text.slice(idx+len, idx+len+48);
+  var pm=rest.match(/^\s*(?:pp\.?|p\.|صفحه)\s*(\d+)/i);
+  return pm?+pm[1]:null;
+ }
+ if(typeof LINK_RE!=="undefined" && LINKS){
+  LINK_RE.lastIndex=0;
+  var mm;
+  while((mm=LINK_RE.exec(text))){
+   add(mm[0], LINKS[mm[0]], pageAfter(mm.index, mm[0].length));
+  }
+ }
+ var tb=text.match(/(?:textbook|کتاب)\s+(?:pp\.?|صفحه)\s*(\d+)/i);
+ if(tb && LINKS["larson farber elementary statistics 5th.pdf"]){
+  add("larson farber elementary statistics 5th.pdf", LINKS["larson farber elementary statistics 5th.pdf"], +tb[1]);
+ }
+ if(!hits.length){
+  var hints=[
+   [/\bCh\.?\s*1\b|chapter 1|فصل 1/i, "statistics_chapter1_lecture_notes.pdf"],
+   [/\bCh\.?\s*2\b|chapter 2|فصل 2/i, "statistics_chapter2_lecture_notes.pdf"],
+   [/\bCh\.?\s*3\b|chapter 3|فصل 3/i, "statistics_chapter3_lecture_notes.pdf"],
+   [/\bCh\.?\s*4\b|chapter 4|فصل 4/i, "statistics_chapter4_lecture_notes.pdf"],
+   [/Week08-Heapstructures|W8 Heap|هفته 8 ساختار هیپ/i, "Week08-Heapstructures.pdf"],
+   [/Week09-DynamicProgramming-1|W9 DP|Dynamic Programming[–\-]?1|برنامه‌سازی پویا 1/i, "Week09-DynamicProgramming-1.pdf"],
+   [/Week10-DynamicProgramming-2|W10 DP|Dynamic Programming[–\-]?2|برنامه‌سازی پویا 2/i, "Week10-DynamicProgramming-2.pdf"],
+   [/COMP2233_h7_Stacks|W7 Stacks|هفته 7 پشته/i, "COMP2233_h7_Stacks.pdf"],
+   [/COMP-2233-LAB-7|LAB-7/i, "COMP-2233-LAB-7.pdf"]
+  ];
+  for(var i=0;i<hints.length;i++){
+   if(hints[i][0].test(text) && LINKS[hints[i][1]]){ add(hints[i][1], LINKS[hints[i][1]], null); break; }
+  }
+ }
+ return hits;
+}
 function taskItem(t){
  var li=el("li");if(state.done[t.id]) li.className="is-done";
  var cb=el("input");cb.type="checkbox";cb.id="cb-"+t.id;cb.checked=!!state.done[t.id];
  cb.addEventListener("change",function(){if(cb.checked&&!confirm(lang==="fa"?"مطمئنی؟":"Are you sure?")){cb.checked=false;return}if(cb.checked)state.done[t.id]=1;else delete state.done[t.id];save();render()});
  var ck=clockParts(tTitle(t));
- var lab=el("label");lab.htmlFor=cb.id;
- if(ck.s){var tm=el("span","tm",ck.s+"\u2013"+ck.e);tm.setAttribute("dir","ltr");lab.appendChild(tm);}
- lab.appendChild(el("span","tn",tidyName(ck.name)));
+ var row=el("span","trow");
+ if(ck.s){var tm=el("span","tm",ck.s+"\u2013"+ck.e);tm.setAttribute("dir","ltr");row.appendChild(tm);}
+ var hits=sourceHits(t);
+ var name=tidyName(ck.name);
+ if(hits.length){
+  var a=document.createElement("a");a.className="tn";a.href=hits[0].href;a.target="_blank";a.rel="noopener";a.textContent=name;a.title=hits[0].name;a.setAttribute("dir","auto");
+  a.addEventListener("click",function(ev){ev.stopPropagation()});
+  row.appendChild(a);
+  hits.slice(1).forEach(function(h){
+   var more=document.createElement("a");more.className="tn-more";more.href=h.href;more.target="_blank";more.rel="noopener";more.title=h.name;more.textContent="\u29c9";more.setAttribute("aria-label",h.name);
+   more.addEventListener("click",function(ev){ev.stopPropagation()});
+   row.appendChild(more);
+  });
+ } else {
+  row.appendChild(el("span","tn",name));
+ }
  var pr=shortPrereq(tDetail(t));
- if(pr) lab.appendChild(el("span","pre",(lang==="fa"?"پیش‌نیاز: ":"Prereq: ")+pr));
- li.appendChild(cb);li.appendChild(lab);return li}
-
+ if(pr) row.appendChild(el("span","pre",(lang==="fa"?"پیش‌نیاز: ":"Prereq: ")+pr));
+ li.appendChild(cb);li.appendChild(row);return li}
 function algKind(x){
  var lab=/Lab|lab/.test(x.week_note)||/\.(c|png)$/.test(x.title);
  var check=/Midterm Review/.test(x.title);
