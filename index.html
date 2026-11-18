@@ -545,15 +545,37 @@ html[lang=fa] span.eee-cram-fa{display:inline}
 
 
 
-/* Live finals countdown — top of page, large, bilingual, no green/yellow */
-#finals-countdown{position:relative;z-index:3;text-align:center;padding:18px 16px 16px;border-bottom:1px solid var(--line,#ddd);background:var(--glass,#fff);color:var(--ink,#111)}
-#finals-countdown .cd-kicker{margin:0 0 6px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#555);font-weight:650}
-#finals-countdown .cd-row{margin:0 auto 10px;max-width:52rem}
-#finals-countdown .cd-row:last-child{margin-bottom:0}
-#finals-countdown .cd-label{display:block;margin:0 0 2px;font-size:.95rem;color:var(--muted,#555)}
-#finals-countdown .cd-val{display:block;font-size:clamp(1.55rem,3.2vw,2.15rem);font-weight:800;line-height:1.25;letter-spacing:-.03em;color:var(--hi,#111);font-variant-numeric:tabular-nums}
-#finals-countdown .cd-val .ex-ltr, #finals-countdown .ex-ltr{unicode-bidi:isolate;direction:ltr;display:inline}
-html[lang=fa] #finals-countdown{font-family:Vazirmatn,"IRANSansX","Tahoma","Geeza Pro",sans-serif}
+/* Top cards: finals countdown, project, upcoming events — minimal, no green/yellow */
+#topbar-cards{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 12px 14px;border-bottom:1px solid var(--line,#ddd);background:var(--glass,#fff);color:var(--ink,#111)}
+@media (max-width:860px){#topbar-cards{grid-template-columns:1fr}}
+#topbar-cards .top-card{border:1px solid var(--line,#ddd);border-radius:var(--r-md,14px);padding:12px 14px 14px;text-align:center;background:var(--glass2,transparent);min-width:0}
+#topbar-cards .cd-kicker{margin:0 0 6px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#555);font-weight:650}
+#topbar-cards .cd-title{margin:0 0 8px;font-size:.98rem;font-weight:700;color:var(--hi,#111);line-height:1.35}
+#topbar-cards .cd-row{margin:0 0 8px}
+#topbar-cards .cd-row:last-child{margin-bottom:0}
+#topbar-cards .cd-label,#topbar-cards .cd-sub{display:block;margin:0 0 2px;font-size:.82rem;color:var(--muted,#555);line-height:1.45}
+#topbar-cards .cd-val{display:block;font-size:clamp(1.15rem,2.1vw,1.72rem);font-weight:800;line-height:1.25;letter-spacing:-.03em;color:var(--hi,#111);font-variant-numeric:tabular-nums}
+#topbar-cards .cd-val .ex-ltr,#topbar-cards .ex-ltr{unicode-bidi:isolate;direction:ltr;display:inline}
+#topbar-cards .cd-tag{display:inline-block;margin:0 0 6px;padding:1px 8px;border:1px solid var(--line,#ddd);border-radius:999px;font-size:.72rem;font-weight:650;color:var(--muted,#555)}
+#topbar-cards .ev-nav{display:flex;align-items:center;gap:8px}
+#topbar-cards .ev-body{flex:1;min-width:0}
+#topbar-cards .ev-arr{flex:0 0 auto;width:28px;height:28px;padding:0;border:1px solid var(--line,#ddd);border-radius:999px;background:transparent;color:var(--hi,#111);font-size:1.05rem;line-height:1;cursor:pointer}
+#topbar-cards .ev-arr:hover:not(:disabled){background:var(--glass2,rgba(255,255,255,.08))}
+#topbar-cards .ev-arr:disabled{opacity:.35;cursor:default}
+html[lang=fa] #topbar-cards{font-family:Vazirmatn,"IRANSansX","Tahoma","Geeza Pro",sans-serif}
+
+/* Minimal daily list: one timed line per block, chronological */
+#panel ul.daylist{list-style:none;margin:0;padding:0}
+#panel ul.daylist li{display:flex;align-items:baseline;gap:10px;flex-wrap:nowrap;padding:7px 2px;border-top:1px solid rgba(255,255,255,.06);border-radius:0}
+#panel ul.daylist li:first-child{border-top:0}
+#panel ul.daylist li:hover{background:transparent}
+#panel ul.daylist li input{margin-top:1px;flex:none}
+#panel ul.daylist li label{display:flex;align-items:baseline;gap:10px;flex:1;min-width:0;flex-wrap:nowrap}
+#panel ul.daylist .tm{flex:none;font-variant-numeric:tabular-nums;font-weight:700;color:var(--hi);direction:ltr;unicode-bidi:isolate;min-width:7.6em;letter-spacing:0}
+#panel ul.daylist .tn{flex:0 1 auto;font-weight:600;color:var(--hi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#panel ul.daylist .pre{flex:0 1 28ch;font-size:.75rem;font-weight:400;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:28ch}
+#panel ul.daylist li.is-done .tn,#panel ul.daylist li.is-done .tm{color:var(--muted);text-decoration:line-through}
+#panel ul.daylist li.is-done .pre{opacity:.7}
 
 /* ===== Finals 5-week plan tab (neutral glass; no green/yellow) ===== */
 #view-finals{padding-bottom:72px}
@@ -613,7 +635,11 @@ html[lang=fa] #view-finals .fin-row input[type=checkbox]{margin:0 0 0 8px}
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-<div id="finals-countdown" class="fin-cd" role="region" aria-live="polite"></div>
+<div id="topbar-cards" class="top-cards" role="region" aria-label="Countdowns">
+  <div id="card-finals" class="top-card" aria-live="polite"></div>
+  <div id="card-project" class="top-card" aria-live="polite"></div>
+  <div id="card-events" class="top-card"></div>
+</div>
 
 <header><div class="hdr glass">
  <div class="hrow"><div><h1 id="h1">Midterm Study Plan: 4 Courses</h1>
@@ -2183,11 +2209,63 @@ function prqList(text){var seen={},list=[],mm;LINK_RE.lastIndex=0;while((mm=LINK
 function prqItem(u){var p=PRQ[u],r=el("div","prq-i");r.appendChild(el("span","prq-f",p[0]+": "));r.appendChild(document.createTextNode((lang==="fa"?FA.prq[u]:p[1])+" "));r.appendChild(aiLink(p[2]));return r}
 function prqBlock(text){var list=prqList(text);if(!list.length)return null;var box=el("details","prq");box.appendChild(el("summary","prq-l",S().prq+" ("+list.length+")"));list.forEach(function(u){box.appendChild(prqItem(u))});return box}
 function noteKey(date){return KEY+":note:"+date}
+function clockParts(title){
+ var raw=String(title||"").replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,"");
+ var m=raw.match(/^(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})(?:\s+|$)(.*)$/);
+ if(m) return {s:m[1],e:m[2],name:m[3].trim()};
+ return {s:"",e:"",name:raw.trim()};
+}
+function taskStartMin(t){
+ var m=String(t.title||"").match(/^(\d{1,2}):(\d{2})\s*[–\-]/);
+ return m?(+m[1])*60+(+m[2]):null;
+}
+function dayTasksInOrder(day){
+ var xs=day.tasks.slice(), any=xs.some(function(t){return taskStartMin(t)!=null});
+ if(!any) return xs;
+ xs.sort(function(a,b){
+  var sa=taskStartMin(a), sb=taskStartMin(b);
+  if(sa==null&&sb==null) return 0;
+  if(sa==null) return 1;
+  if(sb==null) return -1;
+  return sa-sb;
+ });
+ return xs;
+}
+function tidyName(name){
+ var n=String(name||"").replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,"").replace(/[→←↔➜➔⟵⟶]/g,"").trim();
+ n=n.replace(/\s+[—–]\s*(continued|ادامه)\s*$/i,"");
+ n=n.replace(/\s*\((?:guide|textbook|lecture notes|slides TBA|slides)[^)]*\)/gi,"");
+ n=n.replace(/\s*\([^)]*(?:صفحه|جزوه|راهنما|کتاب)[^)]*\)/g,"");
+ n=n.replace(/\s{2,}/g," ").trim();
+ var low=n.toLowerCase();
+ if(low==="break"||n==="استراحت") return lang==="fa"?"استراحت":"Break";
+ if(low==="lunch"||n==="ناهار"||/^lunch\b/i.test(n)) return lang==="fa"?"ناهار":"Lunch";
+ if(low==="dinner"||low==="dinner break"||n==="شام"||/^dinner\b/i.test(n)) return lang==="fa"?"شام":"Dinner";
+ if(/رسیدن به خونه/.test(n)&&lang==="fa") return "رسیدن به خونه";
+ if(/^commute home/i.test(n)) return "Commute home";
+ if(n.length>90) n=n.slice(0,88)+"\u2026";
+ return n;
+}
+function shortPrereq(detail){
+ if(!detail) return "";
+ var m=String(detail).match(/(?:Prerequisites?|پیش‌نیاز)\s*:\s*([^·]+)/);
+ if(!m) return "";
+ var p=m[1].replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,"").replace(/[→←↔]/g,"").replace(/\s*\.\s*$/,"").trim();
+ if(!p||p.length>42) return "";
+ return p;
+}
 function taskItem(t){
- var li=el("li");var cb=el("input");cb.type="checkbox";cb.id="cb-"+t.id;cb.checked=!!state.done[t.id];
+ var li=el("li");if(state.done[t.id]) li.className="is-done";
+ var cb=el("input");cb.type="checkbox";cb.id="cb-"+t.id;cb.checked=!!state.done[t.id];
  cb.addEventListener("change",function(){if(cb.checked&&!confirm(lang==="fa"?"مطمئنی؟":"Are you sure?")){cb.checked=false;return}if(cb.checked)state.done[t.id]=1;else delete state.done[t.id];save();render()});
- var lab=el("label");lab.htmlFor=cb.id;lab.appendChild(el("div","t",tTitle(t)));var det=tDetail(t);if(det){lab.appendChild(linked(el("div","d"),det));var pb=prqBlock(det);if(pb)lab.appendChild(pb);}
- li.appendChild(cb);li.appendChild(lab);li.appendChild(el("span","h",S().hrs(fmt(t.hours))));if(window.__quiz){var qm=window.__quiz.keysFor(t.c,t.title);if(qm)window.__quiz.attach(li,t.id,qm.keys,qm.n)}return li}
+ var ck=clockParts(tTitle(t));
+ var lab=el("label");lab.htmlFor=cb.id;
+ if(ck.s){var tm=el("span","tm",ck.s+"\u2013"+ck.e);tm.setAttribute("dir","ltr");lab.appendChild(tm);}
+ lab.appendChild(el("span","tn",tidyName(ck.name)));
+ var pr=shortPrereq(tDetail(t));
+ if(pr) lab.appendChild(el("span","pre",(lang==="fa"?"پیش‌نیاز: ":"Prereq: ")+pr));
+ li.appendChild(cb);li.appendChild(lab);return li}
+
 function algKind(x){
  var lab=/Lab|lab/.test(x.week_note)||/\.(c|png)$/.test(x.title);
  var check=/Midterm Review/.test(x.title);
@@ -2198,23 +2276,8 @@ function algKind(x){
  if(lab)return {en:"Week "+w+" lab",fa:"لاب هفته "+w};
  return {en:"Week "+w+" lecture",fa:"جزوه هفته "+w};
 }
-var _algResourceTask=taskItem;taskItem=function(t){var li=_algResourceTask(t),pack=ALG_I18N[t.id],r=ALG_RES.tasks[t.id];if(!pack||!r)return li;
- var label=li.querySelector("label"),L=lang==="fa"?"fa":"en",copy=pack[L],box=el("div","alg-resources");
- copy.steps.forEach(function(s){var row=el("div","alg-step");row.appendChild(el("b",null,s[0]));row.appendChild(document.createTextNode(s[1]));box.appendChild(row)});
- box.appendChild(el("h4",null,L==="fa"?"منابع":"Sources"));
- var grid=el("div","alg-src");
- r.resources.forEach(function(n){var x=ALG_RES.assets[n],kind=algKind(x),a=document.createElement("a");
-  a.className="flink alg-file";a.href=x.relative_url;a.target="_blank";a.rel="noopener";a.setAttribute("dir","ltr");
-  a.appendChild(el("b",null,kind[L]));a.appendChild(el("span",null,x.title));
-  a.addEventListener("click",function(e){e.stopPropagation()});grid.appendChild(a)});
- box.appendChild(grid);
- if(r.caveat)box.appendChild(el("p","alg-caveat",ALG_NOTES.caveat[L]));
- var moodleName={"24881":{en:"Lab 7 assignment",fa:"تکلیف لاب 7"},"d=1936":{en:"Lab 6 deadline note",fa:"مهلت لاب 6"},"d=1934":{en:"Labs notice",fa:"اعلان لاب‌ها"}};
- r.moodle_urls.forEach(function(url){var key=url.indexOf("24881")>=0?"24881":url.indexOf("d=1936")>=0?"d=1936":"d=1934";
-  var a=el("a","flink alg-moodle",moodleName[key][L]);a.href=url;a.target="_blank";a.rel="noopener";
-  a.addEventListener("click",function(e){e.stopPropagation()});box.appendChild(a)});
- label.appendChild(box);return li};
-var _taskItem0=taskItem;taskItem=function(t){var li=_taskItem0(t);var ab=projBtn(t.c,cap(COURSES[t.c].code+" \u00b7 "+cn(t.c)+"\n"+tTitle(t)+"\n"+tDetail(t)));ab.className="projbtn askblk";ab.textContent="\u2726";ab.setAttribute("aria-label",(lang==="fa"?"\u067e\u0631\u0633\u06cc\u062f\u0646 \u0627\u0632 ChatGPT: ":"Ask ChatGPT: ")+tTitle(t));li.appendChild(ab);var cps=window.CPP_BLOCKS&&window.CPP_BLOCKS[t.c+"|"+t.title];if(cps)cps.forEach(function(x){var d=el("details","cppv cppblk");d.setAttribute("dir","ltr");d.appendChild(el("summary",null,x[0]));var pr=el("pre","qz-code");pr.appendChild(el("code",null,x[1]));d.appendChild(pr);d.addEventListener("click",function(ev){ev.stopPropagation()});li.appendChild(d)});return li};
+/* Per-task ChatGPT buttons, source packs and hour badges are omitted in the daily list. */
+
 function render(){
  var s=S(),today=todayIso(),tot=0,dn=0,th=0,dh=0,per={};ORDER.forEach(function(k){per[k]={n:0,d:0,h:0,dh:0}});
  var grid=document.getElementById("grid");grid.innerHTML="";
@@ -2254,12 +2317,10 @@ function renderPanel(){
  var dts=day.tasks.filter(function(t){return state.done[t.id]});
  ph.appendChild(el("span","pp",s.pp(dts.length,day.tasks.length,fmt(day.doneH),fmt(day.total))));p.appendChild(ph);
  if(day.markers.length){var n=el("div","notes");day.markers.forEach(function(mk,mi){var r=el("div");r.appendChild(el("span","mk "+mk[0],s.mkP[mk[0]]));r.appendChild(document.createTextNode(" "+mkText(sel,mi)));n.appendChild(r)});p.appendChild(n)}
- ORDER.forEach(function(k){var ts=day.tasks.filter(function(t){return t.c===k});if(!ts.length)return;
-  var g=el("div","grp");g.style.setProperty("--c",COURSES[k].color);
-  var hrs=ts.reduce(function(a,t){return a+t.hours},0),act=ts.filter(function(t){return!state.done[t.id]});
-  var h=el("h3",null,COURSES[k].code+" \u00b7 "+cn(k));h.appendChild(projBtn(k,cap(COURSES[k].code+" \u00b7 "+cn(k)+(lang==="fa"?" \u2014 \u0627\u0645\u0631\u0648\u0632:":" \u2014 today:")+"\n"+ts.map(function(t){return "- "+tTitle(t)}).join("\n"))));h.appendChild(el("small",null,s.hrs(fmt(hrs))));g.appendChild(h);
-  var ul=el("ul");act.forEach(function(t){ul.appendChild(taskItem(t))});if(!act.length)ul.appendChild(el("div","empty",s.allDone));g.appendChild(ul);p.appendChild(g)});
- var dn=el("div","done");dn.id="donebox";dn.appendChild(el("h4",null,s.doneToday+" ("+num(dts.length)+")"));var ul=el("ul");dts.forEach(function(t){var li=taskItem(t);li.querySelector(".t").textContent=t.c+": "+tTitle(t);ul.appendChild(li)});if(!dts.length)ul.appendChild(el("div","empty",s.nothing));dn.appendChild(ul);p.appendChild(dn);
+ var ul=el("ul","daylist");
+ dayTasksInOrder(day).forEach(function(t){ul.appendChild(taskItem(t))});
+ if(!day.tasks.length) ul.appendChild(el("div","empty",s.nothing||""));
+ p.appendChild(ul);
  var nb=el("div","notebox glass");var nl=el("label",null,s.notesL);nl.htmlFor="note-"+day.date;nb.appendChild(nl);
  var ta=el("textarea");ta.id="note-"+day.date;ta.rows=4;ta.placeholder=s.notesPh;ta.value=ls(noteKey(day.date))||"";
  var ns=el("span","nsaved","");var nt;
@@ -2624,11 +2685,78 @@ else paint(true);
 
 
 <script>
-/* Live countdown to finals start / end. Europe/Istanbul. Device clock on every open. */
+/* Top cards: finals countdown, project deadline, upcoming events. Europe/Istanbul. */
 (function(){
 "use strict";
 var START={y:2026,m:12,d:26,h:0,min:0,s:0};          /* 26 Dec 2026 00:00 Istanbul */
 var END={y:2027,m:1,d:12,h:23,min:59,s:59};          /* 12 Jan 2027 end of day */
+var PROJ_DUE={y:2026,m:12,d:13,h:23,min:55,s:0};     /* Moodle upload */
+var PROJ_PRES_END={y:2026,m:12,d:18,h:23,min:59,s:59};
+
+function ev(id,en,fa,whenEn,whenFa,start,end,extra){
+  var o={id:id,en:en,fa:fa,when_en:whenEn,when_fa:whenFa,start:start,end:end||start};
+  if(extra){ for(var k in extra) o[k]=extra[k]; }
+  return o;
+}
+function pt(y,m,d,h,min,s){ return {y:y,m:m,d:d,h:h||0,min:min||0,s:s||0}; }
+function eod(y,m,d){ return pt(y,m,d,23,59,59); }
+
+/* Canonical list, chronological. User list plus dated deadlines already in the file, deduped. No invented dates. */
+var EVENTS=[
+  ev("math-quiz","MATH 2260 Quiz","کوییز MATH 2260",
+     "Thu 19 Nov 2026, 08:40–10:30","پنجشنبه 19 نوامبر 2026، 08:40 تا 10:30",
+     pt(2026,11,19,8,40), pt(2026,11,19,10,30),
+     {detail_en:"In the 08:40–10:30 class; probably Part 2, about 09:40–10:30. Check the list.",
+      detail_fa:"در کلاس ساعت 08:40 تا 10:30؛ احتمالاً بخش 2، حدود 09:40 تا 10:30. فهرست را چک کن.",
+      tag_en:"expected", tag_fa:"انتظار می‌رود",
+      note_en:"Date not officially announced on Moodle.",
+      note_fa:"تاریخ در Moodle رسماً اعلام نشده."}),
+  ev("eee-objection","EEE 2274 lab grade objection deadline","مهلت اعتراض به نمره آزمایشگاه EEE 2274",
+     "Fri 20 Nov 2026, 17:30","جمعه 20 نوامبر 2026، ساعت 17:30",
+     pt(2026,11,20,17,30), pt(2026,11,20,17,30)),
+  ev("hist-mt","HIST 1120 Midterm, online, 25 MCQ","میان‌ترم HIST 1120، آنلاین، 25 سؤال تستی",
+     "Sat 21 Nov 2026, 13:40–14:40","شنبه 21 نوامبر 2026، 13:40 تا 14:40",
+     pt(2026,11,21,13,40), pt(2026,11,21,14,40)),
+  ev("isg-mt","ISG 9120 Midterm quiz, Moodle","کوییز میان‌ترم ISG 9120 در Moodle",
+     "Sat 21 Nov 2026, 17:40–18:30","شنبه 21 نوامبر 2026، 17:40 تا 18:30",
+     pt(2026,11,21,17,40), pt(2026,11,21,18,30)),
+  ev("se-lab8","SE 2228 8th Week Lab, 2nd Lab Work","آزمایشگاه هفته 8 درس SE 2228، کار دوم آزمایشگاه",
+     "Sun 22 Nov 2026, 23:00","یکشنبه 22 نوامبر 2026، ساعت 23:00",
+     pt(2026,11,22,23,0), pt(2026,11,22,23,0)),
+  ev("eee-exp4","EEE 2274 Exp 4 prelab due","مهلت پیش‌گزارش آزمایش 4 درس EEE 2274",
+     "Thu 26 Nov 2026","پنجشنبه 26 نوامبر 2026",
+     eod(2026,11,26), eod(2026,11,26)),
+  ev("eee-exp5","EEE 2274 Exp 5 prelab due","مهلت پیش‌گزارش آزمایش 5 درس EEE 2274",
+     "Thu 3 Dec 2026","پنجشنبه 3 دسامبر 2026",
+     eod(2026,12,3), eod(2026,12,3)),
+  ev("eee-exp6","EEE 2274 Exp 6 prelab due","مهلت پیش‌گزارش آزمایش 6 درس EEE 2274",
+     "Thu 10 Dec 2026","پنجشنبه 10 دسامبر 2026",
+     eod(2026,12,10), eod(2026,12,10)),
+  ev("proj-upload","COMP 2233 Project upload","بارگذاری پروژه COMP 2233",
+     "Sun 13 Dec 2026, 23:55","یکشنبه 13 دسامبر 2026، ساعت 23:55",
+     pt(2026,12,13,23,55), pt(2026,12,13,23,55),
+     {detail_en:"Moodle upload for Term Project #136, RandomizedSet raffle. No late submission.",
+      detail_fa:"بارگذاری پروژه پایانی 136، RandomizedSet raffle، در Moodle. ارسال دیرکرد پذیرفته نمی‌شود."}),
+  ev("ufnd24-due","UFND 2420 Module 3 / 4.1 / 4.2 assignments due","مهلت تکلیف‌های ماژول 3 و 4.1 و 4.2 درس UFND 2420",
+     "Tue 15 Dec 2026, 17:00","سه‌شنبه 15 دسامبر 2026، ساعت 17:00",
+     pt(2026,12,15,17,0), pt(2026,12,15,17,0)),
+  ev("proj-pres","Project presentations","ارائه‌های پروژه",
+     "14–18 Dec 2026","14 تا 18 دسامبر 2026",
+     pt(2026,12,14,0,0), eod(2026,12,18),
+     {detail_en:"Presentations and printed report, Dec 14–18.",
+      detail_fa:"ارائه و گزارش چاپی، 14 تا 18 دسامبر."}),
+  ev("eee-exp7","EEE 2274 Exp 7 prelab due","مهلت پیش‌گزارش آزمایش 7 درس EEE 2274",
+     "Thu 24 Dec 2026","پنجشنبه 24 دسامبر 2026",
+     eod(2026,12,24), eod(2026,12,24)),
+  ev("finals-start","Finals start","شروع امتحانات پایان‌ترم",
+     "Sat 26 Dec 2026","شنبه 26 دسامبر 2026",
+     pt(2026,12,26,0,0), eod(2026,12,26),
+     {detail_en:"Official window 26–30 Dec 2026 and 4–12 Jan 2027. Per-course dates TBA.",
+      detail_fa:"بازه رسمی 26 تا 30 دسامبر 2026 و 4 تا 12 ژانویه 2027. تاریخ هر درس اعلام نشده."})
+];
+
+var evIndex=null; /* null = auto: next event that has not ended */
+
 function nowDate(){
   if(typeof window.__mockNow==="string" && window.__mockNow){
     var x=new Date(window.__mockNow);
@@ -2644,6 +2772,11 @@ function partsIstanbul(d){
 /* Turkey uses UTC+3 year-round (no DST). */
 function wallToMs(y,m,d,h,min,s){
   return Date.UTC(y,m-1,d,h,min,s) - 3*60*60*1000;
+}
+function tMs(p){ return wallToMs(p.y,p.m,p.d,p.h,p.min,p.s); }
+function nowMs(){
+  var p=partsIstanbul(nowDate());
+  return tMs(p);
 }
 function daysInMonth(y,m){ return new Date(Date.UTC(y,m,0)).getUTCDate(); }
 function addMonthsWall(p, n){
@@ -2661,19 +2794,18 @@ function cmpWall(a,b){
 function diffTo(target){
   var now=nowDate();
   var p=partsIstanbul(now);
-  var tMs=wallToMs(target.y,target.m,target.d,target.h,target.min,target.s);
-  var nMs=wallToMs(p.y,p.m,p.d,p.h,p.min,p.s);
-  if(nMs>=tMs) return {past:true,months:0,weeks:0,days:0,hours:0};
-  /* largest month count such that addMonths(now, months) <= target */
+  var targetMs=tMs(target);
+  var nMs=tMs(p);
+  if(nMs>=targetMs) return {past:true,months:0,weeks:0,days:0,hours:0,totalDays:0};
   var months=0;
   while(cmpWall(addMonthsWall(p, months+1), target)<=0) months++;
   var cur=addMonthsWall(p, months);
-  var remMs=tMs - wallToMs(cur.y,cur.m,cur.d,cur.h,cur.min,cur.s);
+  var remMs=targetMs - tMs(cur);
   var remDays=Math.floor(remMs/86400000);
   var weeks=Math.floor(remDays/7);
   var days=remDays%7;
   var hours=Math.floor((remMs%86400000)/3600000);
-  return {past:false,months:months,weeks:weeks,days:days,hours:hours,totalDays:Math.floor((tMs-nMs)/86400000)};
+  return {past:false,months:months,weeks:weeks,days:days,hours:hours,totalDays:Math.floor((targetMs-nMs)/86400000)};
 }
 function joinEN(parts){
   if(!parts.length) return "0 days";
@@ -2682,6 +2814,9 @@ function joinEN(parts){
   return parts.slice(0,-1).join(", ")+" and "+parts[parts.length-1];
 }
 function unitEN(n, one, many){ return n+" "+(n===1?one:many); }
+function unitFA(n, one, many){ return n+" "+(n===1?one:many); }
+
+/* Finals unit rule, kept as is. */
 function formatEN(diff){
   if(diff.past) return "0 days";
   if(diff.months>=1){
@@ -2699,7 +2834,6 @@ function formatEN(diff){
   if(diff.hours>=1) return unitEN(diff.hours,"hour","hours");
   return "less than 1 hour";
 }
-function unitFA(n, one, many){ return n+" "+(n===1?one:many); }
 function formatFA(diff){
   if(diff.past) return "0 روز";
   var p=[];
@@ -2718,16 +2852,48 @@ function formatFA(diff){
   if(diff.hours>=1) return unitFA(diff.hours,"ساعت","ساعت");
   return "کمتر از 1 ساعت";
 }
+/* Project / events: same months→weeks→days; keep days when < 1 week; days and hours when < 1 day. */
+function formatENH(diff){
+  if(diff.past) return "0 days";
+  if(diff.months>=1 || diff.weeks>=1 || diff.totalDays>=1) return formatEN(diff);
+  if(diff.hours>=1) return "0 days and "+unitEN(diff.hours,"hour","hours");
+  return "less than 1 hour";
+}
+function formatFAH(diff){
+  if(diff.past) return "0 روز";
+  if(diff.months>=1 || diff.weeks>=1 || diff.totalDays>=1) return formatFA(diff);
+  if(diff.hours>=1) return "0 روز و "+unitFA(diff.hours,"ساعت","ساعت");
+  return "کمتر از 1 ساعت";
+}
 function wrap(s){
   return String(s).replace(/[A-Za-z0-9][A-Za-z0-9#+\-–—\/.,():*′’_ ]*[A-Za-z0-9#)]|[A-Za-z0-9]/g,
     function(m){return '<span class="ex-ltr" dir="ltr">'+m+"</span>";});
 }
-function paint(){
-  var el=document.getElementById("finals-countdown");
+function isFa(){ return document.documentElement.lang==="fa"; }
+
+function eventEnded(e, n){ return n>=tMs(e.end); }
+function eventStarted(e, n){ return n>=tMs(e.start); }
+function nextUpcomingIndex(n){
+  n=n!=null?n:nowMs();
+  for(var i=0;i<EVENTS.length;i++) if(!eventEnded(EVENTS[i], n)) return i;
+  return EVENTS.length-1;
+}
+function currentIndex(){
+  if(evIndex==null) evIndex=nextUpcomingIndex();
+  return evIndex;
+}
+function stepEvent(dir){
+  var i=currentIndex()+dir;
+  if(i<0) i=0;
+  if(i>EVENTS.length-1) i=EVENTS.length-1;
+  evIndex=i;
+  paintEvents();
+}
+
+function paintFinals(){
+  var el=document.getElementById("card-finals");
   if(!el) return;
-  var fa=document.documentElement.lang==="fa";
-  el.setAttribute("dir", fa?"rtl":"ltr");
-  el.setAttribute("lang", fa?"fa":"en");
+  var fa=isFa();
   var a=diffTo(START), b=diffTo(END);
   var kicker=fa?"شمارش معکوس امتحانات پایان‌ترم":"Finals countdown";
   var startLabel, startVal, endLabel, endVal;
@@ -2753,16 +2919,137 @@ function paint(){
   }
   el.innerHTML=html;
 }
+
+function paintProject(){
+  var el=document.getElementById("card-project");
+  if(!el) return;
+  var fa=isFa();
+  var kicker=fa?"پروژه":"Project";
+  var title=fa?"پروژه پایانی COMP 2233 شماره 136، RandomizedSet raffle":"COMP 2233 Term Project #136, RandomizedSet raffle";
+  var due=fa?"مهلت بارگذاری در Moodle: یکشنبه 13 دسامبر 2026، ساعت 23:55. ارسال دیرکرد پذیرفته نمی‌شود.":"Moodle upload due Sun 13 Dec 2026, 23:55. No late submission.";
+  var pres=fa?"ارائه و گزارش چاپی: 14 تا 18 دسامبر.":"Presentations and printed report: 14–18 Dec.";
+  var dueDiff=diffTo(PROJ_DUE);
+  var label, val;
+  if(!dueDiff.past){
+    label=fa?"تا مهلت بارگذاری":"Until the upload deadline";
+    val=fa?("مانده: "+formatFAH(dueDiff)):("in "+formatENH(dueDiff));
+  } else {
+    var presDiff=diffTo(PROJ_PRES_END);
+    if(!presDiff.past){
+      label=fa?"بارگذاری بسته شد. تا پایان ارائه‌ها، 18 دسامبر":"Upload closed. Until presentations end, 18 Dec";
+      val=fa?("مانده: "+formatFAH(presDiff)):("in "+formatENH(presDiff));
+    } else {
+      label=fa?"بارگذاری و ارائه‌ها تمام شده است.":"Upload and presentations have ended.";
+      val=fa?"مهلت: 13 دسامبر 2026، ساعت 23:55":"Deadline was 13 Dec 2026, 23:55.";
+    }
+  }
+  var html='<div class="cd-kicker">'+wrap(kicker)+"</div>";
+  html+='<div class="cd-title">'+wrap(title)+"</div>";
+  html+='<div class="cd-sub">'+wrap(due)+"</div>";
+  html+='<div class="cd-sub">'+wrap(pres)+"</div>";
+  html+='<div class="cd-row"><span class="cd-label">'+wrap(label)+'</span><span class="cd-val">'+wrap(val)+"</span></div>";
+  el.innerHTML=html;
+}
+
+function paintEvents(){
+  var el=document.getElementById("card-events");
+  if(!el) return;
+  var fa=isFa();
+  var i=currentIndex();
+  var e=EVENTS[i];
+  var n=nowMs();
+  var kicker=fa?"رویداد بعدی":"Upcoming event";
+  var name=fa?e.fa:e.en;
+  var when=fa?e.when_fa:e.when_en;
+  var detail=fa?(e.detail_fa||""):(e.detail_en||"");
+  var note=fa?(e.note_fa||""):(e.note_en||"");
+  var tag=fa?(e.tag_fa||""):(e.tag_en||"");
+  var target, label, val, status="";
+  if(!eventStarted(e,n)){
+    target=e.start;
+    label=fa?"تا شروع":"Until it starts";
+    var d=diffTo(target);
+    val=fa?("مانده: "+formatFAH(d)):("in "+formatENH(d));
+  } else if(!eventEnded(e,n)){
+    status=fa?"در حال برگزاری":"Happening now";
+    target=e.end;
+    label=fa?"تا پایان":"Until it ends";
+    var d=diffTo(target);
+    val=fa?("مانده: "+formatFAH(d)):("in "+formatENH(d));
+  } else {
+    status=fa?"گذشته":"Past";
+    label=fa?"این رویداد تمام شده است.":"This event has ended.";
+    val=when;
+  }
+  var prevG=fa?"\u203A":"\u2039";
+  var nextG=fa?"\u2039":"\u203A";
+  var html='<div class="cd-kicker">'+wrap(kicker)+"</div>";
+  html+='<div class="ev-nav">';
+  html+='<button type="button" class="ev-arr ev-prev" data-dir="-1" aria-label="'+(fa?"قبلی":"Previous")+'" '+(i===0?"disabled":"")+">"+prevG+"</button>";
+  html+='<div class="ev-body">';
+  if(tag) html+='<div class="cd-tag">'+wrap(tag)+"</div>";
+  html+='<div class="cd-title">'+wrap(name)+"</div>";
+  html+='<div class="cd-sub">'+wrap(when)+"</div>";
+  if(detail) html+='<div class="cd-sub">'+wrap(detail)+"</div>";
+  if(note) html+='<div class="cd-sub">'+wrap(note)+"</div>";
+  if(status) html+='<div class="cd-sub">'+wrap(status)+"</div>";
+  html+='<div class="cd-row"><span class="cd-label">'+wrap(label)+'</span><span class="cd-val">'+wrap(val)+"</span></div>";
+  html+="</div>";
+  html+='<button type="button" class="ev-arr ev-next" data-dir="1" aria-label="'+(fa?"بعدی":"Next")+'" '+(i===EVENTS.length-1?"disabled":"")+">"+nextG+"</button>";
+  html+="</div>";
+  el.innerHTML=html;
+}
+
+function paint(){
+  var wrap=document.getElementById("topbar-cards");
+  if(wrap){
+    wrap.setAttribute("dir", isFa()?"rtl":"ltr");
+    wrap.setAttribute("lang", isFa()?"fa":"en");
+  }
+  /* If still in auto mode, snap to the next event that has not ended. */
+  if(evIndex==null) evIndex=nextUpcomingIndex();
+  paintFinals();
+  paintProject();
+  paintEvents();
+}
+
+var evBound=false;
+function bind(){
+  if(evBound) return;
+  evBound=true;
+  var wrap=document.getElementById("topbar-cards");
+  if(wrap){
+    wrap.addEventListener("click", function(ev){
+      var b=ev.target.closest?ev.target.closest(".ev-arr"):null;
+      if(!b || b.disabled) return;
+      var dir=parseInt(b.getAttribute("data-dir"),10);
+      if(dir) stepEvent(dir);
+    });
+  }
+  var sw=document.getElementById("langsw");
+  if(sw) sw.addEventListener("click", function(){ setTimeout(paint, 0); });
+  document.addEventListener("visibilitychange", function(){ if(!document.hidden) paint(); });
+  if(window.MutationObserver){
+    new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+  }
+}
+
+window.__topbar={
+  events:EVENTS,
+  index:function(){ return currentIndex(); },
+  event:function(){ return EVENTS[currentIndex()]; },
+  next:function(){ stepEvent(1); },
+  prev:function(){ stepEvent(-1); },
+  resetAuto:function(){ evIndex=null; paint(); },
+  paint:paint
+};
+
+bind();
 paint();
 setInterval(paint, 30000);
-document.addEventListener("visibilitychange", function(){ if(!document.hidden) paint(); });
-if(window.MutationObserver){
-  new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
-}
-var sw=document.getElementById("langsw");
-if(sw) sw.addEventListener("click", function(){ setTimeout(paint, 0); });
 })();
 </script>
+
 
 </body>
 </html>
