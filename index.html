@@ -1257,6 +1257,9 @@ window.__clockTodayIso = function(){
   <div class="panel glass fin-panel">
    
 <div class="fin-en" lang="en" dir="ltr">
+  <div class="fin-about">
+  <button type="button" class="fin-about-btn" aria-expanded="false" aria-controls="fin-about-en"><svg class="fin-about-chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>About this plan &amp; deadlines</span></button>
+  <div class="fin-about-body" id="fin-about-en" inert><div class="fin-about-in">
   <h2>Finals study plan — 23 Nov – 25 Dec 2026 (5 weeks)</h2>
   <p class="fin-lead">Be ready by Saturday 26 Dec, when the official Yaşar fall finals window opens (26–30 Dec 2026 and 4–12 Jan 2027). Per-course final dates are not published yet (TBA).</p>
   <ul class="fin-notes">
@@ -1267,12 +1270,17 @@ window.__clockTodayIso = function(){
     <li>Weeks 1–4 are learn + practice. Week 5 (21–25 Dec) is full review and past-exam practice. Past papers on disk were confirmed for EEE 2274 (uni-not); for the other courses use a uni-not paper if you have one, otherwise mixed problems from the notes.</li>
     <li>Later topics come from the syllabi and may shift when new slides appear on Moodle. Each topic links its source file when one is on hand, otherwise the course page on Moodle.</li>
   </ul>
+  </div></div>
+</div>
   <h3 class="fin-h3" id="fin-overview-h-en">Weekly overview</h3>
   <p class="fin-sub">Topics per course, ticked / planned. Click a week to jump to its first day.</p>
 </div>
 
    
 <div class="fin-fa" lang="fa" dir="rtl">
+  <div class="fin-about">
+  <button type="button" class="fin-about-btn" aria-expanded="false" aria-controls="fin-about-fa"><svg class="fin-about-chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>درباره این برنامه و مهلت‌ها</span></button>
+  <div class="fin-about-body" id="fin-about-fa" inert><div class="fin-about-in">
   <h2 dir="rtl">برنامه پنج‌هفته‌ای پایان‌ترم، از <span class="ex-ltr" dir="ltr">23</span> نوامبر تا <span class="ex-ltr" dir="ltr">25</span> دسامبر <span class="ex-ltr" dir="ltr">2026</span></h2>
   <p class="fin-lead">تا شنبه <span class="ex-ltr" dir="ltr">26</span> دسامبر آماده باش، وقتی پنجره رسمی امتحان‌های پایان‌ترم پاییز دانشگاه یاشار باز می‌شود. بازه رسمی <span class="ex-ltr" dir="ltr">26</span> تا <span class="ex-ltr" dir="ltr">30</span> دسامبر <span class="ex-ltr" dir="ltr">2026</span> و <span class="ex-ltr" dir="ltr">4</span> تا <span class="ex-ltr" dir="ltr">12</span> ژانویه <span class="ex-ltr" dir="ltr">2027</span> است. تاریخ امتحان هر درس هنوز اعلام نشده و <span class="ex-ltr" dir="ltr">TBA</span> است.</p>
   <ul class="fin-notes">
@@ -1283,6 +1291,8 @@ window.__clockTodayIso = function(){
     <li>هفته‌های <span class="ex-ltr" dir="ltr">1</span> تا <span class="ex-ltr" dir="ltr">4</span> یادگیری و تمرین است. هفته <span class="ex-ltr" dir="ltr">5</span> از <span class="ex-ltr" dir="ltr">21</span> تا <span class="ex-ltr" dir="ltr">25</span> دسامبر مرور کامل و تمرین امتحان‌های قبلی است. برگه‌های قبلی <span class="ex-ltr" dir="ltr">EEE 2274</span> در <span class="ex-ltr" dir="ltr">uni-not</span> تأیید شده؛ برای بقیه درس‌ها اگر برگه <span class="ex-ltr" dir="ltr">uni-not</span> داری همان را بزن، وگرنه مسئله ترکیبی از جزوه.</li>
     <li>مباحث هفته‌های بعد از سیلابس‌ها آمده و با آمدن اسلاید جدید در <span class="ex-ltr" dir="ltr">Moodle</span> ممکن است جابه‌جا شود. هر مبحث به فایل منبعش لینک دارد، و اگر فایلی در دست نیست به صفحه درس در <span class="ex-ltr" dir="ltr">Moodle</span>.</li>
   </ul>
+  </div></div>
+</div>
   <h3 class="fin-h3" id="fin-overview-h-fa">نمای هفتگی</h3>
   <p class="fin-sub">تعداد مباحث هر درس، تیک‌خورده / برنامه‌ریزی‌شده. برای رفتن به اولین روز هفته، روی آن هفته بزن.</p>
 </div>
@@ -3440,6 +3450,23 @@ html[lang=fa] #view-finals .fin-mark b{font-family:var(--gta-fa);font-weight:800
 .fin-daylegend .lgi{display:inline-block;white-space:nowrap;margin-inline-start:8px}
 .fin-daylegend .lg{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-inline-end:5px;background:transparent;border:2px solid}
 .fin-daylegend .lg-g{border-color:#2ecc71}.fin-daylegend .lg-y{border-color:#f1c40f}.fin-daylegend .lg-o{border-color:#ff8c1a}.fin-daylegend .lg-r{border-color:#ff3b30}
+/* Finals intro as a collapsible (v28): always starts collapsed, state not saved */
+.fin-about{margin:0 0 22px;border:1px solid rgba(255,120,200,.28);border-radius:14px;background:rgba(255,255,255,.03)}
+.fin-about-btn{display:flex;align-items:center;gap:10px;width:100%;padding:12px 16px;background:transparent;border:0;color:#fff;font:inherit;font-family:var(--gta-h);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.88rem;cursor:pointer;text-align:start;border-radius:14px;min-height:44px}
+html[lang=fa] .fin-about-btn{font-family:var(--gta-fa);font-weight:800;letter-spacing:0;text-transform:none;font-size:.95rem}
+.fin-about-btn:hover{color:#ffd400}
+.fin-about-btn:focus-visible{outline:2px solid #ff2d95;outline-offset:2px}
+.fin-about-chev{width:16px;height:16px;flex:0 0 16px;color:#ff7ac0;transition:transform .28s ease}
+html[lang=fa] .fin-about-chev{transform:scaleX(-1)}
+.fin-about-btn[aria-expanded=true] .fin-about-chev{transform:rotate(90deg)}
+.fin-about-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}
+.fin-about-body.open{grid-template-rows:1fr}
+.fin-about-in{overflow:hidden;min-height:0;padding:0 18px}
+.fin-about-body.open .fin-about-in{padding-bottom:4px}
+.fin-about-in h2{margin-top:4px}
+#view-finals .fin-about .fin-notes{margin-bottom:14px}
+#view-finals .fin-about .fin-notes li{display:list-item;border:0;background:none;box-shadow:none;padding:0}
+@media (prefers-reduced-motion:reduce){.fin-about-body,.fin-about-chev{transition:none}}
 /* Project tab */
 #view-project{padding-bottom:72px}
 .gta-pjlink{display:block;margin:22px 0 0;padding:12px 16px;border:1px solid rgba(255,212,0,.45);border-radius:14px;color:#ffd400;text-decoration:none;font-weight:650;position:relative;z-index:1}
@@ -3477,6 +3504,18 @@ html[lang=fa] #view-finals .fin-mark b{font-family:var(--gta-fa);font-weight:800
 /* v24: page title follows the language (the old plan script sets an outdated one) */
 (function(){var T=document.querySelector("title");function t(){var w=document.documentElement.lang==="fa"?"برنامه پایان‌ترم 2026":"Finals 2026 · Study plan";if(document.title!==w)document.title=w}
 t();try{new MutationObserver(t).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});if(T)new MutationObserver(t).observe(T,{childList:true})}catch(e){}})();
+</script>
+<script>
+/* Finals intro collapsible (v28): collapsed on every load; open state is not stored. */
+(function(){
+document.addEventListener("click",function(e){
+ var b=e.target.closest?e.target.closest(".fin-about-btn"):null;if(!b) return;
+ var body=document.getElementById(b.getAttribute("aria-controls"));if(!body) return;
+ var open=b.getAttribute("aria-expanded")!=="true";
+ b.setAttribute("aria-expanded",String(open));body.classList.toggle("open",open);
+ if(open) body.removeAttribute("inert"); else body.setAttribute("inert","");
+});
+})();
 </script>
 </body>
 </html>
