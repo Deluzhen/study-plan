@@ -1481,9 +1481,17 @@ function renderDaybar(){
     var d=parseD(iso), ts=dayTopics(iso), all=ts.length&&ts.every(function(t){return ticks[t.id]});
     var short=F?(WD_FA[(d.getDay()+6)%7]+" "+d.getDate()):(WD_EN[(d.getDay()+6)%7].slice(0,3)+" "+d.getDate());
     var mk=(DATA.marks||{})[iso];
-    var cls="fin-daybtn"+(iso===today?" is-today":"")+(all?" is-done":"")+(mk&&mk.quiz?" is-quiz":"");
-    html+="<button type='button' class='"+cls+"' data-iso='"+iso+"' aria-selected='"+(iso===selected)+"'>"+(F?ltrize(short):esc(short))+(mk&&mk.quiz?" · "+(F?"کوییز":"Quiz"):"")+(all?" ✓":"")+"</button>";
+    /* v27 day colours: a past day (ended, Istanbul) is coloured by its share of ticked topics; today only turns green when all are ticked */
+    var nd=ts.filter(function(t){return ticks[t.id]}).length, st="";
+    if(ts.length&&iso<today) st=nd===ts.length?"g":nd*2>=ts.length?"y":nd>0?"o":"r";
+    else if(all&&iso===today) st="g";
+    var cls="fin-daybtn"+(iso===today?" is-today":"")+(all?" is-done":"")+(mk&&mk.quiz?" is-quiz":"")+(st?" st-"+st:"");
+    var stT=st?(F?{g:"همه انجام شد",y:"50% یا بیشتر",o:"کمتر از 50%",r:"هیچ‌کدام"}[st]:{g:"all done",y:"50% or more",o:"under 50%",r:"none done"}[st])+" ("+nd+"/"+ts.length+")":"";
+    html+="<button type='button' class='"+cls+"' data-iso='"+iso+"' aria-selected='"+(iso===selected)+"'"+(stT?" title='"+esc(stT)+"'":"")+">"+(F?ltrize(short):esc(short))+(mk&&mk.quiz?" · "+(F?"کوییز":"Quiz"):"")+(all?" ✓":"")+"</button>";
   });
+  html+="<div class='fin-daylegend'>"+(F?"روزهای گذشته: ":"Past days: ")+
+    "<span class='lgi'><span class='lg lg-g'></span>"+(F?"همه":"all done")+"</span><span class='lgi'><span class='lg lg-y'></span>"+(F?ltrize("50% یا بیشتر"):"50%+")+
+    "</span><span class='lgi'><span class='lg lg-o'></span>"+(F?ltrize("کمتر از 50%"):"under 50%")+"</span><span class='lgi'><span class='lg lg-r'></span>"+(F?"هیچ":"none")+"</span></div>";
   box.innerHTML=html;
   Array.prototype.forEach.call(box.querySelectorAll(".fin-daybtn"),function(b){
     b.addEventListener("click",function(){selected=b.getAttribute("data-iso");render();});
@@ -1560,6 +1568,7 @@ function render(){
 if(!DAYS[0]) return;
 selected=defaultDay();
 window.__finals=function(){selected=selected||defaultDay();render();};
+window.addEventListener("storage",function(e){if(e.key===STORE&&document.getElementById("view-finals")&&!document.getElementById("view-finals").hidden)render()});
 if(document.getElementById("view-finals") && !document.getElementById("view-finals").hidden) render();
 })();
 </script>
@@ -3418,6 +3427,23 @@ html[lang=fa] #view-finals .fin-mark b{font-family:var(--gta-fa);font-weight:800
 #topbar-cards #card-quiz{border-color:rgba(255,138,101,.55)}
 #topbar-cards #card-quiz .cd-kicker{color:#ff8a65}
 @media (max-width:1100px) and (min-width:641px){#topbar-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Finals day picker: completion colours for past days (v27) */
+.fin-daybtn.st-g{border-color:#4ff0a0;color:#4ff0a0;background:rgba(79,240,160,.12)}
+.fin-daybtn.st-y{border-color:#ffd400;color:#ffd400;background:rgba(255,212,0,.12)}
+.fin-daybtn.st-o{border-color:#ff9a3c;color:#ffad5c;background:rgba(255,138,0,.13)}
+.fin-daybtn.st-r{border-color:#ff5f6d;color:#ff7f8a;background:rgba(255,95,109,.13)}
+.fin-daybtn.st-g:hover,.fin-daybtn.st-y:hover,.fin-daybtn.st-o:hover,.fin-daybtn.st-r:hover{filter:brightness(1.15)}
+.fin-daybtn.is-quiz.st-g,.fin-daybtn.is-quiz.st-y,.fin-daybtn.is-quiz.st-o,.fin-daybtn.is-quiz.st-r{border-width:2px;font-weight:700}
+.fin-daybtn[aria-selected=true].st-g,.fin-daybtn[aria-selected=true].st-y,.fin-daybtn[aria-selected=true].st-o,.fin-daybtn[aria-selected=true].st-r{color:#140b26;font-weight:800;box-shadow:0 0 0 2px #fff,0 0 14px rgba(255,255,255,.35)}
+.fin-daybtn[aria-selected=true].st-g{background:#4ff0a0}
+.fin-daybtn[aria-selected=true].st-y{background:#ffd400}
+.fin-daybtn[aria-selected=true].st-o{background:#ff9a3c}
+.fin-daybtn[aria-selected=true].st-r{background:#ff5f6d}
+.fin-daybtn.is-today.st-g:not([aria-selected=true]){box-shadow:0 0 0 1px #ff2d95}
+.fin-daylegend{flex-basis:100%;margin-top:10px;font-size:.76rem;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.fin-daylegend .lgi{display:inline-block;white-space:nowrap;margin-inline-start:8px}
+.fin-daylegend .lg{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-inline-end:5px}
+.fin-daylegend .lg-g{background:#4ff0a0}.fin-daylegend .lg-y{background:#ffd400}.fin-daylegend .lg-o{background:#ff9a3c}.fin-daylegend .lg-r{background:#ff5f6d}
 /* Project tab */
 #view-project{padding-bottom:72px}
 .gta-pjlink{display:block;margin:22px 0 0;padding:12px 16px;border:1px solid rgba(255,212,0,.45);border-radius:14px;color:#ffd400;text-decoration:none;font-weight:650;position:relative;z-index:1}
