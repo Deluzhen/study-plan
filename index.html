@@ -3428,22 +3428,18 @@ html[lang=fa] #view-finals .fin-mark b{font-family:var(--gta-fa);font-weight:800
 #topbar-cards #card-quiz .cd-kicker{color:#ff8a65}
 @media (max-width:1100px) and (min-width:641px){#topbar-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* Finals day picker: completion colours for past days (v27) */
-.fin-daybtn.st-g{border-color:#4ff0a0;color:#4ff0a0;background:rgba(79,240,160,.12)}
-.fin-daybtn.st-y{border-color:#ffd400;color:#ffd400;background:rgba(255,212,0,.12)}
-.fin-daybtn.st-o{border-color:#ff9a3c;color:#ffad5c;background:rgba(255,138,0,.13)}
-.fin-daybtn.st-r{border-color:#ff5f6d;color:#ff7f8a;background:rgba(255,95,109,.13)}
-.fin-daybtn.st-g:hover,.fin-daybtn.st-y:hover,.fin-daybtn.st-o:hover,.fin-daybtn.st-r:hover{filter:brightness(1.15)}
-.fin-daybtn.is-quiz.st-g,.fin-daybtn.is-quiz.st-y,.fin-daybtn.is-quiz.st-o,.fin-daybtn.is-quiz.st-r{border-width:2px;font-weight:700}
-.fin-daybtn[aria-selected=true].st-g,.fin-daybtn[aria-selected=true].st-y,.fin-daybtn[aria-selected=true].st-o,.fin-daybtn[aria-selected=true].st-r{color:#140b26;font-weight:800;box-shadow:0 0 0 2px #fff,0 0 14px rgba(255,255,255,.35)}
-.fin-daybtn[aria-selected=true].st-g{background:#4ff0a0}
-.fin-daybtn[aria-selected=true].st-y{background:#ffd400}
-.fin-daybtn[aria-selected=true].st-o{background:#ff9a3c}
-.fin-daybtn[aria-selected=true].st-r{background:#ff5f6d}
-.fin-daybtn.is-today.st-g:not([aria-selected=true]){box-shadow:0 0 0 1px #ff2d95}
+.fin-daybtn.st-g,.fin-daybtn.st-y,.fin-daybtn.st-o,.fin-daybtn.st-r{background:transparent;border-width:1.5px;font-weight:700}
+.fin-daybtn.st-g{--st:#2ecc71;border-color:#2ecc71;color:#2ecc71}
+.fin-daybtn.st-y{--st:#f1c40f;border-color:#f1c40f;color:#f1c40f}
+.fin-daybtn.st-o{--st:#ff8c1a;border-color:#ff8c1a;color:#ff8c1a}
+.fin-daybtn.st-r{--st:#ff3b30;border-color:#ff3b30;color:#ff3b30}
+.fin-daybtn.st-g:hover,.fin-daybtn.st-y:hover,.fin-daybtn.st-o:hover,.fin-daybtn.st-r:hover{background:transparent;filter:brightness(1.15)}
+.fin-daybtn.is-quiz.st-g,.fin-daybtn.is-quiz.st-y,.fin-daybtn.is-quiz.st-o,.fin-daybtn.is-quiz.st-r{border-width:2px}
+.fin-daybtn[aria-selected=true].st-g,.fin-daybtn[aria-selected=true].st-y,.fin-daybtn[aria-selected=true].st-o,.fin-daybtn[aria-selected=true].st-r{background:transparent;color:var(--st);border-width:3px;border-color:var(--st);font-weight:800;box-shadow:0 0 12px var(--st)}
 .fin-daylegend{flex-basis:100%;margin-top:10px;font-size:.76rem;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
 .fin-daylegend .lgi{display:inline-block;white-space:nowrap;margin-inline-start:8px}
-.fin-daylegend .lg{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-inline-end:5px}
-.fin-daylegend .lg-g{background:#4ff0a0}.fin-daylegend .lg-y{background:#ffd400}.fin-daylegend .lg-o{background:#ff9a3c}.fin-daylegend .lg-r{background:#ff5f6d}
+.fin-daylegend .lg{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:-1px;margin-inline-end:5px;background:transparent;border:2px solid}
+.fin-daylegend .lg-g{border-color:#2ecc71}.fin-daylegend .lg-y{border-color:#f1c40f}.fin-daylegend .lg-o{border-color:#ff8c1a}.fin-daylegend .lg-r{border-color:#ff3b30}
 /* Project tab */
 #view-project{padding-bottom:72px}
 .gta-pjlink{display:block;margin:22px 0 0;padding:12px 16px;border:1px solid rgba(255,212,0,.45);border-radius:14px;color:#ffd400;text-decoration:none;font-weight:650;position:relative;z-index:1}
