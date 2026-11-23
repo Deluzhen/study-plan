@@ -661,9 +661,10 @@ html[lang=fa] #view-finals .fin-carry .fin-topic{box-shadow:inset -3px 0 0 var(-
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div id="topbar-cards" class="top-cards" role="region" aria-label="Countdowns">
-  <div id="card-finals" class="top-card" aria-live="polite"></div>
-  <div id="card-project" class="top-card" aria-live="polite"></div>
-  <div id="card-events" class="top-card"></div>
+  <div id="card-finals" class="top-card"></div>
+  <div id="card-hw" class="top-card"></div>
+  <div id="card-quiz" class="top-card"></div>
+  <div id="card-project" class="top-card"></div>
 </div>
 
 <header><div class="hdr glass">
@@ -681,6 +682,7 @@ html[lang=fa] #view-finals .fin-carry .fin-topic{box-shadow:inset -3px 0 0 var(-
 </div></header>
 <nav class="vtabs" role="tablist" id="vtabs">
  <button type="button" class="vtab" role="tab" id="tab-finals" aria-controls="view-finals" aria-selected="true">Finals plan</button>
+ <button type="button" class="vtab" role="tab" id="tab-project" aria-controls="view-project" aria-selected="false">Project</button>
  <button type="button" class="vtab" role="tab" id="tab-plan" aria-controls="view-plan" aria-selected="false" hidden>Daily plan</button>
  <button type="button" class="vtab" role="tab" id="tab-outlook" aria-controls="view-outlook" aria-selected="false" hidden>Two-week outlook</button>
  <button type="button" class="vtab" role="tab" id="tab-exams" aria-controls="view-exams" aria-selected="false">Exams</button>
@@ -1261,7 +1263,7 @@ window.__clockTodayIso = function(){
     <li>This is a list of topics, not a timetable. Each day shows only what to cover; plan your own timing in ChatGPT or Structured and take as long as you need.</li>
     <li>Anything you don't tick rolls over: it shows at the top of today's list under "Unfinished from earlier days" until you tick it. Ticking it there or on its own day is the same tick.</li>
     <li>Not in this plan, no study needed: HIST 1120, ISG 9120 and UFND 2020 (Research Culture has no midterm and no final). Their news is still reported to you.</li>
-    <li>Deadlines: COMP 2233 Quiz 3 (BST) Fri 27 Nov. Project #136 upload Sun 13 Dec 23:55, presentations 14–18 Dec (roster TBA). EEE prelabs: Exp 4 due 26 Nov, Exp 5 on 3 Dec, Exp 6 on 10 Dec, Exp 7 on 24 Dec. UFND 2420 Module 3 / 4.1 / 4.2 closes Tue 15 Dec 17:00.</li>
+    <li>Deadlines: COMP 2233 Quiz 3 (Binary Trees) Fri 27 Nov, time not announced. Project #136 upload Sun 13 Dec 23:55, presentations 14–18 Dec (roster TBA). EEE prelabs: Exp 4 due 26 Nov, Exp 5 on 3 Dec, Exp 6 on 10 Dec, Exp 7 on 24 Dec. UFND 2420 Module 3 / 4.1 / 4.2 closes Tue 15 Dec 17:00.</li>
     <li>Weeks 1–4 are learn + practice. Week 5 (21–25 Dec) is full review and past-exam practice. Past papers on disk were confirmed for EEE 2274 (uni-not); for the other courses use a uni-not paper if you have one, otherwise mixed problems from the notes.</li>
     <li>Later topics come from the syllabi and may shift when new slides appear on Moodle. Each topic links its source file when one is on hand, otherwise the course page on Moodle.</li>
   </ul>
@@ -1277,7 +1279,7 @@ window.__clockTodayIso = function(){
     <li>این فهرست مباحث است، نه جدول ساعت. هر روز فقط می‌گوید چه چیزی را باید بخوانی؛ زمان‌بندی را خودت با <span class="ex-ltr" dir="ltr">ChatGPT</span> یا <span class="ex-ltr" dir="ltr">Structured</span> بچین و هر قدر لازم است وقت بگذار.</li>
     <li>هر مبحثی که تیک نخورد جا نمی‌ماند: بالای فهرست امروز زیر «باقی‌مانده از روزهای قبل» می‌آید تا تیکش بزنی. تیک زدن آنجا یا در روز خودش یکی است.</li>
     <li>در این برنامه نیستند و خواندن لازم ندارند: <span class="ex-ltr" dir="ltr">HIST 1120</span>، <span class="ex-ltr" dir="ltr">ISG 9120</span> و <span class="ex-ltr" dir="ltr">UFND 2020</span> (فرهنگ پژوهش میان‌ترم و پایان‌ترم ندارد). خبرهایشان همچنان به تو گفته می‌شود.</li>
-    <li>مهلت‌ها: <span class="ex-ltr" dir="ltr">Quiz 3</span> درس <span class="ex-ltr" dir="ltr">COMP 2233</span> (موضوع <span class="ex-ltr" dir="ltr">BST</span>) جمعه <span class="ex-ltr" dir="ltr">27</span> نوامبر. بارگذاری پروژه <span class="ex-ltr" dir="ltr">#136</span> یکشنبه <span class="ex-ltr" dir="ltr">13 Dec 23:55</span>&#x200F;، ارائه‌ها <span class="ex-ltr" dir="ltr">14</span> تا <span class="ex-ltr" dir="ltr">18</span> دسامبر (نوبت اعلام نشده). پیش‌گزارش‌های <span class="ex-ltr" dir="ltr">EEE</span>&#x200F;: آزمایش <span class="ex-ltr" dir="ltr">4</span> تا <span class="ex-ltr" dir="ltr">26</span> نوامبر، آزمایش <span class="ex-ltr" dir="ltr">5</span> در <span class="ex-ltr" dir="ltr">3</span> دسامبر، آزمایش <span class="ex-ltr" dir="ltr">6</span> در <span class="ex-ltr" dir="ltr">10</span> دسامبر، آزمایش <span class="ex-ltr" dir="ltr">7</span> در <span class="ex-ltr" dir="ltr">24</span> دسامبر. تکلیف ماژول <span class="ex-ltr" dir="ltr">3 / 4.1 / 4.2</span> درس <span class="ex-ltr" dir="ltr">UFND 2420</span> سه‌شنبه <span class="ex-ltr" dir="ltr">15 Dec 17:00</span> بسته می‌شود.</li>
+    <li>مهلت‌ها: <span class="ex-ltr" dir="ltr">Quiz 3</span> درس <span class="ex-ltr" dir="ltr">COMP 2233</span> (درخت دودویی) جمعه <span class="ex-ltr" dir="ltr">27</span> نوامبر، ساعت اعلام نشده. بارگذاری پروژه <span class="ex-ltr" dir="ltr">#136</span> یکشنبه <span class="ex-ltr" dir="ltr">13 Dec 23:55</span>&#x200F;، ارائه‌ها <span class="ex-ltr" dir="ltr">14</span> تا <span class="ex-ltr" dir="ltr">18</span> دسامبر (نوبت اعلام نشده). پیش‌گزارش‌های <span class="ex-ltr" dir="ltr">EEE</span>&#x200F;: آزمایش <span class="ex-ltr" dir="ltr">4</span> تا <span class="ex-ltr" dir="ltr">26</span> نوامبر، آزمایش <span class="ex-ltr" dir="ltr">5</span> در <span class="ex-ltr" dir="ltr">3</span> دسامبر، آزمایش <span class="ex-ltr" dir="ltr">6</span> در <span class="ex-ltr" dir="ltr">10</span> دسامبر، آزمایش <span class="ex-ltr" dir="ltr">7</span> در <span class="ex-ltr" dir="ltr">24</span> دسامبر. تکلیف ماژول <span class="ex-ltr" dir="ltr">3 / 4.1 / 4.2</span> درس <span class="ex-ltr" dir="ltr">UFND 2420</span> سه‌شنبه <span class="ex-ltr" dir="ltr">15 Dec 17:00</span> بسته می‌شود.</li>
     <li>هفته‌های <span class="ex-ltr" dir="ltr">1</span> تا <span class="ex-ltr" dir="ltr">4</span> یادگیری و تمرین است. هفته <span class="ex-ltr" dir="ltr">5</span> از <span class="ex-ltr" dir="ltr">21</span> تا <span class="ex-ltr" dir="ltr">25</span> دسامبر مرور کامل و تمرین امتحان‌های قبلی است. برگه‌های قبلی <span class="ex-ltr" dir="ltr">EEE 2274</span> در <span class="ex-ltr" dir="ltr">uni-not</span> تأیید شده؛ برای بقیه درس‌ها اگر برگه <span class="ex-ltr" dir="ltr">uni-not</span> داری همان را بزن، وگرنه مسئله ترکیبی از جزوه.</li>
     <li>مباحث هفته‌های بعد از سیلابس‌ها آمده و با آمدن اسلاید جدید در <span class="ex-ltr" dir="ltr">Moodle</span> ممکن است جابه‌جا شود. هر مبحث به فایل منبعش لینک دارد، و اگر فایلی در دست نیست به صفحه درس در <span class="ex-ltr" dir="ltr">Moodle</span>.</li>
   </ul>
@@ -1351,7 +1353,7 @@ window.__clockTodayIso = function(){
 (function(){
 "use strict";
 var STORE="midterm4-plan-v1:finals-2026-v2-heavy";
-var DATA={"days":{"2026-11-23":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 1 Introduction to statistics (1.1–1.3) — full notes + short exercises","fa":"فصل 1 آشنایی با آمار (1.1 تا 1.3) — جزوه کامل + تمرین کوتاه","p":"lecture notes, 32 pages","pf":"جزوه، 32 صفحه"},{"i":6,"c":"MATH","en":"Ch 1 practice (review midterm mistakes: reading tables, types of data)","fa":"تمرین فصل 1 (مرور غلط‌های میان‌ترم: خواندن جدول، نوع داده)"},{"i":8,"ids":[8,15],"c":"SE","en":"W8 Heap structures — first part (array-heap, height, insert)","fa":"هفته 8 ساختار هیپ — بخش اول (هیپ آرایه‌ای، ارتفاع، درج)","p":"Week08-Heapstructures.pdf, 57 pages, split","pf":"Week08-Heapstructures.pdf، 57 صفحه، تقسیم‌شده"},{"i":17,"c":"EEE","en":"W10 Diode circuits — this week’s Moodle slides (topics from the syllabus)","fa":"هفته 10 مدارهای دیود — اسلایدهای Moodle همین هفته (موضوع از سیلابس)","p":"slides TBA from Moodle, typical ~14 pages","pf":"اسلایدها از Moodle؛ حدود 14 صفحه"},{"i":19,"c":"COMP","en":"Quiz 3 prep: BST (search, insert, delete, traversals) + practice traces","fa":"آمادگی Quiz 3: درخت جستجوی دودویی BST (جستجو، درج، حذف، پیمایش) + تمرین ردیابی","p":"Week 9 Trees slides, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای هفته 9 درخت، omercetin.com.tr/~courses/comp2233"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-24":[{"i":2,"ids":[2,4],"c":"SE","en":"W8 Heap structures — continued (heapify, build-heap, complexity)","fa":"هفته 8 ساختار هیپ — ادامه (heapify، ساخت هیپ، پیچیدگی)","p":"Week08-Heapstructures.pdf, continued","pf":"Week08-Heapstructures.pdf، ادامه"},{"i":6,"c":"SE","en":"Lab prep for today’s SE 2228 lab (this week’s heap / DP notes)","fa":"آمادگی آزمایشگاه امروز SE 2228 (جزوه هیپ / DP همین هفته)"},{"i":8,"ids":[8,10],"c":"COMP","en":"W7 Stacks — lecture slides + a few trace exercises","fa":"هفته 7 پشته — اسلاید + چند تمرین ردیابی","p":"COMP2233_h7_Stacks.pdf, 28 pages","pf":"COMP2233_h7_Stacks.pdf، 28 صفحه"},{"i":17,"c":"MATH","en":"Ch 2 Descriptive statistics — start (2.1–2.2 frequency + graphs)","fa":"فصل 2 آمار توصیفی — شروع (2.1 و 2.2 فراوانی و نمودار)","p":"lecture notes, 48 pages, split","pf":"جزوه، 48 صفحه، تقسیم‌شده"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: design (Vector + Hash Table, swap-with-last)","fa":"پروژه 136 RandomizedSet: طراحی (بردار + جدول درهم، جابجایی با آخر)"},{"i":21,"c":"COMP","en":"Quiz 3 prep: BST (search, insert, delete, traversals) + practice traces","fa":"آمادگی Quiz 3: درخت جستجوی دودویی BST (جستجو، درج، حذف، پیمایش) + تمرین ردیابی","p":"Week 9 Trees slides, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای هفته 9 درخت، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-25":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 2 continued (2.2–2.3 measures of center and variation)","fa":"ادامه فصل 2 (2.2 و 2.3 معیارهای مرکز و پراکندگی)","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"EEE","en":"Exp 4 prelab: Capacitance–Inductance (due Thu 26 Nov)","fa":"پیش‌گزارش آزمایش 4: خازن و سلف (مهلت پنجشنبه 26 نوامبر)"},{"i":10,"ids":[10,20],"c":"SE","en":"W8 Heap structures — finish + 2 practice problems","fa":"هفته 8 ساختار هیپ — تمام + 2 مسئله تمرینی","p":"Week08-Heapstructures.pdf, finish","pf":"Week08-Heapstructures.pdf، پایان"},{"i":26,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-11-26":[{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 2 finish (2.4) + practice set (this was a weak midterm area)","fa":"پایان فصل 2 (2.4) + تمرین (از نقاط ضعف میان‌ترم)","p":"lecture notes, finish 48 pages","pf":"جزوه، پایان 48 صفحه"},{"i":11,"c":"COMP","en":"W7 Stacks lab notes / LAB-7 + one coded stack exercise","fa":"یادداشت آزمایشگاه هفته 7 / LAB-7 + یک تمرین کدنویسی پشته","p":"COMP-2233-LAB-7.pdf, 4 pages","pf":"COMP-2233-LAB-7.pdf، 4 صفحه"},{"i":13,"c":"PROJ","en":"Project #136: start coding insert() and the hash-index map","fa":"پروژه 136: شروع کد insert و نگاشت ایندکس درهم"},{"i":19,"c":"EEE","en":"Submit Exp 4 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 4 را بفرست (مهلت امروز)"},{"i":21,"c":"COMP","en":"Quiz 3 prep: BST (search, insert, delete, traversals) + practice traces","fa":"آمادگی Quiz 3: درخت جستجوی دودویی BST (جستجو، درج، حذف، پیمایش) + تمرین ردیابی","p":"Week 9 Trees slides, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای هفته 9 درخت، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-27":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3 Probability — start (3.1–3.2 sample space, events)","fa":"فصل 3 احتمال — شروع (3.1 و 3.2 فضای نمونه و پیشامد)","p":"lecture notes, 35 pages, split","pf":"جزوه، 35 صفحه، تقسیم‌شده"},{"i":6,"c":"SE","en":"W9 Dynamic Programming–1 — start (memoization idea)","fa":"هفته 9 برنامه‌سازی پویا 1 — شروع (ایده memoization)","p":"Week09-DynamicProgramming-1.pdf, 47 pages, split","pf":"Week09-DynamicProgramming-1.pdf، 47 صفحه، تقسیم‌شده"},{"i":8,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-11-28":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 1–2 formula card + 6 mixed exercises only","fa":"برگه فرمول فصل 1 و 2 + فقط 6 تمرین ترکیبی"}],"2026-11-29":[{"i":5,"c":"SE","en":"Optional: W9 DP-1 recap (one memoization trace)","fa":"اختیاری: مرور DP-1 (یک ردیابی memoization)"}],"2026-11-30":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3 continued (3.2–3.3 addition rules, complements)","fa":"ادامه فصل 3 (3.2 و 3.3 قواعد جمع و متمم)","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"EEE","en":"W11 Operational amplifiers — this week’s Moodle slides","fa":"هفته 11 تقویت‌کننده عملیاتی — اسلایدهای Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"ids":[10,17],"c":"SE","en":"W9 DP-1 continued (Floyd–Warshall idea + examples)","fa":"ادامه DP-1 (ایده فلوید-وارشال + مثال)","p":"Week09-DynamicProgramming-1.pdf, continued","pf":"Week09-DynamicProgramming-1.pdf، ادامه"},{"i":19,"c":"PROJ","en":"Project #136: implement remove() with swap-with-last (O(1))","fa":"پروژه 136: پیاده‌سازی remove با جابجایی با آخر (O(1))"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-01":[{"i":2,"c":"SE","en":"Lab prep for today’s SE 2228 lab (DP / knapsack coding later)","fa":"آمادگی آزمایشگاه امروز SE 2228 (کدنویسی DP / کوله‌پشتی بعداً)"},{"i":4,"ids":[4,6],"c":"MATH","en":"Ch 3 finish (3.4 conditional probability & Bayes) + practice — midterm weak spot","fa":"پایان فصل 3 (3.4 احتمال شرطی و بیز) + تمرین — نقطه ضعف میان‌ترم","p":"lecture notes, finish 35 pages","pf":"جزوه، پایان 35 صفحه"},{"i":8,"ids":[8,10],"c":"COMP","en":"W8 Queues — official topic; slides TBA from Moodle / omercetin","fa":"هفته 8 صف — موضوع رسمی؛ اسلایدها از Moodle / سایت استاد","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":17,"c":"PROJ","en":"Project #136: getRandom() uniform draw + first tests","fa":"پروژه 136: انتخاب یکنواخت getRandom و اولین تست‌ها"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"},{"i":27,"c":"COMP","en":"Extra COMP 2233 traces (hand-simulate this week’s structure)","fa":"ردیابی اضافه COMP 2233 (شبیه‌سازی دستی ساختار همین هفته)","p":"trace exercises","pf":"تمرین ردیابی"}],"2026-12-02":[{"i":2,"ids":[2,4],"c":"EEE","en":"Exp 5 prelab: Diode characteristics (due Thu 3 Dec)","fa":"پیش‌گزارش آزمایش 5: مشخصه دیود (مهلت پنجشنبه 3 دسامبر)"},{"i":6,"ids":[6,8],"c":"SE","en":"W9 DP-1 finish + 2 practice problems","fa":"پایان DP-1 + 2 مسئله تمرینی","p":"Week09-DynamicProgramming-1.pdf, finish 47 pages","pf":"Week09-DynamicProgramming-1.pdf، پایان 47 صفحه"},{"i":10,"c":"MATH","en":"Mixed Ch 3 practice (Bayes, tables) — keep this skill warm","fa":"تمرین ترکیبی فصل 3 (بیز و جدول) — این مهارت را گرم نگه دار"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-03":[{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 4 Discrete probability distributions — start (4.1 random variables)","fa":"فصل 4 توزیع‌های احتمال گسسته — شروع (4.1 متغیر تصادفی)","p":"lecture notes, 25 pages, split","pf":"جزوه، 25 صفحه، تقسیم‌شده"},{"i":11,"ids":[11,13],"c":"PROJ","en":"Project #136: edge cases, O(1) argument notes, start the report draft","fa":"پروژه 136: حالات مرزی، یادداشت استدلال O(1)، شروع پیش‌نویس گزارش"},{"i":15,"ids":[15,21],"c":"COMP","en":"W8 Queues practice (array and linked implementations)","fa":"تمرین هفته 8 صف (پیاده‌سازی آرایه و لیست پیوندی)","p":"topics TBA from slides","pf":"موضوعات از اسلایدها"},{"i":23,"c":"EEE","en":"Submit Exp 5 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 5 را بفرست (مهلت امروز)"},{"i":25,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":27,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":29,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-04":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 4 continued (4.2 binomial) + exercises","fa":"ادامه فصل 4 (4.2 دو جمله‌ای) + تمرین","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"SE","en":"W10 Dynamic Programming–2: the knapsack algorithm — start","fa":"هفته 10 برنامه‌سازی پویا 2: الگوریتم کوله‌پشتی — شروع","p":"Week10-DynamicProgramming-2.pdf, 50 pages, split","pf":"Week10-DynamicProgramming-2.pdf، 50 صفحه، تقسیم‌شده"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-05":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3–4 formula card + 6 exercises (Bayes + binomial)","fa":"برگه فرمول فصل 3 و 4 + 6 تمرین (بیز و دو جمله‌ای)"}],"2026-12-06":[{"i":5,"c":"PROJ","en":"Optional: project test pass + fill report headings","fa":"اختیاری: پاس شدن تست‌های پروژه + پر کردن سرفصل گزارش"}],"2026-12-07":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project #136: finish core code, more tests, start slides outline","fa":"پروژه 136: تمام کردن هسته کد، تست بیشتر، شروع طرح اسلاید"},{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 4 finish + mixed practice (still a weak-spot course)","fa":"پایان فصل 4 + تمرین ترکیبی (هنوز درس نقطه ضعف)","p":"lecture notes, finish 25 pages","pf":"جزوه، پایان 25 صفحه"},{"i":10,"c":"EEE","en":"W12 Bipolar junction transistors — this week’s Moodle slides","fa":"هفته 12 ترانزیستور پیوند دوقطبی — اسلایدهای Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":17,"ids":[17,19],"c":"SE","en":"W10 knapsack continued (table filling + one coded example)","fa":"ادامه کوله‌پشتی هفته 10 (پر کردن جدول + یک مثال کدی)","p":"Week10-DynamicProgramming-2.pdf, continued","pf":"Week10-DynamicProgramming-2.pdf، ادامه"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-08":[{"i":2,"c":"SE","en":"Lab prep for today’s SE 2228 lab (knapsack coding)","fa":"آمادگی آزمایشگاه امروز SE 2228 (کدنویسی کوله‌پشتی)"},{"i":4,"ids":[4,6],"c":"PROJ","en":"Project #136: complete tests, screenshots, fill the official report template","fa":"پروژه 136: تمام تست‌ها، اسکرین‌شات، پر کردن قالب رسمی گزارش"},{"i":8,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides (after Ch 4)","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle (بعد از فصل 4)","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":10,"ids":[10,17],"c":"COMP","en":"W9 Trees and traversal — official topic; slides TBA from Moodle","fa":"هفته 9 درخت و پیمایش — موضوع رسمی؛ اسلایدها از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"},{"i":27,"c":"COMP","en":"Extra COMP 2233 traces (hand-simulate this week’s structure)","fa":"ردیابی اضافه COMP 2233 (شبیه‌سازی دستی ساختار همین هفته)","p":"trace exercises","pf":"تمرین ردیابی"},{"i":29,"c":"PROJ","en":"Project #136 RandomizedSet: code / test / edge cases (due 13 Dec 23:55)","fa":"پروژه 136 RandomizedSet: کد / تست / حالت‌های مرزی (مهلت 13 دسامبر 23:55)"}],"2026-12-09":[{"i":2,"ids":[2,4],"c":"EEE","en":"Exp 6 prelab: Op-AMP (due Thu 10 Dec)","fa":"پیش‌گزارش آزمایش 6: آپ‌امپ (مهلت پنجشنبه 10 دسامبر)"},{"i":6,"ids":[6,8],"c":"PROJ","en":"Project #136: write the report, O(1) analysis, polish code comments","fa":"پروژه 136: نوشتن گزارش، تحلیل O(1)، مرتب کردن توضیح کد"},{"i":10,"c":"SE","en":"W10 knapsack finish + 1 practice problem","fa":"پایان کوله‌پشتی هفته 10 + 1 مسئله تمرینی","p":"Week10-DynamicProgramming-2.pdf, finish 50 pages","pf":"Week10-DynamicProgramming-2.pdf، پایان 50 صفحه"},{"i":20,"c":"UFND24","en":"Start UFND 2420 Module 3 / 4.1 / 4.2 assignment (due Mon 15 Dec 17:00)","fa":"شروع تکلیف ماژول 3 و 4.1 و 4.2 درس UFND 2420 (مهلت دوشنبه 15 دسامبر 17:00)","p":"topics TBA from the assignment brief / slides","pf":"موضوع از صورت تکلیف / اسلایدها"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-10":[{"i":6,"ids":[6,8],"c":"PROJ","en":"Project #136: slides, zip (code + report + slides), dry-run the demo","fa":"پروژه 136: اسلاید، فایل zip (کد + گزارش + اسلاید)، تمرین دمو"},{"i":11,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 2","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 2","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":13,"c":"COMP","en":"W9 Trees: traversal traces (pre/in/post) even if slides are still TBA","fa":"هفته 9 درخت: ردیابی پیمایش (پیش/میان/پس) حتی اگر اسلاید هنوز نیامده","p":"topics TBA from slides","pf":"موضوعات از اسلایدها"},{"i":19,"c":"EEE","en":"Submit Exp 6 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 6 را بفرست (مهلت امروز)"},{"i":21,"c":"UFND24","en":"UFND 2420 Module 3 assignment work / polish (due Tue 15 Dec 17:00)","fa":"کار / پرداخت تکلیف ماژول 3 درس UFND 2420 (مهلت سه‌شنبه 15 دسامبر 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-11":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project #136: final polish and a 10-minute presentation rehearsal","fa":"پروژه 136: پرداخت نهایی و یک تمرین 10 دقیقه‌ای ارائه"},{"i":6,"c":"SE","en":"W11 Topological sort — start (today’s lecture notes if posted)","fa":"هفته 11 مرتب‌سازی توپولوژیک — شروع (جزوه امروز اگر روی Moodle بود)","p":"Week11-Topological Sort.pdf, 46 pages, split","pf":"Week11-Topological Sort.pdf، 46 صفحه، تقسیم‌شده"},{"i":8,"ids":[8,19],"c":"UFND24","en":"UFND 2420 Module 3 assignment work (due Tue 15 Dec 17:00)","fa":"کار تکلیف ماژول 3 درس UFND 2420 (مهلت سه‌شنبه 15 دسامبر 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-12":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project: last checks only (due tomorrow 23:55)","fa":"پروژه: فقط بررسی آخر (مهلت فردا 23:55)"}],"2026-12-13":[{"i":5,"ids":[5,7],"c":"PROJ","en":"REQUIRED: upload report, code zip and slides to Moodle (locks at 23:55). Then stop.","fa":"الزامی: بارگذاری گزارش، zip کد و اسلاید در Moodle (ساعت 23:55 بسته می‌شود). بعد تمام."},{"i":9,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":11,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":13,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-14":[{"i":2,"c":"PROJ","en":"Presentation rehearsal (Dec 14–18 live demo week; roster TBA)","fa":"تمرین ارائه (هفته دمو 14 تا 18 دسامبر؛ برنامه نوبت اعلام نشده)"},{"i":4,"ids":[4,6],"c":"UFND24","en":"Finish UFND 2420 Module 3 / 4.1 / 4.2 assignment (due tomorrow 17:00)","fa":"تمام کردن تکلیف ماژول 3 و 4.1 و 4.2 درس UFND 2420 (مهلت فردا 17:00)","p":"topics TBA from the assignment brief / slides","pf":"موضوع از صورت تکلیف / اسلایدها"},{"i":8,"c":"EEE","en":"W13 Introduction to amplifiers and biasing — Moodle slides","fa":"هفته 13 آشنایی با تقویت‌کننده و بایاس — اسلاید Moodle","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"ids":[10,17],"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 3","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 3","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"SE","en":"W11 Topological sort continued + practice","fa":"ادامه مرتب‌سازی توپولوژیک هفته 11 + تمرین","p":"Week11-Topological Sort.pdf, continued","pf":"Week11-Topological Sort.pdf، ادامه"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-15":[{"i":2,"ids":[2,4],"c":"UFND24","en":"Finish and submit UFND 2420 Module 3 assignment (due today 17:00)","fa":"تکلیف ماژول 3 درس UFND 2420 را تمام و ارسال کن (مهلت امروز 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":6,"c":"UFND24","en":"Finish and submit the UFND 2420 assignment (locks 15 Dec 17:00)","fa":"تکلیف UFND 2420 را تمام کن و بفرست (مهلت 15 دسامبر 17:00)"},{"i":8,"ids":[8,10],"c":"MATH","en":"MATH 2260 mixed practice (Ch 1–4 + any new slides you have)","fa":"تمرین ترکیبی MATH 2260 (فصل 1 تا 4 + اسلایدهای جدیدی که داری)"},{"i":17,"c":"COMP","en":"W10 Binary search trees and balanced trees — official topic; slides TBA","fa":"هفته 10 درخت جستجوی دودویی و درخت متوازن — موضوع رسمی؛ اسلاید از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"SE","en":"W11 topological sort finish + 1 coding-style exercise","fa":"پایان مرتب‌سازی توپولوژیک هفته 11 + 1 تمرین سبک کدنویسی","p":"Week11-Topological Sort.pdf, finish 46 pages","pf":"Week11-Topological Sort.pdf، پایان 46 صفحه"},{"i":21,"c":"PROJ","en":"If your presentation is today: a short rehearsal, then go. If not, skip.","fa":"اگر ارائه‌ات امروز است: یک تمرین کوتاه، بعد برو. اگر نیست، رد شو."},{"i":23,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":25,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":27,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":29,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-16":[{"i":2,"ids":[2,4],"c":"SE","en":"W12 Hashing — start (tables, collisions) + digital-signatures overview later","fa":"هفته 12 درهم‌سازی — شروع (جدول و برخورد)؛ امضای دیجیتال بعداً","p":"Week12-1-Hashing.pdf, 43 pages, split","pf":"Week12-1-Hashing.pdf، 43 صفحه، تقسیم‌شده"},{"i":6,"c":"EEE","en":"W13 amplifiers / biasing practice (load line, Q-point idea)","fa":"تمرین هفته 13 تقویت و بایاس (خط بار، ایده نقطه کار)","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":8,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 4","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 4","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":10,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-17":[{"i":6,"ids":[6,8],"c":"SE","en":"W12 Hashing continued + Week12-2 Digital signatures (7 pages)","fa":"ادامه درهم‌سازی هفته 12 + امضای دیجیتال Week12-2 (7 صفحه)","p":"Week12-1 43 pp + Week12-2 7 pp, split","pf":"Week12-1 43 صفحه + Week12-2 7 صفحه، تقسیم‌شده"},{"i":10,"ids":[10,13],"c":"COMP","en":"W11 Graphs and graph algorithms — official topic; slides TBA","fa":"هفته 11 گراف و الگوریتم‌های گراف — موضوع رسمی؛ اسلاید از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":17,"c":"PROJ","en":"If your presentation is today: rehearsal only.","fa":"اگر ارائه‌ات امروز است: فقط تمرین ارائه."},{"i":25,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":27,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":29,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-18":[{"i":2,"c":"SE","en":"W12 finish hashing practice problems","fa":"پایان هفته 12: تمرین درهم‌سازی","p":"Week12 finish","pf":"پایان هفته 12"},{"i":4,"c":"MATH","en":"MATH formula card (Ch 1–4 + new slides)","fa":"برگه فرمول MATH (فصل 1 تا 4 + اسلاید جدید)"},{"i":6,"c":"PROJ","en":"If your presentation is today: rehearsal only. Week’s roster ends today.","fa":"اگر ارائه‌ات امروز است: فقط تمرین. نوبت‌های این هفته امروز تمام می‌شود."},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-19":[{"i":2,"ids":[2,4],"c":"MATH","en":"8 mixed MATH problems (include midterm-style tables)","fa":"8 مسئله ترکیبی MATH (با جدول‌های شبیه میان‌ترم)"}],"2026-12-20":[{"i":5,"c":"SE","en":"Optional: W12 hash recap (one collision-resolution trace)","fa":"اختیاری: مرور درهم‌سازی هفته 12 (یک ردیابی رفع برخورد)"}],"2026-12-21":[{"i":2,"ids":[2,4],"c":"MATH","en":"Full review: Ch 1–4 formula sheet + midterm error list","fa":"مرور کامل: برگه فرمول فصل 1 تا 4 + فهرست غلط‌های میان‌ترم"},{"i":6,"ids":[6,8],"c":"EEE","en":"W14 BJT amplifiers — this week’s Moodle slides","fa":"هفته 14 تقویت‌کننده BJT — اسلاید Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"c":"EEE","en":"Exp 7 prelab: Biasing BJT (due Thu 24 Dec) — start today","fa":"پیش‌گزارش آزمایش 7: بایاس BJT (مهلت پنجشنبه 24 دسامبر) — امروز شروع کن"},{"i":17,"ids":[17,19],"c":"SE","en":"W13 Complexity revisited: P, NP and other classes — start","fa":"هفته 13 پیچیدگی دوباره: P و NP و بقیه کلاس‌ها — شروع","p":"Week13-1-NP.pdf, 35 pages, split","pf":"Week13-1-NP.pdf، 35 صفحه، تقسیم‌شده"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"ids":[23,25],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":27,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}],"2026-12-22":[{"i":2,"c":"SE","en":"Lab prep + W13 lab theme (computational models, as on the syllabus)","fa":"آمادگی آزمایشگاه + موضوع لب هفته 13 (مدل‌های محاسباتی، طبق سیلابس)"},{"i":4,"ids":[4,6],"c":"MATH","en":"Past-exam practice: MATH 2260 (uni-not / any past paper you have). Time it.","fa":"تمرین امتحان‌های قبلی MATH 2260 (uni-not / هر برگه قبلی که داری). زمان بگیر.","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":8,"ids":[8,10],"c":"EEE","en":"Past-exam practice: EEE 2274 finals on uni-not (diodes, op-amp, BJT + earlier circuits)","fa":"تمرین امتحان‌های قبلی EEE 2274 در uni-not (دیود، آپ‌امپ، BJT + مدارهای قبلی)","p":"uninot final papers 2022–24","pf":"برگه‌های پایان‌ترم uni-not 2022 تا 24"},{"i":17,"c":"COMP","en":"W13 Search and sort — official topic; slides TBA; plus a short W7–W12 recap","fa":"هفته 13 جستجو و مرتب‌سازی — موضوع رسمی؛ اسلاید از Moodle؛ به‌علاوه مرور کوتاه هفته 7 تا 12","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"ids":[21,23],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":25,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"},{"i":27,"c":"SE","en":"Past-exam style: heap, DP, topo-sort, hashing, NP short proofs","fa":"به سبک امتحان قبلی: هیپ، DP، مرتب‌سازی توپولوژیک، درهم‌سازی، برهان کوتاه NP","p":"past exams / one-page maps","pf":"امتحان‌های قبلی / نقشه یک‌برگی"},{"i":29,"c":"COMP","en":"Past-exam style: stack, queue, tree, BST, hash, sort traces","fa":"به سبک امتحان قبلی: ردیابی پشته، صف، درخت، BST، درهم‌سازی، مرتب‌سازی","p":"past exams / traces","pf":"امتحان‌های قبلی / ردیابی"}],"2026-12-23":[{"i":2,"ids":[2,4],"c":"SE","en":"W13 finish NP + Week13-2 unsolved problems (overview only) + W14 final-review start","fa":"پایان NP هفته 13 + مرور Week13-2 مسائل حل‌نشده + شروع مرور نهایی هفته 14","p":"Week13-1 35 pp + Week13-2 19 pp (overview) + Week14_Final Review.pdf 46 pp, split","pf":"Week13-1 35 صفحه + Week13-2 19 صفحه (مرور) + Week14_Final Review.pdf 46 صفحه، تقسیم‌شده"},{"i":6,"c":"EEE","en":"Finish Exp 7 prelab (due tomorrow) + diode/op-amp formula card","fa":"تمام کردن پیش‌گزارش آزمایش 7 (مهلت فردا) + برگه فرمول دیود و آپ‌امپ"},{"i":8,"ids":[8,10],"c":"MATH","en":"Second past-exam / mixed timed set (focus on the 32-score weak items)","fa":"دومین ست زمان‌دار امتحان قبلی / ترکیبی (تمرکز روی ضعف نمره 32)","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"}],"2026-12-24":[{"i":6,"ids":[6,8],"c":"SE","en":"W14 Final review slides + past-exam practice (uni-not if a paper exists; else W1–W13 problem mix)","fa":"اسلاید مرور نهایی هفته 14 + تمرین امتحان قبلی (اگر در uni-not بود؛ وگرنه ترکیب مسئله هفته 1 تا 13)","p":"Week14_Final Review.pdf, 46 pages + past-exam practice","pf":"Week14_Final Review.pdf، 46 صفحه + تمرین امتحان قبلی"},{"i":10,"ids":[10,13],"c":"COMP","en":"Past-exam practice: COMP 2233 (uni-not / midterm practice set + W7–W13 traces)","fa":"تمرین امتحان قبلی COMP 2233 (uni-not / مجموعه تمرین میان‌ترم + ردیابی هفته 7 تا 13)","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":15,"c":"EEE","en":"Submit Exp 7 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 7 را بفرست (مهلت امروز)"},{"i":17,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":25,"c":"UFND24","en":"UFND 2420 module recap after the 15 Dec assignment","fa":"مرور ماژول UFND 2420 بعد از تکلیف 15 دسامبر","p":"module slides","pf":"اسلاید ماژول"},{"i":27,"ids":[27,29],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":31,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}],"2026-12-25":[{"i":2,"c":"MATH","en":"Final pass: formula card only, 4 mixed questions, then stop cramming new MATH","fa":"مرور آخر: فقط برگه فرمول، 4 سؤال ترکیبی، بعد مطلب جدید MATH نخوان"},{"i":4,"c":"EEE","en":"Final pass: L1–L7 + diode/op-amp/BJT formula card","fa":"مرور آخر: برگه فرمول L1 تا L7 + دیود و آپ‌امپ و BJT"},{"i":6,"c":"SE","en":"Final pass: DP / heap / hash / NP one-page map","fa":"مرور آخر: یک برگه نقشه DP و هیپ و درهم‌سازی و NP"},{"i":8,"ids":[8,19],"c":"COMP","en":"Final pass: stack / queue / tree / hash traces + any past paper","fa":"مرور آخر: ردیابی پشته و صف و درخت و درهم‌سازی + هر برگه امتحان قبلی","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"ids":[23,25],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":27,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}]},"weeks":[{"id":1,"en":"Week 1","fa":"هفته 1","dates_en":"23–29 Nov","dates_fa":"23 تا 29 نوامبر","note_en":"Semester week 10 · learn + practice","note_fa":"هفته 10 ترم · یادگیری و تمرین"},{"id":2,"en":"Week 2","fa":"هفته 2","dates_en":"30 Nov – 6 Dec","dates_fa":"30 نوامبر تا 6 دسامبر","note_en":"Semester week 11 · learn + practice","note_fa":"هفته 11 ترم · یادگیری و تمرین"},{"id":3,"en":"Week 3","fa":"هفته 3","dates_en":"7–13 Dec","dates_fa":"7 تا 13 دسامبر","note_en":"Semester week 12 · project due 13 Dec 23:55","note_fa":"هفته 12 ترم · مهلت پروژه 13 دسامبر 23:55"},{"id":4,"en":"Week 4","fa":"هفته 4","dates_en":"14–20 Dec","dates_fa":"14 تا 20 دسامبر","note_en":"Semester week 13 · presentations 14–18 · UFND 2420 due 15 Dec 17:00","note_fa":"هفته 13 ترم · ارائه‌ها 14 تا 18 · مهلت UFND 2420 در 15 دسامبر 17:00"},{"id":5,"en":"Week 5","fa":"هفته 5","dates_en":"21–25 Dec","dates_fa":"21 تا 25 دسامبر","note_en":"Semester week 14 · full review + past exams · ready by 26 Dec","note_fa":"هفته 14 ترم · مرور کامل + امتحان‌های قبلی · آمادگی تا 26 دسامبر"}]};
+var DATA={"days":{"2026-11-23":[{"i":101,"c":"COMP","en":"Binary trees 1: terminology — root, parent/child, sibling, leaf, internal node, edge, path, depth, height, level, subtree (use the slides' convention for height/level)","fa":"درخت دودویی 1: اصطلاحات — ریشه، والد و فرزند، هم‌نیا، برگ، گره داخلی، یال، مسیر، عمق، ارتفاع، سطح، زیردرخت (قرارداد ارتفاع و سطح را از اسلایدها بگیر)","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":102,"c":"COMP","en":"Binary trees 2: full vs complete vs perfect + node-count facts (level k: at most 2^k nodes; height h: at most 2^(h+1) - 1 nodes; n nodes: height at least floor(log2 n))","fa":"درخت دودویی 2: درخت full، complete و perfect + قواعد تعداد گره (سطح k حداکثر 2 به توان k گره؛ ارتفاع h حداکثر 2 به توان h+1 منهای 1 گره؛ n گره یعنی ارتفاع حداقل برابر جزء صحیح log2 n)","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 1 Introduction to statistics (1.1–1.3) — full notes + short exercises","fa":"فصل 1 آشنایی با آمار (1.1 تا 1.3) — جزوه کامل + تمرین کوتاه","p":"lecture notes, 32 pages","pf":"جزوه، 32 صفحه"},{"i":6,"c":"MATH","en":"Ch 1 practice (review midterm mistakes: reading tables, types of data)","fa":"تمرین فصل 1 (مرور غلط‌های میان‌ترم: خواندن جدول، نوع داده)"},{"i":8,"ids":[8,15],"c":"SE","en":"W8 Heap structures — first part (array-heap, height, insert)","fa":"هفته 8 ساختار هیپ — بخش اول (هیپ آرایه‌ای، ارتفاع، درج)","p":"Week08-Heapstructures.pdf, 57 pages, split","pf":"Week08-Heapstructures.pdf، 57 صفحه، تقسیم‌شده"},{"i":17,"c":"EEE","en":"W10 Diode circuits — this week’s Moodle slides (topics from the syllabus)","fa":"هفته 10 مدارهای دیود — اسلایدهای Moodle همین هفته (موضوع از سیلابس)","p":"slides TBA from Moodle, typical ~14 pages","pf":"اسلایدها از Moodle؛ حدود 14 صفحه"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-24":[{"i":101,"c":"COMP","en":"Tree representations: array (root at index 0: children 2i+1 and 2i+2, parent (i-1)/2) and linked nodes (data, left, right) — draw one tree both ways","fa":"نمایش درخت: آرایه‌ای (ریشه در اندیس 0: فرزندان 2i+1 و 2i+2، والد: نصف i-1، گرد به پایین) و پیوندی (data, left, right) — یک درخت را به هر دو روش بکش","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":102,"c":"COMP","en":"Traversals: preorder, inorder, postorder (recursive) + level-order with a queue — hand-trace 3 different trees","fa":"پیمایش‌ها: preorder، inorder و postorder (بازگشتی) + level-order با صف — روی 3 درخت مختلف با دست ردیابی کن","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":2,"ids":[2,4],"c":"SE","en":"W8 Heap structures — continued (heapify, build-heap, complexity)","fa":"هفته 8 ساختار هیپ — ادامه (heapify، ساخت هیپ، پیچیدگی)","p":"Week08-Heapstructures.pdf, continued","pf":"Week08-Heapstructures.pdf، ادامه"},{"i":6,"c":"SE","en":"Lab prep for today’s SE 2228 lab (this week’s heap / DP notes)","fa":"آمادگی آزمایشگاه امروز SE 2228 (جزوه هیپ / DP همین هفته)"},{"i":17,"c":"MATH","en":"Ch 2 Descriptive statistics — start (2.1–2.2 frequency + graphs)","fa":"فصل 2 آمار توصیفی — شروع (2.1 و 2.2 فراوانی و نمودار)","p":"lecture notes, 48 pages, split","pf":"جزوه، 48 صفحه، تقسیم‌شده"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: design (Vector + Hash Table, swap-with-last)","fa":"پروژه 136 RandomizedSet: طراحی (بردار + جدول درهم، جابجایی با آخر)"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-25":[{"i":101,"c":"COMP","en":"BST search and insert: the BST property, find / min / max, build a BST from a key sequence and trace every insert","fa":"جستجو و درج در BST: ویژگی BST، پیدا کردن کلید و min و max، از یک دنباله کلید BST بساز و هر درج را ردیابی کن","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":102,"c":"COMP","en":"BST delete, all 3 cases: leaf, one child, two children (replace with the inorder successor) — trace 4 deletions","fa":"حذف از BST، هر 3 حالت: برگ، یک فرزند، دو فرزند (جایگزینی با inorder successor) — 4 حذف را ردیابی کن","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":103,"c":"COMP","en":"Recursive tree functions: countNodes, height, countLeaves (+ why inorder of a BST is sorted) — write them in C/C++ and trace on paper","fa":"توابع بازگشتی روی درخت: countNodes، height و countLeaves (+ چرا inorder یک BST مرتب است) — در C/C++ بنویس و روی کاغذ ردیابی کن","p":"Trees lab notes + binary_tree_temp.c, omercetin.com.tr/~courses/comp2233","pf":"جزوه آزمایشگاه Trees + binary_tree_temp.c، omercetin.com.tr/~courses/comp2233"},{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 2 continued (2.2–2.3 measures of center and variation)","fa":"ادامه فصل 2 (2.2 و 2.3 معیارهای مرکز و پراکندگی)","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"EEE","en":"Exp 4 prelab: Capacitance–Inductance (due Thu 26 Nov)","fa":"پیش‌گزارش آزمایش 4: خازن و سلف (مهلت پنجشنبه 26 نوامبر)"},{"i":10,"ids":[10,20],"c":"SE","en":"W8 Heap structures — finish + 2 practice problems","fa":"هفته 8 ساختار هیپ — تمام + 2 مسئله تمرینی","p":"Week08-Heapstructures.pdf, finish","pf":"Week08-Heapstructures.pdf، پایان"},{"i":26,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-11-26":[{"i":101,"c":"COMP","en":"Quiz-style practice: rebuild a tree from preorder + inorder, write all 4 traversals, height and node-count questions, BST insert/delete traces, read short tree code","fa":"تمرین سؤال‌های شبیه کوییز: ساختن درخت از preorder و inorder، نوشتن هر 4 پیمایش، سؤال ارتفاع و تعداد گره، ردیابی درج و حذف BST، خواندن کد کوتاه درخت","p":"Week 9 Trees slides + lab notes (mixed set; no official past quiz on file), omercetin.com.tr/~courses/comp2233","pf":"اسلایدها و جزوه آزمایشگاه هفته 9 (مجموعه ترکیبی؛ کوییز رسمی قبلی در دست نیست)، omercetin.com.tr/~courses/comp2233"},{"i":102,"c":"COMP","en":"Final review for Quiz 3: one-page sheet (terms, tree types, formulas, traversal orders, 3 delete cases, recursive templates) + redo every trace you got wrong","fa":"مرور نهایی Quiz 3: یک برگه خلاصه (اصطلاحات، انواع درخت، فرمول‌ها، ترتیب پیمایش‌ها، 3 حالت حذف، الگوی توابع بازگشتی) + دوباره حل کردن هر ردیابی که غلط شد","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 2 finish (2.4) + practice set (this was a weak midterm area)","fa":"پایان فصل 2 (2.4) + تمرین (از نقاط ضعف میان‌ترم)","p":"lecture notes, finish 48 pages","pf":"جزوه، پایان 48 صفحه"},{"i":19,"c":"EEE","en":"Submit Exp 4 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 4 را بفرست (مهلت امروز)"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-11-27":[{"i":101,"c":"COMP","en":"Quiz day: read your one-page sheet once, warm up with 1 traversal + 1 BST delete, then go to Quiz 3","fa":"روز کوییز: برگه خلاصه را یک بار بخوان، با یک پیمایش و یک حذف BST گرم کن، بعد برو سر Quiz 3","p":"Week 9 Trees slides + Trees lab notes, omercetin.com.tr/~courses/comp2233","pf":"اسلایدهای Trees هفته 9 + جزوه آزمایشگاه Trees، omercetin.com.tr/~courses/comp2233"},{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3 Probability — start (3.1–3.2 sample space, events)","fa":"فصل 3 احتمال — شروع (3.1 و 3.2 فضای نمونه و پیشامد)","p":"lecture notes, 35 pages, split","pf":"جزوه، 35 صفحه، تقسیم‌شده"},{"i":6,"c":"SE","en":"W9 Dynamic Programming–1 — start (memoization idea)","fa":"هفته 9 برنامه‌سازی پویا 1 — شروع (ایده memoization)","p":"Week09-DynamicProgramming-1.pdf, 47 pages, split","pf":"Week09-DynamicProgramming-1.pdf، 47 صفحه، تقسیم‌شده"},{"i":8,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-11-28":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 1–2 formula card + 6 mixed exercises only","fa":"برگه فرمول فصل 1 و 2 + فقط 6 تمرین ترکیبی"},{"i":201,"c":"PROJ","en":"Project #136: start coding insert() and the hash-index map","fa":"پروژه 136: شروع کد insert و نگاشت ایندکس درهم","oid":"fin-2026-11-26-13","oids":["fin-2026-11-26-13"]}],"2026-11-29":[{"i":5,"c":"SE","en":"Optional: W9 DP-1 recap (one memoization trace)","fa":"اختیاری: مرور DP-1 (یک ردیابی memoization)"}],"2026-11-30":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3 continued (3.2–3.3 addition rules, complements)","fa":"ادامه فصل 3 (3.2 و 3.3 قواعد جمع و متمم)","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"EEE","en":"W11 Operational amplifiers — this week’s Moodle slides","fa":"هفته 11 تقویت‌کننده عملیاتی — اسلایدهای Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"ids":[10,17],"c":"SE","en":"W9 DP-1 continued (Floyd–Warshall idea + examples)","fa":"ادامه DP-1 (ایده فلوید-وارشال + مثال)","p":"Week09-DynamicProgramming-1.pdf, continued","pf":"Week09-DynamicProgramming-1.pdf، ادامه"},{"i":19,"c":"PROJ","en":"Project #136: implement remove() with swap-with-last (O(1))","fa":"پروژه 136: پیاده‌سازی remove با جابجایی با آخر (O(1))"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":201,"c":"COMP","en":"W7 Stacks — lecture slides + a few trace exercises","fa":"هفته 7 پشته — اسلاید + چند تمرین ردیابی","p":"COMP2233_h7_Stacks.pdf, 28 pages","pf":"COMP2233_h7_Stacks.pdf، 28 صفحه","oid":"fin-2026-11-24-8","oids":["fin-2026-11-24-8","fin-2026-11-24-10"]},{"i":202,"c":"COMP","en":"W7 Stacks lab notes / LAB-7 + one coded stack exercise","fa":"یادداشت آزمایشگاه هفته 7 / LAB-7 + یک تمرین کدنویسی پشته","p":"COMP-2233-LAB-7.pdf, 4 pages","pf":"COMP-2233-LAB-7.pdf، 4 صفحه","oid":"fin-2026-11-26-11","oids":["fin-2026-11-26-11"]}],"2026-12-01":[{"i":2,"c":"SE","en":"Lab prep for today’s SE 2228 lab (DP / knapsack coding later)","fa":"آمادگی آزمایشگاه امروز SE 2228 (کدنویسی DP / کوله‌پشتی بعداً)"},{"i":4,"ids":[4,6],"c":"MATH","en":"Ch 3 finish (3.4 conditional probability & Bayes) + practice — midterm weak spot","fa":"پایان فصل 3 (3.4 احتمال شرطی و بیز) + تمرین — نقطه ضعف میان‌ترم","p":"lecture notes, finish 35 pages","pf":"جزوه، پایان 35 صفحه"},{"i":8,"ids":[8,10],"c":"COMP","en":"W8 Queues — official topic; slides TBA from Moodle / omercetin","fa":"هفته 8 صف — موضوع رسمی؛ اسلایدها از Moodle / سایت استاد","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":17,"c":"PROJ","en":"Project #136: getRandom() uniform draw + first tests","fa":"پروژه 136: انتخاب یکنواخت getRandom و اولین تست‌ها"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"},{"i":27,"c":"COMP","en":"Extra COMP 2233 traces (hand-simulate this week’s structure)","fa":"ردیابی اضافه COMP 2233 (شبیه‌سازی دستی ساختار همین هفته)","p":"trace exercises","pf":"تمرین ردیابی"}],"2026-12-02":[{"i":2,"ids":[2,4],"c":"EEE","en":"Exp 5 prelab: Diode characteristics (due Thu 3 Dec)","fa":"پیش‌گزارش آزمایش 5: مشخصه دیود (مهلت پنجشنبه 3 دسامبر)"},{"i":6,"ids":[6,8],"c":"SE","en":"W9 DP-1 finish + 2 practice problems","fa":"پایان DP-1 + 2 مسئله تمرینی","p":"Week09-DynamicProgramming-1.pdf, finish 47 pages","pf":"Week09-DynamicProgramming-1.pdf، پایان 47 صفحه"},{"i":10,"c":"MATH","en":"Mixed Ch 3 practice (Bayes, tables) — keep this skill warm","fa":"تمرین ترکیبی فصل 3 (بیز و جدول) — این مهارت را گرم نگه دار"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-03":[{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 4 Discrete probability distributions — start (4.1 random variables)","fa":"فصل 4 توزیع‌های احتمال گسسته — شروع (4.1 متغیر تصادفی)","p":"lecture notes, 25 pages, split","pf":"جزوه، 25 صفحه، تقسیم‌شده"},{"i":11,"ids":[11,13],"c":"PROJ","en":"Project #136: edge cases, O(1) argument notes, start the report draft","fa":"پروژه 136: حالات مرزی، یادداشت استدلال O(1)، شروع پیش‌نویس گزارش"},{"i":15,"ids":[15,21],"c":"COMP","en":"W8 Queues practice (array and linked implementations)","fa":"تمرین هفته 8 صف (پیاده‌سازی آرایه و لیست پیوندی)","p":"topics TBA from slides","pf":"موضوعات از اسلایدها"},{"i":23,"c":"EEE","en":"Submit Exp 5 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 5 را بفرست (مهلت امروز)"},{"i":25,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":27,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":29,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-04":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 4 continued (4.2 binomial) + exercises","fa":"ادامه فصل 4 (4.2 دو جمله‌ای) + تمرین","p":"lecture notes, continued","pf":"جزوه، ادامه"},{"i":6,"ids":[6,8],"c":"SE","en":"W10 Dynamic Programming–2: the knapsack algorithm — start","fa":"هفته 10 برنامه‌سازی پویا 2: الگوریتم کوله‌پشتی — شروع","p":"Week10-DynamicProgramming-2.pdf, 50 pages, split","pf":"Week10-DynamicProgramming-2.pdf، 50 صفحه، تقسیم‌شده"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-05":[{"i":2,"ids":[2,4],"c":"MATH","en":"Ch 3–4 formula card + 6 exercises (Bayes + binomial)","fa":"برگه فرمول فصل 3 و 4 + 6 تمرین (بیز و دو جمله‌ای)"}],"2026-12-06":[{"i":5,"c":"PROJ","en":"Optional: project test pass + fill report headings","fa":"اختیاری: پاس شدن تست‌های پروژه + پر کردن سرفصل گزارش"}],"2026-12-07":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project #136: finish core code, more tests, start slides outline","fa":"پروژه 136: تمام کردن هسته کد، تست بیشتر، شروع طرح اسلاید"},{"i":6,"ids":[6,8],"c":"MATH","en":"Ch 4 finish + mixed practice (still a weak-spot course)","fa":"پایان فصل 4 + تمرین ترکیبی (هنوز درس نقطه ضعف)","p":"lecture notes, finish 25 pages","pf":"جزوه، پایان 25 صفحه"},{"i":10,"c":"EEE","en":"W12 Bipolar junction transistors — this week’s Moodle slides","fa":"هفته 12 ترانزیستور پیوند دوقطبی — اسلایدهای Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":17,"ids":[17,19],"c":"SE","en":"W10 knapsack continued (table filling + one coded example)","fa":"ادامه کوله‌پشتی هفته 10 (پر کردن جدول + یک مثال کدی)","p":"Week10-DynamicProgramming-2.pdf, continued","pf":"Week10-DynamicProgramming-2.pdf، ادامه"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-08":[{"i":2,"c":"SE","en":"Lab prep for today’s SE 2228 lab (knapsack coding)","fa":"آمادگی آزمایشگاه امروز SE 2228 (کدنویسی کوله‌پشتی)"},{"i":4,"ids":[4,6],"c":"PROJ","en":"Project #136: complete tests, screenshots, fill the official report template","fa":"پروژه 136: تمام تست‌ها، اسکرین‌شات، پر کردن قالب رسمی گزارش"},{"i":8,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides (after Ch 4)","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle (بعد از فصل 4)","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":10,"ids":[10,17],"c":"COMP","en":"W9 Trees and traversal — official topic; slides TBA from Moodle","fa":"هفته 9 درخت و پیمایش — موضوع رسمی؛ اسلایدها از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"},{"i":27,"c":"COMP","en":"Extra COMP 2233 traces (hand-simulate this week’s structure)","fa":"ردیابی اضافه COMP 2233 (شبیه‌سازی دستی ساختار همین هفته)","p":"trace exercises","pf":"تمرین ردیابی"},{"i":29,"c":"PROJ","en":"Project #136 RandomizedSet: code / test / edge cases (due 13 Dec 23:55)","fa":"پروژه 136 RandomizedSet: کد / تست / حالت‌های مرزی (مهلت 13 دسامبر 23:55)"}],"2026-12-09":[{"i":2,"ids":[2,4],"c":"EEE","en":"Exp 6 prelab: Op-AMP (due Thu 10 Dec)","fa":"پیش‌گزارش آزمایش 6: آپ‌امپ (مهلت پنجشنبه 10 دسامبر)"},{"i":6,"ids":[6,8],"c":"PROJ","en":"Project #136: write the report, O(1) analysis, polish code comments","fa":"پروژه 136: نوشتن گزارش، تحلیل O(1)، مرتب کردن توضیح کد"},{"i":10,"c":"SE","en":"W10 knapsack finish + 1 practice problem","fa":"پایان کوله‌پشتی هفته 10 + 1 مسئله تمرینی","p":"Week10-DynamicProgramming-2.pdf, finish 50 pages","pf":"Week10-DynamicProgramming-2.pdf، پایان 50 صفحه"},{"i":20,"c":"UFND24","en":"Start UFND 2420 Module 3 / 4.1 / 4.2 assignment (due Mon 15 Dec 17:00)","fa":"شروع تکلیف ماژول 3 و 4.1 و 4.2 درس UFND 2420 (مهلت دوشنبه 15 دسامبر 17:00)","p":"topics TBA from the assignment brief / slides","pf":"موضوع از صورت تکلیف / اسلایدها"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-10":[{"i":6,"ids":[6,8],"c":"PROJ","en":"Project #136: slides, zip (code + report + slides), dry-run the demo","fa":"پروژه 136: اسلاید، فایل zip (کد + گزارش + اسلاید)، تمرین دمو"},{"i":11,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 2","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 2","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":13,"c":"COMP","en":"W9 Trees: traversal traces (pre/in/post) even if slides are still TBA","fa":"هفته 9 درخت: ردیابی پیمایش (پیش/میان/پس) حتی اگر اسلاید هنوز نیامده","p":"topics TBA from slides","pf":"موضوعات از اسلایدها"},{"i":19,"c":"EEE","en":"Submit Exp 6 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 6 را بفرست (مهلت امروز)"},{"i":21,"c":"UFND24","en":"UFND 2420 Module 3 assignment work / polish (due Tue 15 Dec 17:00)","fa":"کار / پرداخت تکلیف ماژول 3 درس UFND 2420 (مهلت سه‌شنبه 15 دسامبر 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":27,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-11":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project #136: final polish and a 10-minute presentation rehearsal","fa":"پروژه 136: پرداخت نهایی و یک تمرین 10 دقیقه‌ای ارائه"},{"i":6,"c":"SE","en":"W11 Topological sort — start (today’s lecture notes if posted)","fa":"هفته 11 مرتب‌سازی توپولوژیک — شروع (جزوه امروز اگر روی Moodle بود)","p":"Week11-Topological Sort.pdf, 46 pages, split","pf":"Week11-Topological Sort.pdf، 46 صفحه، تقسیم‌شده"},{"i":8,"ids":[8,19],"c":"UFND24","en":"UFND 2420 Module 3 assignment work (due Tue 15 Dec 17:00)","fa":"کار تکلیف ماژول 3 درس UFND 2420 (مهلت سه‌شنبه 15 دسامبر 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":25,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-12":[{"i":2,"ids":[2,4],"c":"PROJ","en":"Project: last checks only (due tomorrow 23:55)","fa":"پروژه: فقط بررسی آخر (مهلت فردا 23:55)"}],"2026-12-13":[{"i":5,"ids":[5,7],"c":"PROJ","en":"REQUIRED: upload report, code zip and slides to Moodle (locks at 23:55). Then stop.","fa":"الزامی: بارگذاری گزارش، zip کد و اسلاید در Moodle (ساعت 23:55 بسته می‌شود). بعد تمام."},{"i":9,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":11,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":13,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-14":[{"i":2,"c":"PROJ","en":"Presentation rehearsal (Dec 14–18 live demo week; roster TBA)","fa":"تمرین ارائه (هفته دمو 14 تا 18 دسامبر؛ برنامه نوبت اعلام نشده)"},{"i":4,"ids":[4,6],"c":"UFND24","en":"Finish UFND 2420 Module 3 / 4.1 / 4.2 assignment (due tomorrow 17:00)","fa":"تمام کردن تکلیف ماژول 3 و 4.1 و 4.2 درس UFND 2420 (مهلت فردا 17:00)","p":"topics TBA from the assignment brief / slides","pf":"موضوع از صورت تکلیف / اسلایدها"},{"i":8,"c":"EEE","en":"W13 Introduction to amplifiers and biasing — Moodle slides","fa":"هفته 13 آشنایی با تقویت‌کننده و بایاس — اسلاید Moodle","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"ids":[10,17],"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 3","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 3","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"SE","en":"W11 Topological sort continued + practice","fa":"ادامه مرتب‌سازی توپولوژیک هفته 11 + تمرین","p":"Week11-Topological Sort.pdf, continued","pf":"Week11-Topological Sort.pdf، ادامه"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":25,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-15":[{"i":2,"ids":[2,4],"c":"UFND24","en":"Finish and submit UFND 2420 Module 3 assignment (due today 17:00)","fa":"تکلیف ماژول 3 درس UFND 2420 را تمام و ارسال کن (مهلت امروز 17:00)","p":"assignment brief / module slides","pf":"صورت تکلیف / اسلاید ماژول"},{"i":6,"c":"UFND24","en":"Finish and submit the UFND 2420 assignment (locks 15 Dec 17:00)","fa":"تکلیف UFND 2420 را تمام کن و بفرست (مهلت 15 دسامبر 17:00)"},{"i":8,"ids":[8,10],"c":"MATH","en":"MATH 2260 mixed practice (Ch 1–4 + any new slides you have)","fa":"تمرین ترکیبی MATH 2260 (فصل 1 تا 4 + اسلایدهای جدیدی که داری)"},{"i":17,"c":"COMP","en":"W10 Binary search trees and balanced trees — official topic; slides TBA","fa":"هفته 10 درخت جستجوی دودویی و درخت متوازن — موضوع رسمی؛ اسلاید از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"SE","en":"W11 topological sort finish + 1 coding-style exercise","fa":"پایان مرتب‌سازی توپولوژیک هفته 11 + 1 تمرین سبک کدنویسی","p":"Week11-Topological Sort.pdf, finish 46 pages","pf":"Week11-Topological Sort.pdf، پایان 46 صفحه"},{"i":21,"c":"PROJ","en":"If your presentation is today: a short rehearsal, then go. If not, skip.","fa":"اگر ارائه‌ات امروز است: یک تمرین کوتاه، بعد برو. اگر نیست، رد شو."},{"i":23,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":25,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":27,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":29,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-16":[{"i":2,"ids":[2,4],"c":"SE","en":"W12 Hashing — start (tables, collisions) + digital-signatures overview later","fa":"هفته 12 درهم‌سازی — شروع (جدول و برخورد)؛ امضای دیجیتال بعداً","p":"Week12-1-Hashing.pdf, 43 pages, split","pf":"Week12-1-Hashing.pdf، 43 صفحه، تقسیم‌شده"},{"i":6,"c":"EEE","en":"W13 amplifiers / biasing practice (load line, Q-point idea)","fa":"تمرین هفته 13 تقویت و بایاس (خط بار، ایده نقطه کار)","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":8,"c":"MATH","en":"MATH 2260 later weeks — topics TBA from Moodle slides, session 4","fa":"هفته‌های بعدی MATH 2260 — موضوع از اسلاید Moodle، جلسه 4","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":10,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"}],"2026-12-17":[{"i":6,"ids":[6,8],"c":"SE","en":"W12 Hashing continued + Week12-2 Digital signatures (7 pages)","fa":"ادامه درهم‌سازی هفته 12 + امضای دیجیتال Week12-2 (7 صفحه)","p":"Week12-1 43 pp + Week12-2 7 pp, split","pf":"Week12-1 43 صفحه + Week12-2 7 صفحه، تقسیم‌شده"},{"i":10,"ids":[10,13],"c":"COMP","en":"W11 Graphs and graph algorithms — official topic; slides TBA","fa":"هفته 11 گراف و الگوریتم‌های گراف — موضوع رسمی؛ اسلاید از Moodle","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":17,"c":"PROJ","en":"If your presentation is today: rehearsal only.","fa":"اگر ارائه‌ات امروز است: فقط تمرین ارائه."},{"i":25,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":27,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"},{"i":29,"c":"EEE","en":"Extra EEE 2274 problem set from this week’s slides + a short recap card","fa":"تمرین اضافه EEE 2274 از اسلاید همین هفته + یک برگه مرور کوتاه","p":"slides + problems","pf":"اسلاید و تمرین"}],"2026-12-18":[{"i":2,"c":"SE","en":"W12 finish hashing practice problems","fa":"پایان هفته 12: تمرین درهم‌سازی","p":"Week12 finish","pf":"پایان هفته 12"},{"i":4,"c":"MATH","en":"MATH formula card (Ch 1–4 + new slides)","fa":"برگه فرمول MATH (فصل 1 تا 4 + اسلاید جدید)"},{"i":6,"c":"PROJ","en":"If your presentation is today: rehearsal only. Week’s roster ends today.","fa":"اگر ارائه‌ات امروز است: فقط تمرین. نوبت‌های این هفته امروز تمام می‌شود."},{"i":21,"c":"MATH","en":"Extra MATH 2260 practice set (worked examples, then mixed exercises)","fa":"تمرین اضافه MATH 2260 (مثال حل‌شده، بعد تمرین ترکیبی)","p":"practice set","pf":"مجموعه تمرین"},{"i":23,"c":"SE","en":"Extra SE 2228 practice: trace + one written problem from this week’s deck","fa":"تمرین اضافه SE 2228: یک ردیابی + یک مسئله کتبی از جزوه همین هفته","p":"practice problems","pf":"مسئله تمرینی"}],"2026-12-19":[{"i":2,"ids":[2,4],"c":"MATH","en":"8 mixed MATH problems (include midterm-style tables)","fa":"8 مسئله ترکیبی MATH (با جدول‌های شبیه میان‌ترم)"}],"2026-12-20":[{"i":5,"c":"SE","en":"Optional: W12 hash recap (one collision-resolution trace)","fa":"اختیاری: مرور درهم‌سازی هفته 12 (یک ردیابی رفع برخورد)"}],"2026-12-21":[{"i":2,"ids":[2,4],"c":"MATH","en":"Full review: Ch 1–4 formula sheet + midterm error list","fa":"مرور کامل: برگه فرمول فصل 1 تا 4 + فهرست غلط‌های میان‌ترم"},{"i":6,"ids":[6,8],"c":"EEE","en":"W14 BJT amplifiers — this week’s Moodle slides","fa":"هفته 14 تقویت‌کننده BJT — اسلاید Moodle همین هفته","p":"slides TBA from Moodle","pf":"اسلایدها از Moodle"},{"i":10,"c":"EEE","en":"Exp 7 prelab: Biasing BJT (due Thu 24 Dec) — start today","fa":"پیش‌گزارش آزمایش 7: بایاس BJT (مهلت پنجشنبه 24 دسامبر) — امروز شروع کن"},{"i":17,"ids":[17,19],"c":"SE","en":"W13 Complexity revisited: P, NP and other classes — start","fa":"هفته 13 پیچیدگی دوباره: P و NP و بقیه کلاس‌ها — شروع","p":"Week13-1-NP.pdf, 35 pages, split","pf":"Week13-1-NP.pdf، 35 صفحه، تقسیم‌شده"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"ids":[23,25],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":27,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}],"2026-12-22":[{"i":2,"c":"SE","en":"Lab prep + W13 lab theme (computational models, as on the syllabus)","fa":"آمادگی آزمایشگاه + موضوع لب هفته 13 (مدل‌های محاسباتی، طبق سیلابس)"},{"i":4,"ids":[4,6],"c":"MATH","en":"Past-exam practice: MATH 2260 (uni-not / any past paper you have). Time it.","fa":"تمرین امتحان‌های قبلی MATH 2260 (uni-not / هر برگه قبلی که داری). زمان بگیر.","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":8,"ids":[8,10],"c":"EEE","en":"Past-exam practice: EEE 2274 finals on uni-not (diodes, op-amp, BJT + earlier circuits)","fa":"تمرین امتحان‌های قبلی EEE 2274 در uni-not (دیود، آپ‌امپ، BJT + مدارهای قبلی)","p":"uninot final papers 2022–24","pf":"برگه‌های پایان‌ترم uni-not 2022 تا 24"},{"i":17,"c":"COMP","en":"W13 Search and sort — official topic; slides TBA; plus a short W7–W12 recap","fa":"هفته 13 جستجو و مرتب‌سازی — موضوع رسمی؛ اسلاید از Moodle؛ به‌علاوه مرور کوتاه هفته 7 تا 12","p":"topics TBA from slides","pf":"موضوعات از اسلایدها اعلام می‌شود"},{"i":19,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":21,"ids":[21,23],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":25,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"},{"i":27,"c":"SE","en":"Past-exam style: heap, DP, topo-sort, hashing, NP short proofs","fa":"به سبک امتحان قبلی: هیپ، DP، مرتب‌سازی توپولوژیک، درهم‌سازی، برهان کوتاه NP","p":"past exams / one-page maps","pf":"امتحان‌های قبلی / نقشه یک‌برگی"},{"i":29,"c":"COMP","en":"Past-exam style: stack, queue, tree, BST, hash, sort traces","fa":"به سبک امتحان قبلی: ردیابی پشته، صف، درخت، BST، درهم‌سازی، مرتب‌سازی","p":"past exams / traces","pf":"امتحان‌های قبلی / ردیابی"}],"2026-12-23":[{"i":2,"ids":[2,4],"c":"SE","en":"W13 finish NP + Week13-2 unsolved problems (overview only) + W14 final-review start","fa":"پایان NP هفته 13 + مرور Week13-2 مسائل حل‌نشده + شروع مرور نهایی هفته 14","p":"Week13-1 35 pp + Week13-2 19 pp (overview) + Week14_Final Review.pdf 46 pp, split","pf":"Week13-1 35 صفحه + Week13-2 19 صفحه (مرور) + Week14_Final Review.pdf 46 صفحه، تقسیم‌شده"},{"i":6,"c":"EEE","en":"Finish Exp 7 prelab (due tomorrow) + diode/op-amp formula card","fa":"تمام کردن پیش‌گزارش آزمایش 7 (مهلت فردا) + برگه فرمول دیود و آپ‌امپ"},{"i":8,"ids":[8,10],"c":"MATH","en":"Second past-exam / mixed timed set (focus on the 32-score weak items)","fa":"دومین ست زمان‌دار امتحان قبلی / ترکیبی (تمرکز روی ضعف نمره 32)","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":20,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":24,"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"}],"2026-12-24":[{"i":6,"ids":[6,8],"c":"SE","en":"W14 Final review slides + past-exam practice (uni-not if a paper exists; else W1–W13 problem mix)","fa":"اسلاید مرور نهایی هفته 14 + تمرین امتحان قبلی (اگر در uni-not بود؛ وگرنه ترکیب مسئله هفته 1 تا 13)","p":"Week14_Final Review.pdf, 46 pages + past-exam practice","pf":"Week14_Final Review.pdf، 46 صفحه + تمرین امتحان قبلی"},{"i":10,"ids":[10,13],"c":"COMP","en":"Past-exam practice: COMP 2233 (uni-not / midterm practice set + W7–W13 traces)","fa":"تمرین امتحان قبلی COMP 2233 (uni-not / مجموعه تمرین میان‌ترم + ردیابی هفته 7 تا 13)","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":15,"c":"EEE","en":"Submit Exp 7 prelab if not already in (due today)","fa":"اگر هنوز نفرستادی، پیش‌گزارش آزمایش 7 را بفرست (مهلت امروز)"},{"i":17,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":25,"c":"UFND24","en":"UFND 2420 module recap after the 15 Dec assignment","fa":"مرور ماژول UFND 2420 بعد از تکلیف 15 دسامبر","p":"module slides","pf":"اسلاید ماژول"},{"i":27,"ids":[27,29],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":31,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}],"2026-12-25":[{"i":2,"c":"MATH","en":"Final pass: formula card only, 4 mixed questions, then stop cramming new MATH","fa":"مرور آخر: فقط برگه فرمول، 4 سؤال ترکیبی، بعد مطلب جدید MATH نخوان"},{"i":4,"c":"EEE","en":"Final pass: L1–L7 + diode/op-amp/BJT formula card","fa":"مرور آخر: برگه فرمول L1 تا L7 + دیود و آپ‌امپ و BJT"},{"i":6,"c":"SE","en":"Final pass: DP / heap / hash / NP one-page map","fa":"مرور آخر: یک برگه نقشه DP و هیپ و درهم‌سازی و NP"},{"i":8,"ids":[8,19],"c":"COMP","en":"Final pass: stack / queue / tree / hash traces + any past paper","fa":"مرور آخر: ردیابی پشته و صف و درخت و درهم‌سازی + هر برگه امتحان قبلی","p":"past-exam practice","pf":"تمرین امتحان قبلی"},{"i":21,"c":"PROJ","en":"Project #136 RandomizedSet: code, test and report","fa":"پروژه 136 RandomizedSet: کد، تست و گزارش","p":"Term Project page, omercetin.com.tr/~courses/comp2233","pf":"صفحه پروژه، omercetin.com.tr/~courses/comp2233"},{"i":23,"ids":[23,25],"c":"MATH","en":"Past-exam style mixed set: Ch 1–4 + later Moodle weeks, no new topics","fa":"تمرین به سبک امتحان قبلی: فصل 1 تا 4 + هفته‌های بعدی Moodle، مطلب جدید نه","p":"past exams / mixed set","pf":"امتحان‌های قبلی / تمرین ترکیبی"},{"i":27,"c":"EEE","en":"Past-exam style: L1–L7 + diode / op-amp / BJT traces","fa":"به سبک امتحان قبلی: L1 تا L7 + ردیابی دیود و آپ‌امپ و BJT","p":"past exams / formula card","pf":"امتحان‌های قبلی / برگه فرمول"}]},"weeks":[{"id":1,"en":"Week 1","fa":"هفته 1","dates_en":"23–29 Nov","dates_fa":"23 تا 29 نوامبر","note_en":"Semester week 10 · learn + practice","note_fa":"هفته 10 ترم · یادگیری و تمرین"},{"id":2,"en":"Week 2","fa":"هفته 2","dates_en":"30 Nov – 6 Dec","dates_fa":"30 نوامبر تا 6 دسامبر","note_en":"Semester week 11 · learn + practice","note_fa":"هفته 11 ترم · یادگیری و تمرین"},{"id":3,"en":"Week 3","fa":"هفته 3","dates_en":"7–13 Dec","dates_fa":"7 تا 13 دسامبر","note_en":"Semester week 12 · project due 13 Dec 23:55","note_fa":"هفته 12 ترم · مهلت پروژه 13 دسامبر 23:55"},{"id":4,"en":"Week 4","fa":"هفته 4","dates_en":"14–20 Dec","dates_fa":"14 تا 20 دسامبر","note_en":"Semester week 13 · presentations 14–18 · UFND 2420 due 15 Dec 17:00","note_fa":"هفته 13 ترم · ارائه‌ها 14 تا 18 · مهلت UFND 2420 در 15 دسامبر 17:00"},{"id":5,"en":"Week 5","fa":"هفته 5","dates_en":"21–25 Dec","dates_fa":"21 تا 25 دسامبر","note_en":"Semester week 14 · full review + past exams · ready by 26 Dec","note_fa":"هفته 14 ترم · مرور کامل + امتحان‌های قبلی · آمادگی تا 26 دسامبر"}],"marks":{"2026-11-27":{"en":"COMP 2233 Quiz 3: Binary Trees — today (time not announced)","fa":"Quiz 3 درس COMP 2233: درخت دودویی — امروز (ساعت اعلام نشده)","quiz":true}}};
 var COLS=["MATH","EEE","SE","COMP","PROJ","UFND24"];
 var COL_EN={MATH:"MATH 2260",EEE:"EEE 2274",SE:"SE 2228",COMP:"COMP 2233",PROJ:"Project #136",UFND24:"UFND 2420"};
 var COL_FA={MATH:"MATH 2260",EEE:"EEE 2274",SE:"SE 2228",COMP:"COMP 2233",PROJ:"پروژه #136",UFND24:"UFND 2420"};
@@ -1388,7 +1390,7 @@ function tid(iso,i){return "fin-"+iso+"-"+i}
 var TOPICS=[];
 DAYS.forEach(function(iso){
   (DATA.days[iso]||[]).forEach(function(t){
-    TOPICS.push({iso:iso,id:tid(iso,t.i),ids:(t.ids||[t.i]).map(function(i){return tid(iso,i)}),c:t.c,en:t.en,fa:t.fa,p:t.p||"",pf:t.pf||t.p||""});
+    TOPICS.push({iso:iso,id:t.oid||tid(iso,t.i),ids:t.oids||(t.ids||[t.i]).map(function(i){return tid(iso,i)}),c:t.c,en:t.en,fa:t.fa,p:t.p||"",pf:t.pf||t.p||""});
   });
 });
 function dayTopics(iso){return TOPICS.filter(function(t){return t.iso===iso})}
@@ -1478,8 +1480,9 @@ function renderDaybar(){
     }
     var d=parseD(iso), ts=dayTopics(iso), all=ts.length&&ts.every(function(t){return ticks[t.id]});
     var short=F?(WD_FA[(d.getDay()+6)%7]+" "+d.getDate()):(WD_EN[(d.getDay()+6)%7].slice(0,3)+" "+d.getDate());
-    var cls="fin-daybtn"+(iso===today?" is-today":"")+(all?" is-done":"");
-    html+="<button type='button' class='"+cls+"' data-iso='"+iso+"' aria-selected='"+(iso===selected)+"'>"+(F?ltrize(short):esc(short))+(all?" ✓":"")+"</button>";
+    var mk=(DATA.marks||{})[iso];
+    var cls="fin-daybtn"+(iso===today?" is-today":"")+(all?" is-done":"")+(mk&&mk.quiz?" is-quiz":"");
+    html+="<button type='button' class='"+cls+"' data-iso='"+iso+"' aria-selected='"+(iso===selected)+"'>"+(F?ltrize(short):esc(short))+(mk&&mk.quiz?" · "+(F?"کوییز":"Quiz"):"")+(all?" ✓":"")+"</button>";
   });
   box.innerHTML=html;
   Array.prototype.forEach.call(box.querySelectorAll(".fin-daybtn"),function(b){
@@ -1508,6 +1511,15 @@ function renderDay(){
   dh.innerHTML=(F?ltrize(head):esc(head))+(selected===today?" <span class='fin-today'>"+(F?"امروز":"today")+"</span>":"")+
     (ts.length?" <span class='fin-cnt' dir='ltr'>"+nd+"/"+ts.length+"</span>":"");
   var h="";
+  /* quiz / exam markers: on the day itself, and a heads-up on the 4 days before */
+  Object.keys(DATA.marks||{}).forEach(function(mi){
+    var mk=DATA.marks[mi], gap=Math.round((parseD(mi)-parseD(selected))/864e5);
+    if(gap===0) h+="<div class='fin-mark is-day'><b>"+(F?"کوییز":"Quiz")+"</b>"+(F?ltrize(mk.fa):esc(mk.en))+"</div>";
+    else if(gap>0&&gap<=4){
+      var nm=F?ltrize(mk.fa.split(" — ")[0]):esc(mk.en.split(" — ")[0]);
+      h+="<div class='fin-mark'><b>"+(F?"کوییز":"Quiz")+"</b>"+nm+(F?(" · "+ltrize(dateShort(mi,true))+" · "+"<span class='ex-ltr' dir='ltr'>"+gap+"</span>"+(gap===1?" روز دیگر (فردا)":" روز دیگر")):(" · "+esc(dateShort(mi,false))+" · in "+gap+(gap===1?" day (tomorrow)":" days")))+"</div>";
+    }
+  });
   if(selected===today){
     var cs=carried(ticks,today);
     if(cs.length){
@@ -1551,6 +1563,7 @@ window.__finals=function(){selected=selected||defaultDay();render();};
 if(document.getElementById("view-finals") && !document.getElementById("view-finals").hidden) render();
 })();
 </script>
+<main class="wrap" id="view-project" role="tabpanel" hidden><div id="pj-root" class="gta"></div></main>
 <main class="wrap" id="view-stats" role="tabpanel" hidden><div id="gta-root" class="gta"></div></main>
 <style>
 /* GTA VI pause-menu style Stats tab. Scoped to #view-stats / .gta-*. Self-contained, no external assets. */
@@ -1648,7 +1661,7 @@ var PLAN_START={y:2026,m:11,d:23,h:0,min:0};
 /* Missions: dated deadlines already in this file (top cards EVENTS / Moodle). No invented dates. hasTime=false means no official time. */
 var MISSIONS=[
  {en:"EEE 2274 Experiment 4",fa:"آزمایش 4 درس EEE 2274",t:{y:2026,m:11,d:26,h:23,min:55},hasTime:true},
- {en:"COMP 2233 Quiz 3 (BST)",fa:"Quiz 3 درس COMP 2233 (BST)",t:{y:2026,m:11,d:27,h:23,min:59},hasTime:false},
+ {en:"COMP 2233 Quiz 3: Binary Trees",fa:"Quiz 3 درس COMP 2233: درخت دودویی",t:{y:2026,m:11,d:27,h:23,min:59},hasTime:false},
  {en:"EEE 2274 Exp 5 prelab",fa:"پیش‌گزارش آزمایش 5 درس EEE 2274",t:{y:2026,m:12,d:3,h:23,min:59},hasTime:false},
  {en:"EEE 2274 Exp 6 prelab",fa:"پیش‌گزارش آزمایش 6 درس EEE 2274",t:{y:2026,m:12,d:10,h:23,min:59},hasTime:false},
  {en:"Project #136 upload (Moodle)",fa:"بارگذاری پروژه #136 در Moodle",t:{y:2026,m:12,d:13,h:23,min:55},hasTime:true},
@@ -1656,19 +1669,6 @@ var MISSIONS=[
  {en:"EEE 2274 Exp 7 prelab",fa:"پیش‌گزارش آزمایش 7 درس EEE 2274",t:{y:2026,m:12,d:24,h:23,min:59},hasTime:false},
  {en:"Finals start",fa:"شروع امتحانات پایان‌ترم",t:{y:2026,m:12,d:26,h:0,min:0},hasTime:true}
 ];
-/* COMP 2233 Term Project #136: status as of Mon 23 Nov 2026 from the Data Structures project agent. Update by hand; nothing here is computed. */
-var PROJECT={pct:5,asOf:{en:"status as of 23 Nov",fa:"وضعیت تا 23 نوامبر"},due:{y:2026,m:12,d:13,h:23,min:55},
- en:"O(1) Insert, Delete and Uniform Random Raffle (RandomizedSet)",fa:"RandomizedSet: درج، حذف و قرعه‌کشی تصادفی یکنواخت، همه با O(1)",
- next:{en:"Finish the core idea: O(1) delete via swap-with-last.",fa:"ایده اصلی را تمام کن، مخصوصاً حذف O(1) با جابه‌جایی با آخرین عنصر (swap-with-last)."},
- ms:[
-  {st:"prog",en:"Understand the spec",fa:"فهم صورت پروژه",den:"Vector + hash table, swap-with-last, both from scratch, no std containers",dfa:"Vector و Hash Table، swap-with-last، هر دو از صفر، بدون std containers",wen:"started 23 Nov",wfa:"شروع 23 نوامبر"},
-  {st:"no",en:"Design",fa:"طراحی",den:"scenario, edge cases, pseudocode, flowchart",dfa:"سناریو، حالت‌های مرزی، شبه‌کد، فلوچارت",wen:"24–25 Nov",wfa:"24 تا 25 نوامبر"},
-  {st:"no",en:"Implementation",fa:"پیاده‌سازی",den:"own Vector, HashTable, RandomizedSet, C++ console demo",dfa:"Vector و HashTable و RandomizedSet خودت، دموی کنسولی C++",wen:"26 Nov – 2 Dec",wfa:"26 نوامبر تا 2 دسامبر"},
-  {st:"no",en:"Tests + measured complexity",fa:"تست و اندازه‌گیری تجربی پیچیدگی",den:"",dfa:"",wen:"3–4 Dec",wfa:"3 تا 4 دسامبر"},
-  {st:"no",en:"Report",fa:"گزارش",den:"8 required sections, sample template",dfa:"8 بخش اجباری، طبق قالب نمونه",wen:"6–9 Dec",wfa:"6 تا 9 دسامبر"},
-  {st:"no",en:"Slides + live demo rehearsal",fa:"اسلاید و تمرین دموی زنده",den:"",dfa:"",wen:"10–11 Dec",wfa:"10 تا 11 دسامبر"},
-  {st:"no",en:"Moodle upload",fa:"بارگذاری در Moodle",den:"signed report PDF, source .zip, slides",dfa:"PDF گزارش امضاشده، سورس zip، اسلاید",wen:"13 Dec 23:55",wfa:"13 دسامبر 23:55"}
- ]};
 var WD_EN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WD_FA=["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"];
 var MON_EN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],MON_FA=["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"];
 function $(id){return document.getElementById(id)}
@@ -1725,7 +1725,7 @@ function render(){
  root.setAttribute("dir",F?"rtl":"ltr");root.setAttribute("lang",F?"fa":"en");
  var op=pct(S.done,S.tot),h="";
  h+='<div class="gta-top"><div><h2 class="gta-hd gta-title">'+(F?"آمار":"Stats")+'</h2><p class="gta-subt">'+T("Finals plan · 23 Nov – 25 Dec 2026 · topics, not hours","برنامه پایان‌ترم · 23 نوامبر تا 25 دسامبر 2026 · بر اساس مبحث، نه ساعت")+'</p></div>'+
-  '<nav class="gta-nav"><a href="#gta-ov" class="on">'+(F?"کلی":"Overview")+'</a><a href="#gta-ms">'+(F?"مأموریت‌ها":"Missions")+'</a><a href="#gta-pj">'+(F?"پروژه":"Project")+'</a><a href="#gta-cs">'+(F?"درس‌ها":"Courses")+'</a></nav></div><div class="gta-line"></div>';
+  '<nav class="gta-nav"><a href="#gta-ov" class="on">'+(F?"کلی":"Overview")+'</a><a href="#gta-ms">'+(F?"مأموریت‌ها":"Missions")+'</a><a href="#gta-cs">'+(F?"درس‌ها":"Courses")+'</a></nav></div><div class="gta-line"></div>';
  var passed=ORDER.filter(function(c){return S.c[c].tot>0&&S.c[c].done>=S.c[c].tot});
  if(op>=100) h+='<div class="gta-banner"><div class="gta-hd">'+(F?"مأموریت انجام شد":"Mission passed")+'</div><div>'+T("100% completion. Respect +","100% تکمیل شد. احترام +")+'</div></div>';
  else if(passed.length) h+='<div class="gta-banner"><div class="gta-hd">'+(F?"مأموریت انجام شد":"Mission passed")+'</div><div>'+passed.map(function(c){return F?ltrize(NAME_FA[c]):esc(NAME_EN[c])}).join(" · ")+(F?" · 100% تمام شد":" · 100% complete")+'</div></div>';
@@ -1759,30 +1759,16 @@ function render(){
   h+='</ul></div>';
  } else h+='<div class="gta-card">'+T("No upcoming missions.","مأموریتی در پیش نیست.")+'</div>';
  h+='</div></section>';
- /* project #136 */
- var P=PROJECT,left=wallMs(P.due)-S.now;
- h+='<section class="gta-sec" id="gta-pj"><h3 class="gta-hd">'+(F?"پروژه #136":"Project #136")+'</h3><div class="gta-mis gta-pj">';
- h+='<div class="gta-mcard gta-hero"><div class="gta-k" style="color:#ffd400">'+(F?"بارگذاری در Moodle":"Moodle upload")+'</div>'+
-  '<div class="gta-ring gta-pring">'+ring(P.pct,"#ffd400","#ff5f6d","gtaPJ",160,10)+'<div class="gta-c"><div class="gta-num">'+N(P.pct+"%")+'</div><small>'+T(P.asOf.en,P.asOf.fa)+'</small></div></div>'+
-  '<div class="gta-when">'+T("Sun 13 Dec 2026, 23:55 · no late uploads","یکشنبه 13 دسامبر 2026، ساعت 23:55 · بعد از مهلت قبول نمی‌شود")+'</div>'+
-  '<div class="gta-num gta-mcd">'+(dur(left)?N(dur(left)):T("Closed","بسته شد"))+'</div>'+
-  '<div class="gta-pjsub">'+T(P.en,P.fa)+'</div></div>';
- h+='<div class="gta-card"><div class="gta-k">'+(F?"مراحل":"Milestones")+'</div><ul class="gta-mlist gta-ms">';
- P.ms.forEach(function(x){
-  var stTxt=x.st==="done"?T("Done","انجام شد"):x.st==="prog"?T("In progress","در حال انجام"):T("Not started","شروع نشده");
-  h+='<li><span><b class="gta-st gta-st-'+x.st+'">'+stTxt+'</b> '+T(x.en,x.fa)+(x.den?'<small>'+T(x.den,x.dfa)+'</small>':'')+'</span><span>'+T(x.wen,x.wfa)+'</span></li>';
- });
- h+='</ul><div class="gta-pjnext"><span class="gta-k">'+(F?"قدم بعدی":"Next step")+'</span> '+T(P.next.en,P.next.fa)+'</div>'+
-  '<div class="gta-pjfoot">'+T("Presentation + live demo in class, 14–18 Dec (roster after the upload). Bring the printed, double-sided, signed report in a clear folder.","ارائه و دموی زنده سر کلاس، 14 تا 18 دسامبر (نوبت‌ها بعد از بارگذاری اعلام می‌شود). گزارش چاپی دورو و امضاشده را در پوشه شفاف ببر.")+'</div></div>';
- h+='</div></section>';
+ /* project #136 lives in its own tab */
+ h+='<a class="gta-pjlink" href="#project">'+T("Project #136: countdown, milestones and topics are in the Project tab →","پروژه #136: شمارش معکوس، مراحل و مباحث در تب «پروژه» است ←")+'</a>';
  /* course donuts */
  h+='<section class="gta-sec" id="gta-cs"><h3 class="gta-hd">'+(F?"درس‌ها":"Courses")+'</h3><div class="gta-donuts">';
  ORDER.forEach(function(c){var x=S.c[c],p=pct(x.done,x.tot),col=COLOR[c]||["#ff2d95","#ff8a00"],done=x.tot>0&&x.done>=x.tot;
   h+='<div class="gta-card gta-d">'+(done?'<div class="gta-pass gta-hd">'+(F?"انجام شد":"Mission passed")+'</div>':'')+'<div class="gta-ring">'+ring(p,col[0],col[1],"gta"+c,132,10)+'<div class="gta-c"><div class="gta-num">'+N(p+"%")+'</div></div></div>'+
    '<div class="gta-hd gta-dn">'+(F?ltrize(NAME_FA[c]):esc(NAME_EN[c]))+'</div><div class="gta-dh">'+frac(x.done,x.tot)+'</div><div class="gta-dh">'+(F?("مانده: "+tp(x.tot-x.done)):("Left: "+(x.tot-x.done)+" topics"))+'</div></div>'});
  h+='</div></section>';
- h+='<p class="gta-foot">'+T("Read-only. Numbers are topic ticks from the Finals plan tab on this device; a topic split across a day counts once. HIST 1120, ISG 9120 and UFND 2020 are not in this plan. Wanted level counts unfinished topics from earlier days only (today and clock time never count): 0 = none, 1 star for 1–2, 2 for 3–5, 3 for 6–9, 4 for 10–14, 5 for 15 or more. Project status is a manual snapshot. Final exam dates per course are not published yet.",
-  "فقط‌خواندنی. عددها تیک مباحث در تب برنامه پایان‌ترم روی همین دستگاه است؛ مبحثی که در یک روز چند تکه بود یک بار شمرده می‌شود. HIST 1120 و ISG 9120 و UFND 2020 در این برنامه نیستند. سطح تحت تعقیب فقط مباحث تمام‌نشده روزهای قبل را می‌شمارد (امروز و ساعت حساب نمی‌شود): هیچ = 0 ستاره، 1 تا 2 = 1، 3 تا 5 = 2، 6 تا 9 = 3، 10 تا 14 = 4، و 15 یا بیشتر = 5 ستاره. وضعیت پروژه یک عکس دستی است. تاریخ امتحان هر درس هنوز اعلام نشده.")+'</p>';
+ h+='<p class="gta-foot">'+T("Read-only. Numbers are topic ticks from the Finals plan tab on this device; a topic split across a day counts once. HIST 1120, ISG 9120 and UFND 2020 are not in this plan. Wanted level counts unfinished topics from earlier days only (today and clock time never count): 0 = none, 1 star for 1–2, 2 for 3–5, 3 for 6–9, 4 for 10–14, 5 for 15 or more. Final exam dates per course are not published yet.",
+  "فقط‌خواندنی. عددها تیک مباحث در تب برنامه پایان‌ترم روی همین دستگاه است؛ مبحثی که در یک روز چند تکه بود یک بار شمرده می‌شود. HIST 1120 و ISG 9120 و UFND 2020 در این برنامه نیستند. سطح تحت تعقیب فقط مباحث تمام‌نشده روزهای قبل را می‌شمارد (امروز و ساعت حساب نمی‌شود): هیچ = 0 ستاره، 1 تا 2 = 1، 3 تا 5 = 2، 6 تا 9 = 3، 10 تا 14 = 4، و 15 یا بیشتر = 5 ستاره. تاریخ امتحان هر درس هنوز اعلام نشده.")+'</p>';
  root.innerHTML=h;
  Array.prototype.forEach.call(root.querySelectorAll(".gta-nav a"),function(a){a.addEventListener("click",function(ev){ev.preventDefault();var t=$(a.getAttribute("href").slice(1));if(t)t.scrollIntoView({behavior:"smooth",block:"start"});Array.prototype.forEach.call(root.querySelectorAll(".gta-nav a"),function(o){o.classList.toggle("on",o===a)})})});
 }
@@ -1793,6 +1779,106 @@ setInterval(function(){if(visible())render()},60000);
 document.addEventListener("visibilitychange",function(){if(!document.hidden&&visible())render()});
 })();
 </script>
+<script>
+/* Project #136 tab (v25, 23 Nov 2026). Same GTA VI look as Stats (.gta-* classes).
+   Status, milestones and %: manual snapshot from the Data Structures project agent (23 Nov); update PROJECT by hand.
+   Topic ticks use the Finals plan key and ids, so ticking here or in the Finals plan is the same tick. */
+(function(){
+"use strict";
+var SRC=window.__finalsTopics;
+if(typeof SRC!=="function") return;
+var PROJECT={pct:5,asOf:{en:"status as of 23 Nov",fa:"وضعیت تا 23 نوامبر"},due:{y:2026,m:12,d:13,h:23,min:55},
+ en:"O(1) Insert, Delete and Uniform Random Raffle (RandomizedSet)",fa:"RandomizedSet: درج، حذف و قرعه‌کشی تصادفی یکنواخت، همه با O(1)",
+ next:{en:"Finish the core idea: O(1) delete via swap-with-last.",fa:"ایده اصلی را تمام کن، مخصوصاً حذف O(1) با جابه‌جایی با آخرین عنصر (swap-with-last)."},
+ ms:[
+  {st:"prog",en:"Understand the spec",fa:"فهم صورت پروژه",den:"Vector + hash table, swap-with-last, both from scratch, no std containers",dfa:"Vector و Hash Table، swap-with-last، هر دو از صفر، بدون std containers",wen:"started 23 Nov",wfa:"شروع 23 نوامبر"},
+  {st:"no",en:"Design",fa:"طراحی",den:"scenario, edge cases, pseudocode, flowchart",dfa:"سناریو، حالت‌های مرزی، شبه‌کد، فلوچارت",wen:"24–25 Nov",wfa:"24 تا 25 نوامبر"},
+  {st:"no",en:"Implementation",fa:"پیاده‌سازی",den:"own Vector, HashTable, RandomizedSet, C++ console demo",dfa:"Vector و HashTable و RandomizedSet خودت، دموی کنسولی C++",wen:"26 Nov – 2 Dec",wfa:"26 نوامبر تا 2 دسامبر"},
+  {st:"no",en:"Tests + measured complexity",fa:"تست و اندازه‌گیری تجربی پیچیدگی",den:"",dfa:"",wen:"3–4 Dec",wfa:"3 تا 4 دسامبر"},
+  {st:"no",en:"Report",fa:"گزارش",den:"8 required sections, sample template",dfa:"8 بخش اجباری، طبق قالب نمونه",wen:"6–9 Dec",wfa:"6 تا 9 دسامبر"},
+  {st:"no",en:"Slides + live demo rehearsal",fa:"اسلاید و تمرین دموی زنده",den:"",dfa:"",wen:"10–11 Dec",wfa:"10 تا 11 دسامبر"},
+  {st:"no",en:"Moodle upload",fa:"بارگذاری در Moodle",den:"signed report PDF, source .zip, slides",dfa:"PDF گزارش امضاشده، سورس zip، اسلاید",wen:"13 Dec 23:55",wfa:"13 دسامبر 23:55"}
+ ]};
+var WD_EN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WD_FA=["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"];
+var MON_EN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],MON_FA=["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"];
+function $(id){return document.getElementById(id)}
+function fa(){return document.documentElement.lang==="fa"}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+function N(s){return '<span class="gta-ltr ex-ltr" dir="ltr">'+esc(s)+'</span>'}
+function ltrize(s){return esc(s).replace(/[A-Za-z0-9#(][A-Za-z0-9#+\-–\/.,:%()_ ]*[A-Za-z0-9#%)]|[A-Za-z0-9#]/g,function(m){return '<span class="gta-ltr ex-ltr" dir="ltr">'+m+'</span>'})}
+function T(en,faTxt){return fa()?ltrize(faTxt):esc(en)}
+function wallMs(p){return Date.UTC(p.y,p.m-1,p.d,p.h||0,p.min||0,0)-3*3600*1000} /* Turkey is UTC+3 all year */
+function nowMs(){if(typeof window.__mockNow==="string"&&window.__mockNow){var x=new Date(window.__mockNow);if(!isNaN(x.getTime()))return x.getTime()}return Date.now()}
+function dur(ms){if(ms<=0) return null;var m=Math.floor(ms/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mm=m%60;return d+"d "+h+"h "+mm+"m"}
+function isoP(iso){var p=iso.split("-");return {y:+p[0],m:+p[1],d:+p[2]}}
+function dayLabel(iso){var p=isoP(iso),wd=new Date(Date.UTC(p.y,p.m-1,p.d)).getUTCDay();return fa()?(WD_FA[wd]+" "+p.d+" "+MON_FA[p.m-1]):(WD_EN[wd]+" "+p.d+" "+MON_EN[p.m-1])}
+function ring(p,c1,c2,id,stroke){
+ var r=50-stroke/2-1,C=2*Math.PI*r,off=C*(1-Math.min(1,p/100));
+ return '<svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c1+'"/><stop offset="1" stop-color="'+c2+'"/></linearGradient>'+
+ '<filter id="'+id+'f" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>'+
+ '<circle cx="50" cy="50" r="'+r+'" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="'+stroke+'"/>'+
+ (p>0?'<circle cx="50" cy="50" r="'+r+'" fill="none" stroke="url(#'+id+')" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+C.toFixed(2)+'" stroke-dashoffset="'+off.toFixed(2)+'" transform="rotate(-90 50 50)" filter="url(#'+id+'f)" opacity=".55"/>'+
+ '<circle cx="50" cy="50" r="'+r+'" fill="none" stroke="url(#'+id+')" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+C.toFixed(2)+'" stroke-dashoffset="'+off.toFixed(2)+'" transform="rotate(-90 50 50)"/>':'')+'</svg>';
+}
+function load(st){try{return JSON.parse(localStorage.getItem(st)||"{}")||{}}catch(e){return {}}}
+function save(st,o){try{localStorage.setItem(st,JSON.stringify(o))}catch(e){}}
+function render(){
+ var root=$("pj-root");if(!root) return;
+ var F=fa(),X=SRC(),ticks=load(X.store),P=PROJECT,now=nowMs(),left=wallMs(P.due)-now,today=X.today;
+ var tops=X.topics.filter(function(t){return t.c==="PROJ"}),nd=tops.filter(function(t){return ticks[t.id]}).length;
+ root.setAttribute("dir",F?"rtl":"ltr");root.setAttribute("lang",F?"fa":"en");
+ var h='<div class="gta-top"><div><h2 class="gta-hd gta-title">'+(F?"پروژه":"Project")+'</h2><p class="gta-subt">'+T("COMP 2233 · Term Project #136","COMP 2233 · پروژه پایانی #136")+'<br>'+T(P.en,P.fa)+'</p></div></div><div class="gta-line"></div>';
+ /* hero: countdown + ring, milestones */
+ h+='<div class="gta-mis gta-pj"><div class="gta-mcard gta-hero"><div class="gta-k" style="color:#ffd400">'+(F?"بارگذاری در Moodle":"Moodle upload")+'</div>'+
+  '<div class="gta-ring gta-pring">'+ring(P.pct,"#ffd400","#ff5f6d","pjRing",10)+'<div class="gta-c"><div class="gta-num">'+N(P.pct+"%")+'</div><small>'+T(P.asOf.en,P.asOf.fa)+'</small></div></div>'+
+  '<div class="gta-when">'+T("Sun 13 Dec 2026, 23:55 · no late uploads","یکشنبه 13 دسامبر 2026، ساعت 23:55 · بعد از مهلت قبول نمی‌شود")+'</div>'+
+  '<div class="gta-num gta-mcd">'+(dur(left)?N(dur(left)):T("Closed","بسته شد"))+'</div>'+
+  '<div class="gta-pjnext"><span class="gta-k">'+(F?"قدم بعدی":"Next step")+'</span> '+T(P.next.en,P.next.fa)+'</div></div>';
+ h+='<div class="gta-card"><div class="gta-k">'+(F?"مراحل":"Milestones")+'</div><ul class="gta-mlist gta-ms">';
+ P.ms.forEach(function(x){
+  var stTxt=x.st==="done"?T("Done","انجام شد"):x.st==="prog"?T("In progress","در حال انجام"):T("Not started","شروع نشده");
+  h+='<li><span><b class="gta-st gta-st-'+x.st+'">'+stTxt+'</b> '+T(x.en,x.fa)+(x.den?'<small>'+T(x.den,x.dfa)+'</small>':'')+'</span><span>'+T(x.wen,x.wfa)+'</span></li>';
+ });
+ h+='</ul></div></div>';
+ /* deliverables */
+ h+='<section class="gta-sec"><h3 class="gta-hd">'+(F?"چه چیزی و کجا":"What to hand in")+'</h3><div class="gta-mis pj-del">';
+ h+='<div class="gta-card"><div class="gta-k">'+T("Moodle · by Sun 13 Dec, 23:55","Moodle · تا یکشنبه 13 دسامبر، 23:55")+'</div><ul class="gta-mlist">'+
+  '<li><span>'+T("Signed report (PDF)","گزارش امضاشده (PDF)")+'</span></li>'+
+  '<li><span>'+T("Source code (.zip)","سورس کد (.zip)")+'</span></li>'+
+  '<li><span>'+T("Slides","اسلایدها")+'</span></li></ul>'+
+  '<div class="gta-pjfoot">'+T("No late uploads.","بعد از مهلت قبول نمی‌شود.")+'</div></div>';
+ h+='<div class="gta-card"><div class="gta-k">'+T("In class · 14–18 Dec","سر کلاس · 14 تا 18 دسامبر")+'</div><ul class="gta-mlist">'+
+  '<li><span>'+T("Presentation + live demo in class (roster after the upload)","ارائه و دموی زنده سر کلاس (نوبت‌ها بعد از بارگذاری اعلام می‌شود)")+'</span></li>'+
+  '<li><span>'+T("Bring the printed report: double-sided, signed, in a clear folder","گزارش چاپی را بیاور: دورو، امضاشده، در پوشه شفاف")+'</span></li></ul></div>';
+ h+='</div></section>';
+ /* plan topics with ticks */
+ var pc=tops.length?Math.round(nd/tops.length*100):0;
+ h+='<section class="gta-sec"><h3 class="gta-hd">'+(F?"مباحث پروژه در برنامه":"Project topics in the plan")+'</h3><div class="gta-card">'+
+  '<div class="gta-row"><div class="l">'+T("Ticked in the Finals plan","تیک‌خورده در برنامه پایان‌ترم")+'</div><div class="v">'+N(nd+" / "+tops.length)+'</div><div class="gta-bar"><i style="width:'+pc+'%"></i></div></div><ul class="pj-list">';
+ tops.forEach(function(t){
+  var on=!!ticks[t.id],late=!on&&t.iso<today,cid="pj-"+t.id;
+  h+='<li class="pj-t'+(on?" is-done":"")+(t.iso===today?" is-today":"")+(late?" is-late":"")+'"><input type="checkbox" id="'+cid+'" data-pj="'+t.id+'"'+(on?" checked":"")+'>'+
+   '<label for="'+cid+'"><span class="pj-d">'+(F?ltrize(dayLabel(t.iso)):esc(dayLabel(t.iso)))+(t.iso===today?' · '+(F?"امروز":"today"):'')+(late?' · '+(F?"مانده":"unfinished"):'')+'</span>'+T(t.en,t.fa)+'</label></li>';
+ });
+ h+='</ul></div></section>';
+ h+='<p class="gta-foot">'+T("Status, % and milestones are a manual snapshot from the Data Structures project agent (23 Nov). Ticks here are the same ticks as in the Finals plan tab.",
+  "وضعیت، درصد و مراحل یک عکس دستی از دستیار پروژه ساختمان داده است (23 نوامبر). تیک‌های این صفحه همان تیک‌های تب برنامه پایان‌ترم است.")+'</p>';
+ root.innerHTML=h;
+ Array.prototype.forEach.call(root.querySelectorAll("input[data-pj]"),function(inp){
+  inp.addEventListener("change",function(){
+   var id=inp.getAttribute("data-pj"),t=null;for(var k=0;k<tops.length;k++)if(tops[k].id===id){t=tops[k];break}
+   if(!t) return;var o=load(X.store);t.ids.forEach(function(x){if(inp.checked)o[x]=1;else delete o[x]});save(X.store,o);render();
+  });
+ });
+}
+function visible(){var v=$("view-project");return v&&!v.hidden}
+window.__project=render;
+window.addEventListener("storage",function(e){if(visible())render()});
+setInterval(function(){if(visible())render()},60000);
+document.addEventListener("visibilitychange",function(){if(!document.hidden&&visible())render()});
+})();
+</script>
+
 
 
 <script>
@@ -1893,6 +1979,11 @@ quizzes:[
   topics:{en:"Singly Linked Lists only",fa:"فقط لیست پیوندی یک‌طرفه (Singly Linked Lists)"},
   source:{en:"Moodle COMP2233 Announcements (20 and 23 Oct, Giray Kilic)",fa:"اطلاعیه‌های COMP2233 در Moodle (20 و 23 اکتبر، Giray Kilic)"},
   note:{en:"Time and room are not stated.",fa:"ساعت و کلاس اعلام نشده."}},
+ {id:"DS",code:"COMP 2233",course:{en:"Data Structures",fa:"ساختمان داده‌ها"},qid:"ds-quiz3",quiz:{en:"Quiz 3: Binary Trees",fa:"کوییز 3: درخت دودویی"},calendar:true,
+  status:"confirmed",date:"2026-11-27",estimate:null,time:null,where:null,weight:null,
+  topics:{en:"Binary trees: terminology, full / complete / perfect, array and linked representation, traversals (pre / in / post / level-order), BST search, insert and delete, height and node counts, recursive tree functions",fa:"درخت دودویی: اصطلاحات، full و complete و perfect، نمایش آرایه‌ای و پیوندی، پیمایش‌ها (pre و in و post و level-order)، جستجو و درج و حذف در BST، ارتفاع و تعداد گره، توابع بازگشتی روی درخت"},
+  source:{en:"Date from you (23 Nov); material: Week 9 Trees and Traversal Methods, omercetin.com.tr/~courses/comp2233",fa:"تاریخ از خودت (23 نوامبر)؛ مطالب: هفته 9 Trees and Traversal Methods در omercetin.com.tr/~courses/comp2233"},
+  note:{en:"Fri 27 Nov. Time and room are not announced yet.",fa:"جمعه 27 نوامبر. ساعت و کلاس هنوز اعلام نشده."}},
  {id:"STAT",code:"MATH 2260",course:{en:"Probability & Statistics",fa:"احتمال و آمار"},qid:"stat-quiz",quiz:{en:"Quiz",fa:"کوییز"},
   status:"tba",date:null,estimate:null,time:null,where:null,weight:null,topics:null,
   source:{en:"Course info (saved exam data)",fa:"اطلاعات درس (داده‌های ذخیره‌شدهٔ امتحان)"},
@@ -1908,6 +1999,7 @@ finals:[
 ],
 other:[
  {date:"2026-10-30",type:"quiz",en:"Data Structures Quiz 2 (COMP 2233): Singly Linked Lists only",fa:"کوییز 2 ساختمان داده (COMP 2233): فقط Singly Linked Lists"},
+ {date:"2026-11-27",type:"quiz",en:"Data Structures Quiz 3 (COMP 2233): Binary Trees (time not announced)",fa:"کوییز 3 ساختمان داده (COMP 2233): درخت دودویی (ساعت اعلام نشده)"},
  {date:"2026-11-05",type:"minor",en:"EEE Exp 3 prelab due (small, online)",fa:"مهلت پیش‌گزارش آزمایش 3 درس EEE (کوچک و آنلاین)"},
  {date:"2026-11-15",type:"minor",en:"SE 2228 8th Week Lab due 23:00",fa:"مهلت لب هفته 8 درس SE 2228 ساعت 23:00"},
  {date:"2026-12-15",type:"minor",en:"UFND 2420 Module 3 / 4.1 / 4.2 assignments due 17:00",fa:"مهلت تکلیف‌های ماژول 3، 4.1 و 4.2 درس UFND 2420 ساعت 17:00"},
@@ -2683,7 +2775,7 @@ function render(){
 function renderPanel(){
  var s=S(),p=document.getElementById("panel");
  if(sel<0||!PLAN[sel]){
-  var d0=CV&&CV.date?CV.date:pd(todayIso());
+  var d0=(typeof CV!=="undefined"&&CV&&CV.date)?CV.date:pd(todayIso());
   var ae0=document.activeElement,refocus0=ae0&&ae0.tagName==="TEXTAREA"&&p.contains(ae0);p.innerHTML="";
   var ph0=el("div","ph");ph0.appendChild(el("h2",null,(s.WDL?s.WDL[d0.getDay()]:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d0.getDay()])+", "+d0.getDate()+" "+(s.MO?s.MO[d0.getMonth()]:d0.getMonth())+" "+d0.getFullYear()));
   ph0.appendChild(el("p","calnone",lang==="fa"?"برای امروز برنامه‌ای نیست.":"No plan for today."));
@@ -2796,16 +2888,16 @@ window.__plan={reload:function(){var st={};try{st=JSON.parse(ls(KEY)||"{}")||{}}
 (function(){
 "use strict";
 var UI={
- en:{plan:"Daily plan",outlook:"Outlook",exams:"Exams",finals:"Finals plan",gpa:"GPA roadmap",stats:"Stats",hCal:"61-day calendar (Nov 13 – Jan 12)",pCal:"Pick a day to see its tasks. Colored chips show the courses and hours.",hDay:"Tasks for the selected day",pDay:"Tick a task when you finish it. Under each task, \u201cTest yourself\u201d opens a short quiz on exactly that block."},
- fa:{plan:"برنامهٔ روزانه",outlook:"دورنما",exams:"امتحان‌ها",finals:"برنامه پایان‌ترم",gpa:"نقشه معدل",stats:"آمار",hCal:"تقویم 61 روزه (13 نوامبر تا 12 ژانویه)",pCal:"یک روز را انتخاب کن تا کارهایش را ببینی. برچسب‌های رنگی درس‌ها و ساعت‌ها را نشان می‌دهند.",hDay:"کارهای روز انتخاب‌شده",pDay:"هر کاری را که تمام کردی تیک بزن. زیر هر کار، «خودت را بسنج» یک کوییز کوتاه دربارهٔ همان بخش باز می‌کند."}
+ en:{plan:"Daily plan",outlook:"Outlook",exams:"Exams",finals:"Finals plan",project:"Project",gpa:"GPA roadmap",stats:"Stats",hCal:"61-day calendar (Nov 13 – Jan 12)",pCal:"Pick a day to see its tasks. Colored chips show the courses and hours.",hDay:"Tasks for the selected day",pDay:"Tick a task when you finish it. Under each task, \u201cTest yourself\u201d opens a short quiz on exactly that block."},
+ fa:{plan:"برنامهٔ روزانه",outlook:"دورنما",exams:"امتحان‌ها",finals:"برنامه پایان‌ترم",project:"پروژه",gpa:"نقشه معدل",stats:"آمار",hCal:"تقویم 61 روزه (13 نوامبر تا 12 ژانویه)",pCal:"یک روز را انتخاب کن تا کارهایش را ببینی. برچسب‌های رنگی درس‌ها و ساعت‌ها را نشان می‌دهند.",hDay:"کارهای روز انتخاب‌شده",pDay:"هر کاری را که تمام کردی تیک بزن. زیر هر کار، «خودت را بسنج» یک کوییز کوتاه دربارهٔ همان بخش باز می‌کند."}
 };
-var VIEWS=["plan","outlook","exams","finals","gpa","stats"],cur="finals";
+var VIEWS=["plan","outlook","exams","finals","project","gpa","stats"],cur="finals";
 function lang(){var d=window.__plan&&window.__plan.data?window.__plan.data():null;return d&&d.lang==="fa"?"fa":"en"}
 function $(id){return document.getElementById(id)}
 function labels(){var u=UI[lang()];var L=lang();Array.prototype.forEach.call(document.querySelectorAll("#view-gpa .gpa"),function(s){s.hidden=s.getAttribute("data-lang")!==L});
  VIEWS.forEach(function(v){var b=$("tab-"+v);if(b){b.textContent=u[v];b.classList.toggle("fa",lang()==="fa")}});
  var set=function(id,t){var e=$(id);if(e)e.textContent=t};set("h-cal",u.hCal);set("p-cal",u.pCal);set("h-day",u.hDay);set("p-day",u.pDay)}
-function paint(){if(cur==="outlook"&&window.__outlook)window.__outlook();if(cur==="exams"&&window.__ex)window.__ex.render();if(cur==="finals"&&window.__finals)window.__finals();if(cur==="stats"&&window.__stats)window.__stats()}
+function paint(){if(cur==="outlook"&&window.__outlook)window.__outlook();if(cur==="exams"&&window.__ex)window.__ex.render();if(cur==="finals"&&window.__finals)window.__finals();if(cur==="stats"&&window.__stats)window.__stats();if(cur==="project"&&window.__project)window.__project()}
 function show(v,noHash){cur=v;
  VIEWS.forEach(function(x){var m=$("view-"+x),b=$("tab-"+x);if(m)m.hidden=x!==v;if(b)b.setAttribute("aria-selected",x===v?"true":"false")});
  if(!noHash){try{history.replaceState(null,"",v==="finals"?location.pathname+location.search:"#"+v)}catch(e){}}
@@ -3065,368 +3157,109 @@ else paint(true);
 
 
 <script>
-/* Top cards: finals countdown, project deadline, upcoming events. Europe/Istanbul. */
+/* Top cards v26 (23 Nov 2026): exactly 4 cards — finals, homework, quizzes, project. Europe/Istanbul (UTC+3 all year).
+   Each card shows the next item that has not passed and moves on by itself. Dates come from the file (Moodle / official calendar); none invented. */
 (function(){
 "use strict";
-var START={y:2026,m:12,d:26,h:0,min:0,s:0};          /* 26 Dec 2026 00:00 Istanbul */
-var END={y:2027,m:1,d:12,h:23,min:59,s:59};          /* 12 Jan 2027 end of day */
-var PROJ_DUE={y:2026,m:12,d:13,h:23,min:55,s:0};     /* Moodle upload */
-var PROJ_PRES_END={y:2026,m:12,d:18,h:23,min:59,s:59};
-
-function ev(id,en,fa,whenEn,whenFa,start,end,extra){
-  var o={id:id,en:en,fa:fa,when_en:whenEn,when_fa:whenFa,start:start,end:end||start};
-  if(extra){ for(var k in extra) o[k]=extra[k]; }
-  return o;
-}
-function pt(y,m,d,h,min,s){ return {y:y,m:m,d:d,h:h||0,min:min||0,s:s||0}; }
-function eod(y,m,d){ return pt(y,m,d,23,59,59); }
-
-/* Canonical list, chronological. User list plus dated deadlines already in the file, deduped. No invented dates. */
-var EVENTS=[
-  ev("math-quiz","MATH 2260 Quiz","کوییز MATH 2260",
-     "Thu 19 Nov 2026, 08:40–10:30","پنجشنبه 19 نوامبر 2026، 08:40 تا 10:30",
-     pt(2026,11,19,8,40), pt(2026,11,19,10,30),
-     {detail_en:"In the 08:40–10:30 class; probably Part 2, about 09:40–10:30. Check the list.",
-      detail_fa:"در کلاس ساعت 08:40 تا 10:30؛ احتمالاً بخش 2، حدود 09:40 تا 10:30. فهرست را چک کن.",
-      tag_en:"expected", tag_fa:"انتظار می‌رود",
-      note_en:"Date not officially announced on Moodle.",
-      note_fa:"تاریخ در Moodle رسماً اعلام نشده."}),
-  ev("eee-objection","EEE 2274 lab grade objection deadline","مهلت اعتراض به نمره آزمایشگاه EEE 2274",
-     "Fri 20 Nov 2026, 17:30","جمعه 20 نوامبر 2026، ساعت 17:30",
-     pt(2026,11,20,17,30), pt(2026,11,20,17,30)),
-  ev("hist-mt","HIST 1120 Midterm, online, 25 MCQ","میان‌ترم HIST 1120، آنلاین، 25 سؤال تستی",
-     "Sat 21 Nov 2026, 13:40–14:40","شنبه 21 نوامبر 2026، 13:40 تا 14:40",
-     pt(2026,11,21,13,40), pt(2026,11,21,14,40)),
-  ev("isg-mt","ISG 9120 Midterm quiz, Moodle","کوییز میان‌ترم ISG 9120 در Moodle",
-     "Sat 21 Nov 2026, 17:40–18:30","شنبه 21 نوامبر 2026، 17:40 تا 18:30",
-     pt(2026,11,21,17,40), pt(2026,11,21,18,30)),
-  ev("se-lab8","SE 2228 8th Week Lab, 2nd Lab Work","آزمایشگاه هفته 8 درس SE 2228، کار دوم آزمایشگاه",
-     "Sun 22 Nov 2026, 23:00","یکشنبه 22 نوامبر 2026، ساعت 23:00",
-     pt(2026,11,22,23,0), pt(2026,11,22,23,0)),
-  ev("eee-exp4","EEE 2274 Exp 4 prelab due","مهلت پیش‌گزارش آزمایش 4 درس EEE 2274",
-     "Thu 26 Nov 2026","پنجشنبه 26 نوامبر 2026",
-     eod(2026,11,26), eod(2026,11,26)),
-  ev("eee-exp5","EEE 2274 Exp 5 prelab due","مهلت پیش‌گزارش آزمایش 5 درس EEE 2274",
-     "Thu 3 Dec 2026","پنجشنبه 3 دسامبر 2026",
-     eod(2026,12,3), eod(2026,12,3)),
-  ev("eee-exp6","EEE 2274 Exp 6 prelab due","مهلت پیش‌گزارش آزمایش 6 درس EEE 2274",
-     "Thu 10 Dec 2026","پنجشنبه 10 دسامبر 2026",
-     eod(2026,12,10), eod(2026,12,10)),
-  ev("proj-upload","COMP 2233 Project upload","بارگذاری پروژه COMP 2233",
-     "Sun 13 Dec 2026, 23:55","یکشنبه 13 دسامبر 2026، ساعت 23:55",
-     pt(2026,12,13,23,55), pt(2026,12,13,23,55),
-     {detail_en:"Moodle upload for Term Project #136, RandomizedSet raffle. No late submission.",
-      detail_fa:"بارگذاری پروژه پایانی 136، RandomizedSet raffle، در Moodle. ارسال دیرکرد پذیرفته نمی‌شود."}),
-  ev("ufnd24-due","UFND 2420 Module 3 / 4.1 / 4.2 assignments due","مهلت تکلیف‌های ماژول 3 و 4.1 و 4.2 درس UFND 2420",
-     "Tue 15 Dec 2026, 17:00","سه‌شنبه 15 دسامبر 2026، ساعت 17:00",
-     pt(2026,12,15,17,0), pt(2026,12,15,17,0)),
-  ev("proj-pres","Project presentations","ارائه‌های پروژه",
-     "14–18 Dec 2026","14 تا 18 دسامبر 2026",
-     pt(2026,12,14,0,0), eod(2026,12,18),
-     {detail_en:"Presentations and printed report, Dec 14–18.",
-      detail_fa:"ارائه و گزارش چاپی، 14 تا 18 دسامبر."}),
-  ev("eee-exp7","EEE 2274 Exp 7 prelab due","مهلت پیش‌گزارش آزمایش 7 درس EEE 2274",
-     "Thu 24 Dec 2026","پنجشنبه 24 دسامبر 2026",
-     eod(2026,12,24), eod(2026,12,24)),
-  ev("finals-start","Finals start","شروع امتحانات پایان‌ترم",
-     "Sat 26 Dec 2026","شنبه 26 دسامبر 2026",
-     pt(2026,12,26,0,0), eod(2026,12,26),
-     {detail_en:"Official window 26–30 Dec 2026 and 4–12 Jan 2027. Per-course dates TBA.",
-      detail_fa:"بازه رسمی 26 تا 30 دسامبر 2026 و 4 تا 12 ژانویه 2027. تاریخ هر درس اعلام نشده."})
+function pt(y,m,d,h,min){return {y:y,m:m,d:d,h:h||0,min:min||0}}
+var FIN_START=pt(2026,12,26,0,0);            /* official final-exam window starts */
+var SEM_END=pt(2027,1,12,23,59);             /* last final-exam day in the official calendar */
+/* Homework / assignments to hand in. t=deadline; hasTime=false means no official time (counts to end of day). */
+var HW=[
+ {en:"SE 2228 8th Week Lab, 2nd Lab Work",fa:"کار دوم آزمایشگاه هفته 8 درس SE 2228",t:pt(2026,11,22,23,0),hasTime:true},
+ {en:"EEE 2274 Experiment 4 prelab",fa:"پیش‌گزارش آزمایش 4 درس EEE 2274",t:pt(2026,11,26,23,55),hasTime:true},
+ {en:"EEE 2274 Experiment 5 prelab",fa:"پیش‌گزارش آزمایش 5 درس EEE 2274",t:pt(2026,12,3,23,59),hasTime:false},
+ {en:"EEE 2274 Experiment 6 prelab",fa:"پیش‌گزارش آزمایش 6 درس EEE 2274",t:pt(2026,12,10,23,59),hasTime:false},
+ {en:"UFND 2420 Module 3 / 4.1 / 4.2 assignments",fa:"تکلیف‌های ماژول 3 و 4.1 و 4.2 درس UFND 2420",t:pt(2026,12,15,17,0),hasTime:true},
+ {en:"EEE 2274 Experiment 7 prelab",fa:"پیش‌گزارش آزمایش 7 درس EEE 2274",t:pt(2026,12,24,23,59),hasTime:false}
 ];
-
-var evIndex=null; /* null = auto: next event that has not ended */
-
-function nowDate(){
-  if(typeof window.__mockNow==="string" && window.__mockNow){
-    var x=new Date(window.__mockNow);
-    if(!isNaN(x.getTime())) return x;
-  }
-  return new Date();
+/* Quizzes. Time not announced -> counts as passed after the end of that day. */
+var QUIZ=[
+ {en:"COMP 2233 Quiz 3: Binary Trees",fa:"Quiz 3 درس COMP 2233: درخت دودویی",t:pt(2026,11,27,23,59),hasTime:false}
+];
+var PROJ=[
+ {en:"Project #136 Moodle upload",fa:"بارگذاری پروژه #136 در Moodle",t:pt(2026,12,13,23,55),hasTime:true,sub_en:"Report PDF + code .zip + slides. No late uploads.",sub_fa:"PDF گزارش + سورس zip + اسلاید. بعد از مهلت قبول نمی‌شود."},
+ {en:"Project #136 presentations",fa:"ارائه‌های پروژه #136",t:pt(2026,12,18,23,59),hasTime:false,range_en:"14–18 Dec 2026",range_fa:"14 تا 18 دسامبر 2026",sub_en:"Live demo in class + printed signed report.",sub_fa:"دموی زنده سر کلاس + گزارش چاپی امضاشده."}
+];
+var WD_EN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],WD_FA=["یکشنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنجشنبه","جمعه","شنبه"];
+var MON_EN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],MON_FA=["ژانویه","فوریه","مارس","آوریل","مه","ژوئن","ژوئیه","اوت","سپتامبر","اکتبر","نوامبر","دسامبر"];
+function isFa(){return document.documentElement.lang==="fa"}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+function L(s){return '<span class="ex-ltr" dir="ltr">'+esc(s)+'</span>'}
+function ltrize(s){return esc(s).replace(/[A-Za-z0-9#(][A-Za-z0-9#+\-–\/.,:%()_ ]*[A-Za-z0-9#%)]|[A-Za-z0-9#]/g,function(m){return '<span class="ex-ltr" dir="ltr">'+m+'</span>'})}
+function T(en,fa){return isFa()?ltrize(fa):esc(en)}
+function ms(p){return Date.UTC(p.y,p.m-1,p.d,p.h,p.min,0)-3*3600000}
+function nowMs(){if(typeof window.__mockNow==="string"&&window.__mockNow){var x=new Date(window.__mockNow);if(!isNaN(x.getTime()))return x.getTime()}return Date.now()}
+function todayP(n){var d=new Date(n+3*3600000);return {y:d.getUTCFullYear(),m:d.getUTCMonth()+1,d:d.getUTCDate()}}
+function calDays(n,p){var t=todayP(n);return Math.round((Date.UTC(p.y,p.m-1,p.d)-Date.UTC(t.y,t.m-1,t.d))/86400000)}
+function dateTxt(p,withTime){
+ var wd=new Date(Date.UTC(p.y,p.m-1,p.d)).getUTCDay(),hm=(p.h<10?"0":"")+p.h+":"+(p.min<10?"0":"")+p.min;
+ return isFa()?(WD_FA[wd]+" "+p.d+" "+MON_FA[p.m-1]+" "+p.y+(withTime?"، ساعت "+hm:"")):(WD_EN[wd]+" "+p.d+" "+MON_EN[p.m-1]+" "+p.y+(withTime?", "+hm:""));
 }
-function partsIstanbul(d){
-  var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Istanbul",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"});
-  var o={}; f.formatToParts(d).forEach(function(p){ if(p.type!=="literal") o[p.type]=p.value; });
-  return {y:+o.year,m:+o.month,d:+o.day,h:+o.hour,min:+o.minute,s:+o.second};
+function daysTxt(n){return isFa()?(n===0?"امروز":n+" روز"):(n===0?"Today":n===1?"1 day":n+" days")}
+function cd(left){ /* left ms > 0 */
+ var m=Math.floor(left/60000),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mm=m%60;
+ if(isFa()) return d>0?(d+" روز و "+h+" ساعت"):(h+" ساعت و "+mm+" دقیقه");
+ return d>0?(d+"d "+h+"h"):(h+"h "+mm+"m");
 }
-/* Turkey uses UTC+3 year-round (no DST). */
-function wallToMs(y,m,d,h,min,s){
-  return Date.UTC(y,m-1,d,h,min,s) - 3*60*60*1000;
+function nextOf(list,n){for(var i=0;i<list.length;i++) if(ms(list[i].t)>n) return i;return -1}
+function card(o){
+ var h='<div class="cd-kicker">'+o.kicker+'</div>';
+ if(o.title) h+='<div class="cd-title">'+o.title+'</div>';
+ h+='<div class="cd-val">'+o.val+'</div>';
+ if(o.date) h+='<div class="cd-date">'+o.date+'</div>';
+ (o.subs||[]).forEach(function(s){h+='<div class="cd-sub">'+s+'</div>'});
+ return h;
 }
-function tMs(p){ return wallToMs(p.y,p.m,p.d,p.h,p.min,p.s); }
-function nowMs(){
-  var p=partsIstanbul(nowDate());
-  return tMs(p);
-}
-function daysInMonth(y,m){ return new Date(Date.UTC(y,m,0)).getUTCDate(); }
-function addMonthsWall(p, n){
-  var y=p.y, m=p.m-1+n;
-  y+=Math.floor(m/12); m=((m%12)+12)%12;
-  var dim=daysInMonth(y,m+1);
-  var d=Math.min(p.d, dim);
-  return {y:y,m:m+1,d:d,h:p.h,min:p.min,s:p.s};
-}
-function cmpWall(a,b){
-  var ka=((((a.y*14+a.m)*32+a.d)*24+a.h)*60+a.min)*60+a.s;
-  var kb=((((b.y*14+b.m)*32+b.d)*24+b.h)*60+b.min)*60+b.s;
-  return ka===kb?0:(ka<kb?-1:1);
-}
-function diffTo(target){
-  var now=nowDate();
-  var p=partsIstanbul(now);
-  var targetMs=tMs(target);
-  var nMs=tMs(p);
-  if(nMs>=targetMs) return {past:true,months:0,weeks:0,days:0,hours:0,totalDays:0};
-  var months=0;
-  while(cmpWall(addMonthsWall(p, months+1), target)<=0) months++;
-  var cur=addMonthsWall(p, months);
-  var remMs=targetMs - tMs(cur);
-  var remDays=Math.floor(remMs/86400000);
-  var weeks=Math.floor(remDays/7);
-  var days=remDays%7;
-  var hours=Math.floor((remMs%86400000)/3600000);
-  return {past:false,months:months,weeks:weeks,days:days,hours:hours,totalDays:Math.floor((targetMs-nMs)/86400000)};
-}
-function joinEN(parts){
-  if(!parts.length) return "0 days";
-  if(parts.length===1) return parts[0];
-  if(parts.length===2) return parts[0]+" and "+parts[1];
-  return parts.slice(0,-1).join(", ")+" and "+parts[parts.length-1];
-}
-function unitEN(n, one, many){ return n+" "+(n===1?one:many); }
-function unitFA(n, one, many){ return n+" "+(n===1?one:many); }
-
-/* Finals unit rule, kept as is. */
-function formatEN(diff){
-  if(diff.past) return "0 days";
-  if(diff.months>=1){
-    var p=[unitEN(diff.months,"month","months")];
-    if(diff.weeks) p.push(unitEN(diff.weeks,"week","weeks"));
-    if(diff.days) p.push(unitEN(diff.days,"day","days"));
-    return joinEN(p);
-  }
-  if(diff.weeks>=1){
-    var p=[unitEN(diff.weeks,"week","weeks")];
-    if(diff.days) p.push(unitEN(diff.days,"day","days"));
-    return joinEN(p);
-  }
-  if(diff.totalDays>=1) return unitEN(diff.totalDays,"day","days");
-  if(diff.hours>=1) return unitEN(diff.hours,"hour","hours");
-  return "less than 1 hour";
-}
-function formatFA(diff){
-  if(diff.past) return "0 روز";
-  var p=[];
-  if(diff.months>=1){
-    p.push(unitFA(diff.months,"ماه","ماه"));
-    if(diff.weeks) p.push(unitFA(diff.weeks,"هفته","هفته"));
-    if(diff.days) p.push(unitFA(diff.days,"روز","روز"));
-    return p.join(" و ");
-  }
-  if(diff.weeks>=1){
-    p.push(unitFA(diff.weeks,"هفته","هفته"));
-    if(diff.days) p.push(unitFA(diff.days,"روز","روز"));
-    return p.join(" و ");
-  }
-  if(diff.totalDays>=1) return unitFA(diff.totalDays,"روز","روز");
-  if(diff.hours>=1) return unitFA(diff.hours,"ساعت","ساعت");
-  return "کمتر از 1 ساعت";
-}
-/* Project / events: same months→weeks→days; keep days when < 1 week; days and hours when < 1 day. */
-function formatENH(diff){
-  if(diff.past) return "0 days";
-  if(diff.months>=1 || diff.weeks>=1 || diff.totalDays>=1) return formatEN(diff);
-  if(diff.hours>=1) return "0 days and "+unitEN(diff.hours,"hour","hours");
-  return "less than 1 hour";
-}
-function formatFAH(diff){
-  if(diff.past) return "0 روز";
-  if(diff.months>=1 || diff.weeks>=1 || diff.totalDays>=1) return formatFA(diff);
-  if(diff.hours>=1) return "0 روز و "+unitFA(diff.hours,"ساعت","ساعت");
-  return "کمتر از 1 ساعت";
-}
-function wrap(s){
-  return String(s).replace(/[A-Za-z0-9][A-Za-z0-9#+\-–—\/.,():*′’_ ]*[A-Za-z0-9#)]|[A-Za-z0-9]/g,
-    function(m){return '<span class="ex-ltr" dir="ltr">'+m+"</span>";});
-}
-function isFa(){ return document.documentElement.lang==="fa"; }
-
-function eventEnded(e, n){ return n>=tMs(e.end); }
-function eventStarted(e, n){ return n>=tMs(e.start); }
-function nextUpcomingIndex(n){
-  n=n!=null?n:nowMs();
-  for(var i=0;i<EVENTS.length;i++) if(!eventEnded(EVENTS[i], n)) return i;
-  return EVENTS.length-1;
-}
-function currentIndex(){
-  if(evIndex==null) evIndex=nextUpcomingIndex();
-  return evIndex;
-}
-function stepEvent(dir){
-  var i=currentIndex()+dir;
-  if(i<0) i=0;
-  if(i>EVENTS.length-1) i=EVENTS.length-1;
-  evIndex=i;
-  paintEvents();
-}
-
-function paintFinals(){
-  var el=document.getElementById("card-finals");
-  if(!el) return;
-  var fa=isFa();
-  var a=diffTo(START), b=diffTo(END);
-  var kicker=fa?"شمارش معکوس امتحانات پایان‌ترم":"Finals countdown";
-  var startLabel, startVal, endLabel, endVal;
-  if(a.past && b.past){
-    startLabel=fa?"امتحانات پایان‌ترم تمام شده است.":"Finals have ended.";
-    startVal=fa?"پایان بازه: 12 ژانویه 2027":"The window closed on 12 Jan 2027.";
-    endLabel=""; endVal="";
-  } else if(a.past){
-    startLabel=fa?"امتحانات پایان‌ترم شروع شده است.":"Finals have started.";
-    startVal=fa?"شروع بازه: 26 دسامبر 2026، ساعت 00:00":"The window opened on 26 Dec 2026, 00:00.";
-    endLabel=fa?"تا پایان امتحانات، پایان روز 12 ژانویه 2027":"Until the end of finals (12 Jan 2027, end of day)";
-    endVal=fa?("مانده: "+formatFA(b)):("in "+formatEN(b));
-  } else {
-    startLabel=fa?"تا شروع امتحانات پایان‌ترم، 26 دسامبر 2026، ساعت 00:00":"Until finals start (26 Dec 2026, 00:00 Europe/Istanbul)";
-    startVal=fa?("مانده: "+formatFA(a)):("in "+formatEN(a));
-    endLabel=fa?"تا پایان امتحانات، پایان روز 12 ژانویه 2027":"Until the end of finals (12 Jan 2027, end of day)";
-    endVal=fa?("مانده: "+formatFA(b)):("in "+formatEN(b));
-  }
-  var html='<div class="cd-kicker">'+wrap(kicker)+"</div>";
-  html+='<div class="cd-row"><span class="cd-label">'+wrap(startLabel)+'</span><span class="cd-val">'+wrap(startVal)+"</span></div>";
-  if(endVal){
-    html+='<div class="cd-row"><span class="cd-label">'+wrap(endLabel)+'</span><span class="cd-val">'+wrap(endVal)+"</span></div>";
-  }
-  el.innerHTML=html;
-}
-
-function paintProject(){
-  var el=document.getElementById("card-project");
-  if(!el) return;
-  var fa=isFa();
-  var kicker=fa?"پروژه":"Project";
-  var title=fa?"پروژه پایانی COMP 2233 شماره 136، RandomizedSet raffle":"COMP 2233 Term Project #136, RandomizedSet raffle";
-  var due=fa?"مهلت بارگذاری در Moodle: یکشنبه 13 دسامبر 2026، ساعت 23:55. ارسال دیرکرد پذیرفته نمی‌شود.":"Moodle upload due Sun 13 Dec 2026, 23:55. No late submission.";
-  var pres=fa?"ارائه و گزارش چاپی: 14 تا 18 دسامبر.":"Presentations and printed report: 14–18 Dec.";
-  var dueDiff=diffTo(PROJ_DUE);
-  var label, val;
-  if(!dueDiff.past){
-    label=fa?"تا مهلت بارگذاری":"Until the upload deadline";
-    val=fa?("مانده: "+formatFAH(dueDiff)):("in "+formatENH(dueDiff));
-  } else {
-    var presDiff=diffTo(PROJ_PRES_END);
-    if(!presDiff.past){
-      label=fa?"بارگذاری بسته شد. تا پایان ارائه‌ها، 18 دسامبر":"Upload closed. Until presentations end, 18 Dec";
-      val=fa?("مانده: "+formatFAH(presDiff)):("in "+formatENH(presDiff));
-    } else {
-      label=fa?"بارگذاری و ارائه‌ها تمام شده است.":"Upload and presentations have ended.";
-      val=fa?"مهلت: 13 دسامبر 2026، ساعت 23:55":"Deadline was 13 Dec 2026, 23:55.";
-    }
-  }
-  var html='<div class="cd-kicker">'+wrap(kicker)+"</div>";
-  html+='<div class="cd-title">'+wrap(title)+"</div>";
-  html+='<div class="cd-sub">'+wrap(due)+"</div>";
-  html+='<div class="cd-sub">'+wrap(pres)+"</div>";
-  html+='<div class="cd-row"><span class="cd-label">'+wrap(label)+'</span><span class="cd-val">'+wrap(val)+"</span></div>";
-  el.innerHTML=html;
-}
-
-function paintEvents(){
-  var el=document.getElementById("card-events");
-  if(!el) return;
-  var fa=isFa();
-  var i=currentIndex();
-  var e=EVENTS[i];
-  var n=nowMs();
-  var kicker=fa?"رویداد بعدی":"Upcoming event";
-  var name=fa?e.fa:e.en;
-  var when=fa?e.when_fa:e.when_en;
-  var detail=fa?(e.detail_fa||""):(e.detail_en||"");
-  var note=fa?(e.note_fa||""):(e.note_en||"");
-  var tag=fa?(e.tag_fa||""):(e.tag_en||"");
-  var target, label, val, status="";
-  if(!eventStarted(e,n)){
-    target=e.start;
-    label=fa?"تا شروع":"Until it starts";
-    var d=diffTo(target);
-    val=fa?("مانده: "+formatFAH(d)):("in "+formatENH(d));
-  } else if(!eventEnded(e,n)){
-    status=fa?"در حال برگزاری":"Happening now";
-    target=e.end;
-    label=fa?"تا پایان":"Until it ends";
-    var d=diffTo(target);
-    val=fa?("مانده: "+formatFAH(d)):("in "+formatENH(d));
-  } else {
-    status=fa?"گذشته":"Past";
-    label=fa?"این رویداد تمام شده است.":"This event has ended.";
-    val=when;
-  }
-  var prevG=fa?"\u203A":"\u2039";
-  var nextG=fa?"\u2039":"\u203A";
-  var html='<div class="cd-kicker">'+wrap(kicker)+"</div>";
-  html+='<div class="ev-nav">';
-  html+='<button type="button" class="ev-arr ev-prev" data-dir="-1" aria-label="'+(fa?"قبلی":"Previous")+'" '+(i===0?"disabled":"")+">"+prevG+"</button>";
-  html+='<div class="ev-body">';
-  if(tag) html+='<div class="cd-tag">'+wrap(tag)+"</div>";
-  html+='<div class="cd-title">'+wrap(name)+"</div>";
-  html+='<div class="cd-sub">'+wrap(when)+"</div>";
-  if(detail) html+='<div class="cd-sub">'+wrap(detail)+"</div>";
-  if(note) html+='<div class="cd-sub">'+wrap(note)+"</div>";
-  if(status) html+='<div class="cd-sub">'+wrap(status)+"</div>";
-  html+='<div class="cd-row"><span class="cd-label">'+wrap(label)+'</span><span class="cd-val">'+wrap(val)+"</span></div>";
-  html+="</div>";
-  html+='<button type="button" class="ev-arr ev-next" data-dir="1" aria-label="'+(fa?"بعدی":"Next")+'" '+(i===EVENTS.length-1?"disabled":"")+">"+nextG+"</button>";
-  html+="</div>";
-  el.innerHTML=html;
-}
-
+function V(s){return isFa()?ltrize(s):esc(s)}
 function paint(){
-  var wrap=document.getElementById("topbar-cards");
-  if(wrap){
-    wrap.setAttribute("dir", isFa()?"rtl":"ltr");
-    wrap.setAttribute("lang", isFa()?"fa":"en");
-  }
-  /* If still in auto mode, snap to the next event that has not ended. */
-  if(evIndex==null) evIndex=nextUpcomingIndex();
-  paintFinals();
-  paintProject();
-  paintEvents();
+ var F=isFa(),n=nowMs(),wrap=document.getElementById("topbar-cards");if(!wrap) return;
+ wrap.setAttribute("dir",F?"rtl":"ltr");wrap.setAttribute("lang",F?"fa":"en");
+ wrap.setAttribute("aria-label",F?"شمارش معکوس‌ها":"Countdowns");
+ /* 1 finals */
+ var o;
+ if(n<ms(FIN_START)){
+  o={kicker:T("Finals begin in","تا شروع امتحانات پایانی"),val:V(daysTxt(calDays(n,FIN_START))),date:T(dateTxt(FIN_START,false),dateTxt(FIN_START,false)),
+     subs:['<span class="cd-sub2">'+(F?ltrize(daysTxt(calDays(n,SEM_END))+" تا پایان ترم · "+dateTxt(SEM_END,false)):esc(daysTxt(calDays(n,SEM_END))+" until the end of the semester · "+dateTxt(SEM_END,false)))+'</span>']};
+ } else if(n<ms(SEM_END)){
+  o={kicker:T("Finals in progress","امتحانات پایانی در جریان است"),val:V(daysTxt(calDays(n,SEM_END))),date:T("until the end of the semester · ","تا پایان ترم · ")+V(dateTxt(SEM_END,false))};
+ } else o={kicker:T("Semester","ترم"),val:T("Finished","تمام شد"),date:V(dateTxt(SEM_END,false))};
+ document.getElementById("card-finals").innerHTML=card(o);
+ /* 2 homework */
+ var i=nextOf(HW,n);
+ if(i<0) o={kicker:T("Homework to hand in","تکلیف‌های تحویلی"),val:T("All clear","چیزی نمانده"),date:""};
+ else{var e=HW[i],nx=HW[i+1];
+  o={kicker:T("Next homework due","تکلیف بعدی"),title:T(e.en,e.fa),val:V(cd(ms(e.t)-n)),
+     date:V(dateTxt(e.t,e.hasTime))+(e.hasTime?"":" · "+T("no time given","ساعت اعلام نشده")),
+     subs:nx?[T("Then: ","بعدی: ")+T(nx.en,nx.fa)+" · "+V(dateTxt(nx.t,nx.hasTime))]:[]};}
+ document.getElementById("card-hw").innerHTML=card(o);
+ /* 3 quizzes */
+ i=nextOf(QUIZ,n);
+ if(i<0) o={kicker:T("Upcoming quizzes","کوییزهای پیش رو"),val:T("None announced","فعلاً اعلام نشده"),date:""};
+ else{var q=QUIZ[i],dd=calDays(n,q.t);
+  o={kicker:T("Next quiz","کوییز بعدی"),title:T(q.en,q.fa),val:V(dd===0?daysTxt(0):(F?dd+" روز دیگر":"in "+daysTxt(dd))),
+     date:V(dateTxt(q.t,q.hasTime))+(q.hasTime?"":" · "+T("time TBA","ساعت اعلام نشده")),
+     subs:QUIZ[i+1]?[T("Then: ","بعدی: ")+T(QUIZ[i+1].en,QUIZ[i+1].fa)]:[]};}
+ document.getElementById("card-quiz").innerHTML=card(o);
+ /* 4 project */
+ i=nextOf(PROJ,n);
+ if(i<0) o={kicker:T("Project #136","پروژه #136"),val:T("Done","تمام شد"),date:""};
+ else{var p=PROJ[i];
+  o={kicker:T("Project #136","پروژه #136"),title:T(p.en,p.fa),val:V(i===0?cd(ms(p.t)-n):(n<ms(pt(2026,12,14,0,0))?daysTxt(calDays(n,pt(2026,12,14,0,0))):T("This week","این هفته"))),
+     date:p.range_en?T(p.range_en,p.range_fa):V(dateTxt(p.t,true)),subs:[T(p.sub_en,p.sub_fa)]};
+  if(i===1&&n>=ms(pt(2026,12,14,0,0))) o.val=T("This week","این هفته");}
+ document.getElementById("card-project").innerHTML=card(o);
 }
-
-var evBound=false;
-function bind(){
-  if(evBound) return;
-  evBound=true;
-  var wrap=document.getElementById("topbar-cards");
-  if(wrap){
-    wrap.addEventListener("click", function(ev){
-      var b=ev.target.closest?ev.target.closest(".ev-arr"):null;
-      if(!b || b.disabled) return;
-      var dir=parseInt(b.getAttribute("data-dir"),10);
-      if(dir) stepEvent(dir);
-    });
-  }
-  var sw=document.getElementById("langsw");
-  if(sw) sw.addEventListener("click", function(){ setTimeout(paint, 0); });
-  document.addEventListener("visibilitychange", function(){ if(!document.hidden) paint(); });
-  if(window.MutationObserver){
-    new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
-  }
-}
-
-window.__topbar={
-  events:EVENTS,
-  index:function(){ return currentIndex(); },
-  event:function(){ return EVENTS[currentIndex()]; },
-  next:function(){ stepEvent(1); },
-  prev:function(){ stepEvent(-1); },
-  resetAuto:function(){ evIndex=null; paint(); },
-  paint:paint
-};
-
-bind();
-paint();
-setInterval(paint, 30000);
+/* Upcoming events list (kept for other scripts): every dated item above, chronological. */
+var EVENTS=[].concat(HW.map(function(x){return {kind:"homework",en:x.en,fa:x.fa,t:x.t,hasTime:x.hasTime}}),
+ QUIZ.map(function(x){return {kind:"quiz",en:x.en,fa:x.fa,t:x.t,hasTime:x.hasTime}}),
+ PROJ.map(function(x){return {kind:"project",en:x.en,fa:x.fa,t:x.t,hasTime:x.hasTime}}),
+ [{kind:"finals",en:"Finals start",fa:"شروع امتحانات پایانی",t:FIN_START,hasTime:false}]).sort(function(a,b){return ms(a.t)-ms(b.t)});
+window.__topbar={events:EVENTS,paint:paint};
+var sw=document.getElementById("langsw");if(sw) sw.addEventListener("click",function(){setTimeout(paint,0)});
+if(window.MutationObserver) new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+document.addEventListener("visibilitychange",function(){if(!document.hidden) paint()});
+paint();setInterval(paint,30000);
 })();
 </script>
 
@@ -3566,6 +3399,40 @@ html[lang=fa] .gt th{font-family:var(--gta-fa);font-weight:800}
 /* outlook (kept working, tab hidden) */
 .ol-bar>div,.bar>div{background:linear-gradient(90deg,#ff2d95,#ff8a00);box-shadow:none}
 .ol-card{border-top:3px solid #ff2d95}
+/* quiz markers in the Finals plan */
+#view-finals .fin-mark{border:1px solid rgba(255,212,0,.55);background:rgba(255,212,0,.07);color:#fff3c4;border-radius:14px;padding:12px 14px;margin:0 0 14px;font-weight:600}
+#view-finals .fin-mark.is-day{border-width:2px;background:rgba(255,212,0,.13);color:#fff;font-size:1.05rem}
+#view-finals .fin-mark b{display:inline-block;font-family:var(--gta-h);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#07051a;background:#ffd400;border-radius:999px;padding:1px 9px;margin-inline-end:10px;font-size:.78rem}
+html[lang=fa] #view-finals .fin-mark b{font-family:var(--gta-fa);font-weight:800;letter-spacing:0}
+.fin-daybtn.is-quiz{border-color:#ffd400;color:#ffd400}
+.fin-daybtn.is-quiz[aria-selected=true]{color:#fff}
+/* Top cards v26: 4 cards */
+#topbar-cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+#topbar-cards .top-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px}
+#topbar-cards .cd-kicker{margin:0 0 4px}
+#topbar-cards .cd-title{margin:0 0 4px;font-size:.95rem;line-height:1.35}
+#topbar-cards .cd-val{margin:2px 0 4px;font-size:clamp(1.5rem,2.4vw,2rem)}
+#topbar-cards .cd-date{font-size:.8rem;color:#ffd400;font-weight:600;line-height:1.4}
+#topbar-cards .cd-sub{font-size:.78rem;color:var(--muted);line-height:1.45;margin-top:6px}
+#topbar-cards .cd-sub2{color:#c9b8e8}
+#topbar-cards #card-quiz{border-color:rgba(255,138,101,.55)}
+#topbar-cards #card-quiz .cd-kicker{color:#ff8a65}
+@media (max-width:1100px) and (min-width:641px){#topbar-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Project tab */
+#view-project{padding-bottom:72px}
+.gta-pjlink{display:block;margin:22px 0 0;padding:12px 16px;border:1px solid rgba(255,212,0,.45);border-radius:14px;color:#ffd400;text-decoration:none;font-weight:650;position:relative;z-index:1}
+.gta-pjlink:hover{background:rgba(255,212,0,.08)}
+.pj-del{grid-template-columns:1fr 1fr}
+.pj-list{list-style:none;margin:12px 0 0;padding:0}
+.pj-t{display:flex;gap:10px;align-items:flex-start;padding:11px 4px;border-top:1px solid rgba(255,255,255,.07);border-radius:0;background:none}
+.pj-t:hover{background:rgba(255,255,255,.03)}
+.pj-t input{margin-top:3px}
+.pj-t label{cursor:pointer;color:#fff;line-height:1.5}
+.pj-d{display:block;font-size:.78rem;color:#ff7ac0;font-weight:650}
+.pj-t.is-today .pj-d{color:#ffd400}
+.pj-t.is-late .pj-d{color:#ffb13d}
+.pj-t.is-done label{opacity:.55;text-decoration:line-through}
+@media (max-width:820px){.pj-del{grid-template-columns:1fr}}
 /* phones */
 @media (max-width:640px){
  .wrap{padding:0 14px}
