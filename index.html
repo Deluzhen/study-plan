@@ -1310,7 +1310,42 @@ window.__clockTodayIso = function(){
    <div id="fin-daily" class="fin-tl"></div>
   </div>
  </section>
-<section class="sec links-sec" id="links"><details class="scope glass" open><summary>Course links (open in a new tab)</summary>
+<section class="sec today-chart-sec" id="today-chart">
+  <div class="today-chart glass">
+    <div class="today-chart-copy">
+      <p class="today-chart-k fin-en">Today</p>
+      <p class="today-chart-k fin-fa">امروز</p>
+      <h3 class="today-chart-h fin-en">How far you've got</h3>
+      <h3 class="today-chart-h fin-fa">چقدر پیش رفته‌ای</h3>
+      <p class="today-chart-frac" id="today-chart-frac" dir="ltr"><b>0</b> / 0</p>
+      <p class="today-chart-cap fin-en" id="today-chart-cap-en">topics done</p>
+      <p class="today-chart-cap fin-fa" id="today-chart-cap-fa">مبحث تمام شده</p>
+      <p class="today-chart-empty fin-en">No topics today. Enjoy the break, or finish anything left from earlier days.</p>
+      <p class="today-chart-empty fin-fa">امروز مبحثی نیست. استراحت کن، یا اگر چیزی از روزهای قبل مانده همان را تمام کن.</p>
+    </div>
+    <div class="today-chart-ring" role="img" aria-labelledby="today-chart-aria">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="todayChartGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff2d95"/>
+            <stop offset=".55" stop-color="#ff8a00"/>
+            <stop offset="1" stop-color="#ffd400"/>
+          </linearGradient>
+          <filter id="todayChartBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter>
+        </defs>
+        <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="10"/>
+        <circle cx="50" cy="50" r="36.5" fill="none" stroke="rgba(255,255,255,.06)" stroke-width=".6" stroke-dasharray="1.2 2.4"/>
+        <circle class="today-chart-glow" cx="50" cy="50" r="44" fill="none" stroke="url(#todayChartGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 50 50)" filter="url(#todayChartBlur)" opacity="0"/>
+        <circle class="today-chart-arc" cx="50" cy="50" r="44" fill="none" stroke="url(#todayChartGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 50 50)" opacity="0"/>
+      </svg>
+      <div class="today-chart-mid">
+        <div class="today-chart-pct" dir="ltr"><span id="today-chart-pct">0</span><small class="fin-en">%</small><small class="fin-fa">٪</small></div>
+      </div>
+    </div>
+  </div>
+  <p class="today-chart-sr" id="today-chart-aria"></p>
+</section>
+<section class="sec links-sec" id="links"><details class="scope glass" id="links-details"><summary><span class="t-en">Course links (open in a new tab)</span><span class="t-fa">لینک درس‌ها (در تب جدید باز می‌شود)</span></summary>
 <p><b>Main links</b></p><ul class="lnk">
 <li><a class="flink" href="https://deluzhen.github.io/study-plan/" target="_blank" rel="noopener">Midterm Study Plan (this site, online)</a></li>
 <li><a class="flink" href="https://online.yasar.edu.tr/my/courses.php" target="_blank" rel="noopener">Moodle: My courses</a> <small>(Moodle login needed)</small></li>
@@ -1711,11 +1746,46 @@ function renderDay(){
     });
   });
 }
+function renderTodayChart(){
+  var box=$("today-chart"); if(!box) return;
+  var F=lang()==="fa";
+  var today=todayIso();
+  var ts=dayTopics(today);
+  var ticks=load();
+  var total=ts.length;
+  var done=ts.filter(function(t){return !!ticks[t.id]}).length;
+  var empty=!total;
+  var pct=empty?0:Math.round(done/total*100);
+  box.classList.toggle("is-empty", empty);
+  box.classList.toggle("is-done", !empty && done===total);
+  var frac=$("today-chart-frac");
+  if(frac) frac.innerHTML="<b>"+done+"</b> / "+total;
+  var pctEl=$("today-chart-pct");
+  if(pctEl) pctEl.textContent=empty?"\u2014":String(pct);
+  var capEn=$("today-chart-cap-en"), capFa=$("today-chart-cap-fa");
+  if(capEn) capEn.textContent=(!empty && done===total)?"all done":"topics done";
+  if(capFa) capFa.textContent=(!empty && done===total)?"همه تمام شد":"مبحث تمام شده";
+  var r=44, C=2*Math.PI*r, off=empty?C:C*(1-Math.min(1,pct/100));
+  var arc=box.querySelector(".today-chart-arc");
+  var glow=box.querySelector(".today-chart-glow");
+  function paintRing(el, opOn){
+    if(!el) return;
+    el.setAttribute("stroke-dasharray", C.toFixed(2));
+    el.setAttribute("stroke-dashoffset", off.toFixed(2));
+    el.style.opacity=(empty||pct===0)?"0":opOn;
+  }
+  paintRing(glow, ".55");
+  paintRing(arc, "1");
+  var aria=$("today-chart-aria");
+  if(aria) aria.textContent=empty?(F?"امروز مبحثی نیست":"No topics today")
+    :(F?("مباحث امروز: "+done+" از "+total+" تمام شده، "+pct+" درصد"):("Today's topics: "+done+" of "+total+" done, "+pct+" percent"));
+}
 function render(){
   if(!$("fin-overview")) return;
   renderOverview();
   renderDaybar();
   renderDay();
+  renderTodayChart();
 }
 if(!DAYS[0]) return;
 selected=defaultDay();
@@ -3530,6 +3600,33 @@ html[lang=fa] #view-finals .fin-carry .fin-topic{box-shadow:inset -3px 0 0 #ffd4
 .links-sec .scope summary{font-family:var(--gta-h);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#ff7ac0}
 html[lang=fa] .links-sec .scope summary{font-family:var(--gta-fa);font-weight:800;letter-spacing:0}
 ul.lnk li{border:0;padding:4px 0}
+/* Today's completion donut: just above the resources section */
+.today-chart-sec{margin:22px 0 0}
+.today-chart{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 24px 20px;border-color:rgba(255,90,190,.28)!important;border-radius:18px}
+.today-chart::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#ff2d95,#ff8a00,#ffd400,#b14dff)}
+.today-chart-copy{flex:1;min-width:0}
+.today-chart-k{margin:0 0 4px;font-family:var(--gta-h);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff7ac0;font-size:.78rem}
+html[lang=fa] .today-chart-k{font-family:var(--gta-fa);font-weight:800}
+.today-chart-h{margin:0 0 10px;font-family:var(--gta-h);font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#fff;font-size:1.45rem;line-height:1.15}
+html[lang=fa] .today-chart-h{font-family:var(--gta-fa);font-weight:800;line-height:1.4}
+.today-chart-frac{margin:0;font-family:var(--gta-h);font-weight:700;font-size:2rem;color:#fff;letter-spacing:.02em;text-shadow:0 0 16px rgba(255,45,149,.45)}
+html[lang=fa] .today-chart-frac{font-family:var(--gta-fa);font-weight:800}
+.today-chart-cap{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.today-chart-empty{display:none;margin:6px 0 0;color:var(--muted);font-size:.95rem;max-width:36ch}
+.today-chart-sec.is-empty .today-chart-frac,
+.today-chart-sec.is-empty .today-chart-cap{display:none}
+.today-chart-sec.is-empty .today-chart-empty{display:block}
+.today-chart-sec.is-empty .today-chart-pct small{display:none!important}
+.today-chart-ring{position:relative;width:148px;height:148px;flex:0 0 148px}
+.today-chart-ring svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 12px rgba(255,45,149,.35))}
+.today-chart-mid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.today-chart-pct{font-family:var(--gta-h);font-weight:700;font-size:2.1rem;line-height:1;color:#fff;text-shadow:0 0 18px rgba(255,45,149,.6)}
+.today-chart-pct small{font-size:.9rem;margin-inline-start:1px;color:#ffd400}
+html[lang=fa] .today-chart-pct{font-family:var(--gta-fa);font-weight:800}
+.today-chart-arc,.today-chart-glow{transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1),opacity .35s ease}
+.today-chart-sec.is-done .today-chart{box-shadow:0 0 28px -8px rgba(255,212,0,.5)}
+.today-chart-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){.today-chart-arc,.today-chart-glow{transition:none}}
 /* ===== Exams: same colour meaning (green announced, red not announced, yellow to confirm), shown as a stripe + title colour ===== */
 .ex-card.ex-ann,.ex-card.ex-unann,.ex-card.st-check{background:var(--gta-card)!important;border:1px solid rgba(255,255,255,.10)!important;border-inline-start:5px solid var(--exb)!important;box-shadow:none!important;--ext:#fff;--exm:#c4b8e3}
 .ex-card.ex-ann{--exb:#4ff0a0}.ex-card.ex-unann{--exb:#ff4d6d}.ex-card.st-check{--exb:#ffd400}
@@ -3640,6 +3737,11 @@ html[lang=fa] .fin-about-chev{transform:scaleX(-1)}
  #view-finals .fin-src{margin-inline-start:0}
  #view-finals .fin-topic{padding:12px}
  .fin-daybtn{padding:6px 10px;font-size:.84rem}
+ .today-chart{flex-direction:column;text-align:center;padding:18px 16px 20px;gap:14px}
+ .today-chart-ring{width:132px;height:132px;flex-basis:132px}
+ .today-chart-h{font-size:1.2rem}
+ .today-chart-frac{font-size:1.7rem}
+ .today-chart-empty{max-width:none}
  .sec-h h2,#view-finals h2,#view-outlook h2,#view-exams h2,.gpa h2{font-size:1.35rem}
 }
 </style>
@@ -3658,6 +3760,12 @@ document.addEventListener("click",function(e){
  b.setAttribute("aria-expanded",String(open));body.classList.toggle("open",open);
  if(open) body.removeAttribute("inert"); else body.setAttribute("inert","");
 });
+})();
+/* Resources / course links: collapsed on every load (including back-forward cache). Open state is not stored. */
+(function(){
+ function closeLinks(){var d=document.getElementById("links-details")||document.querySelector("#links details");if(d) d.open=false}
+ closeLinks();
+ window.addEventListener("pageshow",closeLinks);
 })();
 </script>
 </body>
